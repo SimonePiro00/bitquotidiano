@@ -2,50 +2,99 @@
   "stato": "in_attesa",
   "fonte": "https://www.instagram.com/p/DeMfjZ0jiep/",
   "bozza": {
-    "argomento": "Costruire uno smartphone fai-da-te con componenti in commercio (Raspberry Pi, ESP32, modem LTE)",
+    "argomento": "Come costruire uno smartphone fai-da-te: i componenti principali e il software",
     "slides": [
       {
-        "titolo": "Uno smartphone fatto in casa? Con i pezzi giusti si può",
+        "titolo": "Uno smartphone fatto in casa: ecco i pezzi",
         "testo": ""
       },
       {
-        "titolo": "Dentro il telefono: tanti chip, ognuno col suo compito",
-        "testo": "Uno smartphone è un insieme di componenti specializzati: un processore per sistema operativo e app, un modem per la rete cellulare, un chip per la ricarica, altri per schermo e controlli."
+        "titolo": "1. Lo schermo touch",
+        "testo": "Un display touch da 3,5\" con controller ST7796 e risoluzione 480×320. Diagonale e risoluzione sono le stesse del primo iPhone."
       },
       {
-        "titolo": "I mattoncini sono già in vendita",
-        "testo": "Un modulo Raspberry Pi può far girare Linux, una scheda ESP32 gestire comandi e grafica, un modem aggiunge l'LTE. Fotocamere e touchscreen si trovano già pronti."
+        "titolo": "2. Il processore piccolo: ESP32-S3",
+        "testo": "Il modulo ESP32-S3-WROOM-1 di Espressif gestisce l'interfaccia grafica e dialoga con il modem cellulare."
       },
       {
-        "titolo": "Il difficile non è l'hardware",
-        "testo": "La vera sfida è progettare la scheda, far dialogare tutti i componenti e scrivere un software che li faccia funzionare come un unico dispositivo."
+        "titolo": "3. Il processore grande: Raspberry Pi CM0",
+        "testo": "Un modulo Compute Module 0 di Raspberry Pi, con 4 core Cortex-A53, esegue Linux, il browser web e le app più pesanti."
       },
       {
-        "titolo": "Non sostituirà il vostro telefono",
-        "testo": "Non è pensato per competere con iPhone o Android. Ma dimostra quanta tecnologia di consumo si può ricreare con pezzi acquistabili, documentazione aperta e strumenti open source."
+        "titolo": "4. Il modem cellulare: A7670G",
+        "testo": "Modem SIMCom A7670G, LTE Cat 1: porta chiamate, SMS e connessione dati. Il chip al suo interno è di ASR, produttore cinese poco noto al grande pubblico."
+      },
+      {
+        "titolo": "5. Ricarica e batteria",
+        "testo": "Il chip RT9471 gestisce la ricarica via USB-C. L'energia arriva da una batteria agli ioni di litio Xiaomi ad alta tensione (Li-HV), presa da un telefono commerciale."
+      },
+      {
+        "titolo": "6. La fotocamera",
+        "testo": "Sensore Sony IMX708 da 12 MP, lo stesso della Raspberry Pi Camera Module 3, collegato con un cavo flat."
+      },
+      {
+        "titolo": "7. La scheda madre",
+        "testo": "Tutti i componenti stanno su un circuito stampato a 6 strati, da progettare su misura. Per farlo si può usare KiCad, software open source e gratuito."
+      },
+      {
+        "titolo": "8. Il software",
+        "testo": "La parte di controllo è scritta in ambiente Arduino; per disegnare l'interfaccia si usa la libreria grafica LovyanGFX. Infine la scocca stampata in 3D."
       }
     ],
-    "didascalia": "Lo smartphone che abbiamo in tasca sembra una scatola magica, ma in realtà è un lavoro di squadra tra chip diversi: chi gestisce la rete cellulare, chi la ricarica, chi l'interfaccia, e un processore principale che fa girare sistema operativo e app.\n\nLa cosa interessante? Molti di questi componenti sono alla portata di maker e appassionati. Con un modulo Raspberry Pi, una scheda ESP32, un modem LTE, un sensore fotografico e un touchscreen si può mettere insieme un telefono funzionante.\n\nLa parte complicata non è procurarsi i pezzi, ma progettare la scheda, farli comunicare tra loro e scrivere il software che li tiene insieme.\n\nNon è un'alternativa al vostro telefono di tutti i giorni, ma è un ottimo esempio di quanto l'hardware aperto e gli strumenti open source abbiano reso accessibile la tecnologia.\n\nVoi ci provereste? 👇",
+    "didascalia": "Dentro uno smartphone non c'è magia: ci sono tanti componenti specializzati che lavorano insieme. 📱🔧\n\nUno gestisce lo schermo e l'interfaccia, uno la rete cellulare, uno la ricarica, mentre un processore più potente fa girare il sistema operativo e le app.\n\nLa novità è che quasi tutti questi pezzi oggi si possono comprare anche da privati: moduli Raspberry Pi che eseguono Linux, schede ESP32 per la grafica, modem LTE pronti all'uso, sensori fotografici e display touch standard.\n\nLa parte difficile non è trovare l'hardware, ma progettare la scheda che li collega, farli comunicare correttamente e scrivere un software che li faccia funzionare come un unico dispositivo.\n\nNon sostituirà il telefono che hai in tasca, ma dimostra quanto la tecnologia di consumo sia diventata accessibile con componenti in commercio, documentazione pubblica e strumenti open source.\n\nNel carosello: tutti i componenti, uno per slide. Quale parte ti sembra la più difficile da realizzare?",
     "hashtag": [
-      "tecnologia",
       "smartphone",
       "diy",
       "faidate",
       "raspberrypi",
       "esp32",
+      "elettronica",
       "maker",
       "opensource",
+      "kicad",
+      "arduino",
       "hardware",
-      "elettronica",
-      "linux",
-      "technews",
-      "innovazione"
+      "tecnologia",
+      "stampa3d",
+      "pcb"
     ],
-    "infografica": null,
+    "infografica": {
+      "tipo": "numeri",
+      "titolo": "Lo smartphone fai-da-te in tre cifre",
+      "unita": "",
+      "elementi": [
+        {
+          "etichetta": "Schermo",
+          "valore": 3.5,
+          "testo": "3,5 pollici, 480×320 pixel"
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 4500.0,
+          "testo": "4500 mAh, ioni di litio Xiaomi"
+        },
+        {
+          "etichetta": "Fotocamera",
+          "valore": 12.0,
+          "testo": "12 megapixel, sensore Sony IMX708"
+        }
+      ],
+      "nota": "Dati riferiti al progetto mostrato nel post di spunto, da verificare"
+    },
     "da_verificare": [
-      "Il post di spunto sembra riferirsi a un progetto specifico di smartphone fai-da-te, ma non lo nomina: identificare il progetto e il suo autore prima di pubblicare",
-      "Verificare che la combinazione Raspberry Pi (Linux) + ESP32 (controlli e grafica) + modem LTE corrisponda all'architettura effettiva del progetto citato",
-      "Verificare quali componenti (fotocamera, touchscreen, modem) siano realmente stati usati nel progetto"
+      "Display 3,5\" ST7796 480×320: l'originale dice che è 'lo stesso display del primo iPhone'; coincidono diagonale e risoluzione, ma il controller ST7796 non risulta usato nel primo iPhone",
+      "ESP32-S3-WROOM-1 gestisce interfaccia e modem: ruolo da confermare nel progetto originale",
+      "Esistenza e specifiche del Raspberry Pi CM0 (4 core Cortex-A53) e sua disponibilità fuori dalla Cina",
+      "Il CM0 'esegue TikTok' come affermato nell'originale: non riportato perché poco plausibile",
+      "Modem A7670G LTE Cat 1 basato su chip ASR",
+      "L'originale afferma che il modem consente app come TikTok: non verificato",
+      "RT9471 con ricarica a 15 W e affermazione che sia 'lo stesso chip che ricarica il tuo telefono'",
+      "Capacità batteria 4500 mAh: nell'immagine l'etichetta sembra indicare 4000 mAh",
+      "Fotocamera 12 MP IMX708 (Camera Module 3); l'originale la definisce 'da top di gamma', affermazione esagerata e non riportata",
+      "Circuito stampato a 6 strati",
+      "Scocca stampata in 3D: dedotto dalle immagini",
+      "Software basato su Arduino e LovyanGFX",
+      "Le immagini del post originale sembrano generate o ritoccate (es. copertina con modulo SIM7600 invece di A7670G): verificare che il progetto esista davvero e chi ne è l'autore"
     ]
   }
 }
