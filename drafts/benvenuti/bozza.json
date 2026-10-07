@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "post introduttivo della pagina",
   "bozza": {
     "argomento": "Presentazione di Bit Quotidiano",
@@ -39,5 +39,6 @@
     ],
     "infografica": null,
     "da_verificare": []
-  }
+  },
+  "media_id": "18072005417743140"
 }

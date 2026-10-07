@@ -5,11 +5,23 @@ Le immagini devono essere raggiungibili da un URL pubblico: Instagram le scarica
 import time
 
 from .config import env
-from .graph import call
+from .graph import GraphError, call
 
 
 def _post(path: str, **params) -> dict:
     return call("POST", path, **params)
+
+
+def _publish(ig: str, container: str, attempts: int = 6) -> str:
+    """media_publish a volte risponde #9007 "Media ID is not available" anche con il container
+    FINISHED: Instagram non ha ancora finito di elaborarlo, basta riprovare poco dopo."""
+    for i in range(attempts):
+        try:
+            return _publish(ig, container)
+        except GraphError as e:
+            if "#9007" not in str(e) or i == attempts - 1:
+                raise
+            time.sleep(10)
 
 
 def _wait_ready(container_id: str, attempts: int = 20) -> None:
@@ -33,7 +45,7 @@ def publish_carousel(image_urls: list[str], caption: str) -> str:
             _wait_ready(c)
         container = _post(f"{ig}/media", media_type="CAROUSEL", children=",".join(children), caption=caption)["id"]
     _wait_ready(container)
-    return _post(f"{ig}/media_publish", creation_id=container)["id"]
+    return _publish(ig, container)
 
 
 def publish_story(image_url: str) -> str:
@@ -42,4 +54,4 @@ def publish_story(image_url: str) -> str:
     ig = env("IG_USER_ID", required=True).strip()
     container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
     _wait_ready(container)
-    return _post(f"{ig}/media_publish", creation_id=container)["id"]
+    return _publish(ig, container)

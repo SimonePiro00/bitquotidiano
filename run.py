@@ -68,17 +68,21 @@ def cmd_publish(args):
         sys.exit("Aggiungi --conferma per pubblicare davvero.")
     folder = DRAFTS_DIR / args.id
     record = json.loads((folder / "bozza.json").read_text())
-    if record["stato"] == "pubblicata":
+    gia_pubblicata = record["stato"] == "pubblicata"
+    if gia_pubblicata and (record.get("story_id") or args.senza_storia):
         sys.exit("Bozza già pubblicata.")
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
     slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
     urls = [f"{base}/{args.id}/{p.name}" for p in slides]
     b = record["bozza"]
     caption = b["didascalia"] + "\n\n" + " ".join(f"#{h}" for h in b["hashtag"])
-    record["media_id"] = publish_carousel(urls, caption)
-    record["stato"] = "pubblicata"
-    (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
-    print(f"Post pubblicato: {record['media_id']}")
+    if gia_pubblicata:
+        print(f"Post già pubblicato ({record.get('media_id')}): pubblico solo la storia.")
+    else:
+        record["media_id"] = publish_carousel(urls, caption)
+        record["stato"] = "pubblicata"
+        (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+        print(f"Post pubblicato: {record['media_id']}")
     if (folder / "story.jpg").exists() and not args.senza_storia:
         record["story_id"] = publish_story(f"{base}/{args.id}/story.jpg")
         print(f"Storia pubblicata: {record['story_id']}")

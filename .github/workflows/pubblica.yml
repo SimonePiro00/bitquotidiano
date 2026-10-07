@@ -19,6 +19,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           PUBLIC_IMAGE_BASE_URL: ${{ vars.PUBLIC_IMAGE_BASE_URL || format('https://{0}.github.io/{1}/drafts', github.repository_owner, github.event.repository.name) }}
-      - run: |
+      - if: always()
+        run: |
           git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
           git add drafts && git commit -m "Bozza ${{ inputs.id }} pubblicata" && git push || true
