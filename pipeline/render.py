@@ -142,7 +142,10 @@ def render_infographic(info, index: int, total: int, handle: str, out: Path) -> 
     y = _title(d, info.titolo, 200, 60) + 70
     {"numeri": _numeri, "barre": _barre, "timeline": _timeline}[info.tipo](d, info, y)
     if info.nota:
-        d.text((MARGIN, H - 110), info.nota, font=_font(FONT_REG, 28), fill=MUTED)
+        note_font = _font(FONT_REG, 28)
+        lines = _wrap(d, info.nota, note_font, W - 2 * MARGIN)[:2]
+        for j, line in enumerate(lines):
+            d.text((MARGIN, H - 80 - 36 * (len(lines) - j)), line, font=note_font, fill=MUTED)
     return _save(img, out)
 
 
