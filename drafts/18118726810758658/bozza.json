@@ -1,0 +1,51 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeMfjZ0jiep/",
+  "bozza": {
+    "argomento": "Costruire uno smartphone fai-da-te con componenti in commercio (Raspberry Pi, ESP32, modem LTE)",
+    "slides": [
+      {
+        "titolo": "Uno smartphone fatto in casa? Con i pezzi giusti si può",
+        "testo": ""
+      },
+      {
+        "titolo": "Dentro il telefono: tanti chip, ognuno col suo compito",
+        "testo": "Uno smartphone è un insieme di componenti specializzati: un processore per sistema operativo e app, un modem per la rete cellulare, un chip per la ricarica, altri per schermo e controlli."
+      },
+      {
+        "titolo": "I mattoncini sono già in vendita",
+        "testo": "Un modulo Raspberry Pi può far girare Linux, una scheda ESP32 gestire comandi e grafica, un modem aggiunge l'LTE. Fotocamere e touchscreen si trovano già pronti."
+      },
+      {
+        "titolo": "Il difficile non è l'hardware",
+        "testo": "La vera sfida è progettare la scheda, far dialogare tutti i componenti e scrivere un software che li faccia funzionare come un unico dispositivo."
+      },
+      {
+        "titolo": "Non sostituirà il vostro telefono",
+        "testo": "Non è pensato per competere con iPhone o Android. Ma dimostra quanta tecnologia di consumo si può ricreare con pezzi acquistabili, documentazione aperta e strumenti open source."
+      }
+    ],
+    "didascalia": "Lo smartphone che abbiamo in tasca sembra una scatola magica, ma in realtà è un lavoro di squadra tra chip diversi: chi gestisce la rete cellulare, chi la ricarica, chi l'interfaccia, e un processore principale che fa girare sistema operativo e app.\n\nLa cosa interessante? Molti di questi componenti sono alla portata di maker e appassionati. Con un modulo Raspberry Pi, una scheda ESP32, un modem LTE, un sensore fotografico e un touchscreen si può mettere insieme un telefono funzionante.\n\nLa parte complicata non è procurarsi i pezzi, ma progettare la scheda, farli comunicare tra loro e scrivere il software che li tiene insieme.\n\nNon è un'alternativa al vostro telefono di tutti i giorni, ma è un ottimo esempio di quanto l'hardware aperto e gli strumenti open source abbiano reso accessibile la tecnologia.\n\nVoi ci provereste? 👇",
+    "hashtag": [
+      "tecnologia",
+      "smartphone",
+      "diy",
+      "faidate",
+      "raspberrypi",
+      "esp32",
+      "maker",
+      "opensource",
+      "hardware",
+      "elettronica",
+      "linux",
+      "technews",
+      "innovazione"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il post di spunto sembra riferirsi a un progetto specifico di smartphone fai-da-te, ma non lo nomina: identificare il progetto e il suo autore prima di pubblicare",
+      "Verificare che la combinazione Raspberry Pi (Linux) + ESP32 (controlli e grafica) + modem LTE corrisponda all'architettura effettiva del progetto citato",
+      "Verificare quali componenti (fotocamera, touchscreen, modem) siano realmente stati usati nel progetto"
+    ]
+  }
+}

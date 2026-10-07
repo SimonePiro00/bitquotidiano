@@ -1,0 +1,53 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeMvzdHFnbw/",
+  "bozza": {
+    "argomento": "Come far rispondere l'iPhone a \"Jarvis\" invece che a \"Siri\" con le Abbreviazioni vocali, e affiancare ChatGPT per le conversazioni",
+    "slides": [
+      {
+        "titolo": "Il tuo iPhone può rispondere a \"Jarvis\"",
+        "testo": ""
+      },
+      {
+        "titolo": "Una frase personalizzata al posto di \"Siri\"",
+        "testo": "Con la funzione di accessibilità Abbreviazioni vocali puoi registrare una parola a scelta, come \"Jarvis\", e usarla per avviare una richiesta a Siri. Basta qualche passaggio nelle Impostazioni."
+      },
+      {
+        "titolo": "Il tocco finale: la voce",
+        "testo": "Abbinando una voce di Siri con accento britannico l'effetto ricorda l'assistente di Iron Man. Non è un vero sostituto di Siri: è solo un modo diverso per richiamarlo."
+      },
+      {
+        "titolo": "Siri per il telefono…",
+        "testo": "Siri resta il più pratico per i comandi del dispositivo: timer, chiamate, messaggi, apertura delle app e controlli di sistema."
+      },
+      {
+        "titolo": "…e un chatbot per parlare",
+        "testo": "Per spiegazioni, idee o domande complesse conviene passare alla modalità vocale di ChatGPT. Il risultato: un \"Jarvis\" diviso in due, uno che esegue e uno che conversa."
+      }
+    ],
+    "didascalia": "Chiamare il proprio iPhone \"Jarvis\" non è più solo un sogno da fan Marvel 🤖\n\nGrazie alle Abbreviazioni vocali, una funzione di accessibilità di iOS, puoi scegliere una parola personalizzata che attiva una richiesta a Siri. Aggiungi una voce con accento britannico e il gioco è fatto.\n\nAttenzione però: Siri non viene sostituito. Continua a gestire timer, chiamate, messaggi, app e impostazioni del telefono. Per conversazioni vere, spiegazioni o brainstorming, la soluzione più efficace è affiancargli un assistente AI come ChatGPT in modalità vocale.\n\nUn assistente che controlla il dispositivo, un altro che sa dialogare: insieme si avvicinano parecchio all'idea di Jarvis.\n\nTu lo proveresti? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "iPhone",
+      "Siri",
+      "Jarvis",
+      "iOS",
+      "Apple",
+      "ChatGPT",
+      "IntelligenzaArtificiale",
+      "AI",
+      "TechNews",
+      "Tecnologia",
+      "TrucchiiPhone",
+      "Accessibilita",
+      "AssistenteVocale"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Nome italiano esatto della funzione (\"Abbreviazioni vocali\") e percorso nelle Impostazioni (Accessibilità)",
+      "Versione di iOS e modelli di iPhone compatibili con le Abbreviazioni vocali",
+      "Che la frase personalizzata possa avviare direttamente una richiesta a Siri e non solo un comando rapido",
+      "Disponibilità della voce di Siri con accento britannico se Siri è impostato in italiano (potrebbe richiedere la lingua inglese)",
+      "Disponibilità della modalità vocale di ChatGPT e eventuali limiti per gli account gratuiti in Italia"
+    ]
+  }
+}
