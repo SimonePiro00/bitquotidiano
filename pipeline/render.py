@@ -55,7 +55,7 @@ def _save(img, out: Path) -> Path:
     return out
 
 
-def render_slide(titolo: str, testo: str, index: int, total: int, handle: str, out: Path) -> Path:
+def render_slide(titolo: str, testo: str, index: int, total: int, handle: str, out: Path, ill=None) -> Path:
     img, d = _frame(index, total, handle)
     cover = index == 1
     y = _title(d, titolo, 420 if cover else 260, 96 if cover else 64)
@@ -67,6 +67,13 @@ def render_slide(titolo: str, testo: str, index: int, total: int, handle: str, o
         for line in _wrap(d, testo, body_font, W - 2 * MARGIN):
             d.text((MARGIN, y), line, font=body_font, fill=FG)
             y += body_font.size + 16
+    if ill is not None:
+        # L'illustrazione occupa lo spazio libero sotto il testo, centrata.
+        top, bottom = y + 50, H - 150
+        scale = min((W - 2 * MARGIN) / ill.width, (bottom - top) / ill.height, 1.0)
+        if scale > 0.25:
+            pic = ill.resize((int(ill.width * scale), int(ill.height * scale)), Image.LANCZOS)
+            img.paste(pic, ((W - pic.width) // 2, top + (bottom - top - pic.height) // 2), pic)
     footer = "Scorri →" if cover else ("Seguici per altre news tech" if index == total else "")
     if footer:
         d.text((MARGIN, H - 120), footer, font=_font(FONT_BOLD, 38), fill=MUTED)
@@ -140,8 +147,9 @@ def render_infographic(info, index: int, total: int, handle: str, out: Path) -> 
 
 
 def render_draft(bozza, out_dir: Path, handle: str) -> list[Path]:
-    """Copertina, poi l'infografica (se c'è), poi le altre slide."""
-    pages = [("slide", s) for s in bozza.slides]
+    """Copertina, poi l'infografica (se c'è), poi le altre slide.
+    Le illustrazioni, se presenti, sono in out_dir/illustrazione_<n>.png (n = indice della slide)."""
+    pages = [("slide", (k, s)) for k, s in enumerate(bozza.slides)]
     if getattr(bozza, "infografica", None):
         pages.insert(1, ("info", bozza.infografica))
     total, paths = len(pages), []
@@ -150,5 +158,8 @@ def render_draft(bozza, out_dir: Path, handle: str) -> list[Path]:
         if kind == "info":
             paths.append(render_infographic(item, i, total, handle, out))
         else:
-            paths.append(render_slide(item.titolo, item.testo, i, total, handle, out))
+            k, slide = item
+            ill_path = out_dir / f"illustrazione_{k}.png"
+            ill = Image.open(ill_path).convert("RGBA") if ill_path.exists() else None
+            paths.append(render_slide(slide.titolo, slide.testo, i, total, handle, out, ill))
     return paths

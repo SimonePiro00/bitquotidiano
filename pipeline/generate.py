@@ -24,6 +24,8 @@ Regole:
   uno o due per slide, numerati nel titolo (es. "1. Apri Impostazioni"). Usa i nomi dei menu come
   appaiono con il dispositivo in italiano; se non sei sicuro del nome italiano, mettilo in `da_verificare`.
   Non sostituire i passaggi con una descrizione generica.
+- Dove l'originale mostra un'immagine (schermata, prodotto, componente), compila `illustrazione` per la
+  slide corrispondente: verrà disegnata un'illustrazione originale. Al massimo 5 slide con illustrazione.
 - Guarda l'immagine del post: se contiene dati, confronti, classifiche o una sequenza di eventi,
   ricavane un'infografica NOSTRA in `infografica` (scegli il tipo più adatto: `numeri` per 1-3 cifre
   chiave, `barre` per confrontare 2-6 valori numerici nella stessa unità, `timeline` per 3-6 tappe).
@@ -34,6 +36,11 @@ Regole:
 class Slide(BaseModel):
     titolo: str = Field(description="Titolo breve della slide, max 60 caratteri")
     testo: str = Field(description="Corpo della slide, max 220 caratteri; vuoto per la copertina")
+    illustrazione: str | None = Field(
+        description="Se nel post originale questa parte era accompagnata da un'immagine utile (schermata, oggetto, "
+        "componente, schema), descrivi in max 300 caratteri un'illustrazione NOSTRA da disegnare che mostri lo stesso "
+        "concetto in modo schematico. Null se non serve. Mai loghi, marchi o copie di immagini altrui."
+    )
 
 
 class Elemento(BaseModel):

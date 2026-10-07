@@ -17,6 +17,7 @@ from pipeline.render import render_draft
 
 def cmd_check(args):
     from pipeline.generate import generate_draft
+    from pipeline.illustrate import draw
     from pipeline.monitor import fetch_recent_media, load_seen, new_posts, save_seen
 
     seen = load_seen()
@@ -35,8 +36,17 @@ def cmd_check(args):
     for post in todo:
         out = DRAFTS_DIR / post["id"]
         bozza = generate_draft(post)
-        for old in out.glob("slide_*.jpg"):
+        for old in [*out.glob("slide_*.jpg"), *out.glob("illustrazione_*.png")]:
             old.unlink()
+        out.mkdir(parents=True, exist_ok=True)
+        disegnate = 0
+        for k, slide in enumerate(bozza.slides):
+            if slide.illustrazione and disegnate < 5:
+                ill = draw(slide.illustrazione, f"{slide.titolo}. {slide.testo}")
+                if ill is not None:
+                    ill.save(out / f"illustrazione_{k}.png")
+                    disegnate += 1
+        print(f"Illustrazioni disegnate: {disegnate}")
         render_draft(bozza, out, env("BRAND_HANDLE", "@bitquotidiano.it"))
         record = {"stato": "in_attesa", "fonte": post["permalink"], "bozza": bozza.model_dump()}
         (out / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
