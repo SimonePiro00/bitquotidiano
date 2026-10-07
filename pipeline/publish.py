@@ -17,7 +17,7 @@ def _publish(ig: str, container: str, attempts: int = 6) -> str:
     FINISHED: Instagram non ha ancora finito di elaborarlo, basta riprovare poco dopo."""
     for i in range(attempts):
         try:
-            return _publish(ig, container)
+            return _post(f"{ig}/media_publish", creation_id=container)["id"]
         except GraphError as e:
             if "#9007" not in str(e) or i == attempts - 1:
                 raise
