@@ -5,26 +5,17 @@ Business/Creator: niente scraping, quindi niente violazioni dei termini di Insta
 """
 import json
 
-import requests
-
 from .config import STATE_FILE, env
+from .graph import call
 
 FIELDS = "id,caption,media_type,media_url,permalink,timestamp,children{media_url,media_type}"
 
 
 def fetch_recent_media(limit: int = 10) -> list[dict]:
-    ig_user_id = env("IG_USER_ID", required=True)
-    token = env("META_ACCESS_TOKEN", required=True)
-    version = env("GRAPH_API_VERSION", "v26.0")
+    ig_user_id = env("IG_USER_ID", required=True).strip()
     source = env("SOURCE_USERNAME", "technologybrief")
     fields = f"business_discovery.username({source}){{media.limit({limit}){{{FIELDS}}}}}"
-    resp = requests.get(
-        f"https://graph.facebook.com/{version}/{ig_user_id}",
-        params={"fields": fields, "access_token": token},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    return resp.json()["business_discovery"]["media"]["data"]
+    return call("GET", ig_user_id, fields=fields)["business_discovery"]["media"]["data"]
 
 
 def load_seen() -> set[str]:
