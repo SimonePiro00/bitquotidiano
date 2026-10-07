@@ -61,7 +61,8 @@ def cmd_publish(args):
     if record["stato"] == "pubblicata":
         sys.exit("Bozza già pubblicata.")
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
-    urls = [f"{base}/{args.id}/{p.name}" for p in sorted(folder.glob("slide_*.jpg"))]
+    slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
+    urls = [f"{base}/{args.id}/{p.name}" for p in slides]
     b = record["bozza"]
     caption = b["didascalia"] + "\n\n" + " ".join(f"#{h}" for h in b["hashtag"])
     record["media_id"] = publish_carousel(urls, caption)
