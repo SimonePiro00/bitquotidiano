@@ -1,5 +1,5 @@
 {
-  "stato": "pubblicata",
+  "stato": "in_attesa",
   "fonte": "post introduttivo della pagina",
   "bozza": {
     "argomento": "Presentazione di Bit Quotidiano",
@@ -40,6 +40,11 @@
     "infografica": null,
     "da_verificare": []
   },
-  "media_id": "18072005417743140",
-  "story_id": "18060351293797480"
+  "precedenti": [
+    {
+      "media_id": "18072005417743140",
+      "story_id": "18060351293797480",
+      "nota": "uscito senza mascotte"
+    }
+  ]
 }
