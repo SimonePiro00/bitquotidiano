@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "post introduttivo della pagina",
   "bozza": {
     "argomento": "Presentazione di Bit Quotidiano",
@@ -46,5 +46,7 @@
       "story_id": "18060351293797480",
       "nota": "uscito senza mascotte"
     }
-  ]
+  ],
+  "media_id": "18130722355767566",
+  "story_id": "18098858219547779"
 }
