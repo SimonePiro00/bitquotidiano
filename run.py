@@ -61,6 +61,22 @@ def cmd_list(args):
         print(f"{f.parent.name}  [{r['stato']}]  {r['bozza']['argomento']}")
 
 
+def _attendi_pages(files: list[Path], urls: list[str], tentativi: int = 30) -> None:
+    """Instagram scarica le immagini da GitHub Pages: prima di pubblicare controlla che Pages
+    serva già la versione attuale di ogni file, altrimenti uscirebbero slide vecchie."""
+    import time
+    import requests
+
+    for _ in range(tentativi):
+        vecchi = [u for f, u in zip(files, urls)
+                  if requests.get(u, timeout=30, headers={"Cache-Control": "no-cache"}).content != f.read_bytes()]
+        if not vecchi:
+            return
+        print(f"Pages non è ancora aggiornato ({len(vecchi)} file), riprovo tra 20 secondi...")
+        time.sleep(20)
+    sys.exit("GitHub Pages serve ancora immagini vecchie: pubblicazione annullata.")
+
+
 def cmd_publish(args):
     from pipeline.publish import publish_carousel, publish_story
 
@@ -74,6 +90,8 @@ def cmd_publish(args):
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
     slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
     urls = [f"{base}/{args.id}/{p.name}" for p in slides]
+    files = slides + [folder / "story.jpg"] if (folder / "story.jpg").exists() else slides
+    _attendi_pages(files, [f"{base}/{args.id}/{p.name}" for p in files])
     b = record["bozza"]
     caption = b["didascalia"] + "\n\n" + " ".join(f"#{h}" for h in b["hashtag"])
     if gia_pubblicata:
