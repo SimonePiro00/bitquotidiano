@@ -2,61 +2,70 @@
   "stato": "in_attesa",
   "fonte": "https://www.instagram.com/p/DeMfjZ0jiep/",
   "bozza": {
-    "argomento": "Come costruire uno smartphone fai-da-te: i componenti principali e il software",
+    "argomento": "Come è fatto uno smartphone fai-da-te: i componenti principali, dallo schermo al modem LTE, e il software per farli funzionare insieme",
     "slides": [
       {
-        "titolo": "Uno smartphone fatto in casa: ecco i pezzi",
-        "testo": ""
+        "titolo": "Uno smartphone fatto in casa: cosa serve davvero",
+        "testo": "",
+        "illustrazione": "Schema esploso di uno smartphone dentro una scocca stampata in 3D: schermo, scheda madre con moduli, batteria e fotocamera separati su livelli sovrapposti, con linee guida che li collegano."
       },
       {
-        "titolo": "1. Lo schermo touch",
-        "testo": "Un display touch da 3,5\" con controller ST7796 e risoluzione 480×320. Diagonale e risoluzione sono le stesse del primo iPhone."
+        "titolo": "Lo schermo: touch da 3,5 pollici",
+        "testo": "Si parte da un display touch da 3,5\" con controller ST7796 e risoluzione 480x320. Dimensioni e risoluzione ricordano quelle del primo iPhone del 2007.",
+        "illustrazione": "Pannello touch rettangolare montato su una piccola scheda rossa con pin di collegamento, griglia di icone generiche sullo schermo e quote che indicano diagonale 3,5\" e 480x320 pixel."
       },
       {
-        "titolo": "2. Il processore piccolo: ESP32-S3",
-        "testo": "Il modulo ESP32-S3-WROOM-1 di Espressif gestisce l'interfaccia grafica e dialoga con il modem cellulare."
+        "titolo": "Due cervelli: uno piccolo e uno grande",
+        "testo": "Un modulo ESP32-S3-WROOM-1 gestisce interfaccia e modem. Il Raspberry Pi CM0, con 4 core Cortex-A53, fa girare Linux, browser e app più pesanti.",
+        "illustrazione": "Due chip affiancati su una scheda: uno piccolo etichettato 'interfaccia + modem', uno più grande etichettato 'Linux + app', collegati da frecce a icone di schermo, antenna e browser."
       },
       {
-        "titolo": "3. Il processore grande: Raspberry Pi CM0",
-        "testo": "Un modulo Compute Module 0 di Raspberry Pi, con 4 core Cortex-A53, esegue Linux, il browser web e le app più pesanti."
+        "titolo": "La rete: modem cellulare A7670G",
+        "testo": "Il modulo SIMCom A7670G aggiunge la connessione LTE Cat 1: chiamate, SMS e dati. Il chip al suo interno è prodotto da ASR, azienda cinese poco nota al grande pubblico.",
+        "illustrazione": "Modulo metallico quadrato con alloggiamento per SIM integrato e un'antenna stilizzata che emette onde, con etichette 'chiamate', 'SMS', 'dati LTE'."
       },
       {
-        "titolo": "4. Il modem cellulare: A7670G",
-        "testo": "Modem SIMCom A7670G, LTE Cat 1: porta chiamate, SMS e connessione dati. Il chip al suo interno è di ASR, produttore cinese poco noto al grande pubblico."
+        "titolo": "Energia: ricarica e batteria",
+        "testo": "Il chip RT9471 gestisce la ricarica via USB-C, indicata fino a 15 W. L'alimentazione arriva da una batteria agli ioni di litio ad alta tensione (Li-HV) da circa 4500 mAh.",
+        "illustrazione": null
       },
       {
-        "titolo": "5. Ricarica e batteria",
-        "testo": "Il chip RT9471 gestisce la ricarica via USB-C. L'energia arriva da una batteria agli ioni di litio Xiaomi ad alta tensione (Li-HV), presa da un telefono commerciale."
+        "titolo": "La fotocamera: sensore Sony IMX708",
+        "testo": "Per le foto si usa un modulo con sensore IMX708 da 12 megapixel, collegato alla scheda con un cavo flat. È lo stesso sensore della Camera Module 3 di Raspberry Pi.",
+        "illustrazione": "Piccolo modulo fotocamera quadrato con obiettivo al centro e un cavo flat arancione che si piega verso un foro nella scocca."
       },
       {
-        "titolo": "6. La fotocamera",
-        "testo": "Sensore Sony IMX708 da 12 MP, lo stesso della Raspberry Pi Camera Module 3, collegato con un cavo flat."
+        "titolo": "Il circuito: scheda a 6 strati",
+        "testo": "Tutto è montato su un circuito stampato a 6 strati, necessario per collegare tanti componenti in poco spazio. Per progettarlo si può usare KiCad, software gratuito e open source.",
+        "illustrazione": "Sezione laterale di un circuito stampato con 6 strati di rame evidenziati a colori alternati e numerati da 1 a 6."
       },
       {
-        "titolo": "7. La scheda madre",
-        "testo": "Tutti i componenti stanno su un circuito stampato a 6 strati, da progettare su misura. Per farlo si può usare KiCad, software open source e gratuito."
+        "titolo": "Il software: Arduino e LovyanGFX",
+        "testo": "Lato ESP32, il codice è scritto con l'ambiente Arduino. La grafica di schermata home, icone e orologio è gestita dalla libreria open source LovyanGFX.",
+        "illustrazione": null
       },
       {
-        "titolo": "8. Il software",
-        "testo": "La parte di controllo è scritta in ambiente Arduino; per disegnare l'interfaccia si usa la libreria grafica LovyanGFX. Infine la scocca stampata in 3D."
+        "titolo": "La parte difficile non è l'hardware",
+        "testo": "I pezzi si comprano online. La sfida è progettare la scheda, far comunicare ogni componente e scrivere un software che faccia sembrare tutto un unico dispositivo.",
+        "illustrazione": null
       }
     ],
-    "didascalia": "Dentro uno smartphone non c'è magia: ci sono tanti componenti specializzati che lavorano insieme. 📱🔧\n\nUno gestisce lo schermo e l'interfaccia, uno la rete cellulare, uno la ricarica, mentre un processore più potente fa girare il sistema operativo e le app.\n\nLa novità è che quasi tutti questi pezzi oggi si possono comprare anche da privati: moduli Raspberry Pi che eseguono Linux, schede ESP32 per la grafica, modem LTE pronti all'uso, sensori fotografici e display touch standard.\n\nLa parte difficile non è trovare l'hardware, ma progettare la scheda che li collega, farli comunicare correttamente e scrivere un software che li faccia funzionare come un unico dispositivo.\n\nNon sostituirà il telefono che hai in tasca, ma dimostra quanto la tecnologia di consumo sia diventata accessibile con componenti in commercio, documentazione pubblica e strumenti open source.\n\nNel carosello: tutti i componenti, uno per slide. Quale parte ti sembra la più difficile da realizzare?",
+    "didascalia": "Dentro ogni smartphone non c'è magia, ma tanti componenti specializzati che lavorano insieme. 📱🔧\n\nUn progetto fai-da-te lo mostra bene: un chip si occupa dell'interfaccia, un modem gestisce la rete cellulare, un altro controlla la ricarica, mentre un processore più potente fa girare Linux e le app più pesanti.\n\nLa cosa interessante? Quasi tutto si può acquistare: moduli Raspberry Pi, schede ESP32, modem LTE, sensori fotografici e schermi touch sono alla portata di qualsiasi maker. Il lavoro vero sta nel progettare il circuito, far dialogare i componenti e scrivere il software.\n\nNon sostituirà il telefono che hai in tasca, ma è un ottimo modo per capire come funziona.\n\nNel carosello trovi la lista dei pezzi principali. Lo costruiresti? Scrivilo nei commenti 👇",
     "hashtag": [
       "smartphone",
-      "diy",
       "faidate",
+      "diy",
+      "maker",
+      "elettronica",
       "raspberrypi",
       "esp32",
-      "elettronica",
-      "maker",
+      "arduino",
       "opensource",
       "kicad",
-      "arduino",
       "hardware",
       "tecnologia",
-      "stampa3d",
-      "pcb"
+      "tech",
+      "linux"
     ],
     "infografica": {
       "tipo": "numeri",
@@ -64,37 +73,38 @@
       "unita": "",
       "elementi": [
         {
-          "etichetta": "Schermo",
+          "etichetta": "Diagonale dello schermo",
           "valore": 3.5,
-          "testo": "3,5 pollici, 480×320 pixel"
+          "testo": "3,5\""
         },
         {
-          "etichetta": "Batteria",
+          "etichetta": "Capacità della batteria",
           "valore": 4500.0,
-          "testo": "4500 mAh, ioni di litio Xiaomi"
+          "testo": "4500 mAh"
         },
         {
-          "etichetta": "Fotocamera",
+          "etichetta": "Risoluzione fotocamera",
           "valore": 12.0,
-          "testo": "12 megapixel, sensore Sony IMX708"
+          "testo": "12 MP"
         }
       ],
-      "nota": "Dati riferiti al progetto mostrato nel post di spunto, da verificare"
+      "nota": "Dati dichiarati per il progetto, da confermare sulle schede tecniche dei componenti"
     },
     "da_verificare": [
-      "Display 3,5\" ST7796 480×320: l'originale dice che è 'lo stesso display del primo iPhone'; coincidono diagonale e risoluzione, ma il controller ST7796 non risulta usato nel primo iPhone",
-      "ESP32-S3-WROOM-1 gestisce interfaccia e modem: ruolo da confermare nel progetto originale",
-      "Esistenza e specifiche del Raspberry Pi CM0 (4 core Cortex-A53) e sua disponibilità fuori dalla Cina",
-      "Il CM0 'esegue TikTok' come affermato nell'originale: non riportato perché poco plausibile",
-      "Modem A7670G LTE Cat 1 basato su chip ASR",
-      "L'originale afferma che il modem consente app come TikTok: non verificato",
-      "RT9471 con ricarica a 15 W e affermazione che sia 'lo stesso chip che ricarica il tuo telefono'",
-      "Capacità batteria 4500 mAh: nell'immagine l'etichetta sembra indicare 4000 mAh",
-      "Fotocamera 12 MP IMX708 (Camera Module 3); l'originale la definisce 'da top di gamma', affermazione esagerata e non riportata",
-      "Circuito stampato a 6 strati",
-      "Scocca stampata in 3D: dedotto dalle immagini",
-      "Software basato su Arduino e LovyanGFX",
-      "Le immagini del post originale sembrano generate o ritoccate (es. copertina con modulo SIM7600 invece di A7670G): verificare che il progetto esista davvero e chi ne è l'autore"
+      "Il display è un 3,5\" con controller ST7796 e risoluzione 480x320: verificare le specifiche esatte",
+      "L'originale afferma che è 'lo stesso display del primo iPhone': probabilmente falso, coincidono solo diagonale e risoluzione; il controller ST7796 non risulta usato nell'iPhone del 2007",
+      "L'ESP32-S3-WROOM-1 gestisce interfaccia e modem: verificare la suddivisione dei compiti tra ESP32 e CM0",
+      "Esistenza e specifiche del Raspberry Pi CM0 (4 core Cortex-A53) e disponibilità fuori dalla Cina",
+      "Il CM0 fa girare Linux, browser e app come TikTok: verificare se TikTok funzioni davvero sul dispositivo",
+      "Il modem A7670G è LTE Cat 1 con chiamate, SMS e dati, e usa un chipset ASR: verificare",
+      "L'originale afferma che il modem permette app come TikTok: affermazione impropria, il modem fornisce solo la connessione",
+      "Il chip RT9471 supporta ricarica fino a 15 W: verificare sulla scheda tecnica (risulta un caricatore da circa 3 A)",
+      "Batteria Xiaomi Li-HV da 4500 mAh: nell'immagine originale l'etichetta sembra indicare un modello da 4000 mAh",
+      "Fotocamera con sensore IMX708 da 12 MP (Camera Module 3 di Raspberry Pi): verificare",
+      "Circuito stampato a 6 strati progettato con KiCad: verificare",
+      "Software basato su Arduino e libreria LovyanGFX: verificare",
+      "Le immagini del post originale sembrano rendering o generate con IA: verificare che il progetto esista davvero e chi lo abbia realizzato",
+      "Valori dell'infografica: 3,5\", 4500 mAh, 12 MP"
     ]
   }
 }

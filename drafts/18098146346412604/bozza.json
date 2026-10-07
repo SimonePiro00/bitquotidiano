@@ -2,72 +2,80 @@
   "stato": "in_attesa",
   "fonte": "https://www.instagram.com/p/DeMvzdHFnbw/",
   "bozza": {
-    "argomento": "Come usare \"Jarvis\" al posto di \"Siri\" su iPhone con le Abbreviazioni vocali e una voce britannica",
+    "argomento": "Tutorial: far rispondere l'iPhone alla parola \"Jarvis\" con Abbreviazioni vocali e una voce britannica di Siri",
     "slides": [
       {
-        "titolo": "Trasforma Siri in J.A.R.V.I.S. in 8 passaggi",
-        "testo": ""
+        "titolo": "Il tuo iPhone può rispondere a \"Jarvis\"",
+        "testo": "",
+        "illustrazione": null
       },
       {
         "titolo": "1. Apri Impostazioni > Siri",
-        "testo": "Vai in Impostazioni e tocca la voce dedicata a Siri. Sugli iPhone con Apple Intelligence si chiama \"Apple Intelligence e Siri\"."
+        "testo": "Vai in Impostazioni e tocca la voce dedicata a Siri. Sui modelli recenti può chiamarsi \"Apple Intelligence e Siri\".",
+        "illustrazione": "Schema stilizzato di un elenco di impostazioni di uno smartphone, con una riga evidenziata da un cerchio colorato e la scritta generica \"Siri\"."
       },
       {
-        "titolo": "2. Scegli una voce britannica",
-        "testo": "Tocca \"Voce di Siri\", in Varietà seleziona Britannica e in Voce scegli Voce 2. Le varietà regionali compaiono solo se la lingua di Siri è l'inglese."
+        "titolo": "2. Scegli la voce britannica",
+        "testo": "Tocca \"Voce di Siri\", seleziona la varietà \"Britannica\" e poi \"Voce 2\". Questa opzione compare se Siri è impostata in inglese.",
+        "illustrazione": "Due liste stilizzate: in alto le varietà di accento con un segno di spunta su \"Britannica\", sotto quattro voci numerate con spunta sulla Voce 2."
       },
       {
-        "titolo": "3. (Facoltativo) Riaggancia chiamate",
-        "testo": "Nella stessa schermata puoi attivare l'opzione per chiudere le chiamate a voce. Non serve per il trucco Jarvis: è solo un'aggiunta."
+        "titolo": "3. Opzionale: termina le chiamate",
+        "testo": "Nella stessa schermata di Siri puoi attivare l'opzione che permette di chiudere una telefonata a voce. Non serve per Jarvis, ma può tornare utile.",
+        "illustrazione": null
       },
       {
         "titolo": "4. Accessibilità > Abbreviazioni vocali",
-        "testo": "Torna in Impostazioni, apri Accessibilità e scorri fino alla sezione Generali: lì trovi Abbreviazioni vocali."
+        "testo": "Torna in Impostazioni, apri Accessibilità e scorri fino in fondo, nella sezione Generali: tocca \"Abbreviazioni vocali\".",
+        "illustrazione": "Elenco stilizzato di menu di accessibilità diviso in gruppi, con freccia che indica l'ultima voce in basso, accompagnata da un'icona a forma di onda sonora."
       },
       {
         "titolo": "5. Tocca \"Aggiungi azione\"",
-        "testo": "Questa funzione permette di creare comandi vocali personalizzati che avviano funzioni di sistema, di accessibilità o comandi rapidi."
+        "testo": "Nella schermata delle Abbreviazioni vocali premi il pulsante per creare un nuovo comando vocale personalizzato.",
+        "illustrazione": null
       },
       {
-        "titolo": "6. Cerca Siri e scegli \"Richiesta Siri\"",
-        "testo": "Nella barra di ricerca scrivi \"Siri\" e seleziona l'azione Richiesta Siri: sarà quella che parte quando pronunci la tua frase."
+        "titolo": "6. Cerca e scegli \"Richiesta Siri\"",
+        "testo": "Nel campo di ricerca scrivi \"Siri\" e seleziona l'azione \"Richiesta Siri\": la tua frase servirà ad attivare l'assistente.",
+        "illustrazione": "Barra di ricerca stilizzata con la parola \"Siri\" e sotto un elenco di risultati, il primo evidenziato con una sfera colorata astratta."
       },
       {
         "titolo": "7. Scrivi \"Jarvis\" come frase",
-        "testo": "Nel campo della frase digita Jarvis, poi segui le istruzioni a schermo: l'iPhone ti chiederà di pronunciarla qualche volta per riconoscerla."
+        "testo": "Inserisci \"Jarvis\" come frase di attivazione e segui le istruzioni a schermo: l'iPhone ti chiederà di pronunciarla per riconoscerla.",
+        "illustrazione": "Campo di testo stilizzato con la scritta \"Jarvis\" tra virgolette e una tastiera semplificata sotto."
       },
       {
-        "titolo": "8. Di' \"Jarvis\" e prova",
-        "testo": "Siri si attiva e risponde con la voce britannica. Per comandi (timer, app, messaggi) usa Siri; per conversazioni lunghe meglio la modalità vocale di ChatGPT."
+        "titolo": "8. Di' \"Jarvis\" e parti",
+        "testo": "Ora basta dire \"Jarvis\" per richiamare Siri. Per comandi su telefono e app usa Siri; per conversazioni lunghe, la modalità vocale di ChatGPT.",
+        "illustrazione": null
       }
     ],
-    "didascalia": "Vuoi chiamare il tuo iPhone \"Jarvis\" come Tony Stark? Si può fare con le impostazioni già presenti, senza app extra.\n\nIl trucco unisce due funzioni di iOS:\n🔹 una voce di Siri con accento britannico, per avvicinarsi all'effetto del film;\n🔹 le Abbreviazioni vocali, una funzione di Accessibilità che permette di associare una parola a tua scelta a un'azione, in questo caso una richiesta a Siri.\n\nAttenzione: Siri non viene sostituito. Dietro \"Jarvis\" c'è sempre l'assistente Apple, che resta il più comodo per controllare il telefono: timer, chiamate, messaggi, app e impostazioni.\n\nSe invece vuoi fare domande complesse, farti spiegare qualcosa o ragionare su un'idea, conviene passare alla modalità vocale di un assistente AI come ChatGPT. In pratica dividi J.A.R.V.I.S. in due: uno esegue, l'altro conversa.\n\nNota: la voce britannica è disponibile solo se Siri è impostato in inglese.\n\nScorri il carosello per tutti i passaggi e salva il post per rifarlo con calma 📌",
+    "didascalia": "Un assistente in stile J.A.R.V.I.S. sull'iPhone? Non proprio, ma ci si avvicina con pochi ritocchi alle impostazioni.\n\nGrazie alla funzione Abbreviazioni vocali puoi creare una parola personalizzata, come \"Jarvis\", che avvia una richiesta a Siri. Abbinata alla voce britannica dell'assistente, l'effetto è piuttosto convincente.\n\nAttenzione: Siri non viene sostituita. Resta lei a gestire timer, chiamate, messaggi, app e controlli del sistema. Per conversazioni, spiegazioni o domande più complesse conviene invece passare alla modalità vocale di un chatbot come ChatGPT.\n\nIn pratica dividi il tuo \"Jarvis\" in due: uno che comanda il telefono e uno che ragiona con te.\n\nSalva il post e prova i passaggi nel carosello 👉",
     "hashtag": [
-      "iPhone",
-      "iOS",
-      "Siri",
-      "Jarvis",
-      "IronMan",
-      "TrucchiiPhone",
-      "Apple",
-      "AbbreviazioniVocali",
-      "Accessibilita",
-      "ChatGPT",
-      "AssistenteVocale",
-      "TechTips",
-      "Tecnologia"
+      "iphone",
+      "ios",
+      "siri",
+      "jarvis",
+      "abbreviazionivocali",
+      "accessibilita",
+      "trucchiiphone",
+      "tutorialiphone",
+      "apple",
+      "chatgpt",
+      "intelligenzaartificiale",
+      "tech",
+      "tecnologia"
     ],
     "infografica": null,
     "da_verificare": [
-      "Nome italiano del menu Siri in Impostazioni (\"Siri\" o \"Apple Intelligence e Siri\") a seconda di modello e versione di iOS",
-      "Nomi italiani delle opzioni \"Voce di Siri\", \"Varietà\", \"Britannica\" e \"Voce 2\"",
-      "Che le varietà regionali della voce (es. britannica) siano disponibili solo con Siri impostato in lingua inglese",
-      "Nome italiano dell'opzione Call Hang Up (ipotizzato \"Riaggancia chiamate\")",
-      "Nome italiano della funzione Vocal Shortcuts (ipotizzato \"Abbreviazioni vocali\") e sua posizione nella sezione Generali di Accessibilità",
+      "Nome italiano del menu di Siri in Impostazioni (\"Siri\" o \"Apple Intelligence e Siri\") a seconda della versione di iOS",
+      "Nomi italiani \"Voce di Siri\", varietà \"Britannica\" e \"Voce 2\"",
+      "Che la varietà britannica sia disponibile solo con lingua di Siri impostata su inglese",
+      "Nome italiano dell'opzione \"Call Hang Up\" (riaggancio/termina chiamate) e sua disponibilità",
+      "Nome italiano del menu \"Abbreviazioni vocali\" (Vocal Shortcuts) e sua posizione in Accessibilità",
       "Nome italiano del pulsante \"Aggiungi azione\" e dell'azione \"Richiesta Siri\"",
-      "Che durante la configurazione l'iPhone chieda di ripetere la frase più volte (si ritiene tre) per riconoscerla",
-      "Versione minima di iOS e modelli di iPhone compatibili con le Abbreviazioni vocali (si ritiene iOS 18)",
-      "Che la frase \"Jarvis\" funzioni in modo affidabile anche con Siri in italiano"
+      "Che durante la configurazione venga chiesto di pronunciare più volte la frase",
+      "Versione minima di iOS e modelli di iPhone compatibili con Abbreviazioni vocali"
     ]
   }
 }
