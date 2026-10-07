@@ -7,6 +7,9 @@ on:
       backfill:
         description: "Solo al primo avvio: quanti post recenti trasformare in bozze di prova"
         default: "0"
+      rigenera:
+        description: "ID delle bozze da rigenerare, separati da virgola"
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -17,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install -r requirements.txt && sudo apt-get install -y -q fonts-dejavu-core
-      - run: python run.py check --backfill "${{ inputs.backfill || '0' }}"
+      - run: python run.py check --backfill "${{ inputs.backfill || '0' }}" --rigenera "${{ inputs.rigenera }}"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}

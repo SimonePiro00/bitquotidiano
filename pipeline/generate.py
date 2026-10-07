@@ -1,7 +1,9 @@
 """Trasforma un post della pagina sorgente in una bozza originale in italiano con Claude."""
+import base64
 from typing import Literal
 
 import anthropic
+import requests
 from pydantic import BaseModel, Field
 
 MODEL = "claude-opus-5-5"
@@ -16,6 +18,12 @@ Regole:
   invece di presentarla come fatto.
 - Non citare né taggare la pagina di origine nel testo.
 - Le slide sono un carosello: la prima è un titolo forte, le successive spiegano (max ~220 caratteri l'una).
+- Ricevi TUTTE le immagini del carosello originale, in ordine: leggi il testo di ogni slide, non solo la prima.
+- Se il post è un tutorial o una guida (passaggi, impostazioni, componenti, comandi), la bozza deve
+  permettere a chi legge di rifarlo davvero: riporta tutti i passaggi concreti, nell'ordine giusto,
+  uno o due per slide, numerati nel titolo (es. "1. Apri Impostazioni"). Usa i nomi dei menu come
+  appaiono con il dispositivo in italiano; se non sei sicuro del nome italiano, mettilo in `da_verificare`.
+  Non sostituire i passaggi con una descrizione generica.
 - Guarda l'immagine del post: se contiene dati, confronti, classifiche o una sequenza di eventi,
   ricavane un'infografica NOSTRA in `infografica` (scegli il tipo più adatto: `numeri` per 1-3 cifre
   chiave, `barre` per confrontare 2-6 valori numerici nella stessa unità, `timeline` per 3-6 tappe).
@@ -44,25 +52,53 @@ class Infografica(BaseModel):
 
 class Bozza(BaseModel):
     argomento: str
-    slides: list[Slide] = Field(description="Da 3 a 6 slide, la prima è la copertina")
+    slides: list[Slide] = Field(description="Da 3 a 9 slide, la prima è la copertina; per i tutorial una slide per passaggio")
     didascalia: str = Field(description="Caption Instagram in italiano, max 1500 caratteri")
     hashtag: list[str] = Field(description="8-15 hashtag pertinenti, senza #")
     infografica: Infografica | None = Field(description="Inserita come seconda slide")
     da_verificare: list[str] = Field(description="Affermazioni da controllare prima di pubblicare")
 
 
+def _image_urls(post: dict) -> list[str]:
+    children = post.get("children", {}).get("data", [])
+    if children:
+        return [c["media_url"] for c in children if c.get("media_type") == "IMAGE" and c.get("media_url")]
+    if post.get("media_type") == "IMAGE" and post.get("media_url"):
+        return [post["media_url"]]
+    return []
+
+
+def _download_images(post: dict, limit: int = 10) -> list[tuple[str, str]]:
+    """Scarica le immagini del post e le restituisce in base64 (gli URL di Instagram non sono
+    sempre raggiungibili dall'API di Claude). Le immagini non scaricabili vengono saltate."""
+    images = []
+    for url in _image_urls(post)[:limit]:
+        try:
+            resp = requests.get(url, timeout=30)
+            resp.raise_for_status()
+        except requests.RequestException:
+            continue
+        mt = resp.headers.get("content-type", "image/jpeg").split(";")[0]
+        if mt not in ("image/jpeg", "image/png", "image/webp", "image/gif"):
+            mt = "image/jpeg"
+        images.append((mt, base64.b64encode(resp.content).decode()))
+    return images
+
+
 def generate_draft(post: dict, client: anthropic.Anthropic | None = None) -> Bozza:
     client = client or anthropic.Anthropic()
-    content: list[dict] = []
-    image_url = post.get("media_url") or next(
-        (c.get("media_url") for c in post.get("children", {}).get("data", []) if c.get("media_type") == "IMAGE"),
-        None,
-    )
-    if image_url and post.get("media_type") != "VIDEO":
-        content.append({"type": "image", "source": {"type": "url", "url": image_url}})
+    content: list[dict] = [
+        {"type": "image", "source": {"type": "base64", "media_type": mt, "data": data}}
+        for mt, data in _download_images(post)
+    ]
+    print(f"Post {post.get('id')}: {len(content)} immagini su {len(_image_urls(post))} lette")
     content.append({
         "type": "text",
-        "text": f"Post di spunto (pubblicato {post.get('timestamp')}):\n\n{post.get('caption') or '(senza didascalia)'}",
+        "text": (
+            f"Post di spunto (pubblicato {post.get('timestamp')}), "
+            f"{len(content)} immagini allegate in ordine.\n\n"
+            f"Didascalia originale:\n{post.get('caption') or '(senza didascalia)'}"
+        ),
     })
 
     def ask(blocks):
@@ -78,7 +114,7 @@ def generate_draft(post: dict, client: anthropic.Anthropic | None = None) -> Boz
     try:
         response = ask(content)
     except anthropic.BadRequestError:
-        # L'URL dell'immagine di Instagram può essere scaduto o non scaricabile: si riprova solo col testo.
+        # Un'immagine non accettata (formato o dimensione): si riprova solo col testo.
         response = ask([b for b in content if b["type"] == "text"])
     if response.stop_reason == "refusal" or response.parsed_output is None:
         raise RuntimeError(f"Generazione non riuscita (stop_reason={response.stop_reason})")

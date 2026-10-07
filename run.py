@@ -28,9 +28,15 @@ def cmd_check(args):
         seen = {m["id"] for m in media} - {m["id"] for m in recent}
         save_seen(seen)
         print(f"Primo avvio: {len(seen)} post segnati come già visti, {len(recent)} in elaborazione.")
-    for post in new_posts(media, seen):
+    todo = new_posts(media, seen)
+    if args.rigenera:
+        ids = {i.strip() for i in args.rigenera.split(",") if i.strip()}
+        todo += [m for m in media if m["id"] in ids and m not in todo]
+    for post in todo:
         out = DRAFTS_DIR / post["id"]
         bozza = generate_draft(post)
+        for old in out.glob("slide_*.jpg"):
+            old.unlink()
         render_draft(bozza, out, env("BRAND_HANDLE", "@bitquotidiano.it"))
         record = {"stato": "in_attesa", "fonte": post["permalink"], "bozza": bozza.model_dump()}
         (out / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
@@ -76,7 +82,7 @@ def cmd_demo(args):
 def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
-    c = sub.add_parser("check"); c.add_argument("--backfill", type=int, default=0); c.set_defaults(fn=cmd_check)
+    c = sub.add_parser("check"); c.add_argument("--backfill", type=int, default=0); c.add_argument("--rigenera", default=""); c.set_defaults(fn=cmd_check)
     sub.add_parser("list").set_defaults(fn=cmd_list)
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.set_defaults(fn=cmd_publish)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
