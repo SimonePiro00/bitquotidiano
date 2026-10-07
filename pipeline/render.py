@@ -105,19 +105,23 @@ def _barre(d, info, y):
     els = sorted([e for e in info.elementi if e.valore is not None], key=lambda e: e.valore, reverse=True)[:6]
     if not els:
         return
-    label_font, value_font = _font(FONT_REG, 38), _font(FONT_BOLD, 38)
+    # Lo spazio sotto il grafico è riservato all'unità e alla nota (2 righe): se le barre non
+    # ci stanno, si riducono font, barre e spazi in proporzione.
+    available = H - 80 - 36 * 2 - 60 - y
+    scale = min(1.0, available / (len(els) * (38 + 14 + 56 + 62)))
+    label_font, value_font = _font(FONT_REG, int(38 * scale)), _font(FONT_BOLD, int(38 * scale))
     max_v = max(e.valore for e in els) or 1
-    bar_h, gap = 56, 62
+    bar_h, gap = int(56 * scale), int(62 * scale)
     max_w = W - 2 * MARGIN - 220
     for e in els:
         d.text((MARGIN, y), e.etichetta, font=label_font, fill=FG)
-        y += label_font.size + 14
+        y += label_font.size + int(14 * scale)
         w = max(8, int(max_w * e.valore / max_v))
         d.rounded_rectangle([MARGIN, y, MARGIN + w, y + bar_h], radius=6, fill=ACCENT)
         d.text((MARGIN + w + 20, y + bar_h / 2), e.testo, font=value_font, fill=FG, anchor="lm")
         y += bar_h + gap
     if info.unita:
-        d.text((MARGIN, y - 20), f"Valori in {info.unita}", font=_font(FONT_REG, 30), fill=MUTED)
+        d.text((MARGIN, y - gap // 3), f"Valori in {info.unita}", font=_font(FONT_REG, 30), fill=MUTED)
 
 
 def _timeline(d, info, y):
