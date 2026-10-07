@@ -1,0 +1,79 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeM-LHclsoX/",
+  "bozza": {
+    "argomento": "7 strumenti essenziali per chi vuole capire, costruire e riparare la tecnologia",
+    "slides": [
+      {
+        "titolo": "7 strumenti per trasformare la scrivania in un mini-lab",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "1. Raspberry Pi",
+        "testo": "Un computer completo grande quanto un mazzo di carte. È un ottimo modo per imparare Linux, programmazione, elettronica e automazione con un unico dispositivo.",
+        "illustrazione": "Una piccola scheda-computer in una custodia bicolore, collegata via cavo a un monitor compatto che mostra un terminale con righe di testo. Stile flat, nessun logo."
+      },
+      {
+        "titolo": "2. ESP32",
+        "testo": "Una scheda microcontrollore economica con connettività wireless integrata. Ideale per domotica fai-da-te, piccoli robot, dispositivi indossabili e progetti IoT.",
+        "illustrazione": "Schema di una scheda di sviluppo allungata con un modulo metallico quadrato in alto, antenna stampata a zigzag, due file di pin laterali e porta USB in basso. Frecce stilizzate verso icone di casa, robot e orologio."
+      },
+      {
+        "titolo": "3. Multimetro digitale",
+        "testo": "Lo userai di continuo: misura tensione, resistenza e continuità, aiuta a trovare guasti nei circuiti ed evita di bruciare componenti per errore.",
+        "illustrazione": "Multimetro generico con display che indica 5.00 V, selettore rotante centrale e due puntali (rosso e nero) appoggiati su un circuito. Nessun marchio."
+      },
+      {
+        "titolo": "4. Kit di cacciaviti di precisione",
+        "testo": "Serve per aprire laptop, smartphone, console e altri dispositivi. Avere la punta giusta evita di rovinare le viti, uno dei danni più comuni nelle riparazioni.",
+        "illustrazione": "Valigetta aperta con file ordinate di punte intercambiabili di forme diverse (a croce, a stella, piatta, esagonale) e un manico zigrinato accanto. Stile schematico."
+      },
+      {
+        "titolo": "5. Saldatore",
+        "testo": "Con una stazione saldante puoi costruire, riparare e modificare l'elettronica invece di buttarla e ricomprarla. Meglio se a temperatura regolabile.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "6. SSD portatile",
+        "testo": "Il meno entusiasmante della lista, finché non ti serve. Archivio veloce per backup, file dei progetti, sistemi operativi avviabili e strumenti di ripristino.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "7. Analizzatore logico USB",
+        "testo": "Strumento economico che si collega al PC e mostra i segnali digitali tra microcontrollore e sensori. Utile quando un progetto non funziona e non capisci perché.",
+        "illustrazione": "Piccolo box collegato via USB a un portatile; dal box escono cavetti colorati verso una scheda con un sensore. Sullo schermo del portatile, onde quadre digitali su più canali."
+      },
+      {
+        "titolo": "Il punto: smettere di vederla come una scatola chiusa",
+        "testo": "Nessuno di questi strumenti costa una fortuna da solo. Insieme ti permettono di costruire, rompere, aggiustare e capire davvero la tecnologia che usi ogni giorno.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Usare la tecnologia ogni giorno non significa capirla. Il modo più rapido per imparare come funziona davvero? Metterci le mani sopra.\n\nEcco 7 strumenti che trasformano una normale scrivania in un piccolo laboratorio di elettronica:\n\n🔹 Raspberry Pi – per imparare Linux, codice e automazione\n🔹 ESP32 – il microcontrollore low cost per domotica e IoT\n🔹 Multimetro – per misurare e diagnosticare i circuiti\n🔹 Cacciaviti di precisione – per aprire i dispositivi senza danni\n🔹 Saldatore – per riparare e modificare invece di sostituire\n🔹 SSD portatile – backup e sistemi operativi sempre con te\n🔹 Analizzatore logico USB – per vedere i segnali tra i componenti\n\nPresi singolarmente non sono strumenti costosi, ma insieme cambiano il modo in cui guardi un dispositivo rotto: non più qualcosa da buttare, ma qualcosa da aprire e capire.\n\nQuale hai già? E quale manca sulla tua scrivania? Dillo nei commenti 👇",
+    "hashtag": [
+      "tecnologia",
+      "elettronica",
+      "raspberrypi",
+      "esp32",
+      "maker",
+      "faidate",
+      "diy",
+      "iot",
+      "domotica",
+      "riparazione",
+      "multimetro",
+      "saldatura",
+      "arduino",
+      "tech",
+      "labelettronica"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Le schede di sviluppo ESP32 si trovano a meno di 10 dollari",
+      "L'ESP32 integra Wi-Fi e Bluetooth (vero per la versione classica, verificare per le varianti)",
+      "Gli analizzatori logici USB entry-level sono considerati strumenti economici",
+      "Raspberry Pi descritto come 'grande quanto un mazzo di carte': verificare che il paragone sia corretto per i modelli attuali"
+    ]
+  }
+}

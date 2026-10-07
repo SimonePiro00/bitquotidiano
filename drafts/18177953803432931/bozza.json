@@ -1,0 +1,110 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeNVn-4meNX/",
+  "bozza": {
+    "argomento": "Come costruire un cyberdeck economico con Raspberry Pi Zero 2 W: componenti e costi",
+    "slides": [
+      {
+        "titolo": "Un computer Linux portatile fatto da te con circa 100 $",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cos'è un cyberdeck",
+        "testo": "È un computer portatile autocostruito, spesso dentro una valigetta rigida. Non serve hardware potente né esperienza: bastano pochi componenti economici da collegare tra loro.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "1. Il cervello: Raspberry Pi Zero 2 W",
+        "testo": "Scheda minuscola con Wi-Fi integrato che fa girare Linux. Costa circa 15-20 $ ed è il cuore di tutto il progetto.",
+        "illustrazione": "Schema in vista dall'alto di una piccola scheda elettronica rettangolare con fila di pin sul lato lungo, slot microSD, porta mini HDMI e due micro USB, con etichette che indicano ciascuna porta."
+      },
+      {
+        "titolo": "2. Lo schermo: display HDMI da 4,3-5\"",
+        "testo": "Un piccolo pannello IPS, con buoni angoli di visione. Prezzo indicativo: 20-30 $. Si collega alla scheda via HDMI (con cavo o adattatore adatto).",
+        "illustrazione": "Disegno lineare di un piccolo schermo orizzontale con cornice, collegato con un cavo HDMI a una mini scheda; una freccia indica la diagonale con scritto 4,3-5 pollici."
+      },
+      {
+        "titolo": "3. Tastiera wireless con touchpad",
+        "testo": "Una mini tastiera senza fili con touchpad integrato sostituisce anche il mouse. Costo: 15-20 $.",
+        "illustrazione": "Illustrazione schematica di una mini tastiera compatta orizzontale con tasti QWERTY a sinistra e un riquadro touchpad a destra, con un'icona di segnale wireless sopra."
+      },
+      {
+        "titolo": "4. Energia: power bank USB da 20.000 mAh",
+        "testo": "Alimenta tutto il cyberdeck per ore tramite cavo USB. Prezzo indicativo: 20-25 $.",
+        "illustrazione": "Disegno di una batteria esterna rettangolare con porta USB, da cui parte un cavo spiralato verso una valigetta aperta con schermo e tastiera stilizzati."
+      },
+      {
+        "titolo": "5. MicroSD e case",
+        "testo": "Una microSD da 32 o 64 GB ospita il sistema operativo. Con il case per contenere i componenti si spendono circa 10-15 $.",
+        "illustrazione": "Schema di una scheda microSD generica senza marchi che entra in uno slot di una mini scheda, accanto a una valigetta rigida aperta che contiene schermo e tastiera."
+      },
+      {
+        "titolo": "Il conto finale",
+        "testo": "Totale stimato: 80-110 $, esclusi cavi e adattatori extra. Si può usare per imparare Linux, programmare, collegare elettronica o portarsi strumenti leggeri senza un laptop.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Un computer Linux portatile, costruito con le tue mani, per circa 80-110 dollari. Si chiama cyberdeck ed è uno dei progetti fai-da-te più amati da chi vuole capire come funziona davvero un computer.\n\nI pezzi che servono:\n🧠 Raspberry Pi Zero 2 W (15-20 $)\n🖥️ Display HDMI IPS da 4,3-5 pollici (20-30 $)\n⌨️ Mini tastiera wireless con touchpad (15-20 $)\n🔋 Power bank USB da 20.000 mAh (20-25 $)\n💾 MicroSD da 32/64 GB + case (10-15 $)\n\nAl totale vanno aggiunti eventuali cavi e adattatori. Il bello è la libertà: c'è chi lo monta in una valigetta rigida e chi lo trasforma in un palmare tascabile.\n\nA cosa serve? Imparare Linux, fare pratica di programmazione, collegare sensori ed elettronica o usare strumenti leggeri ovunque. Non deve essere potente per essere utile.\n\nI prezzi sono indicativi e possono variare in base al negozio e al paese.\n\nTu lo costruiresti? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "cyberdeck",
+      "raspberrypi",
+      "raspberrypizero",
+      "linux",
+      "faidate",
+      "diy",
+      "maker",
+      "elettronica",
+      "tech",
+      "tecnologia",
+      "programmazione",
+      "opensource",
+      "computer"
+    ],
+    "infografica": {
+      "tipo": "barre",
+      "titolo": "Quanto costa un cyberdeck, pezzo per pezzo",
+      "unita": "dollari (valore medio della fascia)",
+      "elementi": [
+        {
+          "etichetta": "Raspberry Pi Zero 2 W",
+          "valore": 17.5,
+          "testo": "15-20 $"
+        },
+        {
+          "etichetta": "Display HDMI 4,3-5\"",
+          "valore": 25.0,
+          "testo": "20-30 $"
+        },
+        {
+          "etichetta": "Tastiera con touchpad",
+          "valore": 17.5,
+          "testo": "15-20 $"
+        },
+        {
+          "etichetta": "Power bank 20.000 mAh",
+          "valore": 22.5,
+          "testo": "20-25 $"
+        },
+        {
+          "etichetta": "MicroSD + case",
+          "valore": 12.5,
+          "testo": "10-15 $"
+        }
+      ],
+      "nota": "Prezzi indicativi; totale stimato 80-110 $, esclusi cavi e adattatori"
+    },
+    "da_verificare": [
+      "Prezzo Raspberry Pi Zero 2 W: 15-20 $",
+      "Prezzo display HDMI IPS 4,3-5 pollici: 20-30 $",
+      "Prezzo mini tastiera wireless con touchpad: 15-20 $",
+      "Prezzo power bank 20.000 mAh: 20-25 $",
+      "Prezzo microSD 32/64 GB + case: 10-15 $",
+      "Costo totale stimato 80-110 $ esclusi cavi e adattatori",
+      "Autonomia 'per ore' con power bank da 20.000 mAh: dipende dai consumi del display",
+      "Il Pi Zero 2 W ha una porta mini HDMI e micro USB: potrebbero servire adattatori per display e ricevitore della tastiera",
+      "Prezzi in dollari: verificare i prezzi equivalenti in euro sul mercato italiano",
+      "Il 'case' indicato nell'originale potrebbe riferirsi al guscio della scheda o alla valigetta che contiene tutto"
+    ]
+  }
+}
