@@ -34,3 +34,12 @@ def publish_carousel(image_urls: list[str], caption: str) -> str:
         container = _post(f"{ig}/media", media_type="CAROUSEL", children=",".join(children), caption=caption)["id"]
     _wait_ready(container)
     return _post(f"{ig}/media_publish", creation_id=container)["id"]
+
+
+def publish_story(image_url: str) -> str:
+    """Pubblica una storia con un'immagine. L'API non permette di "ricondividere" un post con lo
+    sticker nativo, quindi la storia è un'immagine nostra che rimanda al post."""
+    ig = env("IG_USER_ID", required=True).strip()
+    container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
+    _wait_ready(container)
+    return _post(f"{ig}/media_publish", creation_id=container)["id"]

@@ -156,6 +156,7 @@ def render_draft(bozza, out_dir: Path, handle: str) -> list[Path]:
     if getattr(bozza, "infografica", None):
         pages.insert(1, ("info", bozza.infografica))
     total, paths = len(pages), []
+    story_src = None
     for i, (kind, item) in enumerate(pages, start=1):
         out = out_dir / f"slide_{i}.jpg"
         if kind == "info":
@@ -165,4 +166,21 @@ def render_draft(bozza, out_dir: Path, handle: str) -> list[Path]:
             ill_path = out_dir / f"illustrazione_{k}.png"
             ill = Image.open(ill_path).convert("RGBA") if ill_path.exists() else None
             paths.append(render_slide(slide.titolo, slide.testo, i, total, handle, out, ill))
+    render_story(paths[0], out_dir / "story.jpg", handle)
     return paths
+
+
+def render_story(cover: Path, out: Path, handle: str) -> Path:
+    """Storia 1080x1920 che rilancia il post: la copertina al centro e l'invito ad aprirlo."""
+    sw, sh = 1080, 1920
+    img = Image.new("RGB", (sw, sh), BG)
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, sw, 14], fill=ACCENT)
+    d.text((sw // 2, 170), "NUOVO POST", font=_font(FONT_BOLD, 64), fill=ACCENT, anchor="mm")
+    card = Image.open(cover).convert("RGB").resize((840, 1050), Image.LANCZOS)
+    x, y = (sw - card.width) // 2, 300
+    d.rounded_rectangle([x - 6, y - 6, x + card.width + 6, y + card.height + 6], radius=24, fill=ACCENT)
+    img.paste(card, (x, y))
+    d.text((sw // 2, y + card.height + 130), "Lo trovi sul profilo", font=_font(FONT_BOLD, 54), fill=FG, anchor="mm")
+    d.text((sw // 2, y + card.height + 210), handle, font=_font(FONT_REG, 44), fill=MUTED, anchor="mm")
+    return _save(img, out)

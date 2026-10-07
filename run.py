@@ -62,7 +62,7 @@ def cmd_list(args):
 
 
 def cmd_publish(args):
-    from pipeline.publish import publish_carousel
+    from pipeline.publish import publish_carousel, publish_story
 
     if not args.conferma:
         sys.exit("Aggiungi --conferma per pubblicare davvero.")
@@ -78,7 +78,11 @@ def cmd_publish(args):
     record["media_id"] = publish_carousel(urls, caption)
     record["stato"] = "pubblicata"
     (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
-    print(f"Pubblicato: {record['media_id']}")
+    print(f"Post pubblicato: {record['media_id']}")
+    if (folder / "story.jpg").exists() and not args.senza_storia:
+        record["story_id"] = publish_story(f"{base}/{args.id}/story.jpg")
+        print(f"Storia pubblicata: {record['story_id']}")
+        (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
 
 
 def cmd_demo(args):
@@ -95,7 +99,7 @@ def main():
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("check"); c.add_argument("--backfill", type=int, default=0); c.add_argument("--rigenera", default=""); c.set_defaults(fn=cmd_check)
     sub.add_parser("list").set_defaults(fn=cmd_list)
-    pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.set_defaults(fn=cmd_publish)
+    pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.set_defaults(fn=cmd_publish)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
     args = p.parse_args()
     args.fn(args)

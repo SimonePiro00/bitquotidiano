@@ -1,0 +1,18 @@
+{
+  "stato": "in_attesa",
+  "fonte": "post introduttivo della pagina",
+  "bozza": {
+    "argomento": "Presentazione di Bit Quotidiano",
+    "slides": [
+      {"titolo": "Benvenuti su Bit Quotidiano", "testo": "", "illustrazione": null},
+      {"titolo": "Cosa trovi qui", "testo": "Ogni giorno le notizie tech più interessanti, spiegate in poche slide: nuovi prodotti, intelligenza artificiale, trucchi per lo smartphone e curiosità dal mondo digitale.", "illustrazione": null},
+      {"titolo": "Guide da provare subito", "testo": "Quando c'è qualcosa da fare, te lo spieghiamo passo per passo, con i nomi dei menu in italiano. Salva il post e rifallo con calma.", "illustrazione": null},
+      {"titolo": "Come lavoriamo", "testo": "I contenuti sono preparati con l'aiuto dell'intelligenza artificiale e controllati da una persona prima di essere pubblicati. Se trovi un errore, scrivicelo.", "illustrazione": null},
+      {"titolo": "Restiamo in contatto", "testo": "Seguici per non perderti nulla e dicci nei commenti quali argomenti vorresti vedere. Un bit al giorno, tutti i giorni.", "illustrazione": null}
+    ],
+    "didascalia": "Ciao e benvenuti su Bit Quotidiano! 👋\n\nQui trovi ogni giorno le notizie di tecnologia che contano, spiegate in modo semplice: nuovi prodotti, intelligenza artificiale, guide passo passo per il tuo smartphone e curiosità dal mondo digitale.\n\nI post sono preparati con l'aiuto dell'intelligenza artificiale e controllati prima di essere pubblicati.\n\nSeguici per non perderti nulla e scrivici nei commenti cosa vorresti vedere 👇",
+    "hashtag": ["tecnologia", "tech", "notizietech", "intelligenzaartificiale", "smartphone", "trucchitech", "innovazione", "digitale", "bitquotidiano"],
+    "infografica": null,
+    "da_verificare": []
+  }
+}
