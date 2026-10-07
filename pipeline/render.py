@@ -75,10 +75,18 @@ def render_slide(titolo: str, testo: str, index: int, total: int, handle: str, o
 
 def _numeri(d, info, y):
     """1-3 cifre chiave, grandi, una sotto l'altra."""
-    big, small = _font(FONT_BOLD, 120), _font(FONT_REG, 40)
+    small = _font(FONT_REG, 40)
     for el in info.elementi[:3]:
-        d.text((MARGIN, y), el.testo, font=big, fill=ACCENT)
-        y += big.size + 20
+        # La cifra si rimpicciolisce finché sta nella larghezza della slide.
+        size = 120
+        big = _font(FONT_BOLD, size)
+        while size > 56 and d.textlength(el.testo, font=big) > W - 2 * MARGIN:
+            size -= 8
+            big = _font(FONT_BOLD, size)
+        for line in _wrap(d, el.testo, big, W - 2 * MARGIN)[:2]:
+            d.text((MARGIN, y), line, font=big, fill=ACCENT)
+            y += big.size + 12
+        y += 8
         for line in _wrap(d, el.etichetta, small, W - 2 * MARGIN):
             d.text((MARGIN, y), line, font=small, fill=FG)
             y += small.size + 10

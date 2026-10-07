@@ -39,7 +39,7 @@ class Slide(BaseModel):
 class Elemento(BaseModel):
     etichetta: str = Field(description="Nome della voce o data della tappa, max 30 caratteri")
     valore: float | None = Field(description="Valore numerico (numeri e barre); null per la timeline")
-    testo: str = Field(description="Breve descrizione o valore formattato (es. '1,2 mld'), max 80 caratteri")
+    testo: str = Field(description="Per `numeri` e `barre`: solo il valore formattato, max 12 caratteri (es. '1,2 mld', '3,5\"'); per `timeline`: breve descrizione, max 80 caratteri")
 
 
 class Infografica(BaseModel):
