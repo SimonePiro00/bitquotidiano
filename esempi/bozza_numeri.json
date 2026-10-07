@@ -1,0 +1,51 @@
+{
+  "argomento": "Esempio di formato (contenuto di prova, non una notizia reale)",
+  "slides": [
+    {
+      "titolo": "Il tuo prossimo smartphone potrebbe non avere più porte",
+      "testo": ""
+    },
+    {
+      "titolo": "Cosa succede",
+      "testo": "Diversi produttori stanno testando telefoni con sola ricarica wireless e niente porta USB-C. Il vantaggio: corpo più sottile e più resistente all'acqua."
+    },
+    {
+      "titolo": "Il problema",
+      "testo": "Senza cavo, il trasferimento dati e la ricarica rapida dipendono da standard wireless ancora meno efficienti. E in Europa l'USB-C è obbligatorio per legge."
+    },
+    {
+      "titolo": "In breve",
+      "testo": "Per ora è una sperimentazione. Difficile vederlo in Italia a breve, proprio per le regole UE sul caricatore unico."
+    }
+  ],
+  "didascalia": "Testo di prova per mostrare il formato della didascalia generata.",
+  "hashtag": [
+    "tech",
+    "tecnologia",
+    "smartphone"
+  ],
+  "da_verificare": [],
+  "infografica": {
+    "tipo": "numeri",
+    "titolo": "Lo smartphone in tre numeri",
+    "unita": "",
+    "elementi": [
+      {
+        "etichetta": "utenti nel mondo",
+        "valore": null,
+        "testo": "4,8 mld"
+      },
+      {
+        "etichetta": "ore al giorno in media sullo schermo",
+        "valore": null,
+        "testo": "3,5 h"
+      },
+      {
+        "etichetta": "anni di vita media di un telefono",
+        "valore": null,
+        "testo": "2,8"
+      }
+    ],
+    "nota": "Dati di esempio, non reali"
+  }
+}
