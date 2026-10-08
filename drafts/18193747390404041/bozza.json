@@ -1,0 +1,70 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeNmlTNDrUo/",
+  "bozza": {
+    "argomento": "Riutilizzare vecchi dispositivi (smartphone, laptop, tablet, webcam, router) come tecnologia assistiva per l'autonomia delle persone con disabilità",
+    "slides": [
+      {
+        "titolo": "Vecchi dispositivi, nuova autonomia",
+        "testo": "",
+        "illustrazione": "Disegno schematico di un tavolino con un vecchio smartphone, un laptop, un tablet con webcam sopra e un router con due antenne, collegati da linee tratteggiate a un'icona di casa al centro."
+      },
+      {
+        "titolo": "Smartphone → stazione della memoria",
+        "testo": "Un telefono in disuso, fisso sul comodino, può gestire promemoria vocali, routine quotidiane e contatti di emergenza. Poche funzioni essenziali, sempre nello stesso posto: più semplice di un'app in più.",
+        "illustrazione": "Smartphone stilizzato su una base di ricarica, con a schermo un'icona di pillola, l'orario 08:00 e un grande pulsante 'Fatto'. Accanto, un bicchiere d'acqua semplificato."
+      },
+      {
+        "titolo": "Laptop → assistente privato",
+        "testo": "Anche un portatile vecchio o con lo schermo rovinato può fare da centro per backup, promemoria e alcuni strumenti di IA in locale: i dati restano in casa e non serve un abbonamento cloud.",
+        "illustrazione": "Laptop generico stilizzato con una finestra di chat sullo schermo e, accanto, tre icone: disco di backup, campanella dei promemoria e un lucchetto con la scritta 'locale'."
+      },
+      {
+        "titolo": "Tablet + webcam → routine visive",
+        "testo": "Un tablet appeso al muro mostra la sequenza della giornata con immagini chiare. Una webcam collegata può osservare l'ambiente e inviare avvisi di sicurezza, elaborati in locale.",
+        "illustrazione": "Tablet fissato a parete con quattro riquadri in colonna: spazzolino, ciotola della colazione, flacone di medicine, giacca. Sopra, una webcam generica senza marchi."
+      },
+      {
+        "titolo": "Router → scudo per la privacy",
+        "testo": "Un vecchio router può filtrare pubblicità e tracciamento per tutta la rete di casa, proteggendo ogni dispositivo connesso. Conta solo se l'hardware è supportato e riceve aggiornamenti di sicurezza.",
+        "illustrazione": "Router generico con due antenne al centro di uno scudo stilizzato; frecce verso telefono, tablet e laptop, mentre icone di annunci e tracker vengono respinte."
+      },
+      {
+        "titolo": "Prima di iniziare",
+        "testo": "Parti dai bisogni reali della persona, non dalla tecnologia. Tieni aggiornati i dispositivi connessi e scegli soluzioni che diano più controllo, non un'altra cosa da gestire.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Hai un dispositivo nel cassetto?",
+        "testo": "La tecnologia assistiva non deve per forza essere costosa o progettata apposta. Spesso basta adattare ciò che si ha già. Quale vecchio device rimetteresti in uso?",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quel vecchio telefono dimenticato in un cassetto potrebbe diventare uno strumento utile per l'autonomia di qualcuno.\n\nLa tecnologia assistiva non è solo quella costosa e specializzata: a volte basta adattare dispositivi comuni.\n\n📱 Smartphone: promemoria vocali, routine e contatti di emergenza in un unico posto, ideale per chi ha difficoltà di memoria.\n💻 Laptop: backup, promemoria e alcuni strumenti di IA in locale, senza abbonamenti cloud.\n📲 Tablet + webcam: routine visive a parete e avvisi di sicurezza in casa.\n📡 Router: meno pubblicità e tracciamento su tutta la rete domestica, se l'hardware è ancora supportato.\n\nLa regola d'oro: scegliere strumenti adatti ai bisogni reali della persona, mantenerli aggiornati e sicuri, e fare in modo che diano più controllo sulla propria giornata, non più complicazioni.\n\nTu quale dispositivo riutilizzeresti? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "tecnologiaassistiva",
+      "accessibilita",
+      "disabilita",
+      "autonomia",
+      "riciclo",
+      "riuso",
+      "tech",
+      "tecnologia",
+      "privacy",
+      "smarthome",
+      "sostenibilita",
+      "inclusione",
+      "IAlocale",
+      "promemoria"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il post originale annuncia 5 idee ma ne mostra solo 4 (smartphone, laptop, tablet+webcam, router): verificare se manca un'idea o se tablet e webcam contano come due",
+      "Fattibilità di eseguire strumenti di IA in locale su laptop datati: dipende da CPU, RAM e modelli usati",
+      "Quali app concrete usare per promemoria vocali e routine visive su smartphone e tablet vecchi, e se sono ancora compatibili con sistemi operativi non aggiornati",
+      "Software per trasformare un vecchio router in filtro anti-pubblicità/tracciamento (es. firmware alternativi o filtri DNS): compatibilità del modello e disponibilità di aggiornamenti di sicurezza",
+      "Uso della webcam per monitoraggio e avvisi 'in locale': verificare soluzioni disponibili e implicazioni di privacy/consenso per la persona monitorata",
+      "Sicurezza di usare dispositivi non più aggiornati dal produttore connessi a internet"
+    ]
+  }
+}
