@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeN8cL4jivI/",
+  "bozza": {
+    "argomento": "Come costruire uno specchio smart fai-da-te con un vecchio monitor, un Raspberry Pi e acrilico semiriflettente",
+    "slides": [
+      {
+        "titolo": "Specchio smart fai-da-te: si può fare spendendo poco",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Come funziona",
+        "testo": "È un normale schermo nascosto dietro uno specchio semiriflettente. Dove il display è acceso, il testo traspare. Il resto della superficie riflette come uno specchio qualsiasi.",
+        "illustrazione": "Vista esplosa laterale e schematica: a sinistra una cornice, al centro una lastra semiriflettente, a destra un monitor e una piccola scheda elettronica. Frecce indicano la luce del display che attraversa la lastra e il riflesso che torna indietro."
+      },
+      {
+        "titolo": "1. Recupera un vecchio monitor",
+        "testo": "Non serve comprarne uno nuovo. Va bene un monitor o una piccola TV che hai già in casa, oppure uno usato preso a poco prezzo.",
+        "illustrazione": "Disegno al tratto di un monitor piatto generico, un po' datato, con un'etichetta 'usato' e un simbolo di riciclo stilizzato accanto. Nessun marchio visibile."
+      },
+      {
+        "titolo": "2. Collega un Raspberry Pi",
+        "testo": "È il piccolo computer che fa girare la dashboard. Non serve l'ultimo modello: per mostrare ora, meteo e calendario basta anche una versione meno recente. Collegalo al monitor.",
+        "illustrazione": "Schema di una scheda elettronica rettangolare generica con porte USB, porta video e slot per microSD, collegata con un cavo a un monitor stilizzato. Nessun logo."
+      },
+      {
+        "titolo": "3. Usa acrilico a specchio semiriflettente",
+        "testo": "Procurati una lastra di acrilico \"two-way\" (specchio unidirezionale) delle misure dello schermo. Va davanti al display: crea l'effetto specchio ma lascia vedere le scritte luminose.",
+        "illustrazione": "Due pannelli affiancati: a sinistra la lastra che riflette una sagoma, a destra la stessa lastra con dietro uno schermo acceso e il testo che traspare. Didascalie 'spento' e 'acceso'."
+      },
+      {
+        "titolo": "4. Costruisci la cornice da solo",
+        "testo": "Legno economico e una semplice verniciatura nera bastano per un risultato pulito, senza pagare un case già pronto. La cornice deve tenere la lastra davanti e il monitor dietro.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Installa e personalizza la dashboard",
+        "testo": "Con software open source come MagicMirror² scegli cosa mostrare: ora, meteo, calendario, notizie, promemoria. Usa uno sfondo nero, così sullo specchio appare solo il testo.",
+        "illustrazione": "Schermata schematica di una dashboard su sfondo nero: in alto a sinistra un orologio, a destra un'icona meteo con temperatura, sotto una lista di appuntamenti e una colonna di titoli di notizie. Testo bianco, elementi generici."
+      },
+      {
+        "titolo": "Perché vale la pena",
+        "testo": "Riusi hardware che prenderebbe polvere in un armadio. E a differenza di molti dispositivi smart commerciali, decidi tu cosa vedere, come appare e se collegarlo a servizi esterni.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Uno specchio smart non è altro che uno schermo nascosto dietro una superficie semiriflettente: dove il display è acceso le informazioni appaiono sullo specchio, il resto continua a riflettere normalmente.\n\nCostruirlo non richiede tecnologia particolare né grandi spese. La voce di costo più alta di solito è comprare tutto nuovo, ma non serve:\n\n1️⃣ Un vecchio monitor o una piccola TV, anche di seconda mano\n2️⃣ Un Raspberry Pi, anche non recente\n3️⃣ Una lastra di acrilico a specchio semiriflettente (\"two-way\")\n4️⃣ Una cornice in legno economico con finitura nera, fatta da te\n5️⃣ Un software open source come MagicMirror² per mostrare ora, meteo, calendario, notizie e promemoria\n\nIl bello è il controllo: scegli tu quali informazioni vedere ogni mattina, che aspetto hanno e se collegare o meno lo specchio a servizi esterni.\n\nLo costruiresti? Cosa ci metteresti sopra? 👇",
+    "hashtag": [
+      "smartmirror",
+      "specchiosmart",
+      "raspberrypi",
+      "faidate",
+      "diy",
+      "maker",
+      "magicmirror",
+      "opensource",
+      "riciclo",
+      "domotica",
+      "tech",
+      "tecnologia",
+      "progettifaidate"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Che il progetto si possa realizzare con una spesa contenuta (meno di alcune centinaia di euro/dollari) usando componenti usati",
+      "Che anche modelli meno recenti di Raspberry Pi siano sufficienti per far girare una dashboard come MagicMirror²",
+      "Nome esatto e licenza open source del software MagicMirror² e moduli disponibili (meteo, calendario, notizie, promemoria)",
+      "Tipo di collegamento video: i monitor più vecchi possono avere solo ingressi VGA/DVI e richiedere un adattatore HDMI",
+      "Termine italiano corretto e reperibilità della lastra 'acrilico two-way' / specchio unidirezionale / semiriflettente",
+      "Consiglio dello sfondo nero per far apparire solo il testo (impostazione predefinita di MagicMirror²?)"
+    ]
+  }
+}
