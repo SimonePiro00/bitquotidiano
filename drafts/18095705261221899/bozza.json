@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeN8cL4jivI/",
   "bozza": {
     "argomento": "Come costruire uno specchio smart fai-da-te con un vecchio monitor, un Raspberry Pi e acrilico semiriflettente",
@@ -70,5 +70,7 @@
       "Termine italiano corretto e reperibilità della lastra 'acrilico two-way' / specchio unidirezionale / semiriflettente",
       "Consiglio dello sfondo nero per far apparire solo il testo (impostazione predefinita di MagicMirror²?)"
     ]
-  }
+  },
+  "media_id": "17940819069367768",
+  "story_id": "18151523143538847"
 }
