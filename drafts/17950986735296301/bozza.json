@@ -1,0 +1,71 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeP34A7mQ0B/",
+  "bozza": {
+    "argomento": "Privacy digitale: quattro alternative orientate alla riservatezza per messaggi, email, sistema operativo e VPN",
+    "slides": [
+      {
+        "titolo": "Privacy digitale: 4 scelte da valutare",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Perché parlarne",
+        "testo": "App e servizi che usiamo ogni giorno trattano molti dati personali. Esistono alternative con un approccio diverso: vediamo cosa offrono davvero, senza esagerazioni.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Messaggi: Signal",
+        "testo": "Cifratura end-to-end attiva di default per chat e chiamate, codice aperto e gestione non profit. Anche Messenger ha introdotto la cifratura end-to-end di default per le chat personali.",
+        "illustrazione": "Due smartphone stilizzati collegati da una linea tratteggiata; sopra la linea un fumetto chiuso da un lucchetto, a indicare che il messaggio è leggibile solo da mittente e destinatario."
+      },
+      {
+        "titolo": "Email: Tuta (ex Tutanota)",
+        "testo": "Servizio tedesco che cifra la casella di posta, inclusi oggetto e contatti. Le email tra utenti Tuta sono cifrate end-to-end; Gmail invece non lo fa di default.",
+        "illustrazione": "Una busta da lettera stilizzata con sopra un piccolo lucchetto e accanto una cassaforte aperta che contiene altre buste, per rappresentare una casella di posta cifrata."
+      },
+      {
+        "titolo": "Sistema operativo: Linux",
+        "testo": "Open source e con molte distribuzioni che raccolgono pochi o nessun dato d'uso. Windows invia dati diagnostici a Microsoft, in parte riducibili dalle impostazioni.",
+        "illustrazione": "Finestra di un computer generico con un terminale aperto e righe di testo, affiancata da un grafico semplice con poche frecce di dati in uscita verso una nuvola."
+      },
+      {
+        "titolo": "VPN: Mullvad",
+        "testo": "Si attiva con un numero di account generato a caso, senza email, e accetta anche pagamenti in contanti. Ogni VPN maschera l'IP: la differenza sta nei dati chiesti all'utente.",
+        "illustrazione": "Schema: un computer, un tunnel colorato che attraversa una nuvola di rete e arriva a un server, con l'indirizzo IP originale coperto da un punto interrogativo."
+      },
+      {
+        "titolo": "Da ricordare",
+        "testo": "Nessuno strumento rende anonimi da solo. Conta come lo usi: password robuste, autenticazione a due fattori, aggiornamenti e attenzione a ciò che condividi.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Privacy online: non serve stravolgere tutto, ma conoscere le alternative aiuta a scegliere meglio.\n\nAbbiamo messo a confronto quattro ambiti quotidiani:\n💬 Messaggi: Signal, cifrato end-to-end di default e open source\n📧 Email: Tuta (ex Tutanota), casella cifrata con sede in Germania\n💻 Sistema operativo: Linux, open source e con meno raccolta di dati d'uso\n🌐 VPN: Mullvad, account senza email e pagamento anche in contanti\n\nAttenzione però: anche i servizi più diffusi si sono mossi. Messenger, per esempio, ha attivato la cifratura end-to-end di default per le chat personali, e tutte le VPN serie nascondono il tuo indirizzo IP.\n\nLa vera differenza la fanno le abitudini: aggiornamenti, password robuste, autenticazione a due fattori.\n\nTu quali di questi strumenti usi già? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "privacy",
+      "privacyonline",
+      "sicurezzainformatica",
+      "cybersecurity",
+      "signal",
+      "tuta",
+      "linux",
+      "mullvad",
+      "vpn",
+      "crittografia",
+      "opensource",
+      "tecnologia",
+      "datipersonali"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Signal attiva la cifratura end-to-end di default per chat e chiamate ed è gestito dalla Signal Foundation (non profit)",
+      "Messenger ha attivato la cifratura end-to-end di default per le chat personali (annuncio Meta, dicembre 2023) e se vale in tutti i Paesi, inclusa l'UE",
+      "Tutanota è stato rinominato Tuta e ha sede in Germania",
+      "Tuta cifra oggetto, contatti e calendario oltre al corpo delle email",
+      "Gmail non applica cifratura end-to-end di default agli account personali",
+      "Windows invia dati diagnostici a Microsoft e solo una parte è disattivabile dalle impostazioni",
+      "Mullvad usa un numero di account casuale senza email e accetta pagamenti in contanti",
+      "Nome italiano delle voci di menu sulla telemetria di Windows (es. 'Diagnostica e feedback') se citate in didascalia o commenti"
+    ]
+  }
+}
