@@ -1,0 +1,104 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeSaxtHmctR/",
+  "bozza": {
+    "argomento": "Strumenti OSINT: siti pubblici usati da ricercatori di sicurezza, giornalisti e investigatori digitali per trovare informazioni già accessibili online",
+    "slides": [
+      {
+        "titolo": "I motori di ricerca che Google non ti mostra",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Ricerca per immagini: Google Lens e Yandex",
+        "testo": "Carichi una foto e scopri cosa ritrae: luoghi, piante, prodotti. Yandex, il motore di ricerca russo, è noto per trovare bene dove una stessa immagine compare sul web.",
+        "illustrazione": "Schema: una foto caricata in un riquadro tratteggiato, frecce verso una griglia di miniature simili trovate online, con lente d'ingrandimento stilizzata al centro."
+      },
+      {
+        "titolo": "Ricerca facciale: PimEyes",
+        "testo": "Carichi il volto di una persona e il sito cerca altre sue foto pubblicate online. Utile per verificare dove circola la propria immagine, ma solleva seri problemi di privacy.",
+        "illustrazione": "Volto stilizzato con punti di riconoscimento collegati da linee, da cui partono frecce verso più cornici di foto sparse su schermi diversi."
+      },
+      {
+        "titolo": "Dove è stata scattata? GeoHints",
+        "testo": "Una raccolta di indizi per localizzare una foto: segnaletica, targhe, architettura, vegetazione, lato di guida, numeri civici. Molto usata da chi pratica geolocalizzazione.",
+        "illustrazione": "Foto di strada schematica con cerchi evidenziati su targa, palo stradale, edificio e albero, collegati a un segnaposto su un mappamondo."
+      },
+      {
+        "titolo": "Mappe come database: Overpass Turbo",
+        "testo": "Interroga i dati di OpenStreetMap con una query: ad esempio tutti i bar, le telecamere o i bancomat mappati in una zona, mostrati subito sulla cartina.",
+        "illustrazione": "Schermo diviso: a sinistra righe di codice stilizzate, a destra una mappa a griglia di strade con tanti segnaposto uguali evidenziati."
+      },
+      {
+        "titolo": "Shodan e Censys: Google per i dispositivi",
+        "testo": "Non cercano siti ma dispositivi connessi: webcam, router, server, impianti industriali. Servono a scoprire cosa è esposto su internet, spesso per errore.",
+        "illustrazione": "Planisfero stilizzato coperto di puntini luminosi, con icone di webcam, router e server collegate ai puntini."
+      },
+      {
+        "titolo": "Quali cookie usa un sito?",
+        "testo": "Strumenti gratuiti come Cookieserve analizzano un indirizzo web ed elencano i cookie che il sito installa, con la loro funzione, ad esempio tracciamento o pubblicità.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Subdomain Finder: le parti nascoste di un sito",
+        "testo": "Inserisci un dominio e ottieni l'elenco dei suoi sottodomini: ambienti di test, server di sviluppo, pagine dimenticate. Usato anche nei programmi di bug bounty.",
+        "illustrazione": "Albero schematico: un dominio principale al centro da cui si diramano rami etichettati genericamente 'dev', 'test', 'old', alcuni evidenziati con un'icona di avviso."
+      },
+      {
+        "titolo": "Non è hacking: è OSINT",
+        "testo": "Queste informazioni sono già pubbliche: gli strumenti le rendono solo più facili da trovare e collegare. Saperlo aiuta a proteggersi. Usarle contro altri può essere illegale.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Molte informazioni che crediamo nascoste sono in realtà a pochi clic di distanza. Non serve violare nulla: basta sapere dove cercare.\n\nÈ il principio dell'OSINT (Open Source Intelligence), l'analisi di fonti aperte usata da ricercatori di sicurezza, giornalisti e investigatori digitali. Nel carosello trovi alcuni degli strumenti più noti:\n\n🔎 Google Lens e Yandex per la ricerca inversa delle immagini\n🙂 PimEyes per la ricerca facciale\n🌍 GeoHints per capire dove è stata scattata una foto\n🗺️ Overpass Turbo per interrogare le mappe di OpenStreetMap\n📡 Shodan e Censys per trovare dispositivi esposti online\n🍪 Analizzatori di cookie per vedere cosa traccia un sito\n🌐 Subdomain Finder per scoprire i sottodomini di un dominio\n\nPerché conoscerli? Perché sono gli stessi strumenti che possono usare anche malintenzionati. Controllare cosa si trova su di te, sulla tua azienda o sulla tua rete è il primo passo per ridurre i rischi: cambia le password predefinite di webcam e router, limita le foto pubbliche, verifica cosa è raggiungibile da internet.\n\nAttenzione: usare questi strumenti per sorvegliare o identificare altre persone senza consenso può violare la privacy e la legge, GDPR compreso.\n\nQuale conoscevi già?",
+    "hashtag": [
+      "OSINT",
+      "cybersecurity",
+      "sicurezzainformatica",
+      "privacy",
+      "tech",
+      "Shodan",
+      "GoogleLens",
+      "ricercaimmagini",
+      "GDPR",
+      "sicurezzadigitale",
+      "OpenStreetMap",
+      "tecnologia"
+    ],
+    "infografica": {
+      "tipo": "numeri",
+      "titolo": "Shodan in cifre, secondo il sito",
+      "unita": "",
+      "elementi": [
+        {
+          "etichetta": "Utenti registrati",
+          "valore": 3000000.0,
+          "testo": "oltre 3 mln"
+        },
+        {
+          "etichetta": "Aziende Fortune 100",
+          "valore": 89.0,
+          "testo": "89%"
+        },
+        {
+          "etichetta": "Università che lo usano",
+          "valore": 1000.0,
+          "testo": "oltre 1.000"
+        }
+      ],
+      "nota": "Dati dichiarati dalla homepage di Shodan, non verificati in modo indipendente"
+    },
+    "da_verificare": [
+      "Il titolo originale parla di 12 siti, ma il carosello ne mostra solo 9: verificare se mancano strumenti",
+      "Shodan: oltre 3 milioni di utenti registrati (dato dichiarato dal sito)",
+      "Shodan: usato dall'89% delle aziende Fortune 100 (dato dichiarato dal sito)",
+      "Shodan: usato da oltre 1.000 università (dato dichiarato dal sito)",
+      "Che molti dispositivi trovati su Shodan usino ancora password predefinite",
+      "Che Google Lens identifichi anche i volti delle persone (Google limita il riconoscimento facciale di persone)",
+      "Che la ricerca inversa di Yandex sia più efficace di quella di altri motori",
+      "Che lo strumento 'Cookies viewer' citato sia Cookieserve e che analizzi un URL (non i cookie del proprio browser)",
+      "Il servizio Subdomain Finder mostrato sembra essere quello di c99.nl: confermare il nome/sito corretto",
+      "Liceità dell'uso di PimEyes su terzi nell'UE (GDPR): verificare prima di dare indicazioni legali più precise"
+    ]
+  }
+}
