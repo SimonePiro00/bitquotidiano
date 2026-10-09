@@ -1,0 +1,81 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeQfgR2DvSj/",
+  "bozza": {
+    "argomento": "Gadget 'a doppio uso' venduti online: occhiali con telecamera, grimaldelli elettrici, tracker GPS e lettori NFC. Legali da comprare, ma usarli contro altri può essere reato.",
+    "slides": [
+      {
+        "titolo": "I gadget 'da spia' che chiunque può comprare online",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Occhiali con telecamera nascosta",
+        "testo": "Sembrano occhiali normali, ma nella montatura c'è una minicamera che registra ciò che vedi. Filmare persone a loro insaputa, in luoghi privati, può violare la privacy.",
+        "illustrazione": "Schema di un paio di occhiali squadrati visti di fronte, con un piccolo cerchio sul ponte evidenziato da una freccia e l'etichetta 'telecamera'. Stile flat, linee semplici."
+      },
+      {
+        "titolo": "Il grimaldello elettrico",
+        "testo": "Una specie di penna metallica con un ago vibrante: inserita nella serratura fa saltare i perni in pochi secondi. Nasce per i fabbri, che la usano per aprire porte senza rompere nulla.",
+        "illustrazione": "Disegno schematico in sezione di un cilindro di serratura con i perni, e uno strumento a forma di penna che inserisce un ago sottile; piccole onde indicano la vibrazione."
+      },
+      {
+        "titolo": "Microfono che ascolta attraverso i muri",
+        "testo": "Si appoggia alla parete e amplifica le vibrazioni sonore, con le cuffie si sente cosa si dice nella stanza accanto. In Italia intercettare conversazioni altrui senza consenso è reato.",
+        "illustrazione": "Sezione di un muro: a sinistra onde sonore da due sagome che parlano, al centro il muro che vibra, a destra un piccolo cilindro appoggiato al muro collegato a un paio di auricolari."
+      },
+      {
+        "titolo": "In auto: chiavi e localizzatori",
+        "testo": "I programmatori di chiavi si collegano alla presa diagnostica e abbinano un telecomando nuovo all'auto. I mini tracker GPS invece mostrano su mappa dove si trova un veicolo.",
+        "illustrazione": "Schema: una sagoma di auto con un cavo che esce dalla presa sotto il volante verso un tablet con l'icona di una chiave; accanto, un piccolo disco nero e uno smartphone con un segnaposto su una mappa."
+      },
+      {
+        "titolo": "Magneti e visori notturni",
+        "testo": "Un elettromagnete può ingannare i sensori magnetici di porte e finestre degli allarmi. I visori notturni permettono di vedere al buio senza torcia: usati anche da cacciatori ed escursionisti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Il telefono senza SIM",
+        "testo": "WiPhone è un telefono programmabile che chiama via Wi‑Fi tramite VoIP, senza scheda SIM né rete cellulare. È pensato per maker e sviluppatori che vogliono modificarne il software.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Lettori RFID e NFC",
+        "testo": "Leggono i chip delle tessere contactless da vicino. Sono usati per badge e controllo accessi, ma possono leggere alcuni dati dalle carte di pagamento. Un portacarte schermato aiuta.",
+        "illustrazione": "Schema di un portafoglio con carte contactless e, a pochi centimetri, un lettore rettangolare con onde radio tra i due; a fianco lo stesso portafoglio dentro una custodia schermata con le onde bloccate."
+      },
+      {
+        "titolo": "Il confine è nell'uso",
+        "testo": "Quasi tutti questi oggetti hanno usi legittimi e si vendono legalmente. Il problema nasce quando servono a spiare, pedinare o entrare dove non si dovrebbe: lì scattano i reati.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Occhiali che registrano video, strumenti che aprono serrature in pochi secondi, localizzatori grandi come una moneta. Sembrano accessori da film di spionaggio, ma sono prodotti reali che si comprano online, spesso a prezzi bassi.\n\nMolti nascono per scopi professionali: i grimaldelli elettrici servono ai fabbri, i programmatori di chiavi alle officine, i lettori RFID a chi gestisce badge e accessi. Altri, come i visori notturni o i telefoni programmabili, hanno usi del tutto ordinari.\n\nIl punto non è la tecnologia in sé, ma quanto è diventata accessibile. Strumenti che un tempo richiedevano competenze o contatti nel settore oggi arrivano a casa con un clic. E la linea tra gadget curioso e strumento per violare la privacy di qualcuno si è fatta sottile.\n\nRicorda: possedere uno di questi oggetti in genere non è vietato, ma usarlo per registrare persone a loro insaputa, ascoltare conversazioni altrui, seguire gli spostamenti di qualcuno o entrare senza permesso può costituire reato.\n\nConsiglio pratico: se temi lettori NFC indiscreti, un portacarte schermato è una precauzione economica. E se trovi un piccolo dispositivo sconosciuto nella tua auto, non ignorarlo.\n\nQuale di questi ti ha sorpreso di più?",
+    "hashtag": [
+      "tecnologia",
+      "tech",
+      "gadget",
+      "privacy",
+      "sicurezza",
+      "cybersecurity",
+      "sicurezzainformatica",
+      "gps",
+      "nfc",
+      "rfid",
+      "sorveglianza",
+      "techitalia",
+      "innovazione"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il post originale annuncia 11 gadget ma ne mostra 9 nelle immagini ricevute; la didascalia cita anche 'computer tascabili' con strumenti di cybersecurity: verificare la lista completa",
+      "Che tutti i prodotti citati (Midzoo, Multipick Kronos, SRTYH, programmatore Autel, WiPhone, lettori RFID/NFC) siano effettivamente in vendita su Amazon, anche in Italia",
+      "Che il dispositivo SRTYH funzioni davvero attraverso le pareti come dichiarato",
+      "Riferimento normativo: intercettazione illecita di conversazioni (art. 617 c.p. e seguenti) e uso di tracker GPS su terzi come possibile violazione della privacy o stalking: verificare con fonte legale",
+      "Che i lettori NFC possano leggere dati da carte di pagamento contactless e quali dati (in genere numero carta e scadenza, non CVV)",
+      "Che il WiPhone effettui chiamate solo via Wi‑Fi/VoIP e sia open source/programmabile",
+      "Che un elettromagnete possa effettivamente eludere i sensori magnetici degli allarmi",
+      "Legalità della vendita e dell'uso di grimaldelli e visori notturni in Italia"
+    ]
+  }
+}
