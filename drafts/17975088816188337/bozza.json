@@ -1,0 +1,73 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeQxYWJFvtO/",
+  "bozza": {
+    "argomento": "Progetti avanzati con il microcontrollore ESP32: drone autonomo, CNC, scacchiera robotica, robot a gesti e telescopio automatico",
+    "slides": [
+      {
+        "titolo": "5 progetti avanzati con ESP32",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cos'è l'ESP32",
+        "testo": "Un microcontrollore economico con Wi-Fi e Bluetooth integrati. Legge sensori e comanda motori senza bisogno di un computer completo: per questo piace a maker e hobbisti.",
+        "illustrazione": "Schema stilizzato di una scheda di sviluppo generica: modulo metallico rettangolare, file di pin ai lati, porta USB, con icone Wi-Fi e Bluetooth che ne escono."
+      },
+      {
+        "titolo": "Drone autonomo",
+        "testo": "L'ESP32 fa da controllore di volo: unisce i dati dei sensori inerziali (IMU), corregge di continuo i motori per restare stabile e può gestire la navigazione autonoma.",
+        "illustrazione": "Quadricottero visto dall'alto, schematico: telaio a X, quattro eliche, scheda al centro collegata a un piccolo sensore IMU con frecce che indicano le correzioni sui motori."
+      },
+      {
+        "titolo": "Fresa CNC fatta in casa",
+        "testo": "Qui il microcontrollore coordina più motori passo-passo, uno per asse, pianificando i movimenti con precisione per incidere o fresare materiali.",
+        "illustrazione": "Disegno lineare di una piccola fresa a portale con assi X, Y, Z indicati da frecce colorate e tre motori passo-passo collegati a una centralina."
+      },
+      {
+        "titolo": "Scacchiera robotica",
+        "testo": "Rileva la posizione dei pezzi e li sposta da sola: sotto il piano un carrello con elettromagnete scorre su due assi mossi da motori.",
+        "illustrazione": "Spaccato laterale di una scacchiera: sopra i pezzi, sotto un carrello con bobina che scorre su guide X/Y, linee tratteggiate che mostrano l'attrazione magnetica."
+      },
+      {
+        "titolo": "Robot comandato a gesti",
+        "testo": "Un guanto con sensori indossabili traduce i movimenti della mano in comandi per un braccio robotico, ad esempio per afferrare un oggetto.",
+        "illustrazione": "Mano con guanto sensorizzato a sinistra, frecce di segnale wireless verso un braccio robotico a pinza a destra che solleva un cubo."
+      },
+      {
+        "titolo": "Telescopio che insegue le stelle",
+        "testo": "L'ESP32 pilota i motori della montatura per seguire automaticamente gli oggetti celesti, compensando la rotazione terrestre.",
+        "illustrazione": "Telescopio su montatura con due motori evidenziati e un arco tratteggiato nel cielo che mostra la traiettoria di una stella seguita."
+      },
+      {
+        "titolo": "Perché conta",
+        "testo": "Con componenti economici e diffusi, progetti che un tempo richiedevano attrezzature dedicate oggi sono alla portata di chi sa programmare e ha pazienza.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Costa pochi euro, ma può guidare un drone, una fresa CNC o un braccio robotico. L'ESP32 è un microcontrollore con Wi-Fi e Bluetooth integrati, molto usato da chi costruisce dispositivi che devono leggere sensori, comunicare senza fili e muovere motori senza appoggiarsi a un PC.\n\nNel carosello cinque esempi che vanno ben oltre la classica domotica:\n🚁 un drone che si stabilizza e naviga da solo\n⚙️ una fresa CNC che coordina più assi\n♟️ una scacchiera che riconosce e sposta i pezzi\n🦾 un braccio robotico comandato da un guanto con sensori\n🔭 un telescopio che segue gli astri compensando la rotazione terrestre\n\nL'ESP32 non fa tutto da solo: servono sensori, driver, motori e tanto lavoro di programmazione. Ma rende accessibile un tipo di progetto che fino a pochi anni fa richiedeva attrezzature specializzate.\n\nQuale proveresti a costruire? Scrivilo nei commenti.",
+    "hashtag": [
+      "ESP32",
+      "maker",
+      "elettronica",
+      "robotica",
+      "faidate",
+      "DIY",
+      "microcontrollori",
+      "droni",
+      "CNC",
+      "IoT",
+      "programmazione",
+      "astronomia",
+      "tech",
+      "tecnologia"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Prezzo dell'ESP32 indicato come 'pochi euro/dollari'",
+      "Che tutti i progetti mostrati (drone, CNC, scacchiera, robot a gesti, telescopio) siano realizzazioni reali con ESP32: le immagini originali sembrano generate o illustrative",
+      "Che l'ESP32 da solo possa fungere da controllore di volo completo con navigazione autonoma",
+      "Meccanismo della scacchiera (carrello con elettromagnete) dedotto dall'immagine, non dal testo"
+    ]
+  }
+}
