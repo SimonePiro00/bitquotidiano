@@ -1,0 +1,69 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeR3S5LDn7r/",
+  "bozza": {
+    "argomento": "Progetti sorprendenti realizzabili con un Raspberry Pi: satelliti, aerei, riconoscimento facciale, telescopi e navigatori GPS",
+    "slides": [
+      {
+        "titolo": "5 progetti che non diresti possibili con un Raspberry Pi",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Ricevere dati dai satelliti",
+        "testo": "Con una chiavetta radio SDR e un'antenna, il Pi capta e decodifica i segnali trasmessi da alcuni satelliti, come quelli meteo, e ne ricava immagini della Terra.",
+        "illustrazione": "Schema: piccola scheda generica collegata via USB a una chiavetta radio, cavo verso un'antenna alla finestra; accanto uno schermo con una mappa di nuvole e uno spettro di frequenze colorato sotto."
+      },
+      {
+        "titolo": "Seguire gli aerei in tempo reale",
+        "testo": "Un ricevitore e un'antenna bastano per raccogliere i dati che gli aerei trasmettono pubblicamente: posizione, quota, velocità e rotta compaiono su una mappa.",
+        "illustrazione": "Antenna verticale su un tetto collegata a una scatola stagna con una mini scheda e un ricevitore USB; a fianco un tablet con mappa scura e icone di aerei gialli, un riquadro con quota e velocità di un volo."
+      },
+      {
+        "titolo": "Riconoscere i volti",
+        "testo": "Collegando una fotocamera, il Pi può eseguire software di visione artificiale che individua i volti nel flusso video. Attenzione: usarlo su altre persone tocca temi di privacy.",
+        "illustrazione": "Piccolo modulo fotocamera su braccio flessibile sopra un monitor; sullo schermo sagome stilizzate di persone con riquadri gialli attorno ai volti, collegato a una scatola compatta."
+      },
+      {
+        "titolo": "Controllare un telescopio",
+        "testo": "Il Pi può muovere in automatico una montatura motorizzata, puntare gli oggetti celesti e scattare foto astronomiche, anche gestendo tutto da remoto.",
+        "illustrazione": "Telescopio rifrattore bianco su montatura motorizzata, una mini scheda fissata al treppiede con un cavo verso la montatura; accanto un portatile che mostra la Luna."
+      },
+      {
+        "titolo": "Costruire un navigatore GPS",
+        "testo": "Aggiungi un modulo GPS e uno schermo: ottieni un computer di navigazione su misura, per esempio per la moto o le escursioni, con le mappe e le funzioni che scegli tu.",
+        "illustrazione": "Manubrio di moto stilizzato con uno schermo in custodia rigida che mostra una mappa topografica, un percorso rosso, una freccia di posizione e le coordinate."
+      },
+      {
+        "titolo": "Il segreto: hardware aggiuntivo e open source",
+        "testo": "Il Pi fa da cervello, i componenti esterni aggiungono le capacità. Con pezzi economici, software libero e tante guide online si costruiscono strumenti un tempo specialistici.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il Raspberry Pi costa meno di uno smartphone, ma è molto più versatile di quanto sembri. 🛰️✈️🔭\n\nIl suo punto di forza è la facilità con cui si collega ad altro hardware. Il Pi si occupa dell'elaborazione, i componenti aggiunti gli danno nuove funzioni:\n\n📡 una chiavetta radio SDR per captare i segnali dei satelliti meteo\n✈️ un ricevitore con antenna per vedere sulla mappa gli aerei che passano sopra casa\n📷 una fotocamera per la visione artificiale e il riconoscimento dei volti\n🔭 una montatura motorizzata per puntare il telescopio e fare astrofotografia\n🧭 un modulo GPS e uno schermo per un navigatore costruito su misura\n\nMolti di questi progetti non richiedono attrezzature costose né anni di programmazione: si basano su software open source e su una community enorme che condivide guide e tutorial. Serve però capire come i vari pezzi lavorano insieme.\n\nUna nota: se sperimenti con il riconoscimento facciale, ricorda che riprendere e identificare altre persone ha implicazioni di privacy e regole precise.\n\nQuale proveresti per primo? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "RaspberryPi",
+      "FaiDaTe",
+      "Maker",
+      "Elettronica",
+      "SDR",
+      "ADSB",
+      "Astrofotografia",
+      "VisioneArtificiale",
+      "GPS",
+      "OpenSource",
+      "Tecnologia",
+      "ProgettiDIY",
+      "Radioamatori"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il Raspberry Pi costa meno della maggior parte degli smartphone (verificare prezzi attuali dei modelli)",
+      "Con una chiavetta RTL-SDR e un'antenna adeguata si possono ricevere immagini dai satelliti meteo (es. NOAA/Meteor): verificare quali satelliti sono ancora attivi e ricevibili",
+      "I dati ADS-B degli aerei sono trasmessi pubblicamente sulla frequenza 1090 MHz e ricevibili con hardware economico",
+      "Quali dati di volo sono effettivamente visibili (quota, velocità, rotta) con un ricevitore ADS-B domestico",
+      "Normativa sulla privacy (GDPR) applicabile all'uso domestico del riconoscimento facciale su altre persone",
+      "Possibilità di controllare montature motorizzate di telescopi tramite Raspberry Pi con software open source (es. INDI/KStars, Astroberry)"
+    ]
+  }
+}
