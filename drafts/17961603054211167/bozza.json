@@ -1,0 +1,94 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeTZdYmDq7L/",
+  "bozza": {
+    "argomento": "Sei siti web utili che funzionano senza app e senza registrazione",
+    "slides": [
+      {
+        "titolo": "6 siti utili che non chiedono app né login",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "WeTransfer: file grandi via link",
+        "testo": "Carichi uno o più file, anche cartelle, e ottieni un link da condividere o un invio via email. La versione gratuita ha un limite di dimensione per trasferimento e i link scadono dopo alcuni giorni.",
+        "illustrazione": "Schema stilizzato: un riquadro di caricamento con pulsanti 'Aggiungi file' e 'Aggiungi cartelle', campo email e un grande bottone di invio; una freccia porta a un link generato."
+      },
+      {
+        "titolo": "ToS;DR: i termini d'uso riassunti",
+        "testo": "Il progetto Terms of Service; Didn't Read riassume condizioni d'uso e privacy di molti servizi online e assegna un voto da A a E. Cerchi il servizio e vedi subito i punti critici.",
+        "illustrazione": "Due schede affiancate di servizi generici con un badge del voto (A verde, E rosso) e un elenco di punti segnalati con icone di avviso."
+      },
+      {
+        "titolo": "JustBeamIt: da un computer all'altro",
+        "testo": "Trascini il file nella pagina e ricevi un link: chi lo apre scarica il file direttamente dal tuo computer. Interfaccia minimale, nessun account richiesto.",
+        "illustrazione": "Due computer collegati da una freccia tratteggiata, con al centro un paracadute stilizzato che trasporta un documento."
+      },
+      {
+        "titolo": "Project Gutenberg: libri liberi",
+        "testo": "Una biblioteca digitale di decine di migliaia di eBook gratuiti, soprattutto opere classiche non più protette da copyright. Si leggono online o si scaricano, divisi per categorie.",
+        "illustrazione": "Uno scaffale di libri antichi stilizzati che si trasforma in uno schermo con copertine digitali e una freccia di download."
+      },
+      {
+        "titolo": "SuperCook: cena con quello che hai",
+        "testo": "Segni gli ingredienti presenti in dispensa e il sito propone ricette compatibili, con filtri per tipo di piatto, dieta, tempi e ingredienti da escludere.",
+        "illustrazione": "Una dispensa stilizzata con etichette di ingredienti spuntate (uova, latte, patate) collegate a schede di ricette con il segno di spunta."
+      },
+      {
+        "titolo": "OneLook: il dizionario al contrario",
+        "testo": "Descrivi una cosa a parole e il sito ti suggerisce il termine giusto. Esempio: 'la punta di plastica dei lacci' restituisce 'aglet'. Funziona soprattutto in inglese.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvali nei preferiti",
+        "testo": "Nessuno di questi siti richiede di installare un'app per le funzioni base. Li apri dal browser, su computer o smartphone, e li usi subito.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Sempre più servizi ti chiedono di scaricare un'app o creare un account anche per le cose più semplici. Questi sei siti no: si aprono dal browser e funzionano subito.\n\n📁 WeTransfer – invia file pesanti tramite link\n📜 ToS;DR – riassume e valuta i termini d'uso dei servizi online\n💻 JustBeamIt – passa un file da un computer all'altro con un link\n📚 Project Gutenberg – migliaia di eBook gratuiti di opere fuori copyright\n🍳 SuperCook – trova ricette con gli ingredienti che hai già\n🔤 OneLook – descrivi una parola e scopri come si chiama\n\nAlcuni hanno limiti nella versione gratuita, ma per l'uso quotidiano bastano e avanzano.\n\nQuale conoscevi già? Salva il post per ritrovarli quando servono.",
+    "hashtag": [
+      "siti utili",
+      "tecnologia",
+      "web",
+      "strumenti online",
+      "privacy",
+      "produttività",
+      "trucchi tech",
+      "ebook gratis",
+      "ricette",
+      "condivisione file",
+      "internet",
+      "tech italia"
+    ],
+    "infografica": {
+      "tipo": "numeri",
+      "titolo": "Due cifre da questi siti",
+      "unita": "",
+      "elementi": [
+        {
+          "etichetta": "Limite gratuito WeTransfer",
+          "valore": 3.0,
+          "testo": "3 GB"
+        },
+        {
+          "etichetta": "eBook su Project Gutenberg",
+          "valore": 79558.0,
+          "testo": "79.558"
+        }
+      ],
+      "nota": "Dati mostrati dai siti al momento della consultazione, possono cambiare"
+    },
+    "da_verificare": [
+      "Limite di 3 GB per trasferimento nella versione gratuita di WeTransfer (il limite è cambiato più volte)",
+      "Che WeTransfer gratuito non richieda login/registrazione per inviare (potrebbe chiedere verifica email)",
+      "Durata di scadenza dei link WeTransfer gratuiti (lo screenshot mostra 3 giorni)",
+      "Numero di eBook su Project Gutenberg: 79.558 secondo lo screenshot",
+      "Che Project Gutenberg offra anche spartiti musicali, come affermato nel post originale",
+      "Che ToS;DR usi una scala di voti da A a E e che Google e Facebook abbiano voto E",
+      "Che JustBeamIt richieda che il mittente resti online durante il download (trasferimento diretto)",
+      "Che JustBeamIt sia ancora attivo e funzionante",
+      "Che SuperCook e OneLook siano utilizzabili senza account per le funzioni base",
+      "La didascalia originale parla di Shodan/OSINT, argomento diverso dalle immagini: verificare quale fosse il tema inteso"
+    ]
+  }
+}
