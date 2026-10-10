@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeM-LHclsoX/",
   "bozza": {
     "argomento": "7 strumenti essenziali per chi vuole capire, costruire e riparare la tecnologia",
@@ -75,5 +75,7 @@
       "Gli analizzatori logici USB entry-level sono considerati strumenti economici",
       "Raspberry Pi descritto come 'grande quanto un mazzo di carte': verificare che il paragone sia corretto per i modelli attuali"
     ]
-  }
+  },
+  "media_id": "18027044936697212",
+  "story_id": "18111702922881039"
 }
