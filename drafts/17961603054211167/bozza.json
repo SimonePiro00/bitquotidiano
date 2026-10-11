@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeTZdYmDq7L/",
   "bozza": {
     "argomento": "Sei siti web utili che funzionano senza app e senza registrazione",
@@ -90,5 +90,7 @@
       "Che SuperCook e OneLook siano utilizzabili senza account per le funzioni base",
       "La didascalia originale parla di Shodan/OSINT, argomento diverso dalle immagini: verificare quale fosse il tema inteso"
     ]
-  }
+  },
+  "media_id": "18496350721096059",
+  "story_id": "17952538356291402"
 }
