@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeSaxtHmctR/",
   "bozza": {
     "argomento": "Strumenti OSINT: siti pubblici usati da ricercatori di sicurezza, giornalisti e investigatori digitali per trovare informazioni già accessibili online",
@@ -100,5 +100,7 @@
       "Il servizio Subdomain Finder mostrato sembra essere quello di c99.nl: confermare il nome/sito corretto",
       "Liceità dell'uso di PimEyes su terzi nell'UE (GDPR): verificare prima di dare indicazioni legali più precise"
     ]
-  }
+  },
+  "media_id": "18005027288794578",
+  "story_id": "18187648579411588"
 }
