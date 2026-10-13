@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeP34A7mQ0B/",
   "bozza": {
     "argomento": "Privacy digitale: quattro alternative orientate alla riservatezza per messaggi, email, sistema operativo e VPN",
@@ -67,5 +67,7 @@
       "Mullvad usa un numero di account casuale senza email e accetta pagamenti in contanti",
       "Nome italiano delle voci di menu sulla telemetria di Windows (es. 'Diagnostica e feedback') se citate in didascalia o commenti"
     ]
-  }
+  },
+  "media_id": "17875479426587903",
+  "story_id": "18015077675952925"
 }
