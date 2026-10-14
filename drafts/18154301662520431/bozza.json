@@ -1,0 +1,28 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeckSKKmR1g/",
+  "bozza": {
+    "argomento": "6 app Android che fanno una cosa sola, ma la fanno bene",
+    "slides": [
+      {"titolo": "6 app Android che fanno una cosa sola (e la fanno bene)", "testo": "", "illustrazione": null},
+      {"titolo": "MacroDroid: il telefono si arrangia", "testo": "Scegli un evento e un'azione. Esempio: appoggi il telefono a faccia in giù sul tavolo e si attiva da solo il Non disturbare. Niente programmazione.", "illustrazione": "telefono capovolto, Non disturbare"},
+      {"titolo": "Forest: concentrazione in vaso", "testo": "Avvii un timer e pianti un albero virtuale. Se lasci l'app per distrarti prima della fine, l'albero appassisce. Un piccolo gioco contro le distrazioni.", "illustrazione": "albero e timer"},
+      {"titolo": "Snapdrop: file senza cavi", "testo": "Apri la pagina nel browser su due dispositivi collegati alla stessa rete Wi-Fi e trascini il file. Niente account e niente cloud. Un'alternativa simile è PairDrop.", "illustrazione": "pc e telefono sulla stessa rete"},
+      {"titolo": "Basta squilli dagli sconosciuti", "testo": "Alcune app, e alcuni telefoni di serie, filtrano le chiamate dai numeri sconosciuti: il telefono suona solo se dall'altra parte c'è una persona reale.", "illustrazione": "chiamata filtrata"},
+      {"titolo": "Le notifiche non spariscono più", "testo": "Hai cancellato una notifica per sbaglio? Da Android 11 c'è la Cronologia notifiche: Impostazioni › Notifiche › Cronologia notifiche. Va attivata una volta.", "illustrazione": "elenco notifiche recuperate"},
+      {"titolo": "one sec: un respiro prima dei social", "testo": "Quando apri un social, one sec ti chiede di respirare e aspettare qualche secondo. Spesso quella pausa basta a farti cambiare idea.", "illustrazione": "respiro e clessidra"},
+      {"titolo": "Piccole app, grande differenza", "testo": "Android si può personalizzare molto più di quanto pensi. Quale app aggiungeresti alla lista? Scrivilo nei commenti.", "illustrazione": "mascotte Bit"}
+    ],
+    "didascalia": "Non serve un'app che fa tutto: a volte basta una che fa una cosa sola, ma la fa bene. 📱\n\nEcco 6 strumenti per Android che risolvono piccoli fastidi quotidiani:\n\n🤖 MacroDroid automatizza le azioni ripetitive (es. telefono a faccia in giù = Non disturbare)\n🌳 Forest ti aiuta a restare concentrato con un albero virtuale da far crescere\n📂 Snapdrop sposta file tra dispositivi sulla stessa rete Wi-Fi, senza cloud\n📵 i filtri per le chiamate sconosciute ti fanno squillare solo quando serve\n🔔 la Cronologia notifiche recupera gli avvisi cancellati per sbaglio\n🫁 one sec mette una pausa prima di aprire i social\n\nNon cambiano il telefono, cambiano il modo in cui lo usi.\n\nSalva il post per ritrovarlo e dicci nei commenti quale app manca 👇",
+    "hashtag": ["Android", "AppAndroid", "Smartphone", "Produttività", "Automazione", "MacroDroid", "Forest", "DigitalDetox", "TrucchiAndroid", "Tecnologia", "App", "Concentrazione"],
+    "infografica": null,
+    "da_verificare": [
+      "Snapdrop: dopo l'acquisizione da parte di LimeWire (2023) il servizio originale potrebbe essere cambiato; PairDrop è il fork open source della community",
+      "Il post originale cita un'app 'Hush' per filtrare le chiamate: non ho trovato conferma sicura, per questo la slide parla di filtri in generale",
+      "Il Filtro chiamate dei Pixel non è disponibile in tutti i paesi (verificare per l'Italia)",
+      "Il percorso Impostazioni › Notifiche › Cronologia notifiche può cambiare in base al produttore (Samsung, Xiaomi...)",
+      "Forest: verificare che la versione Android sia ancora gratuita con acquisti in-app",
+      "one sec: verificare disponibilità e funzioni gratuite su Android"
+    ]
+  }
+}
