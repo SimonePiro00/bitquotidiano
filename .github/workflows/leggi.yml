@@ -1,0 +1,34 @@
+# Scarica testo e immagini dei post Instagram indicati per link (in fonti/). Non pubblica nulla.
+name: Leggi post da link
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        description: "Link dei post Instagram, separati da spazio o virgola"
+        required: true
+      account:
+        description: "Username dell'account (Business/Creator pubblico)"
+        default: "technologybrief"
+permissions:
+  contents: write
+jobs:
+  leggi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - run: |
+          python run.py leggi "$LINK" --account "$ACCOUNT" 2> errore.txt || {
+            cat errore.txt; echo "::error::$(tail -c 900 errore.txt | tr '\n' ' ')"; exit 1; }
+        env:
+          LINK: ${{ inputs.link }}
+          ACCOUNT: ${{ inputs.account }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+      - name: Salva i post letti
+        if: always()
+        run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add fonti && git commit -m "Post letti da link" && git push || echo "Nessuna novità"
