@@ -1,0 +1,70 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DeYzxxTFsqe/",
+  "bozza": {
+    "argomento": "I colori delle porte USB e cosa significano",
+    "slides": [
+      {
+        "titolo": "Cosa significano i colori delle porte USB?",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Bianco: il primo USB",
+        "testo": "È l'USB 1.x di fine anni '90: 12 Mbit/s, circa 1,5 MB al secondo. Bastava per tastiere e mouse. Oggi lo trovi quasi solo su computer molto vecchi.",
+        "illustrazione": "porta bianca, tastiera e mouse"
+      },
+      {
+        "titolo": "Nero: USB 2.0",
+        "testo": "Arrivato nel 2000, raggiunge 480 Mbit/s. Va bene per mouse, tastiere e chiavette, ma è lento con i file grandi. In compenso funziona con quasi tutto.",
+        "illustrazione": "porta nera e chiavetta"
+      },
+      {
+        "titolo": "Blu: USB 3.0, dieci volte più veloce",
+        "testo": "5 Gbit/s, oggi chiamato anche USB 3.2 Gen 1. Il blu serve proprio a distinguerlo dal nero. Hai un SSD o un disco esterno? Collegalo qui.",
+        "illustrazione": "porta blu e SSD"
+      },
+      {
+        "titolo": "Verde acqua: 10 Gbit/s",
+        "testo": "Il doppio del blu. Ma attenzione ai nomi: \"USB 3.1\" può voler dire sia 5 sia 10 Gbit/s, a seconda della generazione. Meglio controllare le specifiche.",
+        "illustrazione": "porta verde acqua, USB 3.1 5 o 10"
+      },
+      {
+        "titolo": "Rosso e giallo: ricarica sempre attiva",
+        "testo": "Di solito indicano porte che restano alimentate anche con il PC in sospensione o spento. Comode per ricaricare il telefono di notte. A volte vanno attivate nel BIOS.",
+        "illustrazione": "porte rossa e gialla, telefono in carica, luna"
+      },
+      {
+        "titolo": "Arancione e verde: decide il produttore",
+        "testo": "Non hanno un significato ufficiale: possono indicare ricarica, porte di servizio o solo estetica (come il verde dei PC Razer). Le vecchie porte tonde verdi e viola erano PS/2, non USB.",
+        "illustrazione": "porte arancione e verde con punto di domanda"
+      },
+      {
+        "titolo": "Il colore è un indizio, non una regola",
+        "testo": "I colori non sono obbligatori. Per sapere cosa fa davvero una porta guarda i simboli accanto (SS, SS10, fulmine) o la scheda tecnica. Di che colore sono le tue?",
+        "illustrazione": "simboli USB e mascotte Bit"
+      }
+    ],
+    "didascalia": "Bianco, nero, blu, rosso... quei colori dentro le porte USB non sono messi a caso. 🔌\n\n⚪ Bianco: USB 1.x, 12 Mbit/s\n⚫ Nero: USB 2.0, 480 Mbit/s\n🔵 Blu: USB 3.0, 5 Gbit/s\n🟢 Verde acqua: 10 Gbit/s\n🔴🟡 Rosso e giallo: ricarica anche a PC spento o in sospensione\n🟠 Arancione e verde: dipende dal produttore\n\nPerché conta? Un SSD esterno collegato a una porta nera viaggia a una frazione della sua velocità.\n\nAttenzione però: i colori non sono uno standard obbligatorio. Prendili come un indizio e, nel dubbio, controlla i simboli accanto alla porta o la scheda tecnica.\n\nSalva il post per la prossima volta che colleghi un disco 👇",
+    "hashtag": [
+      "USB",
+      "PC",
+      "Hardware",
+      "Computer",
+      "TrucchiPC",
+      "Tecnologia",
+      "SSD",
+      "Informatica",
+      "TechTips",
+      "Laptop",
+      "Gaming",
+      "SapeviChe"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il colore teal/verde acqua per 10 Gbit/s è una convenzione diffusa, non una regola della specifica USB",
+      "Rosso/giallo per la ricarica sempre attiva: convenzione dei produttori, il comportamento a PC spento dipende dal BIOS",
+      "Il blu per USB 3.0 è raccomandato dalla specifica ma non obbligatorio"
+    ]
+  }
+}
