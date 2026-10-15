@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeYzxxTFsqe/",
   "bozza": {
     "argomento": "I colori delle porte USB e cosa significano",
@@ -66,5 +66,7 @@
       "Rosso/giallo per la ricarica sempre attiva: convenzione dei produttori, il comportamento a PC spento dipende dal BIOS",
       "Il blu per USB 3.0 è raccomandato dalla specifica ma non obbligatorio"
     ]
-  }
+  },
+  "media_id": "18340829314259219",
+  "story_id": "18135153343710552"
 }
