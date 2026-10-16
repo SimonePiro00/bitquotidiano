@@ -1,0 +1,26 @@
+{
+ "stato": "in_attesa",
+ "fonte": "https://www.instagram.com/p/DeWJUWolg_e/",
+ "bozza": {
+  "argomento": "Sette siti web che risolvono piccoli problemi quotidiani in pochi clic",
+  "slides": [
+   {"titolo": "7 siti che ti risolvono la giornata", "testo": "", "illustrazione": null},
+   {"titolo": "JustDelete.me: cancellati e basta", "testo": "Raccoglie i link diretti per eliminare l'account da centinaia di servizi, con un colore che indica quanto è difficile: dal verde (facile) al nero (impossibile).", "illustrazione": "elenco servizi con pallini colorati e cestino"},
+   {"titolo": "AlternativeTo: paghi ancora?", "testo": "Scrivi il nome di un programma che usi e trovi alternative gratuite o open source, ordinate per i voti degli utenti. Filtra per Windows, Mac, Linux, Android o iPhone.", "illustrazione": "app a pagamento verso alternative gratis e open source"},
+   {"titolo": "ManualsLib: il manuale che hai perso", "testo": "Lavatrice, caldaia, telecomando di dieci anni fa: cerca marca e modello e scarica il manuale in PDF gratis. Basta frugare nei cassetti.", "illustrazione": "elettrodomestico e documento PDF"},
+   {"titolo": "TinyPNG: immagini più leggere", "testo": "Trascina le foto e le riduce di peso spesso del 50-80%, senza differenze visibili. Funziona con PNG, JPEG e WebP. Utile per siti web, email e allegati troppo grandi.", "illustrazione": "immagine da 2,4 MB a 0,6 MB"},
+   {"titolo": "Excalidraw: lavagna in comune", "testo": "Schemi e diagrammi con l'effetto disegnato a mano, direttamente nel browser. Condividi il link e disegnate insieme in tempo reale. Gratis, open source, senza account.", "illustrazione": "riquadri disegnati a mano e due cursori"},
+   {"titolo": "Temp Mail: la casella usa e getta", "testo": "Un indirizzo email temporaneo in un clic, per le iscrizioni che non vuoi nella tua casella. Mai usarlo per account importanti: chi perde la casella perde anche l'accesso.", "illustrazione": "busta e cronometro"},
+   {"titolo": "Speedtest: la tua rete va davvero piano?", "testo": "Misura download, upload e ping in pochi secondi. Consiglio: prova anche col cavo, vicino al router. Se così va bene, il problema è il Wi-Fi, non la linea.", "illustrazione": "tachimetro con download, upload, ping"},
+   {"titolo": "Salvali nei preferiti", "testo": "Non ti servono tutti i giorni, ma quando ti servono fanno risparmiare tempo, soldi e pazienza. Quale conoscevi già? E quale aggiungeresti tu?", "illustrazione": "segnalibro con stella e mascotte Bit"}
+  ],
+  "didascalia": "Siti che fanno una cosa sola, ma la fanno bene. Niente app da installare, quasi sempre niente registrazione. 🔖\n\n🗑️ JustDelete.me: i link per cancellare i tuoi account\n🔁 AlternativeTo: alternative gratuite ai programmi che paghi\n📘 ManualsLib: manuali di elettrodomestici in PDF\n🖼️ TinyPNG: immagini più leggere senza perdere qualità\n✏️ Excalidraw: lavagna da disegnare insieme online\n📮 Temp Mail: email usa e getta per le iscrizioni inutili\n📶 Speedtest: per capire se la connessione è davvero lenta\n\nI motori di ricerca premiano le grandi piattaforme, così questi piccoli strumenti passano inosservati. Salvali adesso, ti torneranno utili quando meno te lo aspetti.\n\nQuale aggiungeresti alla lista? 👇",
+  "hashtag": ["SitiUtili", "Tecnologia", "TechTips", "Internet", "Produttività", "Privacy", "Strumenti", "TrucchiWeb", "Software", "OpenSource", "Informatica", "LifeHack"],
+  "infografica": null,
+  "da_verificare": [
+   "TinyPNG: la riduzione 50-80% è indicativa e la versione gratuita ha limiti di numero e dimensione dei file",
+   "Temp Mail: esistono più siti con nomi simili (temp-mail.org e altri), non ne indichiamo uno specifico",
+   "Ho escluso Cobalt (download video, zona grigia sul copyright), Photoroom (freemium con limiti) e Sleepyti.me (basi scientifiche deboli)"
+  ]
+ }
+}
