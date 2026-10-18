@@ -1,0 +1,66 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-22",
+  "bozza": {
+    "argomento": "Perché l'AI ti risponde male: 4 errori comuni nei prompt e come correggerli",
+    "slides": [
+      {
+        "titolo": "Perché l'AI ti risponde male: 4 errori nei prompt",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Errore 1: la domanda vaga",
+        "testo": "\"Dammi idee per un regalo\" porta risposte banali. Meglio: \"Regalo per mia sorella, 30 anni, ama il trekking, budget 50 €. Dammi 5 idee con il perché.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Errore 2: non dire chi sei",
+        "testo": "La stessa domanda merita risposte diverse per un principiante e per un esperto. Aggiungi per esempio: \"Sono alle prime armi, spiegami senza termini tecnici.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Errore 3: non dire il formato",
+        "testo": "Vuoi un elenco, una tabella, 3 righe? Dillo: \"Rispondi con una tabella a 3 colonne: opzione, costo, pro e contro.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Errore 4: fidarsi a occhi chiusi",
+        "testo": "I chatbot possono inventare numeri, date e fonti con molta sicurezza. Su salute, soldi e leggi chiedi sempre da dove viene l'informazione e controllala.",
+        "illustrazione": "triangolo di attenzione: controlla numeri, date e fonti"
+      },
+      {
+        "titolo": "La formula da ricordare",
+        "testo": "Contesto + richiesta + formato + limiti. \"Sono uno studente, spiegami la fotosintesi in 5 punti, senza formule.\"",
+        "illustrazione": "i quattro blocchi del prompt: contesto, richiesta, formato, limiti"
+      },
+      {
+        "titolo": "Bonus: fatti fare le domande",
+        "testo": "Scrivi: \"Prima di rispondere, fammi le domande che ti servono per essere preciso.\" Funziona benissimo per viaggi, curriculum e acquisti.",
+        "illustrazione": "il chatbot fa le domande prima di rispondere"
+      },
+      {
+        "titolo": "Provalo oggi",
+        "testo": "Riprendi una domanda che hai già fatto a un chatbot, riscrivila con la formula e confronta le due risposte. Salva il post per averlo sotto mano.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Se l'intelligenza artificiale ti dà risposte generiche o sbagliate, spesso il problema è la domanda.\n\nI 4 errori più comuni: chiedere in modo vago, non dire chi sei, non dire che forma vuoi la risposta e fidarti senza controllare.\n\nLa formula da ricordare è semplice: contesto + richiesta + formato + limiti. E se non sai da dove partire, chiedi al chatbot di farti lui le domande.\n\nProva a riscrivere una tua domanda e raccontaci com'è andata 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "prompt",
+      "chatgpt",
+      "gemini",
+      "claude",
+      "aiitalia",
+      "produttività",
+      "trucchitech",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": []
+  }
+}
