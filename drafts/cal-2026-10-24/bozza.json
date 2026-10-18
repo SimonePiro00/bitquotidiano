@@ -1,0 +1,71 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-24",
+  "bozza": {
+    "argomento": "Spazio di Google Foto o iCloud pieno: 4 alternative all'abbonamento, dalla gratuita al cloud in casa",
+    "slides": [
+      {
+        "titolo": "Google Foto o iCloud pieno? 4 alternative all'abbonamento",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il problema",
+        "testo": "Google dà 15 GB gratis, iCloud solo 5 GB. Con foto e video del telefono finiscono presto, e il piano da 2 TB costa circa 10 € al mese: 120 € l'anno.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "1. Fai pulizia ●○○",
+        "testo": "Gratis. Screenshot, foto doppie, video lunghi e allegati delle chat spesso occupano gigabyte. Google Foto e Google One hanno uno strumento per liberare spazio che li trova per te.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. Un disco esterno ●○○",
+        "testo": "Una tantum. Ogni tanto copi foto e video su un disco esterno e li togli dal cloud. Lo paghi una volta sola. Contro: devi ricordarti di farlo.",
+        "illustrazione": "telefono che copia le foto su un disco esterno"
+      },
+      {
+        "titolo": "3. Dividi tra più servizi ●●○",
+        "testo": "Gratis. Lascia nel cloud solo le foto recenti e sposta gli archivi vecchi su un altro servizio gratuito. Contro: tante app e password da gestire.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. Il cloud in casa ●●●",
+        "testo": "Una tantum. Immich è un'app open source simile a Google Foto che gira su un tuo mini PC o Raspberry Pi: backup automatico dal telefono, nessun canone.",
+        "illustrazione": "casetta con dentro un mini server che riceve le foto dal telefono"
+      },
+      {
+        "titolo": "Cosa perdi con il cloud in casa",
+        "testo": "Se il disco si rompe, le foto sono a rischio: tieni sempre una seconda copia, su un altro disco o fuori casa. Serve un po' di pazienza per la configurazione.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "La regola del 3-2-1",
+        "testo": "3 copie delle foto importanti, su 2 supporti diversi, 1 fuori casa. Vale qualunque soluzione scegli. Salva il post e manda a chi ha \"lo spazio pieno\"!",
+        "illustrazione": "regola 3-2-1: tre copie, due supporti, una fuori casa"
+      }
+    ],
+    "didascalia": "\"Spazio di archiviazione quasi pieno\": se il messaggio ti suona familiare, non devi per forza pagare un abbonamento più grande.\n\nQuattro strade, dalla più semplice alla più da smanettoni:\n1. pulizia di doppioni e video inutili\n2. un disco esterno, pagato una volta\n3. dividere gli archivi tra più servizi gratuiti\n4. il tuo cloud in casa con Immich su un mini PC o Raspberry Pi\n\nI pallini indicano la difficoltà. E qualunque scelta fai, ricorda la regola del 3-2-1.\n\nQuanto spazio ti resta sul telefono? 👇",
+    "hashtag": [
+      "googlefoto",
+      "icloud",
+      "abbonamenti",
+      "risparmio",
+      "backup",
+      "selfhosting",
+      "raspberrypi",
+      "opensource",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Spazio gratuito: 15 GB Google, 5 GB iCloud",
+      "Piano da 2 TB a circa 9,99 €/mese in Italia per Google One e iCloud+",
+      "Immich: open source, app mobile con backup automatico, gira su Raspberry Pi (consigliati almeno 4 GB di RAM)",
+      "Nome dello strumento di pulizia in Google Foto / Google One"
+    ]
+  }
+}

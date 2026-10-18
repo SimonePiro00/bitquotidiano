@@ -1,0 +1,73 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-19",
+  "bozza": {
+    "argomento": "5 compiti noiosi della settimana da far fare gratis a un chatbot, con i prompt pronti da copiare",
+    "slides": [
+      {
+        "titolo": "5 compiti noiosi da far fare all'AI (gratis)",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Prima di iniziare",
+        "testo": "Va bene un qualsiasi chatbot gratuito: ChatGPT, Gemini, Claude o Copilot. Copia il prompt, cambia le parti tra [parentesi] e non incollare mai password, IBAN o codice fiscale.",
+        "illustrazione": "schema di una chat con un prompt dell'utente e la risposta del chatbot"
+      },
+      {
+        "titolo": "1. Le cene della settimana",
+        "testo": "\"In frigo ho [ingredienti]. Proponi 4 cene veloci per la settimana e la lista della spesa per il resto, divisa per reparto.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. La mail che rimandi da giorni",
+        "testo": "\"Scrivi una mail cortese ma decisa a [destinatario] per chiedere [cosa]. Massimo 6 righe, tono [formale o amichevole].\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Il testo lungo da leggere",
+        "testo": "\"Riassumi questo testo in 5 punti e dimmi cosa devo fare io, con le scadenze: [incolla il testo]\". Ottimo per circolari, regolamenti e verbali di condominio.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. La settimana piena di impegni",
+        "testo": "\"Questi sono i miei impegni: [elenco]. Organizzali giorno per giorno e lasciami 30 minuti liberi ogni giorno.\"",
+        "illustrazione": "settimana con impegni organizzati e 30 minuti liberi ogni giorno"
+      },
+      {
+        "titolo": "5. L'argomento che non capisci",
+        "testo": "\"Spiegami [argomento] come se avessi 12 anni, poi fammi 3 domande per capire se ho capito.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Il trucco in più",
+        "testo": "Se la risposta non ti convince non ricominciare da capo: scrivi \"più breve\", \"più formale\" o \"fammi un esempio\". Il chatbot corregge il tiro nella stessa chat.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo per lunedì prossimo",
+        "testo": "E mandalo a chi dice che l'intelligenza artificiale \"non gli serve a niente\".",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "L'intelligenza artificiale non serve solo a chi programma: il modo più semplice per iniziare è darle i compiti noiosi che rimandi ogni settimana.\n\nIn questo carosello trovi 5 prompt pronti da copiare: cene e lista della spesa, la mail che non hai voglia di scrivere, il riassunto di un testo lungo, l'agenda della settimana e un argomento spiegato semplice.\n\nFunzionano con qualsiasi chatbot gratuito. Una sola regola: niente dati personali sensibili nella chat.\n\nQuale compito daresti per primo all'AI? Scrivilo nei commenti 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "chatgpt",
+      "gemini",
+      "prompt",
+      "produttività",
+      "tecnologia",
+      "tech",
+      "trucchitech",
+      "aiitalia",
+      "lifehacks",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "ChatGPT, Gemini, Claude e Copilot hanno tutti una versione gratuita utilizzabile in Italia"
+    ]
+  }
+}

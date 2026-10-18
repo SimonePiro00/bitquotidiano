@@ -1,0 +1,82 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-21",
+  "bozza": {
+    "argomento": "Telefono lento: 5 passaggi che funzionano davvero, dal più facile al più impegnativo, e 3 miti da ignorare",
+    "slides": [
+      {
+        "titolo": "Telefono lento? 5 passaggi che funzionano (e 3 miti)",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Prima di tutto: il backup",
+        "testo": "Bastano pochi minuti e ti salva se qualcosa va storto. Su Android lo trovi in Impostazioni > Google > Backup, su iPhone in Impostazioni > il tuo nome > iCloud.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "1. Libera spazio",
+        "testo": "0 €, 15 minuti. Con la memoria quasi piena il telefono rallenta. In Impostazioni > Memoria vedi cosa occupa di più: di solito video, chat e app mai aperte.",
+        "illustrazione": "barra della memoria del telefono quasi piena divisa tra video, chat e app"
+      },
+      {
+        "titolo": "2. Svuota WhatsApp",
+        "testo": "0 €, 5 minuti. In WhatsApp: Impostazioni > Spazio e dati > Gestisci spazio. Ordina per dimensione e cancella video e file inoltrati che non ti servono più.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Aggiorna tutto",
+        "testo": "0 €, 20 minuti. Gli aggiornamenti di sistema e app correggono errori che consumano memoria e batteria. Falli con il Wi-Fi e il telefono in carica.",
+        "illustrazione": "freccia circolare di aggiornamento con Wi-Fi e telefono in carica"
+      },
+      {
+        "titolo": "4. Via le app inutili",
+        "testo": "0 €, 10 minuti. Molte app lavorano anche quando non le usi. Se non ne apri una da 3 mesi, disinstallala: la riscarichi quando ti serve.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Il ripristino",
+        "testo": "0 €, 1-2 ore. Dopo il backup, il ripristino ai dati di fabbrica toglie anni di file e impostazioni accumulati. È il passaggio più lungo, ma anche il più efficace.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mito 1: chiudere le app aperte",
+        "testo": "Chiuderle sempre dal multitasking non velocizza nulla: riaprirle da zero costa più tempo e batteria. Il sistema le mette già in pausa da solo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Miti 2 e 3: app \"pulisci\" e batteria a zero",
+        "testo": "Le app che promettono di velocizzare il telefono fanno poco e mostrano tanta pubblicità. E le batterie al litio non vanno scaricate a zero: meglio restare tra 20 e 80%.",
+        "illustrazione": "batteria con la zona consigliata tra 20 e 80 per cento"
+      },
+      {
+        "titolo": "Ancora lento?",
+        "testo": "Controlla la salute della batteria: se è molto consumata può frenare anche le prestazioni, e cambiarla costa molto meno di un telefono nuovo. Salva il post per la prossima volta!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quest'anno telefoni e PC costano di più, anche per colpa della corsa alle memorie per l'intelligenza artificiale. Prima di cambiare telefono, vale la pena provare questi 5 passaggi: sono gratis e li fai in un pomeriggio.\n\nParti dal backup, poi segui l'ordine: dal più veloce (liberare spazio) al più impegnativo (il ripristino).\n\nE lascia perdere i miti: chiudere le app di continuo, le app \"acceleratrici\" e scaricare la batteria a zero non aiutano.\n\nQual è il tuo trucco per far durare il telefono? 👇",
+    "hashtag": [
+      "smartphone",
+      "telefonolento",
+      "android",
+      "iphone",
+      "trucchitech",
+      "batteria",
+      "whatsapp",
+      "risparmio",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Percorsi dei menu del backup su Android e iPhone (cambiano tra marche e versioni)",
+      "Percorso WhatsApp: Impostazioni > Spazio e dati > Gestisci spazio",
+      "Il consiglio 20-80% per le batterie al litio è indicativo",
+      "Su alcuni telefoni una batteria degradata riduce le prestazioni (es. gestione prestazioni di iPhone)",
+      "Aumento dei prezzi di PC e smartphone nel 2026 legato alla carenza di memoria (IDC)"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-20",
+  "bozza": {
+    "argomento": "Come riconoscere in pochi secondi l'SMS truffa del pacco in giacenza da pagare",
+    "slides": [
+      {
+        "titolo": "\"Pacco in giacenza\": è una truffa? Come capirlo",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il messaggio tipo",
+        "testo": "\"Il tuo pacco è in giacenza per indirizzo incompleto. Paga 1,99 € per la riconsegna entro 24 ore: [link]\". Arriva per SMS, email o WhatsApp, anche se non aspetti nulla.",
+        "illustrazione": "telefono con un SMS generico di finto pacco in giacenza, link e scadenza evidenziati"
+      },
+      {
+        "titolo": "Segnale 1: il link",
+        "testo": "Il collegamento imita il nome di un corriere o di Poste con parole in più, trattini o lettere cambiate. Un indirizzo che \"sembra quasi giusto\" è il primo campanello.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 2: la fretta",
+        "testo": "\"Entro 24 ore\", \"ultimo avviso\", \"il pacco tornerà al mittente\". La scadenza serve solo a farti cliccare senza pensare.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 3: la cifra piccola",
+        "testo": "1 o 2 euro sembrano niente, ed è proprio questo il trucco. Il vero obiettivo sono i dati della tua carta: con quelli possono fare acquisti o attivare abbonamenti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 4: zero dettagli",
+        "testo": "Nessun nome, nessun mittente, nessun contenuto del pacco. Spesso il numero o l'indirizzo email da cui arriva non c'entra nulla con un corriere.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa fare",
+        "testo": "Non cliccare. Se aspetti davvero un pacco, apri tu l'app o il sito ufficiale del corriere e inserisci il codice di tracciamento. Poi cancella il messaggio.",
+        "illustrazione": "scudo con spunta: controllare dall'app ufficiale invece di cliccare"
+      },
+      {
+        "titolo": "Se hai già messo i dati della carta",
+        "testo": "Blocca subito la carta dall'app della banca o con il numero sul retro, controlla i movimenti e segnala tutto alla Polizia Postale.",
+        "illustrazione": "carta di pagamento bloccata con un lucchetto"
+      },
+      {
+        "titolo": "Mandalo a chi ne ha bisogno",
+        "testo": "Genitori, nonni, amici che comprano online: un messaggio su WhatsApp adesso vale più di mille spiegazioni dopo.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "È una delle truffe più diffuse in Italia: un SMS ti dice che il tuo pacco è fermo e che basta pagare pochi euro per riceverlo.\n\nI segnali per riconoscerla sono sempre gli stessi: un link che imita un nome vero, una scadenza strettissima, una cifra piccola e nessun dettaglio sul pacco.\n\nLa regola d'oro: non si clicca mai. Se aspetti davvero una consegna, controlla dall'app o dal sito ufficiale del corriere.\n\nLe truffe via SMS si fermano soprattutto parlandone: manda questo post a chi in famiglia compra online 📲",
+    "hashtag": [
+      "truffe",
+      "truffeonline",
+      "smishing",
+      "phishing",
+      "sicurezzainformatica",
+      "cybersecurity",
+      "pacco",
+      "consigli",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il testo d'esempio è ricostruito e generico, senza link o numeri reali",
+      "Sito per le segnalazioni alla Polizia Postale: commissariatodips.it",
+      "Alcuni corrieri chiedono davvero il pagamento dei dazi per pacchi extra UE: il consiglio di verificare dall'app ufficiale copre anche quel caso"
+    ]
+  }
+}
