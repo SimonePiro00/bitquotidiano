@@ -27,12 +27,21 @@ sul nostro account solo dopo approvazione.
 pip install -r requirements.txt
 cp config.example.env .env   # poi compila e carica le variabili
 python run.py check [--backfill N]   # cerca nuovi post e crea bozze
+python run.py piano [--giorni N]     # bozze dal calendario editoriale, da domani
 python run.py list           # elenca le bozze
 python run.py publish ID --conferma
 python run.py demo esempi/bozza_esempio.json --out esempi/render   # solo grafica, senza API
 ```
 
 `.github/workflows/controllo.yml` esegue `check` ogni 2 ore su GitHub Actions.
+
+## Calendario editoriale
+
+`pipeline/calendario.py` assegna a ogni giorno un angolo di contenuto: lunedì e giovedì l'AI nella vita
+di tutti i giorni, martedì le truffe, mercoledì far durare i dispositivi, sabato un abbonamento in meno.
+Venerdì (notizia spiegata) e domenica (siti e app utili) restano liberi per le bozze da @technologybrief.
+`.github/workflows/piano.yml` ogni mattina crea con Claude la bozza del giorno dopo in `drafts/cal-AAAA-MM-GG/`,
+evitando gli argomenti già trattati. Anche queste bozze si pubblicano solo dopo approvazione.
 
 ## Cosa serve per andare in produzione
 
