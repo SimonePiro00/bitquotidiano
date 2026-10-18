@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DemeBeQFncT/",
   "bozza": {
     "argomento": "La fisica dietro il nuovo Tesla Roadster con spinta a gas compresso sviluppata con SpaceX",
@@ -71,5 +71,7 @@
       "Il calcolo 3,4 g è nostro: 26,8 m/s in 0,81 s",
       "Guida a testa in giù: dimostrata su rampa curva, non su un vero soffitto"
     ]
-  }
+  },
+  "media_id": "17971689276176391",
+  "story_id": "18108028799610182"
 }
