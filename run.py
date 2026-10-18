@@ -2,6 +2,7 @@
 
 Uso:
   python run.py check                 # cerca nuovi post e crea le bozze (non pubblica nulla)
+  python run.py piano [--giorni N]    # crea le bozze del calendario editoriale da domani
   python run.py list                  # elenca le bozze e il loro stato
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
@@ -18,7 +19,6 @@ from pipeline.render import render_draft
 
 def cmd_check(args):
     from pipeline.generate import generate_draft
-    from pipeline.illustrate import draw
     from pipeline.monitor import fetch_recent_media, load_seen, new_posts, save_seen
 
     seen = load_seen()
@@ -35,25 +35,53 @@ def cmd_check(args):
         ids = {i.strip() for i in args.rigenera.split(",") if i.strip()}
         todo += [m for m in media if m["id"] in ids and m not in todo]
     for post in todo:
-        out = DRAFTS_DIR / post["id"]
-        bozza = generate_draft(post)
-        for old in [*out.glob("slide_*.jpg"), *out.glob("illustrazione_*.png")]:
-            old.unlink()
-        out.mkdir(parents=True, exist_ok=True)
-        disegnate = 0
-        for k, slide in enumerate(bozza.slides):
-            if slide.illustrazione and disegnate < 5:
-                ill = draw(slide.illustrazione, f"{slide.titolo}. {slide.testo}")
-                if ill is not None:
-                    ill.save(out / f"illustrazione_{k}.png")
-                    disegnate += 1
-        print(f"Illustrazioni disegnate: {disegnate}")
-        render_draft(bozza, out, env("BRAND_HANDLE", "@bitquotidiano.it"))
-        record = {"stato": "in_attesa", "fonte": post["permalink"], "bozza": bozza.model_dump()}
-        (out / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+        _salva_bozza(DRAFTS_DIR / post["id"], generate_draft(post), post["permalink"])
         seen.add(post["id"])
         save_seen(seen)
-        print(f"Bozza creata: {out}")
+
+
+def _salva_bozza(out: Path, bozza, fonte: str) -> None:
+    """Disegna illustrazioni e slide della bozza in `out` e la salva in attesa di approvazione."""
+    from pipeline.illustrate import draw
+
+    for old in [*out.glob("slide_*.jpg"), *out.glob("illustrazione_*.png")]:
+        old.unlink()
+    out.mkdir(parents=True, exist_ok=True)
+    disegnate = 0
+    for k, slide in enumerate(bozza.slides):
+        if slide.illustrazione and disegnate < 5:
+            ill = draw(slide.illustrazione, f"{slide.titolo}. {slide.testo}")
+            if ill is not None:
+                ill.save(out / f"illustrazione_{k}.png")
+                disegnate += 1
+    print(f"Illustrazioni disegnate: {disegnate}")
+    render_draft(bozza, out, env("BRAND_HANDLE", "@bitquotidiano.it"))
+    record = {"stato": "in_attesa", "fonte": fonte, "bozza": bozza.model_dump()}
+    (out / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+    print(f"Bozza creata: {out}")
+
+
+def cmd_piano(args):
+    """Crea le bozze del calendario editoriale per i prossimi giorni (da domani), una per giorno con angolo."""
+    from datetime import date, timedelta
+
+    from pipeline.calendario import CALENDARIO
+    from pipeline.generate import generate_from_angle
+
+    inizio = date.fromisoformat(args.data) if args.data else date.today() + timedelta(days=1)
+    for i in range(args.giorni):
+        giorno = inizio + timedelta(days=i)
+        angolo = CALENDARIO[giorno.weekday()]
+        out = DRAFTS_DIR / f"cal-{giorno.isoformat()}"
+        if angolo is None:
+            print(f"{giorno}: giorno libero, nessuna bozza dal calendario.")
+            continue
+        if (out / "bozza.json").exists() and not args.rigenera:
+            print(f"{giorno}: bozza già presente ({out.name}).")
+            continue
+        gia_fatti = [json.loads(f.read_text())["bozza"]["argomento"] for f in DRAFTS_DIR.glob("*/bozza.json")]
+        bozza = generate_from_angle(angolo, giorno.isoformat(), gia_fatti)
+        _salva_bozza(out, bozza, f"calendario: {angolo.nome} ({giorno.isoformat()})")
 
 
 def cmd_list(args):
@@ -127,6 +155,7 @@ def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("check"); c.add_argument("--backfill", type=int, default=0); c.add_argument("--rigenera", default=""); c.set_defaults(fn=cmd_check)
+    pn = sub.add_parser("piano"); pn.add_argument("--giorni", type=int, default=1); pn.add_argument("--data", default=""); pn.add_argument("--rigenera", action="store_true"); pn.set_defaults(fn=cmd_piano)
     sub.add_parser("list").set_defaults(fn=cmd_list)
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)

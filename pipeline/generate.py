@@ -108,21 +108,53 @@ def generate_draft(post: dict, client: anthropic.Anthropic | None = None) -> Boz
         ),
     })
 
-    def ask(blocks):
-        return client.messages.parse(
-            model=MODEL,
-            max_tokens=16000,
-            system=SYSTEM,
-            output_config={"effort": "medium"},
-            messages=[{"role": "user", "content": blocks}],
-            output_format=Bozza,
-        )
-
     try:
-        response = ask(content)
+        return _ask(client, SYSTEM, content)
     except anthropic.BadRequestError:
         # Un'immagine non accettata (formato o dimensione): si riprova solo col testo.
-        response = ask([b for b in content if b["type"] == "text"])
+        return _ask(client, SYSTEM, [b for b in content if b["type"] == "text"])
+
+
+def _ask(client: anthropic.Anthropic, system: str, blocks: list[dict]) -> Bozza:
+    response = client.messages.parse(
+        model=MODEL,
+        max_tokens=16000,
+        system=system,
+        output_config={"effort": "medium"},
+        messages=[{"role": "user", "content": blocks}],
+        output_format=Bozza,
+    )
     if response.stop_reason == "refusal" or response.parsed_output is None:
         raise RuntimeError(f"Generazione non riuscita (stop_reason={response.stop_reason})")
     return response.parsed_output
+
+
+SYSTEM_ANGOLO = """Sei il redattore di Bit Quotidiano (@bitquotidiano.it), pagina Instagram italiana di tecnologia
+che pubblica caroselli pratici con la mascotte Bit. Tono: l'amico che se ne intende, diretto e accessibile,
+mai clickbait. Ricevi l'angolo editoriale del giorno e scrivi un carosello originale su UN argomento specifico.
+Regole:
+- L'argomento deve essere concreto e utile da salvare o da inviare a qualcuno, non generico.
+- Non ripetere argomenti già trattati (te ne viene data la lista): scegli un problema diverso.
+- Prima slide: titolo forte e specifico (numeri e beneficio concreto). Ultima slide: invito a salvare o inviare.
+- Per guide e tutorial, un passaggio per slide, numerato nel titolo, con i nomi dei menu come appaiono con il
+  dispositivo in italiano; se non sei sicuro di un nome o di un dato, mettilo in `da_verificare`.
+- Scrivi solo fatti stabili che conosci bene. Prezzi, percentuali, date e nomi di funzioni recenti vanno
+  sempre anche in `da_verificare`.
+- Compila `illustrazione` per al massimo 5 slide dove uno schema aiuta (schermata stilizzata, oggetto, passaggi).
+- Usa `infografica` solo se hai dati solidi da mostrare; altrimenti lasciala vuota."""
+
+
+def generate_from_angle(angolo, data: str, gia_fatti: list[str],
+                        client: anthropic.Anthropic | None = None) -> Bozza:
+    """Bozza originale per il giorno `data` a partire dall'angolo del calendario editoriale."""
+    client = client or anthropic.Anthropic()
+    esempi = "\n".join(f"- {e}" for e in angolo.esempi)
+    fatti = "\n".join(f"- {a}" for a in gia_fatti) or "(nessuno)"
+    testo = (
+        f"Data di pubblicazione prevista: {data}\n\n"
+        f"Angolo: {angolo.nome}\nPubblico: {angolo.pubblico}\nLeva: {angolo.leva}\n"
+        f"Indicazioni: {angolo.istruzioni}\n\n"
+        f"Esempi di titoli nello stile giusto (non serve usarli):\n{esempi}\n\n"
+        f"Argomenti già trattati o in bozza, da non ripetere:\n{fatti}"
+    )
+    return _ask(client, SYSTEM_ANGOLO, [{"type": "text", "text": testo}])

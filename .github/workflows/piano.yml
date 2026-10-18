@@ -1,0 +1,36 @@
+# Ogni mattina prepara la bozza del calendario editoriale per il giorno dopo. Non pubblica nulla.
+name: Bozze dal calendario
+on:
+  schedule: [{cron: "0 5 * * *"}]
+  workflow_dispatch:
+    inputs:
+      data:
+        description: "Primo giorno per cui creare la bozza (AAAA-MM-GG); vuoto = domani"
+        default: ""
+      giorni:
+        description: "Quanti giorni preparare a partire da quella data"
+        default: "1"
+      rigenera:
+        description: "Rifai le bozze già presenti per quei giorni (si/no)"
+        default: "no"
+permissions:
+  contents: write
+jobs:
+  piano:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt && sudo apt-get install -y -q fonts-dejavu-core libcairo2
+      - run: |
+          python run.py piano --data "${{ inputs.data }}" --giorni "${{ inputs.giorni || '1' }}" \
+            ${{ inputs.rigenera == 'si' && '--rigenera' || '' }} 2> errore.txt || {
+            cat errore.txt; echo "::error::$(tail -c 900 errore.txt | tr '\n' ' ')"; exit 1; }
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BRAND_HANDLE: ${{ vars.BRAND_HANDLE || '@bitquotidiano.it' }}
+      - name: Salva le bozze nel repository
+        run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add drafts && git commit -m "Bozze dal calendario" && git push || echo "Nessuna novità"
