@@ -1,0 +1,75 @@
+{
+  "stato": "in_attesa",
+  "fonte": "https://www.instagram.com/p/DemeBeQFncT/",
+  "bozza": {
+    "argomento": "La fisica dietro il nuovo Tesla Roadster con spinta a gas compresso sviluppata con SpaceX",
+    "slides": [
+      {
+        "titolo": "La Tesla che salta: la fisica del nuovo Roadster",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Il limite delle gomme",
+        "testo": "Anche le gomme più aderenti spingono al massimo con circa 1 g, la forza che senti adesso sulla sedia. Con le sole ruote, da 0 a 96 km/h servono almeno 2,7 secondi circa.",
+        "illustrazione": "ruota su asfalto con attrito massimo 1 g"
+      },
+      {
+        "titolo": "0-96 km/h in 0,81 secondi?",
+        "testo": "È il dato annunciato da Tesla. Servono circa 3,4 g di accelerazione: più del triplo di quello che le gomme da sole riescono a dare. Il resto deve arrivare da qualche altra parte.",
+        "illustrazione": "grafico 1 g contro 3,4 g"
+      },
+      {
+        "titolo": "Spinta ad aria, non a razzo",
+        "testo": "Il gas compresso esce ad alta velocità da un ugello e spinge l'auto nella direzione opposta, come un palloncino che si sgonfia. Niente fiamme, niente carburante: solo pressione.",
+        "illustrazione": "ugello che espelle gas e freccia di spinta"
+      },
+      {
+        "titolo": "Le bombole sviluppate con SpaceX",
+        "testo": "Circa 250 kg di gas compresso alimentano fino a 10 ugelli. Le spinte durano pochi secondi: più simile a un estintore che a un motore a reazione.",
+        "illustrazione": "quattro bombole, 250 kg, 10 ugelli"
+      },
+      {
+        "titolo": "Ventole sotto la scocca",
+        "testo": "Quattro ventole aspirano aria e premono l'auto sull'asfalto fino a circa 2 g. Agli alettoni serve velocità, alle ventole no: in teoria basta per guidare a testa in giù.",
+        "illustrazione": "auto con ventole sotto la scocca e forza verso il basso"
+      },
+      {
+        "titolo": "Sterzare in volo",
+        "testo": "Piccoli getti laterali fanno ruotare l'auto in aria, come fanno i satelliti nello spazio. Così, alla presentazione del 15 ottobre in Texas, il Roadster ha saltato sopra cinque Tesla.",
+        "illustrazione": "auto in volo che ruota con piccoli getti"
+      },
+      {
+        "titolo": "I limiti, per ora",
+        "testo": "Il gas finisce in fretta, quindi solo salti brevi. Il sistema completo occupa il sedile del passeggero e la rende una monoposto. La produzione è prevista dal 2028.",
+        "illustrazione": "indicatore gas basso, sedile barrato, calendario 2028"
+      },
+      {
+        "titolo": "Spingere l'aria invece della strada",
+        "testo": "Per un secolo le auto sono state limitate dalle gomme. Il Roadster prova a barare spingendo l'aria. Ingegneria geniale o trovata da show? Dimmelo nei commenti.",
+        "illustrazione": "spingere la strada contro spingere l'aria, con Bit"
+      }
+    ],
+    "didascalia": "Il 15 ottobre in Texas il nuovo Tesla Roadster ha saltato sopra cinque auto. Niente trucchi di montaggio: gas compresso e ugelli sviluppati con SpaceX. 🚀\n\n🛞 Le gomme arrivano al massimo a circa 1 g\n⚡ Per lo 0-96 km/h in 0,81 s annunciato ne servono circa 3,4\n💨 La spinta extra arriva da gas compresso sparato fuori dagli ugelli, senza combustione\n🌀 Quattro ventole sotto la scocca la premono a terra\n🛰️ Piccoli getti la fanno ruotare in aria, come un satellite\n\nI limiti ci sono: il gas finisce in pochi secondi, il sistema completo ruba il posto del passeggero e la produzione è attesa dal 2028.\n\nGenio dell'ingegneria o trovata da palcoscenico? 👇",
+    "hashtag": [
+      "Tesla",
+      "Roadster",
+      "SpaceX",
+      "AutoElettriche",
+      "Tecnologia",
+      "Fisica",
+      "Ingegneria",
+      "Innovazione",
+      "Motori",
+      "Scienza",
+      "Tech",
+      "Futuro"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "0-96 km/h in 0,81 s, 10 ugelli e 250 kg di gas sono dati dichiarati da Tesla alla presentazione, non misure indipendenti",
+      "Il calcolo 3,4 g è nostro: 26,8 m/s in 0,81 s",
+      "Guida a testa in giù: dimostrata su rampa curva, non su un vero soffitto"
+    ]
+  }
+}
