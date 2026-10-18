@@ -1,0 +1,94 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-23",
+  "bozza": {
+    "argomento": "Perché nel 2026 telefoni e PC costano di più: la carenza di memoria causata dai data center per l'intelligenza artificiale",
+    "slides": [
+      {
+        "titolo": "Perché telefoni e PC costano di più (e c'entra l'AI)",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Cosa sta succedendo",
+        "testo": "Dell, Lenovo, HP, Asus e Acer hanno già annunciato aumenti sui PC, e gli smartphone seguiranno. Non è inflazione generica: il problema è un singolo componente.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Il colpevole: la memoria",
+        "testo": "Ogni telefono e computer ha bisogno di RAM. Ma le fabbriche di chip di memoria sono poche, e oggi hanno un cliente che compra tutto quello che può.",
+        "illustrazione": "chip di memoria RAM con i contatti e la scritta RAM"
+      },
+      {
+        "titolo": "I data center dell'AI",
+        "testo": "I server che fanno girare i chatbot usano una memoria speciale e velocissima, chiamata HBM. Rende di più ai produttori, che spostano lì la produzione.",
+        "illustrazione": "data center per l'AI che assorbe chip di memoria, mentre telefono e PC ne ricevono meno"
+      },
+      {
+        "titolo": "Meno memoria per tutti gli altri",
+        "testo": "Se si producono più chip per l'AI, ne restano meno per telefoni e PC. La memoria normale scarseggia, il suo prezzo sale e l'aumento arriva sul cartellino.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Quanto durerà",
+        "testo": "IDC prevede che la carenza continui anche nel 2027. Nel frattempo si venderanno meno PC: fino al 9% in meno se la situazione peggiora.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa cambia per te",
+        "testo": "Se il tuo dispositivo funziona, conviene farlo durare. Se devi comprare, le versioni con più memoria saranno quelle che rincarano di più: scegli quella che ti serve davvero.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Il tuo telefono è lento?",
+        "testo": "Mercoledì abbiamo pubblicato 5 passaggi gratuiti per rimetterlo in forma: lo trovi sul profilo. Segui Bit Quotidiano per capire le notizie tech in 2 minuti.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Hai notato che telefoni e computer costano di più? Non è solo un'impressione.\n\nIl motivo è un componente che hanno tutti i dispositivi: la memoria. I produttori di chip la stanno destinando sempre di più ai data center che fanno girare l'intelligenza artificiale, e per il resto del mercato ne resta meno.\n\nSecondo IDC, nel 2026 i PC possono rincarare fino all'8% e gli smartphone tra il 3 e l'8%, e la carenza potrebbe durare fino al 2027.\n\nLa mossa più furba? Far durare quello che hai. Tu stai pensando di cambiare telefono o PC? 👇",
+    "hashtag": [
+      "tecnologia",
+      "tech",
+      "notizietech",
+      "smartphone",
+      "pc",
+      "intelligenzaartificiale",
+      "chip",
+      "memoria",
+      "prezzi",
+      "risparmio",
+      "bitquotidiano"
+    ],
+    "infografica": {
+      "tipo": "numeri",
+      "titolo": "Le previsioni di IDC per il 2026",
+      "unita": "",
+      "elementi": [
+        {
+          "etichetta": "aumento dei prezzi dei PC",
+          "valore": 8.0,
+          "testo": "fino a +8%"
+        },
+        {
+          "etichetta": "aumento dei prezzi degli smartphone",
+          "valore": null,
+          "testo": "+3-8%"
+        },
+        {
+          "etichetta": "l'anno fino a cui potrebbe durare la carenza",
+          "valore": 2027.0,
+          "testo": "2027"
+        }
+      ],
+      "nota": "Fonte: previsioni IDC riportate da TechSpot"
+    },
+    "da_verificare": [
+      "PC fino a +8%, smartphone +3-5% (scenario moderato) o +6-8% (pessimistico): IDC via TechSpot",
+      "Vendite di PC -4,9%, fino a -8,9% se la carenza peggiora (IDC)",
+      "Carenza prevista fino al 2027 (IDC)",
+      "Dell, Lenovo, HP, Asus e Acer hanno confermato aumenti (TechSpot)",
+      "La memoria HBM per i data center AI sottrae capacità produttiva alla DRAM consumer"
+    ]
+  }
+}
