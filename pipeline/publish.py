@@ -3,6 +3,7 @@
 Le immagini devono essere raggiungibili da un URL pubblico: Instagram le scarica da lì.
 """
 import time
+from datetime import datetime
 
 from .config import env
 from .graph import GraphError, call
@@ -12,14 +13,36 @@ def _post(path: str, **params) -> dict:
     return call("POST", path, **params)
 
 
-def _publish(ig: str, container: str, attempts: int = 6) -> str:
+def _gia_uscito(ig: str, edge: str, inizio: float, caption: str | None) -> str | None:
+    """Cerca tra gli ultimi media dell'account uno pubblicato dopo `inizio` (e con la stessa
+    didascalia, se data). Serve perché media_publish può dare errore anche quando il post è uscito."""
+    time.sleep(15)
+    recenti = call("GET", f"{ig}/{edge}", fields="id,caption,timestamp", limit=5).get("data", [])
+    for m in recenti:
+        quando = datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
+        if quando >= inizio - 60 and (caption is None or m.get("caption", "").strip()[:80] == caption.strip()[:80]):
+            return m["id"]
+    return None
+
+
+def _publish(ig: str, container: str, edge: str, caption: str | None = None, attempts: int = 6) -> str:
     """media_publish a volte risponde #9007 "Media ID is not available" anche con il container
-    FINISHED: Instagram non ha ancora finito di elaborarlo, basta riprovare poco dopo."""
+    FINISHED: Instagram non ha ancora finito di elaborarlo, basta riprovare poco dopo.
+    Con altri errori (per esempio #4, limite di richieste) il post a volte esce lo stesso: prima di
+    fallire controlla se è già sul profilo, così rilanciare il workflow non crea doppioni."""
+    inizio = time.time()
     for i in range(attempts):
         try:
             return _post(f"{ig}/media_publish", creation_id=container)["id"]
         except GraphError as e:
             if "#9007" not in str(e) or i == attempts - 1:
+                try:
+                    trovato = _gia_uscito(ig, edge, inizio, caption)
+                except GraphError:
+                    trovato = None
+                if trovato:
+                    print(f"media_publish ha risposto {e}, ma il contenuto risulta pubblicato: {trovato}")
+                    return trovato
                 raise
             time.sleep(10)
 
@@ -45,7 +68,7 @@ def publish_carousel(image_urls: list[str], caption: str) -> str:
             _wait_ready(c)
         container = _post(f"{ig}/media", media_type="CAROUSEL", children=",".join(children), caption=caption)["id"]
     _wait_ready(container)
-    return _publish(ig, container)
+    return _publish(ig, container, "media", caption)
 
 
 def publish_story(image_url: str) -> str:
@@ -54,4 +77,4 @@ def publish_story(image_url: str) -> str:
     ig = env("IG_USER_ID", required=True).strip()
     container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
     _wait_ready(container)
-    return _publish(ig, container)
+    return _publish(ig, container, "stories")
