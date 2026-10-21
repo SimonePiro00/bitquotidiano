@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-20",
   "bozza": {
@@ -71,5 +71,7 @@
       "Sito per le segnalazioni alla Polizia Postale: commissariatodips.it",
       "Alcuni corrieri chiedono davvero il pagamento dei dazi per pacchi extra UE: il consiglio di verificare dall'app ufficiale copre anche quel caso"
     ]
-  }
+  },
+  "media_id": null,
+  "nota": "Pubblicato il 2026-10-20 alle 12:30 nonostante l'errore #4 di media_publish (confermato da Simone); storia non pubblicata."
 }
