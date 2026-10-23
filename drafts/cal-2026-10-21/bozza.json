@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-21",
   "bozza": {
@@ -78,5 +78,7 @@
       "Su alcuni telefoni una batteria degradata riduce le prestazioni (es. gestione prestazioni di iPhone)",
       "Aumento dei prezzi di PC e smartphone nel 2026 legato alla carenza di memoria (IDC)"
     ]
-  }
+  },
+  "media_id": null,
+  "nota": "Pubblicato il 2026-10-21 alle 20:00 nonostante l'errore #4 di media_publish (confermato da Simone); storia non pubblicata."
 }

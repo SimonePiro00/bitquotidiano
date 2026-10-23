@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-22",
   "bozza": {
@@ -62,5 +62,7 @@
     ],
     "infografica": null,
     "da_verificare": []
-  }
+  },
+  "media_id": null,
+  "nota": "Pubblicato il 2026-10-22 alle 12:30 nonostante l'errore #4 di media_publish (confermato da Simone); storia non pubblicata."
 }
