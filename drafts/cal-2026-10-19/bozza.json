@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-19",
   "bozza": {
@@ -69,5 +69,8 @@
     "da_verificare": [
       "ChatGPT, Gemini, Claude e Copilot hanno tutti una versione gratuita utilizzabile in Italia"
     ]
-  }
+  },
+  "media_id": null,
+  "nota": "Pubblicato il 2026-10-19 alle 20:00 nonostante l'errore #4 di media_publish; doppione rimosso e storia pubblicati a mano da Simone.",
+  "story_id": "pubblicata a mano"
 }
