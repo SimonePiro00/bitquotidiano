@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-24",
   "bozza": {
@@ -67,5 +67,7 @@
       "Immich: open source, app mobile con backup automatico, gira su Raspberry Pi (consigliati almeno 4 GB di RAM)",
       "Nome dello strumento di pulizia in Google Foto / Google One"
     ]
-  }
+  },
+  "media_id": "17922439461451419",
+  "story_id": "18177385306453796"
 }
