@@ -1,0 +1,69 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-30",
+  "bozza": {
+    "argomento": "Il tuo telefono riceve ancora aggiornamenti di sicurezza? Le nuove regole UE e come controllarlo",
+    "slides": [
+      {
+        "titolo": "Il tuo telefono riceve ancora aggiornamenti? Come controllarlo",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Perché conta",
+        "testo": "Gli aggiornamenti di sicurezza chiudono le falle che virus e truffatori usano per entrare. Un telefono che non li riceve più diventa via via più esposto.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "La novità UE",
+        "testo": "Dal 20 giugno 2025, i telefoni messi in vendita nell'UE devono ricevere aggiornamenti del sistema per almeno 5 anni dopo l'uscita dal mercato del modello.",
+        "illustrazione": "scudo con 5 anni di aggiornamenti garantiti dalle regole UE"
+      },
+      {
+        "titolo": "Cosa vuol dire per te",
+        "testo": "Vale per i modelli lanciati da metà 2025 in poi. Per i telefoni più vecchi valgono le promesse del produttore, che spesso sono più brevi.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Come controllare su Android",
+        "testo": "Impostazioni > Info sul telefono (o Sistema) > Versione Android: guarda la data della \"Patch di sicurezza\". Se ha più di qualche mese, cerca un aggiornamento.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Come controllare su iPhone",
+        "testo": "Impostazioni > Generali > Aggiornamento software. Se non arrivano più nuove versioni di iOS, il produttore ha smesso di supportarlo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Se non riceve più aggiornamenti",
+        "testo": "Non serve buttarlo subito: evita app bancarie e dati sensibili su quel telefono, e quando lo cambi scegli un modello con anni di supporto garantiti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Controllalo adesso",
+        "testo": "Ci vuole un minuto. Salva il post e mandalo a chi usa ancora un telefono di tanti anni fa.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il tuo telefono è ancora protetto? Dipende dagli aggiornamenti di sicurezza, e molti non sanno come controllarlo.\n\nDa giugno 2025 le regole europee obbligano i produttori a garantire aggiornamenti per almeno 5 anni dopo che un modello esce dal mercato. Per i telefoni più vecchi, invece, contano le promesse delle singole marche.\n\nNel carosello trovi dove guardare su Android e iPhone, e cosa fare se il tuo non riceve più aggiornamenti.\n\nDi che anno è il tuo telefono? 👇",
+    "hashtag": [
+      "smartphone",
+      "aggiornamenti",
+      "sicurezza",
+      "android",
+      "iphone",
+      "unioneeuropea",
+      "cybersecurity",
+      "notizietech",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Regolamento UE 2023/1670 (ecodesign smartphone e tablet): applicabile dal 20 giugno 2025, aggiornamenti del sistema operativo per almeno 5 anni dalla fine dell'immissione sul mercato",
+      "Percorsi dei menu su Android cambiano tra marche"
+    ]
+  }
+}

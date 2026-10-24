@@ -1,0 +1,69 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-31",
+  "bozza": {
+    "argomento": "Streaming a rotazione: pagare meno Netflix, Disney+, Prime e gli altri cambiando abbonamento ogni mese",
+    "slides": [
+      {
+        "titolo": "Paghi troppi streaming? Prova la rotazione",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il problema",
+        "testo": "Netflix, Prime Video, Disney+, NOW, DAZN: tenerli tutti insieme costa decine di euro al mese, ma raramente li guardi tutti nello stesso mese.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "L'idea",
+        "testo": "Tieni attivo un solo servizio alla volta. Quando hai finito la serie che ti interessa, disdici e passa al prossimo. Gli abbonamenti mensili si disdicono quando vuoi.",
+        "illustrazione": "calendario con un servizio streaming diverso ogni mese"
+      },
+      {
+        "titolo": "1. Fai la lista",
+        "testo": "Scrivi le serie e i film che vuoi davvero vedere nei prossimi mesi, e accanto il servizio dove si trovano. È la tua scaletta.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. Disdici subito",
+        "testo": "Appena ti abboni, disattiva il rinnovo automatico: il servizio resta attivo fino a fine mese e non ti dimentichi di pagare quello dopo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Un calendario semplice",
+        "testo": "Ottobre Netflix, novembre Disney+, dicembre Prime... Segna nel calendario del telefono il giorno di fine di ogni abbonamento.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Quando non conviene",
+        "testo": "Per il calcio o lo sport che segui tutto l'anno la rotazione funziona poco. E se un piano annuale ti fa risparmiare e lo usi sempre, tienilo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Quanto risparmi",
+        "testo": "Passare da 4 servizi a 1 alla volta può valere più di 300 € l'anno. Salva il post e mandalo a chi \"non trova mai niente da vedere\".",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quanti abbonamenti streaming paghi ogni mese? Spesso sono più di quelli che riesci a guardare.\n\nLa rotazione è semplice: un servizio alla volta, finisci quello che ti interessa, disdici e passi al prossimo. Con il rinnovo automatico disattivato fin dal primo giorno non paghi mai un mese in più.\n\nFunziona meno per lo sport che segui tutto l'anno, ma per serie e film è il modo più facile per risparmiare.\n\nQuanti servizi hai attivi adesso? 👇",
+    "hashtag": [
+      "streaming",
+      "netflix",
+      "disneyplus",
+      "primevideo",
+      "abbonamenti",
+      "risparmio",
+      "serietv",
+      "consigli",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Disdetta dei piani mensili: il servizio resta attivo fino a fine periodo per Netflix, Disney+, Prime Video, NOW",
+      "Stima del risparmio: 3 servizi in meno a circa 9-10 € al mese = oltre 300 € l'anno"
+    ]
+  }
+}

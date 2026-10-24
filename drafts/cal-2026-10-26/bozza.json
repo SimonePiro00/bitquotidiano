@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-26",
+  "bozza": {
+    "argomento": "Fotografa e chiedi: 5 usi utili dell'AI con la fotocamera del telefono",
+    "slides": [
+      {
+        "titolo": "Fotografa e chiedi: 5 usi dell'AI con la fotocamera",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come funziona",
+        "testo": "Nelle app gratuite di ChatGPT, Gemini o Copilot c'è l'icona della fotocamera. Scatti una foto, scrivi la domanda e l'AI ti risponde guardando l'immagine.",
+        "illustrazione": "telefono che inquadra un menu con il riquadro di scansione e una domanda all'AI"
+      },
+      {
+        "titolo": "1. Il menu in un'altra lingua",
+        "testo": "\"Traduci questo menu e dimmi quali piatti sono senza glutine.\" Funziona anche con cartelli, istruzioni e scontrini all'estero.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. L'etichetta dei vestiti",
+        "testo": "Fotografa i simboli di lavaggio: \"Cosa significano? Posso metterlo in lavatrice a 40 gradi?\" Niente più maglioni ristretti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. La bolletta incomprensibile",
+        "testo": "\"Spiegami questa bolletta: quanto pago di consumi e quanto di costi fissi?\" Prima copri codice cliente, indirizzo e IBAN.",
+        "illustrazione": "bolletta con codice cliente e IBAN coperti, consumi e costi fissi evidenziati"
+      },
+      {
+        "titolo": "4. La pianta di casa",
+        "testo": "\"Che pianta è e perché ha le foglie gialle?\" Ti dà un'idea del problema e di cosa provare, poi decidi tu.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Il grafico o l'esercizio",
+        "testo": "\"Spiegami cosa mostra questo grafico\" oppure \"Aiutami a capire come si risolve, senza darmi subito la soluzione.\" Ottimo per i compiti dei figli.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "La regola d'oro",
+        "testo": "Non fotografare documenti d'identità, carte di pagamento o dati sanitari. E sui numeri importanti fai sempre un controllo: l'AI può sbagliare.",
+        "illustrazione": "triangolo di attenzione: controlla numeri, date e fonti"
+      },
+      {
+        "titolo": "Provalo stasera",
+        "testo": "Scegli una delle 5 idee e prova. Salva il post e mandalo a chi pensa che l'AI serva solo a scrivere testi.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "La fotocamera del telefono più l'intelligenza artificiale è uno degli usi più pratici che ci siano, e quasi nessuno lo sfrutta.\n\nIn questo carosello trovi 5 idee: tradurre un menu, capire l'etichetta dei vestiti, decifrare una bolletta, curare una pianta e farti spiegare un grafico.\n\nFunziona con le app gratuite di ChatGPT, Gemini e Copilot. Una sola regola: niente documenti e dati personali nelle foto.\n\nQuale proveresti per prima? 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "chatgpt",
+      "gemini",
+      "copilot",
+      "fotocamera",
+      "trucchitech",
+      "aiitalia",
+      "produttività",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Le app gratuite di ChatGPT, Gemini e Copilot accettano foto in ingresso in Italia",
+      "L'AI può sbagliare a identificare piante e simboli: il post lo dice"
+    ]
+  }
+}
