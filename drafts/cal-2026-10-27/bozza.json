@@ -1,0 +1,75 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-27",
+  "bozza": {
+    "argomento": "La truffa del finto operatore della banca al telefono: come riconoscerla e cosa fare",
+    "slides": [
+      {
+        "titolo": "\"Chiamo dalla sua banca\": come riconoscere la truffa",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come inizia",
+        "testo": "Ti chiamano per un \"pagamento sospetto\" sul tuo conto. Spesso prima arriva un SMS che sembra della banca, poi la telefonata di un finto operatore.",
+        "illustrazione": "telefono con una chiamata in arrivo dalla Banca e un punto di domanda"
+      },
+      {
+        "titolo": "Il trucco del numero",
+        "testo": "Sullo schermo può comparire il numero vero della banca, o un numero italiano qualunque. I truffatori possono falsificarlo: non è una prova.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 1: l'urgenza",
+        "testo": "\"Dobbiamo bloccare subito il conto\", \"tra 10 minuti i soldi spariscono\". La fretta serve a non farti ragionare.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 2: i codici",
+        "testo": "Ti chiedono il codice arrivato per SMS, il PIN o le credenziali dell'app. Una banca vera non li chiede mai, né al telefono né per messaggio.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 3: il \"conto sicuro\"",
+        "testo": "Ti dicono di spostare i soldi su un conto \"protetto\" o di fare un bonifico per \"annullare\" un altro. È il cuore della truffa.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa fare",
+        "testo": "Riattacca. Poi chiama tu la banca al numero sul retro della carta o dall'app ufficiale. Se era tutto vero, te lo confermano loro.",
+        "illustrazione": "riagganciare e richiamare tu la banca dal numero sul retro della carta"
+      },
+      {
+        "titolo": "Se hai già dato codici o fatto bonifici",
+        "testo": "Chiama subito la banca per bloccare carte e operazioni, cambia le password e denuncia alla Polizia Postale. Ogni minuto conta.",
+        "illustrazione": "carta di pagamento bloccata con un lucchetto"
+      },
+      {
+        "titolo": "Mandalo a chi ne ha bisogno",
+        "testo": "Genitori e nonni sono i bersagli preferiti. Un messaggio adesso può evitare una brutta telefonata domani.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Buongiorno, la chiamo dall'ufficio antifrode della sua banca.\" È una delle truffe più diffuse, e funziona perché sembra un aiuto.\n\nI segnali sono sempre gli stessi: fretta, richiesta di codici e l'invito a spostare i soldi su un \"conto sicuro\". E il numero che vedi sullo schermo può essere falsificato.\n\nLa regola: riattacca e richiama tu la banca dal numero ufficiale.\n\nManda questo post a chi in famiglia risponde sempre al telefono 📲",
+    "hashtag": [
+      "truffe",
+      "truffetelefoniche",
+      "vishing",
+      "spoofing",
+      "banca",
+      "sicurezzainformatica",
+      "cybersecurity",
+      "consigli",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Il numero del chiamante può essere falsificato (spoofing); in Italia AGCOM ha introdotto blocchi sulle chiamate con numeri italiani falsi dall'estero, ma non coprono tutti i casi",
+      "Le banche dichiarano di non chiedere mai codici o PIN al telefono",
+      "Sito Polizia Postale: commissariatodips.it"
+    ]
+  }
+}

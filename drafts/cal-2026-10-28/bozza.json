@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-28",
+  "bozza": {
+    "argomento": "PC Windows lento: 5 passaggi gratuiti da provare prima di comprarne uno nuovo",
+    "slides": [
+      {
+        "titolo": "PC lento? 5 passaggi gratis prima di cambiarlo",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Perché adesso",
+        "testo": "Con la memoria più cara, PC e portatili nuovi costano di più. Prima di spendere, prova questi passaggi: li fai in un pomeriggio.",
+        "illustrazione": "portatile con l'indicatore di velocità in risalita"
+      },
+      {
+        "titolo": "1. Le app all'avvio",
+        "testo": "0 €, 5 minuti. Apri Gestione attività (Ctrl + Maiusc + Esc) e nella scheda \"App di avvio\" disattiva quelle che non ti servono subito.",
+        "illustrazione": "elenco di app all'avvio con gli interruttori, quasi tutti spenti"
+      },
+      {
+        "titolo": "2. Libera il disco",
+        "testo": "0 €, 15 minuti. In Impostazioni > Sistema > Archiviazione usa i \"Consigli per la pulizia\": file temporanei, download vecchi e cestino.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Aggiorna tutto",
+        "testo": "0 €, 30 minuti. Windows Update e gli aggiornamenti dei driver correggono errori che rallentano. Lascialo collegato alla corrente.",
+        "illustrazione": "freccia circolare di aggiornamento con Wi-Fi e telefono in carica"
+      },
+      {
+        "titolo": "4. Controlla cosa consuma",
+        "testo": "0 €, 5 minuti. In Gestione attività ordina per CPU e memoria: un programma che usa tantissimo senza motivo va chiuso o disinstallato.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Il ripristino",
+        "testo": "0 €, 2-3 ore. Dopo un backup, \"Reimposta il PC\" reinstalla Windows e toglie anni di programmi accumulati. È il passo più lungo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Se non basta: l'SSD",
+        "testo": "Se il PC ha ancora un vecchio disco meccanico, passare a un SSD è spesso l'aggiornamento che cambia di più, a una frazione del prezzo di un PC nuovo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo per dopo",
+        "testo": "E mandalo a chi sta per comprare un portatile nuovo \"perché il vecchio è lento\".",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il PC è diventato lentissimo? Prima di comprarne uno nuovo, proprio ora che i prezzi sono saliti, prova questi 5 passaggi gratuiti.\n\nDal più veloce al più impegnativo: app all'avvio, pulizia del disco, aggiornamenti, controllo dei programmi che consumano e, come ultima carta, il ripristino.\n\nE se il computer ha ancora un disco meccanico, un SSD può fare miracoli.\n\nIl tuo PC quanti anni ha? 👇",
+    "hashtag": [
+      "pc",
+      "windows",
+      "computerlento",
+      "trucchitech",
+      "ssd",
+      "risparmio",
+      "tecnologia",
+      "tech",
+      "informatica",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Percorsi di Windows 11: Gestione attività > App di avvio; Impostazioni > Sistema > Archiviazione > Consigli per la pulizia; Impostazioni > Sistema > Ripristino > Reimposta il PC",
+      "Con Windows 10 i nomi dei menu cambiano leggermente"
+    ]
+  }
+}

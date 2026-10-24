@@ -1,0 +1,70 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-01",
+  "bozza": {
+    "argomento": "Il vecchio telefono nel cassetto: 4 modi per dargli una seconda vita invece di buttarlo",
+    "slides": [
+      {
+        "titolo": "Il vecchio telefono nel cassetto: 4 seconde vite",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Prima di tutto",
+        "testo": "Fai un ripristino ai dati di fabbrica e togli la SIM. Poi tienilo in carica vicino a una presa: per questi usi non serve che sia veloce.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "1. Telecamera di casa",
+        "testo": "Con app come Alfred o Manything il vecchio telefono diventa una telecamera che guardi dal telefono nuovo. Utile per animali e casa vuota.",
+        "illustrazione": "vecchio telefono su un supporto usato come telecamera, collegato al telefono nuovo"
+      },
+      {
+        "titolo": "2. Webcam per il PC",
+        "testo": "Su Windows 11 e Mac puoi usare il telefono come webcam, spesso migliore di quella del portatile. Su Android e iPhone recenti è integrato.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Lettore musicale e radio",
+        "testo": "Collegato a una cassa Bluetooth diventa lo stereo della cucina o del garage, con Spotify, la radio o la tua musica.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. Telecomando e cornice",
+        "testo": "Comanda TV e casa smart dal divano, o lascialo sul mobile come cornice digitale con le foto di famiglia.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Se proprio non serve",
+        "testo": "Portalo a un punto di raccolta RAEE o nei negozi di elettronica: il ritiro dei piccoli apparecchi è gratuito. Non buttarlo nell'indifferenziata.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "E tu cosa ci faresti?",
+        "testo": "Salva il post per quando trovi il vecchio telefono nel cassetto, e raccontaci la tua idea nei commenti.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quasi tutti abbiamo un vecchio telefono in un cassetto. Invece di lasciarlo lì, può tornare utile.\n\n4 idee semplici: telecamera di casa, webcam per il PC, stereo della cucina, telecomando o cornice digitale. Basta un ripristino e un caricatore.\n\nE se proprio non ti serve, il ritiro nei punti RAEE e nei negozi di elettronica è gratuito.\n\nQuanti telefoni vecchi hai in casa? 👇",
+    "hashtag": [
+      "riciclo",
+      "smartphone",
+      "fattodate",
+      "tecnologia",
+      "tech",
+      "raee",
+      "sostenibilità",
+      "trucchitech",
+      "smarthome",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "App Alfred e Manything disponibili per Android/iOS",
+      "Webcam dal telefono: Collegamento al telefono/Phone Link su Windows 11 per Android, Continuity Camera su Mac con iPhone",
+      "Ritiro gratuito RAEE piccoli (uno contro zero) nei negozi di elettronica oltre 400 m²"
+    ]
+  }
+}

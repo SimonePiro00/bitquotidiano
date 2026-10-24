@@ -1,0 +1,66 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-10-29",
+  "bozza": {
+    "argomento": "Organizza una gita del weekend con l'AI in 4 prompt, dall'idea all'itinerario",
+    "slides": [
+      {
+        "titolo": "Una gita nel weekend? Organizzala con l'AI in 4 prompt",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "1. Le idee",
+        "testo": "\"Parto da [città] sabato mattina, torno domenica sera, budget [cifra] a testa, mi piacciono [natura, borghi, cibo]. Proponi 5 mete entro 2 ore di auto o treno.\"",
+        "illustrazione": "mappa con percorso tratteggiato da casa a una meta del weekend"
+      },
+      {
+        "titolo": "2. Il programma",
+        "testo": "\"Per [meta] fammi un programma ora per ora: cosa vedere, dove fermarsi a pranzo e una pausa ogni 2 ore. Niente corse.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Il piano B",
+        "testo": "\"E se piove? Dammi 3 alternative al coperto nella stessa zona.\" Meglio saperlo prima che sotto l'ombrello.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. La lista",
+        "testo": "\"Fammi la lista di cosa portare per due giorni in [mese], divisa tra zaino e valigia.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa controllare sempre",
+        "testo": "Orari, prezzi e aperture possono essere vecchi o inventati. Verifica sul sito ufficiale di musei, treni e ristoranti prima di partire.",
+        "illustrazione": "triangolo di attenzione: controlla numeri, date e fonti"
+      },
+      {
+        "titolo": "Il trucco in più",
+        "testo": "Chiudi con: \"Prima di rispondere, fammi le domande che ti servono.\" L'AI ti chiederà chi viaggia, che ritmo preferisci e cosa vuoi evitare.",
+        "illustrazione": "il chatbot fa le domande prima di rispondere"
+      },
+      {
+        "titolo": "Salvalo per il prossimo weekend",
+        "testo": "E taggalo a chi nel gruppo organizza sempre tutto: questa volta fa prima.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Organizzare una gita richiede ore di ricerche. Con un chatbot gratuito puoi passare dall'idea all'itinerario in pochi minuti.\n\nI 4 prompt: le mete, il programma ora per ora, il piano B se piove e la lista di cosa portare. Cambia le parti tra [parentesi] con i tuoi dati.\n\nUnica regola: orari e prezzi vanno sempre controllati sui siti ufficiali, perché l'AI può sbagliarli.\n\nDove andresti questo weekend? 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "chatgpt",
+      "gemini",
+      "viaggi",
+      "weekend",
+      "gitafuoriporta",
+      "prompt",
+      "aiitalia",
+      "tecnologia",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": []
+  }
+}
