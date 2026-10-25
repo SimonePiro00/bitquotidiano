@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "https://www.instagram.com/p/DeR3S5LDn7r/",
   "data_prevista": "2026-10-25",
   "bozza": {
@@ -66,5 +66,7 @@
       "Normativa sulla privacy (GDPR) applicabile all'uso domestico del riconoscimento facciale su altre persone",
       "Possibilità di controllare montature motorizzate di telescopi tramite Raspberry Pi con software open source (es. INDI/KStars, Astroberry)"
     ]
-  }
+  },
+  "media_id": "18116149241027276",
+  "story_id": "17952157941324397"
 }
