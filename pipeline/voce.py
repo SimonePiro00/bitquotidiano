@@ -16,6 +16,7 @@ import numpy as np
 RATE = 44100
 ALZA_TONO = 1.25    # quanto è più acuta della voce originale
 VELOCITA = 0.82     # atempo dopo l'alzata di tono: riporta la voce più o meno alla velocità originale
+ROBOT = 0.6        # quanto effetto robot: 0 voce pulita, 1 solo modulazione
 CACHE = Path.home() / ".cache" / "bitquotidiano"
 MODELLO = CACHE / "it-riccardo_fasol-x-low.onnx"
 URL = "https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-it-riccardo_fasol-x-low.tar.gz"
@@ -65,10 +66,14 @@ def parla(testo: str) -> np.ndarray:
             voce.synthesize_wav(pronuncia(testo), w)
         with wave.open(str(sorgente)) as w:
             rate = w.getframerate()
-        filtro = f"asetrate={int(rate * ALZA_TONO)},aresample={RATE},atempo={VELOCITA}"
+        # Eco cortissimo = suono metallico, da voce in una scatola di latta.
+        filtro = f"asetrate={int(rate * ALZA_TONO)},aresample={RATE},atempo={VELOCITA},aecho=0.8:0.7:6|11:0.45|0.3"
         raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(sorgente), "-af", filtro,
                               "-ac", "1", "-f", "f32le", "-"], capture_output=True, check=True).stdout
-    return np.frombuffer(raw, dtype=np.float32)
+    audio = np.frombuffer(raw, dtype=np.float32)
+    # Modulazione ad anello, il classico effetto "voce da robot", mescolata alla voce pulita per restare chiara.
+    t = np.arange(audio.size) / RATE
+    return (1 - ROBOT) * audio + ROBOT * audio * np.sin(2 * np.pi * 55 * t) * 1.6
 
 
 def salva(audio: np.ndarray, percorso: Path):
