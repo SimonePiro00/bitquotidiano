@@ -1,0 +1,135 @@
+{
+  "periodo": [
+    "2026-10-19",
+    "2026-10-25"
+  ],
+  "profilo": {
+    "id": "17841419448745802",
+    "followers_count": 1,
+    "media_count": 18,
+    "username": "bitquotidiano.it"
+  },
+  "account": {
+    "reach": {
+      "value": 1
+    },
+    "follows_and_unfollows": null,
+    "profile_views": {
+      "value": 0
+    }
+  },
+  "post": [
+    {
+      "id": "18160311964504933",
+      "data": "2026-10-19T18:03:12+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/Der21mNoHb9/",
+      "titolo": "L'intelligenza artificiale non serve solo a chi programma: il modo più semplice per inizia",
+      "reach": 1,
+      "views": 3,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "17871784326648399",
+      "data": "2026-10-20T10:32:34+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DetoEHuFkj0/",
+      "titolo": "È una delle truffe più diffuse in Italia: un SMS ti dice che il tuo pacco è fermo e che ba",
+      "reach": 1,
+      "views": 11,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18074247251743116",
+      "data": "2026-10-21T18:02:43+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DexAYioHeL-/",
+      "titolo": "Quest'anno telefoni e PC costano di più, anche per colpa della corsa alle memorie per l'in",
+      "reach": 1,
+      "views": 2,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18166815397490568",
+      "data": "2026-10-22T10:31:41+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/Deyxj78Fw3E/",
+      "titolo": "Se l'intelligenza artificiale ti dà risposte generiche o sbagliate, spesso il problema è l",
+      "reach": 1,
+      "views": 3,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18128777504483001",
+      "data": "2026-10-23T18:01:58+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/De2J4zwFwIT/",
+      "titolo": "Hai notato che telefoni e computer costano di più? Non è solo un'impressione.",
+      "reach": 1,
+      "views": 3,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "17922439461451419",
+      "data": "2026-10-24T10:32:18+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/De37NnKl-KR/",
+      "titolo": "\"Spazio di archiviazione quasi pieno\": se il messaggio ti suona familiare, non devi per fo",
+      "reach": 1,
+      "views": 4,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18116149241027276",
+      "data": "2026-10-25T19:02:28+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/De7aZIpF2uk/",
+      "titolo": "Il Raspberry Pi costa meno di uno smartphone, ma è molto più versatile di quanto sembri. 🛰",
+      "reach": 1,
+      "views": 6,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    }
+  ]
+}
