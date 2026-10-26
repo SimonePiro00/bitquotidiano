@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-26",
   "bozza": {
@@ -70,5 +70,7 @@
       "Le app gratuite di ChatGPT, Gemini e Copilot accettano foto in ingresso in Italia",
       "L'AI può sbagliare a identificare piante e simboli: il post lo dice"
     ]
-  }
+  },
+  "media_id": "17899441038395201",
+  "story_id": "17974196646152727"
 }
