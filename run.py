@@ -7,11 +7,12 @@ Uso:
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
-  python run.py reel ID [ID...]      # crea reel.mp4 dalle slide della bozza; --stile bit|infografica (voce: pip install piper-tts)
+  python run.py reel ID [ID...]      # crea reel.mp4 (infografica, muto); --stile bit, --voce (pip install piper-tts)
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -152,6 +153,8 @@ def cmd_reel(args):
     from pipeline.reel import make_reel
     from pipeline.reel_info import make_reel_info
 
+    if not args.voce:
+        os.environ["BIT_MUTO"] = "1"   # scelta di Simone (26/10): Reel senza voce
     for id_ in args.id:
         folder = DRAFTS_DIR / id_
         b = json.loads((folder / "bozza.json").read_text())["bozza"]
@@ -195,7 +198,7 @@ def main():
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.add_argument("--senza-reel", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
     an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
-    rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["bit", "infografica"], default="bit"); rl.set_defaults(fn=cmd_reel)
+    rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["bit", "infografica"], default="infografica"); rl.add_argument("--voce", action="store_true"); rl.set_defaults(fn=cmd_reel)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
     args = p.parse_args()
     args.fn(args)

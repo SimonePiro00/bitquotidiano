@@ -11,6 +11,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from .reel import (ACCENT, BG, FG, FPS, H, MUTED, SCURO, W, _bit, _bocca, _chiudi, _codifica, _scene, _tempi)
+from . import musica
 from .render import FONT_BOLD, FONT_REG, _font, _wrap
 
 X0, X1 = 90, 950          # zona sicura orizzontale
@@ -184,6 +185,9 @@ def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4") -> Pa
     with tempfile.TemporaryDirectory() as tmp:
         traccia = Path(tmp) / "voce.wav"
         tempi = _tempi(scene, traccia, pausa_fine=2.0)
+        if not traccia.exists():
+            # Senza voce: musichetta originale, diversa per ogni bozza.
+            musica.salva(musica.genera(sum(tm[0] for tm in tempi) / FPS, folder.name), traccia)
         proc = _codifica(out, traccia)
         t = 0
         for n, ((titolo, corpo, tipo), (totale, inizio, scrittura, seg)) in enumerate(zip(scene, tempi)):

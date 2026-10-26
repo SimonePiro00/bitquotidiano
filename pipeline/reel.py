@@ -17,7 +17,7 @@ import cairosvg
 import numpy as np
 from PIL import Image, ImageDraw
 
-from . import voce
+from . import musica, voce
 from .render import FONT_BOLD, FONT_REG, _font, _wrap
 
 W, H, FPS = 1080, 1920, 30
@@ -199,6 +199,9 @@ def make_reel(folder: Path, slides: list[dict]) -> Path:
     with tempfile.TemporaryDirectory() as tmp:
         traccia = Path(tmp) / "voce.wav"
         tempi = _tempi(scene, traccia)
+        if not traccia.exists():
+            # Senza voce: musichetta originale, diversa per ogni bozza.
+            musica.salva(musica.genera(sum(tm[0] for tm in tempi) / FPS, folder.name), traccia)
         proc = _codifica(out, traccia)
         t = 0
         for n, ((titolo, corpo, tipo), (totale, inizio, scrittura, seg)) in enumerate(zip(scene, tempi)):
