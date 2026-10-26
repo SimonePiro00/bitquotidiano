@@ -7,7 +7,7 @@ Uso:
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
-  python run.py reel ID [ID...]      # crea reel.mp4 dalle slide della bozza
+  python run.py reel ID [ID...]      # crea reel.mp4 dalle slide della bozza (voce: pip install piper-tts)
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
 import argparse

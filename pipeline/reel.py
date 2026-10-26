@@ -3,18 +3,21 @@
 Struttura: Bit saluta e annuncia il titolo (gancio), poi un fumetto per ogni punto con il testo
 che compare parola per parola mentre Bit "parla", infine l'invito a seguire la pagina.
 I fotogrammi sono disegnati con Pillow (Bit da SVG con cairosvg) e codificati con ffmpeg.
-Audio muto: l'API non permette la musica di Instagram.
+Bit parla con una vocina sintetica (pipeline/voce.py); niente musica, l'API non permette quella di Instagram.
 """
 import math
 import re
 import subprocess
+import tempfile
 from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
 
 import cairosvg
+import numpy as np
 from PIL import Image, ImageDraw
 
+from . import voce
 from .render import FONT_BOLD, FONT_REG, _font, _wrap
 
 W, H, FPS = 1080, 1920, 30
@@ -123,41 +126,74 @@ def _disegna_testo(img, pos, parole_visibili):
             return
 
 
+def _battuta(titolo, corpo, tipo):
+    """Cosa dice Bit nella scena: il testo del fumetto letto ad alta voce."""
+    if tipo == "gancio":
+        return f"{titolo} {corpo}"
+    return f"{titolo.rstrip('.!?:')}. {corpo}"
+
+
 def make_reel(folder: Path, slides: list[dict]) -> Path:
     """slides: le slide della bozza (titolo, testo). L'ultima, l'invito finale del carosello,
     viene sostituita dall'invito a seguire la pagina."""
     scene = [("Ciao, sono Bit!", slides[0]["titolo"], "gancio")]
     scene += [(s["titolo"], _sintesi(s["testo"]), "punto") for s in slides[1:-1]]
     scene.append(("Ti è stato utile?", "Seguimi su @bitquotidiano.it: ogni giorno un trucco tech spiegato semplice.", "fine"))
+    con_voce = voce.disponibile()
     out = folder / "reel.mp4"
-    cmd = ["ffmpeg", "-y", "-loglevel", "error",
-           "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-           "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
-           "-c:v", "libx264", "-profile:v", "high", "-pix_fmt", "yuv420p", "-crf", "20",
-           "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out)]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    t = 0
-    for n, (titolo, corpo, tipo) in enumerate(scene):
-        # Nel gancio il titolo del post è il testo grande del fumetto.
-        base, pos = _scena(titolo, corpo, n, len(scene), MUTED if tipo == "gancio" else ACCENT)
-        parole = sum(len(r.split()) for r, *_ in pos)
-        scrittura = parole / PAROLE_AL_SECONDO
-        lettura = {"gancio": 1.5, "fine": 2.0}.get(tipo, min(2.6, 0.8 + parole / 8))
-        totale = int((scrittura + lettura) * FPS)
-        for k in range(totale):
-            sec = k / FPS
-            frame = base.copy()
-            _disegna_testo(frame, pos, int(sec * PAROLE_AL_SECONDO) + 1 if sec < scrittura else parole)
-            parla = sec < scrittura
-            bocca = (1 + (k // 4) % 2) if parla and (k // 4) % 3 else 0
-            occhi = (t % 75) < 4                       # sbatte gli occhi ogni 2,5 secondi
-            braccio = tipo in ("gancio", "fine") and (k // 8) % 2 == 0
-            bob = int(10 * math.sin(t / FPS * 2 * math.pi * 0.8))
-            bit = _bit(bocca, occhi, braccio)
-            frame.paste(bit, ((W - BIT_LATO) // 2, BIT_Y + bob), bit)
-            proc.stdin.write(frame.tobytes())
-            t += 1
-    proc.stdin.close()
-    if proc.wait():
-        raise RuntimeError("ffmpeg non è riuscito a creare il Reel")
+    with tempfile.TemporaryDirectory() as tmp:
+        traccia = Path(tmp) / "voce.wav"
+        audio_in = ["-i", str(traccia)] if con_voce else ["-f", "lavfi", "-i", "anullsrc=channel_layout=mono:sample_rate=44100"]
+        cmd = ["ffmpeg", "-y", "-loglevel", "error",
+               "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", *audio_in,
+               "-c:v", "libx264", "-profile:v", "high", "-pix_fmt", "yuv420p", "-crf", "20",
+               "-c:a", "aac", "-b:a", "128k", "-ac", "2", "-shortest", "-movflags", "+faststart", str(out)]
+        # Prima tutta la voce: la durata di ogni scena dipende da quanto parla Bit.
+        battute = [voce.parla(_battuta(*sc)) if con_voce else None for sc in scene]
+        picco = max((float(np.abs(a).max()) for a in battute if a is not None and a.size), default=1.0)
+        segmenti, frame_scene = [], []
+        for (titolo, corpo, tipo), a in zip(scene, battute):
+            if a is None:
+                parole = len(f"{titolo} {corpo}".split())
+                scrittura = parole / PAROLE_AL_SECONDO
+                durata = scrittura + {"gancio": 1.5, "fine": 2.0}.get(tipo, min(2.6, 0.8 + parole / 8))
+                frame_scene.append((int(durata * FPS), 0, scrittura, None))
+                continue
+            a = a / picco * 0.9
+            prima, dopo = int(0.15 * voce.RATE), int({"gancio": 0.4, "fine": 1.5}.get(tipo, 0.45) * voce.RATE)
+            totale = int((prima + a.size + dopo) / voce.RATE * FPS) + 1
+            campioni = totale * voce.RATE // FPS
+            seg = np.zeros(campioni, dtype=np.float32)
+            seg[prima:prima + a.size] = a
+            segmenti.append(seg)
+            frame_scene.append((totale, prima / voce.RATE, a.size / voce.RATE, seg))
+        if con_voce:
+            voce.salva(np.concatenate(segmenti), traccia)
+        proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+        t = 0
+        for n, ((titolo, corpo, tipo), (totale, inizio, scrittura, seg)) in enumerate(zip(scene, frame_scene)):
+            # Nel gancio il titolo del post è il testo grande del fumetto.
+            base, pos = _scena(titolo, corpo, n, len(scene), MUTED if tipo == "gancio" else ACCENT)
+            parole = sum(len(r.split()) for r, *_ in pos)
+            for k in range(totale):
+                sec = k / FPS - inizio
+                frame = base.copy()
+                # Le parole compaiono man mano che Bit le dice.
+                _disegna_testo(frame, pos, max(1, int(parole * sec / scrittura) + 1) if sec < scrittura else parole)
+                if seg is not None:
+                    finestra = seg[k * voce.RATE // FPS:(k + 1) * voce.RATE // FPS]
+                    volume = float(np.sqrt(np.mean(finestra ** 2))) if finestra.size else 0.0
+                    bocca = 2 if volume > 0.12 else 1 if volume > 0.04 else 0
+                else:
+                    bocca = (1 + (k // 4) % 2) if 0 <= sec < scrittura and (k // 4) % 3 else 0
+                occhi = (t % 75) < 4                       # sbatte gli occhi ogni 2,5 secondi
+                braccio = tipo in ("gancio", "fine") and (k // 8) % 2 == 0
+                bob = int(10 * math.sin(t / FPS * 2 * math.pi * 0.8))
+                bit = _bit(bocca, occhi, braccio)
+                frame.paste(bit, ((W - BIT_LATO) // 2, BIT_Y + bob), bit)
+                proc.stdin.write(frame.tobytes())
+                t += 1
+        proc.stdin.close()
+        if proc.wait():
+            raise RuntimeError("ffmpeg non è riuscito a creare il Reel")
     return out
