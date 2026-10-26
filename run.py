@@ -6,6 +6,7 @@ Uso:
   python run.py list                  # elenca le bozze e il loro stato
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
+  python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
 import argparse
@@ -142,6 +143,16 @@ def cmd_leggi(args):
     salva(args.account.lstrip("@"), [l for l in args.link.replace(",", " ").split() if l])
 
 
+def cmd_analisi(args):
+    from pipeline.analisi import analizza
+
+    risultato = analizza(args.dal, args.al)
+    out = Path("analisi") / f"{args.dal}_{args.al}.json"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(risultato, ensure_ascii=False, indent=2))
+    print(json.dumps(risultato, ensure_ascii=False, indent=2))
+
+
 def cmd_demo(args):
     from pipeline.generate import Bozza
 
@@ -159,6 +170,7 @@ def main():
     sub.add_parser("list").set_defaults(fn=cmd_list)
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
+    an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
     args = p.parse_args()
     args.fn(args)

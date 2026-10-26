@@ -1,0 +1,32 @@
+# Legge i risultati (Insights) dei post pubblicati in un periodo e li salva in analisi/. Non pubblica nulla.
+name: Analisi risultati
+on:
+  workflow_dispatch:
+    inputs:
+      dal: {description: "Data di inizio (AAAA-MM-GG)", required: true}
+      al: {description: "Data di fine (AAAA-MM-GG)", required: true}
+  push:
+    branches: [claude/project-thread-1obi9s]
+    paths: [analisi/richiesta.txt]
+permissions:
+  contents: write
+jobs:
+  analisi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - run: |
+          if [ -z "$DAL" ]; then read DAL AL < analisi/richiesta.txt; fi
+          python run.py analisi --dal "$DAL" --al "$AL"
+        env:
+          DAL: ${{ inputs.dal }}
+          AL: ${{ inputs.al }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+      - if: always()
+        run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add analisi && git commit -m "Analisi risultati" && git push || echo "Nessuna novità"
