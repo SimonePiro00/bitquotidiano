@@ -1,0 +1,21 @@
+# Crea campioni audio delle voci di Bit per sceglierne una. Non pubblica nulla.
+name: Campioni voce
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-1obi9s]
+    paths: [voci/campioni.sh]
+permissions:
+  contents: write
+jobs:
+  voci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy piper-tts && sudo apt-get install -y -q ffmpeg
+      - run: bash voci/campioni.sh
+      - run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add voci/campioni && git commit -m "Campioni voce di Bit" && git push || echo "Nessuna novità"
