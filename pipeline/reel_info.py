@@ -4,6 +4,7 @@ Gancio con il titolo, poi un passo per ogni punto (numero grande, titolo, illust
 se c'è, testo che compare mentre Bit lo dice), infine un riepilogo a spunte e l'invito a seguire la pagina.
 """
 import math
+import re
 import tempfile
 from pathlib import Path
 
@@ -131,9 +132,13 @@ def _punto(n, tot, titolo, corpo, ill, sec, k, t, seg, scrittura):
         img.paste(im, (X0 + (LARGHEZZA - im.width) // 2, int(y + (h_ill - im.height) / 2)), im)
         y += h_ill + 40
     parole = len(corpo.split())
-    visibili = parole if sec >= scrittura else max(0, int(parole * sec / max(scrittura, 0.1)) + 1)
+    if seg is None:
+        # Senza voce il testo compare tutto insieme: ognuno lo legge con i suoi tempi.
+        visibili, colore = parole, _mix(FG, _ease((k - 12) / 10))
+    else:
+        visibili, colore = parole if sec >= scrittura else max(0, int(parole * sec / max(scrittura, 0.1)) + 1), FG
     for r in _righe_visibili(rc, visibili):
-        d.text((X0, y), r, font=fc, fill=FG)
+        d.text((X0, y), r, font=fc, fill=colore)
         y += sc * 1.35
     return img
 
@@ -168,7 +173,8 @@ def _riepilogo(titoli, invito, sec, k, t, seg, scrittura, tot):
 
 
 def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4") -> Path:
-    scene = _scene(slides)
+    # I titoli del carosello a volte sono già numerati ("2. Libera il disco"): qui il numero c'è già.
+    scene = [(re.sub(r"^\d+[.)]\s*", "", t), c, tipo) for t, c, tipo in _scene(slides)]
     punti = scene[1:-1]
     illustrazioni = []
     for i in range(1, len(slides) - 1):
