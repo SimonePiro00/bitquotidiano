@@ -78,3 +78,12 @@ def publish_story(image_url: str) -> str:
     container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
     _wait_ready(container)
     return _publish(ig, container, "stories")
+
+
+def publish_reel(video_url: str, caption: str) -> str:
+    """Pubblica un Reel solo nella sezione Reel (share_to_feed=false), per non doppiare il carosello
+    nella griglia. I video richiedono più tempo di elaborazione delle immagini."""
+    ig = env("IG_USER_ID", required=True).strip()
+    container = _post(f"{ig}/media", media_type="REELS", video_url=video_url, caption=caption, share_to_feed="false")["id"]
+    _wait_ready(container, attempts=72)
+    return _publish(ig, container, "media", caption)

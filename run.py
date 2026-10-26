@@ -7,6 +7,7 @@ Uso:
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
+  python run.py reel ID [ID...]      # crea reel.mp4 dalle slide della bozza
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
 import argparse
@@ -108,33 +109,52 @@ def _attendi_pages(files: list[Path], urls: list[str], tentativi: int = 30) -> N
 
 
 def cmd_publish(args):
-    from pipeline.publish import publish_carousel, publish_story
+    from pipeline.publish import publish_carousel, publish_reel, publish_story
 
     if not args.conferma:
         sys.exit("Aggiungi --conferma per pubblicare davvero.")
     folder = DRAFTS_DIR / args.id
     record = json.loads((folder / "bozza.json").read_text())
-    gia_pubblicata = record["stato"] == "pubblicata"
-    if gia_pubblicata and (record.get("story_id") or args.senza_storia):
+    story, reel = folder / "story.jpg", folder / "reel.mp4"
+    fai_post = record["stato"] != "pubblicata"
+    fai_storia = story.exists() and not args.senza_storia and not record.get("story_id")
+    fai_reel = reel.exists() and not args.senza_reel and not record.get("reel_id")
+    if not (fai_post or fai_storia or fai_reel):
         sys.exit("Bozza già pubblicata.")
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
     slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
     urls = [f"{base}/{args.id}/{p.name}" for p in slides]
-    files = slides + [folder / "story.jpg"] if (folder / "story.jpg").exists() else slides
+    files = slides + [f for f, usa in [(story, fai_storia), (reel, fai_reel)] if usa]
     _attendi_pages(files, [f"{base}/{args.id}/{p.name}" for p in files])
     b = record["bozza"]
-    caption = b["didascalia"] + "\n\n" + " ".join(f"#{h}" for h in b["hashtag"])
-    if gia_pubblicata:
-        print(f"Post già pubblicato ({record.get('media_id')}): pubblico solo la storia.")
-    else:
-        record["media_id"] = publish_carousel(urls, caption)
+    hashtag = " ".join(f"#{h}" for h in b["hashtag"])
+    salva = lambda: (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+    if fai_post:
+        record["media_id"] = publish_carousel(urls, b["didascalia"] + "\n\n" + hashtag)
         record["stato"] = "pubblicata"
-        (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+        salva()
         print(f"Post pubblicato: {record['media_id']}")
-    if (folder / "story.jpg").exists() and not args.senza_storia:
+    else:
+        print(f"Post già pubblicato ({record.get('media_id')}).")
+    if fai_storia:
         record["story_id"] = publish_story(f"{base}/{args.id}/story.jpg")
+        salva()
         print(f"Storia pubblicata: {record['story_id']}")
-        (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
+    if fai_reel:
+        # La didascalia del Reel parte dal titolo, così non si confonde con quella del carosello.
+        titolo = b["slides"][0]["titolo"]
+        record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", f"{titolo}\n\n{b['didascalia']}\n\n{hashtag}")
+        salva()
+        print(f"Reel pubblicato: {record['reel_id']}")
+
+
+def cmd_reel(args):
+    from pipeline.reel import make_reel
+
+    for id_ in args.id:
+        folder = DRAFTS_DIR / id_
+        b = json.loads((folder / "bozza.json").read_text())["bozza"]
+        print(make_reel(folder, b["slides"]))
 
 
 def cmd_leggi(args):
@@ -168,9 +188,10 @@ def main():
     c = sub.add_parser("check"); c.add_argument("--backfill", type=int, default=0); c.add_argument("--rigenera", default=""); c.set_defaults(fn=cmd_check)
     pn = sub.add_parser("piano"); pn.add_argument("--giorni", type=int, default=1); pn.add_argument("--data", default=""); pn.add_argument("--rigenera", action="store_true"); pn.set_defaults(fn=cmd_piano)
     sub.add_parser("list").set_defaults(fn=cmd_list)
-    pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.set_defaults(fn=cmd_publish)
+    pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.add_argument("--senza-reel", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
     an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
+    rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.set_defaults(fn=cmd_reel)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
     args = p.parse_args()
     args.fn(args)
