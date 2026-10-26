@@ -15,7 +15,7 @@ import numpy as np
 
 RATE = 44100
 ALZA_TONO = 1.25    # quanto è più acuta della voce originale
-VELOCITA = 1.08     # atempo dopo l'alzata di tono: un po' più svelta dell'originale, come un robottino
+VELOCITA = 0.82     # atempo dopo l'alzata di tono: riporta la voce più o meno alla velocità originale
 CACHE = Path.home() / ".cache" / "bitquotidiano"
 MODELLO = CACHE / "it-riccardo_fasol-x-low.onnx"
 URL = "https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-it-riccardo_fasol-x-low.tar.gz"
