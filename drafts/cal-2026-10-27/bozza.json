@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-27",
   "bozza": {
@@ -71,5 +71,8 @@
       "Le banche dichiarano di non chiedere mai codici o PIN al telefono",
       "Sito Polizia Postale: commissariatodips.it"
     ]
-  }
+  },
+  "media_id": "18343289209260073",
+  "story_id": "17953736664270207",
+  "reel_id": "18110811371621889"
 }
