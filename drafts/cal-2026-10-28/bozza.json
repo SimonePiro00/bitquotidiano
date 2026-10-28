@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-28",
   "bozza": {
@@ -70,5 +70,6 @@
       "Percorsi di Windows 11: Gestione attività > App di avvio; Impostazioni > Sistema > Archiviazione > Consigli per la pulizia; Impostazioni > Sistema > Ripristino > Reimposta il PC",
       "Con Windows 10 i nomi dei menu cambiano leggermente"
     ]
-  }
+  },
+  "media_id": "18027538103879845"
 }
