@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-29",
   "bozza": {
@@ -62,5 +62,8 @@
     ],
     "infografica": null,
     "da_verificare": []
-  }
+  },
+  "media_id": "18154463032533710",
+  "story_id": "18131154100692863",
+  "reel_id": "18335928721277012"
 }
