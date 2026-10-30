@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-30",
   "bozza": {
@@ -65,5 +65,8 @@
       "Regolamento UE 2023/1670 (ecodesign smartphone e tablet): applicabile dal 20 giugno 2025, aggiornamenti del sistema operativo per almeno 5 anni dalla fine dell'immissione sul mercato",
       "Percorsi dei menu su Android cambiano tra marche"
     ]
-  }
+  },
+  "media_id": "17873485257637359",
+  "story_id": "18161073598499292",
+  "reel_id": "18097711250418489"
 }
