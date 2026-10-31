@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-10-31",
   "bozza": {
@@ -65,5 +65,8 @@
       "Disdetta dei piani mensili: il servizio resta attivo fino a fine periodo per Netflix, Disney+, Prime Video, NOW",
       "Stima del risparmio: 3 servizi in meno a circa 9-10 € al mese = oltre 300 € l'anno"
     ]
-  }
+  },
+  "media_id": "17915174823499521",
+  "story_id": "18121450036946946",
+  "reel_id": "18095230085657320"
 }
