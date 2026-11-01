@@ -1,0 +1,75 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-08",
+  "bozza": {
+    "argomento": "Passkey: cosa sono, perché sostituiscono le password e come attivarle sui servizi più usati",
+    "slides": [
+      {
+        "titolo": "Addio password? Arrivano le passkey",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Cosa sono",
+        "testo": "Una passkey ti fa entrare in un account con l'impronta, il volto o il PIN del telefono, senza scrivere nessuna password.",
+        "illustrazione": "chiave e impronta digitale al posto della password"
+      },
+      {
+        "titolo": "Perché sono più sicure",
+        "testo": "Non c'è una password da rubare o da indovinare, e funzionano solo sul sito vero: un sito truffa non può usarle.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Chi le usa già",
+        "testo": "Google, Apple, Microsoft, Amazon, PayPal e WhatsApp, e la lista cresce ogni mese.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Come attivarla su Google",
+        "testo": "Vai su myaccount.google.com, poi Sicurezza e \"Passkey e token di sicurezza\": crea una passkey e conferma con l'impronta.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Sugli altri servizi",
+        "testo": "Cerca \"passkey\" nelle impostazioni di sicurezza dell'account. Spesso il sito te la propone da solo al prossimo accesso.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "E se perdo il telefono?",
+        "testo": "Le passkey si salvano nel portachiavi di Google o di Apple e tornano sul telefono nuovo quando accedi con il tuo account.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Un consiglio",
+        "testo": "Tieni comunque attivo un secondo metodo di accesso, come il numero di telefono, per non restare chiuso fuori.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo e prova oggi",
+        "testo": "Inizia dall'account Google: ci vogliono due minuti.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quante password diverse usi davvero? 🔑\n\nLe passkey le stanno sostituendo: entri con impronta, volto o PIN del telefono, e non c'è niente da rubare o da indovinare.\n\nGoogle, Apple, Microsoft, Amazon e WhatsApp le supportano già. Inizia dal tuo account Google: ci vogliono due minuti.\n\nLe hai già attivate? 👇",
+    "hashtag": [
+      "passkey",
+      "password",
+      "sicurezza",
+      "google",
+      "privacy",
+      "account",
+      "trucchitech",
+      "tecnologia",
+      "cybersecurity",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Elenco servizi con passkey",
+      "Percorso Google: Sicurezza > Passkey e token di sicurezza"
+    ],
+    "gancio": "Le *password* stanno per sparire. Ecco cosa le sostituisce."
+  }
+}

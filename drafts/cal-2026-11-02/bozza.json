@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-02",
+  "bozza": {
+    "argomento": "Contratti, bollette e documenti lunghi: farseli spiegare da un chatbot gratuito in un minuto",
+    "slides": [
+      {
+        "titolo": "Contratti e bollette? Fatteli spiegare dall'AI",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il problema",
+        "testo": "Contratti del telefono, condizioni di un conto, bollette: pagine fitte che nessuno legge. Ma i punti che contano sono quasi sempre gli stessi.",
+        "illustrazione": "documento lungo che diventa tre punti chiari in una chat"
+      },
+      {
+        "titolo": "1. Carica il documento",
+        "testo": "Nelle versioni gratuite di ChatGPT, Gemini e Copilot puoi caricare un PDF o una foto del foglio. Prima cancella o copri codice fiscale, IBAN e indirizzo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. Chiedi le cose giuste",
+        "testo": "Prova: \"Spiegami in 5 punti semplici questo contratto: durata, costi totali, come si disdice, penali, cosa cambia dopo il primo anno.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Cerca le trappole",
+        "testo": "Poi chiedi: \"Ci sono costi nascosti, rinnovi automatici o aumenti previsti? Indicami la pagina e la frase esatta.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. Bolletta strana?",
+        "testo": "Carica la bolletta e scrivi: \"Perché questo mese pago di più rispetto al mese scorso? Confronta le voci una per una.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Controlla sempre",
+        "testo": "L'AI può sbagliare o inventare. Vai a rileggere tu le frasi che ti indica, soprattutto prima di firmare o di disdire.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa non fare",
+        "testo": "Non caricare documenti con dati sanitari o password, e non usare la risposta come parere legale: per dubbi seri chiedi a un'associazione consumatori.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo per la prossima bolletta",
+        "testo": "E mandalo a chi firma tutto senza leggere.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quante volte hai firmato un contratto senza leggerlo? 🙋\n\nCon un chatbot gratuito puoi farti spiegare in un minuto durata, costi, penali e come si disdice, chiedendo anche la frase esatta da andare a controllare.\n\nDue regole: copri i tuoi dati personali prima di caricare il documento, e verifica sempre tu le frasi che ti indica.\n\nQual è il contratto più incomprensibile che hai firmato? 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "chatgpt",
+      "gemini",
+      "bollette",
+      "contratti",
+      "risparmio",
+      "trucchitech",
+      "tecnologia",
+      "consigli",
+      "ai",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Caricamento di file nelle versioni gratuite di ChatGPT, Gemini e Copilot (possibili limiti giornalieri)"
+    ],
+    "gancio": "Contratto di *20 pagine?* Fattelo spiegare in un minuto."
+  }
+}

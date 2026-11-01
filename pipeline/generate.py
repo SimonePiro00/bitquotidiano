@@ -64,6 +64,7 @@ class Bozza(BaseModel):
     hashtag: list[str] = Field(description="8-15 hashtag pertinenti, senza #")
     infografica: Infografica | None = Field(description="Inserita come seconda slide")
     da_verificare: list[str] = Field(description="Affermazioni da controllare prima di pubblicare")
+    gancio: str | None = Field(default=None, description="Frase d'apertura del Reel, che parla a chi guarda; parole chiave tra *asterischi*")
 
 
 def _image_urls(post: dict) -> list[str]:

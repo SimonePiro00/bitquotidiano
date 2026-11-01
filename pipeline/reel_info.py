@@ -4,13 +4,14 @@ Gancio con il titolo, poi un passo per ogni punto (numero grande, titolo, illust
 se c'è, testo che compare mentre Bit lo dice), infine un riepilogo a spunte e l'invito a seguire la pagina.
 """
 import math
+from functools import lru_cache
 import re
 import tempfile
 from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from .reel import (ACCENT, BG, FG, FPS, H, MUTED, SCURO, W, _bit, _bocca, _chiudi, _codifica, _scene, _tempi)
+from .reel import (ACCENT, BG, FG, FPS, H, MUTED, SCURO, W, _bit, _bocca, _chiudi, _codifica, _scene, _sintesi, _tempi)
 from . import musica
 from .render import FONT_BOLD, FONT_REG, _font, _wrap
 
@@ -73,25 +74,82 @@ def _righe_visibili(righe, parole_visibili):
     return out
 
 
-def _gancio(titolo, sec, k, t, seg, scrittura, n_punti):
+def _righe_evidenziate(d, testo, font, larghezza):
+    """Va a capo come _wrap, ma tiene in arancio il testo tra *asterischi* (anche a metà parola, es. *"ciao"*:).
+    Restituisce righe di parole; ogni parola è una lista di pezzi (testo, arancio)."""
+    righe, riga, w_riga, acceso = [], [], 0, False
+    spazio = d.textlength(" ", font=font)
+    for parola in testo.split():
+        pezzi, corrente = [], ""
+        for c in parola:
+            if c == "*":
+                if corrente:
+                    pezzi.append((corrente, acceso))
+                corrente, acceso = "", not acceso
+            else:
+                corrente += c
+        if corrente:
+            pezzi.append((corrente, acceso))
+        lw = sum(d.textlength(t, font=font) for t, _ in pezzi)
+        if riga and w_riga + spazio + lw > larghezza:
+            righe.append(riga)
+            riga, w_riga = [], 0
+        w_riga += (spazio if riga else 0) + lw
+        riga.append(pezzi)
+    if riga:
+        righe.append(riga)
+    return righe
+
+
+@lru_cache(maxsize=4)
+def _fondo_gancio(testo, n_punti):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
-    _testata(d, -1, 0)
-    a = _ease(k / 12)
-    d.text((X0, 420 - 40 * (1 - a)), f"IN {n_punti} PUNTI", font=_font(FONT_BOLD, 44), fill=_mix(ACCENT, a))
-    for size in (100, 90, 80, 70):
+    for size in (124, 112, 100, 90, 80):
         f = _font(FONT_BOLD, size)
-        righe = _wrap(d, titolo, f, LARGHEZZA)
-        if len(righe) * size * 1.2 <= 560:
+        righe = _righe_evidenziate(d, testo, f, LARGHEZZA)
+        if len(righe) * size * 1.15 <= 700:
             break
-    y = 500
-    for i, r in enumerate(righe):
-        ai = _ease((k - 6 - 5 * i) / 12)
-        d.text((X0 + 60 * (1 - ai), y), r, font=f, fill=_mix(FG, ai))
-        y += size * 1.2
-    d.rounded_rectangle([X0, y + 30, X0 + 260 * _ease((k - 20) / 15), y + 46], 8, fill=ACCENT)
-    bit = _bit_piccolo(_bocca(seg, k, sec, scrittura), (t % 75) < 4, (k // 8) % 2 == 0, 420)
-    img.paste(bit, ((W - 420) // 2, int(1060 + 10 * math.sin(t / FPS * 5))), bit)
+    y = 330
+    spazio = d.textlength(" ", font=f)
+    for riga in righe:
+        x = X0
+        for pezzi in riga:
+            for pezzo, arancio in pezzi:
+                d.text((x, y), pezzo, font=f, fill=ACCENT if arancio else FG)
+                x += d.textlength(pezzo, font=f)
+            x += spazio
+        y += size * 1.15
+    fi = _font(FONT_BOLD, 46)
+    d.text((X0, y + 50), f"{n_punti} cose da sapere ↓", font=fi, fill=MUTED)
+    return img, int(y + 110)
+
+
+def _gancio(testo, sec, k, t, seg, scrittura, n_punti):
+    """Primo secondo: frase-gancio enorme già leggibile al fotogramma 0, con un leggero zoom all'indietro,
+    e Bit che spunta dal basso con un punto esclamativo."""
+    base, fine_testo = _fondo_gancio(testo, n_punti)
+    z = 1 + 0.04 * (1 - _ease(k / 18))
+    if z > 1.001:
+        lw, lh = int(W / z), int(H / z)
+        x0, y0 = (W - lw) // 2, int((H - lh) * 0.3)
+        img = base.crop((x0, y0, x0 + lw, y0 + lh)).resize((W, H), Image.BILINEAR)
+    else:
+        img = base.copy()
+    d = ImageDraw.Draw(img)
+    d.text((X0, 170), "@bitquotidiano.it", font=_font(FONT_BOLD, 38), fill=ACCENT)
+    lato = 460
+    sale = _ease(k / 8)
+    arrivo = max(1080, fine_testo + 70)             # Bit e il "!" non coprono mai il testo
+    y_bit = int(1500 - (1500 - arrivo) * sale + 8 * math.sin(t / FPS * 6))
+    bit = _bit_piccolo(_bocca(seg, k, sec, scrittura), False, True, lato)
+    img.paste(bit, (X1 - lato, y_bit), bit)
+    if k >= 6:
+        # Il fumetto con il punto esclamativo "pulsa" per attirare l'occhio.
+        r = int(52 + 6 * math.sin(k / 3))
+        cx, cy = X1 - lato - 20, y_bit + 60
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ACCENT)
+        d.text((cx, cy), "!", font=_font(FONT_BOLD, 76), fill=BG, anchor="mm")
     return img
 
 
@@ -99,7 +157,7 @@ def _punto(n, tot, titolo, corpo, ill, sec, k, t, seg, scrittura):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
     _testata(d, n, tot)
-    a = _ease(k / 10)
+    a = _ease(k / 5)
     d.text((X0 - 80 * (1 - a), 360), f"{n + 1:02d}", font=_font(FONT_BOLD, 180), fill=_mix(ACCENT, a))
     bit = _bit_piccolo(_bocca(seg, k, sec, scrittura), (t % 75) < 4, False)
     img.paste(bit, (X1 - BIT_LATO, int(350 + 8 * math.sin(t / FPS * 5))), bit)
@@ -115,17 +173,17 @@ def _punto(n, tot, titolo, corpo, ill, sec, k, t, seg, scrittura):
         rt, rc = _wrap(d, titolo, ft, LARGHEZZA), _wrap(d, corpo, fc, LARGHEZZA)
         h_ill = int(alto_ill * ridu)
         h = len(rt) * st * 1.18 + 70 + (h_ill + 40 if ill is not None else 0) + len(rc) * sc * 1.35
-        if 600 + h <= 1480:
+        if 600 + h <= 1370:
             break
-    y = 600 if ill is not None else max(600, 600 + (880 - h) / 3)   # senza illustrazione il testo scende un po'
-    at = _ease((k - 4) / 10)
+    y = 600 if ill is not None else max(600, 600 + (770 - h) / 3)   # senza illustrazione il testo scende un po'
+    at = _ease((k - 1) / 6)
     for r in rt:
         d.text((X0 + 50 * (1 - at), y), r, font=ft, fill=_mix(FG, at))
         y += st * 1.18
-    d.rounded_rectangle([X0, y + 18, X0 + 200 * _ease((k - 10) / 12), y + 30], 6, fill=ACCENT)
+    d.rounded_rectangle([X0, y + 18, X0 + 200 * _ease((k - 4) / 8), y + 30], 6, fill=ACCENT)
     y += 70
     if ill is not None:
-        ai = _ease((k - 8) / 12)
+        ai = _ease((k - 3) / 8)
         alto = int(h_ill * (0.85 + 0.15 * ai))
         im = ill.resize((int(alto * ill.width / ill.height), alto), Image.LANCZOS)
         if ai < 1:
@@ -135,7 +193,7 @@ def _punto(n, tot, titolo, corpo, ill, sec, k, t, seg, scrittura):
     parole = len(corpo.split())
     if seg is None:
         # Senza voce il testo compare tutto insieme: ognuno lo legge con i suoi tempi.
-        visibili, colore = parole, _mix(FG, _ease((k - 12) / 10))
+        visibili, colore = parole, _mix(FG, _ease((k - 4) / 6))
     else:
         visibili, colore = parole if sec >= scrittura else max(0, int(parole * sec / max(scrittura, 0.1)) + 1), FG
     for r in _righe_visibili(rc, visibili):
@@ -173,9 +231,26 @@ def _riepilogo(titoli, invito, sec, k, t, seg, scrittura, tot):
     return img
 
 
-def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4") -> Path:
+def _sovrimpressioni(frame, t, totale, mostra_invito):
+    """Barra di avanzamento di tutto il video (si vede che è corto) e, da metà, l'invito a seguire."""
+    d = ImageDraw.Draw(frame)
+    d.rectangle([0, 0, W, 12], fill=SCURO)
+    d.rectangle([0, 0, int(W * t / totale), 12], fill=ACCENT)
+    if mostra_invito:
+        f = _font(FONT_BOLD, 40)
+        testo = "+ Segui @bitquotidiano.it"
+        lt = d.textlength(testo, font=f)
+        d.rounded_rectangle([X0, 1390, X0 + lt + 50, 1462], 36, fill=ACCENT)
+        d.text((X0 + 25, 1426), testo, font=f, fill=BG, anchor="lm")
+    return frame
+
+
+def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4", gancio: str | None = None) -> Path:
+    """gancio: frase d'apertura (parole tra *asterischi* in arancio); se manca si usa il titolo."""
     # I titoli del carosello a volte sono già numerati ("2. Libera il disco"): qui il numero c'è già.
     scene = [(re.sub(r"^\d+[.)]\s*", "", t), c, tipo) for t, c, tipo in _scene(slides)]
+    # Testi più brevi: i Reel devono durare circa 20 secondi.
+    scene = [(t, _sintesi(slides[n]["testo"], 80) if tipo == "punto" else c, tipo) for n, (t, c, tipo) in enumerate(scene)]
     punti = scene[1:-1]
     illustrazioni = []
     for i in range(1, len(slides) - 1):
@@ -186,6 +261,17 @@ def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4") -> Pa
         traccia = Path(tmp) / "voce.wav"
         tempi = _tempi(scene, traccia, pausa_fine=2.0)
         if not traccia.exists():
+            # Senza voce il ritmo è veloce: 2 s di gancio, 2-3 s per punto, 3 s di riepilogo.
+            def durata(titolo, corpo, tipo):
+                if tipo == "gancio":
+                    return 2.0
+                if tipo == "fine":
+                    return 3.0
+                return min(3.2, 1.3 + len(f"{titolo} {corpo}".split()) / 7)
+            tempi = [(int(durata(*sc) * FPS), 0, 0.1, None) for sc in scene]
+        totale_video = sum(tm[0] for tm in tempi)
+        meta = sum(tm[0] for tm in tempi[:1 + len(punti) // 2])
+        if not traccia.exists():
             # Senza voce: musichetta originale, diversa per ogni bozza.
             musica.salva(musica.genera(sum(tm[0] for tm in tempi) / FPS, folder.name), traccia)
         proc = _codifica(out, traccia)
@@ -194,12 +280,16 @@ def make_reel_info(folder: Path, slides: list[dict], nome="reel_info.mp4") -> Pa
             for k in range(totale):
                 sec = k / FPS - inizio
                 if tipo == "gancio":
-                    frame = _gancio(corpo, sec, k, t, seg, scrittura, len(punti))
+                    frame = _gancio(gancio or corpo, sec, k, t, seg, scrittura, len(punti))
                 elif tipo == "fine":
                     frame = _riepilogo([p[0] for p in punti], "Segui @bitquotidiano.it per un trucco tech al giorno",
                                        sec, k, t, seg, scrittura, len(punti))
                 else:
                     frame = _punto(n - 1, len(punti), titolo, corpo, illustrazioni[n - 1], sec, k, t, seg, scrittura)
+                if tipo != "fine":
+                    frame = _sovrimpressioni(frame, t, totale_video, t >= meta)
+                else:
+                    frame = _sovrimpressioni(frame, t, totale_video, False)
                 proc.stdin.write(frame.tobytes())
                 t += 1
         _chiudi(proc)
