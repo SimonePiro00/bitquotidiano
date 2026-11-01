@@ -159,7 +159,7 @@ def cmd_reel(args):
         folder = DRAFTS_DIR / id_
         b = json.loads((folder / "bozza.json").read_text())["bozza"]
         if args.stile == "infografica":
-            print(make_reel_info(folder, b["slides"], "reel.mp4"))
+            print(make_reel_info(folder, b["slides"], "reel.mp4", b.get("gancio")))
         else:
             print(make_reel(folder, b["slides"]))
 
