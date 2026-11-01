@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-01",
   "bozza": {
@@ -66,5 +66,8 @@
       "Webcam dal telefono: Collegamento al telefono/Phone Link su Windows 11 per Android, Continuity Camera su Mac con iPhone",
       "Ritiro gratuito RAEE piccoli (uno contro zero) nei negozi di elettronica oltre 400 m²"
     ]
-  }
+  },
+  "media_id": "17960188920266727",
+  "story_id": "18119699485981640",
+  "reel_id": "18120956335977174"
 }
