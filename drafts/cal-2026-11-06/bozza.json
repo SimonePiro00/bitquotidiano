@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-06",
+  "bozza": {
+    "argomento": "Come capire se una foto è stata creata con l'intelligenza artificiale: 5 indizi da controllare",
+    "slides": [
+      {
+        "titolo": "Foto vera o fatta con l'AI? 5 indizi",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Perché conta",
+        "testo": "Le immagini create con l'AI sono sempre più realistiche e girano ogni giorno sui social e nelle chat, spesso per far arrabbiare o per truffare.",
+        "illustrazione": "foto sospetta con i dettagli da controllare: mani, testo, sfondo, ombre"
+      },
+      {
+        "titolo": "1. Mani e dettagli",
+        "testo": "Guarda mani, orecchie, denti e gioielli: dita in più, forme che si fondono o orecchini diversi sono ancora errori frequenti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "2. Scritte e cartelli",
+        "testo": "Le scritte sullo sfondo spesso sono parole senza senso o lettere deformate.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Luce e ombre",
+        "testo": "Ombre che vanno in direzioni diverse o riflessi che non corrispondono alla scena sono un campanello d'allarme.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. Troppo perfetta",
+        "testo": "Pelle liscissima, sfondo sfocato ovunque e un aspetto \"da cartolina\": se sembra troppo bella, insospettisciti.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Cerca la fonte",
+        "testo": "Con Google Lens o la ricerca per immagine puoi vedere dove è apparsa la foto per prima e se qualcuno l'ha già smentita.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Non basta un indizio",
+        "testo": "Nessun trucco è sicuro al 100%: guarda più indizi insieme e chiediti chi ha pubblicato la foto e perché.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo nel gruppo di famiglia",
+        "testo": "Prima che arrivi la prossima foto incredibile.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Hai mai condiviso una foto che poi si è scoperta finta? 👀\n\nLe immagini create con l'AI sono sempre più realistiche, ma lasciano ancora tracce: mani strane, scritte senza senso, ombre che non tornano.\n\nE quando hai un dubbio, la ricerca per immagine ti dice da dove arriva la foto.\n\nMandalo nel gruppo di famiglia 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "fakenews",
+      "deepfake",
+      "foto",
+      "ai",
+      "sicurezza",
+      "tecnologia",
+      "trucchitech",
+      "googlelens",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Gli errori tipici (mani, scritte) diminuiscono con i modelli più recenti"
+    ],
+    "gancio": "Questa foto è vera? *5 indizi* per scoprire se l'ha fatta l'AI."
+  }
+}

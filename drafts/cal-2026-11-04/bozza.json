@@ -1,0 +1,75 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-04",
+  "bozza": {
+    "argomento": "Wi-Fi di casa lento: 5 cose da provare prima di chiamare l'operatore",
+    "slides": [
+      {
+        "titolo": "Wi-Fi lento? 5 cose da provare prima di chiamare",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "1. Dove sta il router",
+        "testo": "Il router va in alto e al centro della casa, non dentro un mobile o dietro la TV. Muri spessi, specchi e acquari bloccano il segnale.",
+        "illustrazione": "router in alto e al centro della casa, lontano da muri spessi e microonde"
+      },
+      {
+        "titolo": "2. Riavvialo bene",
+        "testo": "Spegnilo, aspetta 30 secondi e riaccendilo. Sembra banale, ma risolve molti rallentamenti dovuti a giorni di lavoro senza pause.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "3. Scegli la rete giusta",
+        "testo": "Molti router hanno due reti: 5 GHz è più veloce ma arriva meno lontano, 2,4 GHz arriva lontano ma è più lenta. Vicino al router usa la 5 GHz.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "4. Capisci di chi è la colpa",
+        "testo": "Fai uno speed test con il PC collegato al router via cavo. Se è lento anche così, il problema è la linea: allora chiama l'operatore.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "5. Lontano dal microonde",
+        "testo": "Il microonde acceso disturba la rete a 2,4 GHz. Anche i telefoni cordless e altri router vicini possono interferire.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Casa grande?",
+        "testo": "Se in alcune stanze il segnale non arriva, un sistema mesh o un ripetitore costa meno di quanto pensi e copre tutta la casa.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Quando chiamare",
+        "testo": "Se dopo questi passaggi lo speed test via cavo resta molto sotto la velocità del contratto, chiama l'operatore con i numeri alla mano.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo e mandalo",
+        "testo": "A chi in casa dice sempre \"internet non va\".",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il Wi-Fi rallenta proprio quando serve? 🐢\n\nPrima di passare un'ora al telefono con l'operatore, prova questi 5 passaggi: posizione del router, riavvio, rete a 5 GHz, speed test via cavo e interferenze.\n\nSpesso il problema è dentro casa, non nella linea.\n\nIn che stanza di casa tua il Wi-Fi non arriva? 👇",
+    "hashtag": [
+      "wifi",
+      "internet",
+      "router",
+      "casa",
+      "fibra",
+      "trucchitech",
+      "tecnologia",
+      "tech",
+      "consigli",
+      "smarthome",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Interferenze del microonde sulla banda 2,4 GHz",
+      "Nomi delle reti 2,4/5 GHz variano per router"
+    ],
+    "gancio": "Wi-Fi lento? Forse il problema è *dove hai messo il router.*"
+  }
+}

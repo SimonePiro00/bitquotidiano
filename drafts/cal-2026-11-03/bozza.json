@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-03",
+  "bozza": {
+    "argomento": "La truffa WhatsApp \"Ciao mamma, ho cambiato numero\": come riconoscerla e cosa fare",
+    "slides": [
+      {
+        "titolo": "\"Ciao mamma, ho cambiato numero\": è una truffa",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come inizia",
+        "testo": "Un messaggio WhatsApp da un numero sconosciuto: \"Ciao mamma, mi si è rotto il telefono, questo è il mio nuovo numero. Salvalo.\"",
+        "illustrazione": "chat di WhatsApp da un numero sconosciuto: ciao mamma, ho cambiato numero"
+      },
+      {
+        "titolo": "Poi arriva la richiesta",
+        "testo": "Dopo qualche messaggio affettuoso: \"Devo pagare una cosa urgente ma la mia app non funziona, mi fai un bonifico? Ti ridò i soldi domani.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 1: il numero nuovo",
+        "testo": "Un figlio che cambia numero di solito te lo dice a voce, non con un messaggio da uno sconosciuto.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Segnale 2: soldi e fretta",
+        "testo": "Bonifico urgente, IBAN di una persona che non conosci, \"non posso chiamare adesso\": sono gli ingredienti della truffa.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa fare: chiama",
+        "testo": "Telefona al numero vecchio che hai in rubrica. Se non risponde, fai una domanda che solo tuo figlio può sapere.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Non pagare mai così",
+        "testo": "Nessun bonifico o ricarica verso un IBAN arrivato per messaggio, finché non hai parlato a voce con la persona.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Se ci sei cascato",
+        "testo": "Chiama subito la banca per provare a bloccare il bonifico, poi segnala il numero a WhatsApp e denuncia alla Polizia Postale.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Sono loro i bersagli preferiti: un messaggio adesso vale più di mille spiegazioni dopo.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Ciao mamma, ho cambiato numero\" 📱\n\nÈ una delle truffe WhatsApp più diffuse in Italia: un finto figlio o una finta figlia scrive da un numero nuovo e, dopo pochi messaggi, chiede un bonifico urgente.\n\nLa difesa è semplice: chiama il numero vecchio o fai una domanda che solo tuo figlio può sapere. E mai bonifici a IBAN arrivati per messaggio.\n\nManda questo post ai tuoi genitori 👇",
+    "hashtag": [
+      "truffe",
+      "whatsapp",
+      "truffeonline",
+      "sicurezza",
+      "genitori",
+      "nonni",
+      "polizia",
+      "tecnologia",
+      "trucchitech",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Diffusione in Italia della truffa \"Ciao mamma\" (segnalazioni Polizia Postale)"
+    ],
+    "gancio": "*\"Ciao mamma, ho cambiato numero\"*: non rispondere prima di aver visto questo."
+  }
+}

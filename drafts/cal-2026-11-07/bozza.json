@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-07",
+  "bozza": {
+    "argomento": "Abbonamenti dimenticati sul telefono: dove trovarli su Android e iPhone e come disdirli",
+    "slides": [
+      {
+        "titolo": "Abbonamenti dimenticati? Trovali in 1 minuto",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il problema",
+        "testo": "Prove gratuite che diventano a pagamento, app aperte una volta: piccoli importi ogni mese che a fine anno diventano decine di euro.",
+        "illustrazione": "elenco degli abbonamenti attivi nello store del telefono con il tasto annulla"
+      },
+      {
+        "titolo": "Su Android",
+        "testo": "Apri il Play Store, tocca la tua foto in alto a destra, poi \"Pagamenti e abbonamenti\" e \"Abbonamenti\".",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Su iPhone",
+        "testo": "Apri Impostazioni, tocca il tuo nome in alto e poi \"Abbonamenti\". Trovi anche quelli scaduti, per sicurezza.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Fuori dagli store",
+        "testo": "Netflix, Spotify o le pay TV pagati con la carta non compaiono lì: controlla l'estratto conto degli ultimi 3 mesi.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "La domanda giusta",
+        "testo": "Per ogni voce chiediti: l'ho usato nell'ultimo mese? Se no, disdici. Puoi sempre riattivarlo quando ti serve.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Prove gratuite",
+        "testo": "Quando attivi una prova, segna subito sul calendario il giorno prima della scadenza. Molte app ti permettono di disdire subito e usarla fino alla fine.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Disdetta ≠ disinstallare",
+        "testo": "Cancellare l'app non ferma l'abbonamento: va annullato dallo store o dal sito del servizio.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Fallo adesso",
+        "testo": "Ci vuole un minuto. E mandalo a chi \"non sa dove vanno a finire i soldi\".",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Quanto paghi ogni mese di abbonamenti che non usi? 💸\n\nSu Android e iPhone c'è una pagina che li elenca tutti: ci vuole un minuto per controllarla e disdire quelli dimenticati.\n\nRicorda: disinstallare l'app non basta, l'abbonamento va annullato.\n\nQuanti ne hai trovati? 👇",
+    "hashtag": [
+      "abbonamenti",
+      "risparmio",
+      "android",
+      "iphone",
+      "app",
+      "soldi",
+      "trucchitech",
+      "tecnologia",
+      "consigli",
+      "tech",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Percorsi menu Play Store e Impostazioni iPhone (possibili variazioni di nome)"
+    ],
+    "gancio": "Stai pagando un abbonamento *che non usi?* Controlla qui."
+  }
+}

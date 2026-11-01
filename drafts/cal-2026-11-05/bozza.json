@@ -1,0 +1,74 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-05",
+  "bozza": {
+    "argomento": "Reclami, disdette e email difficili: farle scrivere a un chatbot gratuito con il prompt giusto",
+    "slides": [
+      {
+        "titolo": "Reclami ed email difficili? Scrivili con l'AI",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il problema",
+        "testo": "Un pacco mai arrivato, una bolletta sbagliata, un rimborso che non arriva. Scrivere un reclamo chiaro e deciso richiede tempo e pazienza.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "La formula",
+        "testo": "Dai al chatbot 4 cose: cosa è successo, cosa vuoi ottenere, entro quando, e il tono che preferisci.",
+        "illustrazione": "i quattro blocchi del prompt: contesto, richiesta, formato, limiti"
+      },
+      {
+        "titolo": "Il prompt da copiare",
+        "testo": "\"Scrivi un reclamo cortese ma deciso a [azienda]. Il [data] ho ordinato [prodotto], mai arrivato. Chiedo il rimborso entro 14 giorni. Massimo 120 parole.\"",
+        "illustrazione": "schema di una chat con un prompt dell'utente e la risposta del chatbot"
+      },
+      {
+        "titolo": "Rendilo più forte",
+        "testo": "Poi chiedi: \"Aggiungi il numero d'ordine e chiudi dicendo che, senza risposta, mi rivolgerò a un'associazione consumatori.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Attenzione alle leggi",
+        "testo": "L'AI a volte cita leggi o articoli che non esistono. Se vuoi citarli, controllali sul sito dell'azienda o di un'associazione consumatori.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Per le disdette",
+        "testo": "Usalo per scrivere il testo, ma verifica sul contratto come va inviata la disdetta: modulo, PEC o raccomandata, e i giorni di preavviso.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Funziona anche per",
+        "testo": "Rispondere al condominio, chiedere un permesso al lavoro, scrivere alla scuola: dai il contesto, l'obiettivo e il tono.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Salvalo per il prossimo reclamo",
+        "testo": "E mandalo a chi rimanda da settimane quella email.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "C'è un reclamo che rimandi da settimane? ✉️\n\nCon un chatbot gratuito e il prompt giusto lo scrivi in 30 secondi: cosa è successo, cosa vuoi, entro quando e con che tono.\n\nUna sola regola: se l'AI cita leggi o articoli, controllali prima di inviare.\n\nQual è stato il tuo reclamo più assurdo? 👇",
+    "hashtag": [
+      "intelligenzaartificiale",
+      "chatgpt",
+      "reclamo",
+      "consumatori",
+      "email",
+      "prompt",
+      "trucchitech",
+      "tecnologia",
+      "consigli",
+      "ai",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Modalità di disdetta (PEC, raccomandata, modulo online) dipendono dal contratto"
+    ],
+    "gancio": "Devi scrivere un *reclamo?* L'AI lo fa in 30 secondi."
+  }
+}

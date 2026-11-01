@@ -75,23 +75,27 @@ def _righe_visibili(righe, parole_visibili):
 
 
 def _righe_evidenziate(d, testo, font, larghezza):
-    """Va a capo come _wrap, ma tiene le parole tra *asterischi* in arancio. Restituisce righe di (parola, arancio)."""
+    """Va a capo come _wrap, ma tiene in arancio il testo tra *asterischi* (anche a metà parola, es. *"ciao"*:).
+    Restituisce righe di parole; ogni parola è una lista di pezzi (testo, arancio)."""
     righe, riga, w_riga, acceso = [], [], 0, False
     spazio = d.textlength(" ", font=font)
     for parola in testo.split():
-        inizio, fine = parola.startswith("*"), parola.endswith("*")
-        pulita = parola.strip("*")
-        arancio = acceso or inizio
-        if inizio and not fine:
-            acceso = True
-        if fine:
-            acceso = False
-        lw = d.textlength(pulita, font=font)
+        pezzi, corrente = [], ""
+        for c in parola:
+            if c == "*":
+                if corrente:
+                    pezzi.append((corrente, acceso))
+                corrente, acceso = "", not acceso
+            else:
+                corrente += c
+        if corrente:
+            pezzi.append((corrente, acceso))
+        lw = sum(d.textlength(t, font=font) for t, _ in pezzi)
         if riga and w_riga + spazio + lw > larghezza:
             righe.append(riga)
             riga, w_riga = [], 0
         w_riga += (spazio if riga else 0) + lw
-        riga.append((pulita, arancio))
+        riga.append(pezzi)
     if riga:
         righe.append(riga)
     return righe
@@ -110,19 +114,21 @@ def _fondo_gancio(testo, n_punti):
     spazio = d.textlength(" ", font=f)
     for riga in righe:
         x = X0
-        for parola, arancio in riga:
-            d.text((x, y), parola, font=f, fill=ACCENT if arancio else FG)
-            x += d.textlength(parola, font=f) + spazio
+        for pezzi in riga:
+            for pezzo, arancio in pezzi:
+                d.text((x, y), pezzo, font=f, fill=ACCENT if arancio else FG)
+                x += d.textlength(pezzo, font=f)
+            x += spazio
         y += size * 1.15
     fi = _font(FONT_BOLD, 46)
     d.text((X0, y + 50), f"{n_punti} cose da sapere ↓", font=fi, fill=MUTED)
-    return img
+    return img, int(y + 110)
 
 
 def _gancio(testo, sec, k, t, seg, scrittura, n_punti):
     """Primo secondo: frase-gancio enorme già leggibile al fotogramma 0, con un leggero zoom all'indietro,
     e Bit che spunta dal basso con un punto esclamativo."""
-    base = _fondo_gancio(testo, n_punti)
+    base, fine_testo = _fondo_gancio(testo, n_punti)
     z = 1 + 0.04 * (1 - _ease(k / 18))
     if z > 1.001:
         lw, lh = int(W / z), int(H / z)
@@ -134,7 +140,8 @@ def _gancio(testo, sec, k, t, seg, scrittura, n_punti):
     d.text((X0, 170), "@bitquotidiano.it", font=_font(FONT_BOLD, 38), fill=ACCENT)
     lato = 460
     sale = _ease(k / 8)
-    y_bit = int(1500 - 420 * sale + 8 * math.sin(t / FPS * 6))
+    arrivo = max(1080, fine_testo + 70)             # Bit e il "!" non coprono mai il testo
+    y_bit = int(1500 - (1500 - arrivo) * sale + 8 * math.sin(t / FPS * 6))
     bit = _bit_piccolo(_bocca(seg, k, sec, scrittura), False, True, lato)
     img.paste(bit, (X1 - lato, y_bit), bit)
     if k >= 6:
