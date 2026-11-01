@@ -1,0 +1,209 @@
+{
+  "periodo": [
+    "2026-10-26",
+    "2026-11-01"
+  ],
+  "profilo": {
+    "id": "17841419448745802",
+    "followers_count": 1,
+    "media_count": 23,
+    "username": "bitquotidiano.it"
+  },
+  "account": {
+    "reach": {
+      "value": 169
+    },
+    "follows_and_unfollows": null,
+    "profile_views": {
+      "value": 0
+    }
+  },
+  "post": [
+    {
+      "id": "17899441038395201",
+      "data": "2026-10-26T19:02:26+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/De9_MSslhsc/",
+      "titolo": "La fotocamera del telefono più l'intelligenza artificiale è uno degli usi più pratici che ",
+      "reach": 1,
+      "views": 6,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "17953711377294487",
+      "data": "2026-10-26T22:50:07+0000",
+      "tipo": "VIDEO",
+      "link": "https://www.instagram.com/reel/De-ZM3diAGr/",
+      "titolo": "Fotografa e chiedi: 5 usi dell'AI con la fotocamera",
+      "errori": [
+        "follows: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the follows metric for this media product type.",
+        "profile_visits: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the profile_visits metric for this media product type."
+      ],
+      "reach": 20,
+      "views": 20,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0
+    },
+    {
+      "id": "18343289209260073",
+      "data": "2026-10-27T11:32:36+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/De_wgUMjwog/",
+      "titolo": "\"Buongiorno, la chiamo dall'ufficio antifrode della sua banca.\" È una delle truffe più dif",
+      "reach": 1,
+      "views": 4,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18110811371621889",
+      "data": "2026-10-27T11:33:35+0000",
+      "tipo": "VIDEO",
+      "link": "https://www.instagram.com/reel/De_wk4ZAVx1/",
+      "titolo": "\"Chiamo dalla sua banca\": come riconoscere la truffa",
+      "errori": [
+        "follows: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the follows metric for this media product type.",
+        "profile_visits: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the profile_visits metric for this media product type."
+      ],
+      "reach": 24,
+      "views": 29,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0
+    },
+    {
+      "id": "18027538103879845",
+      "data": "2026-10-28T19:03:57+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DfDI8eGl3cT/",
+      "titolo": "Il PC è diventato lentissimo? Prima di comprarne uno nuovo, proprio ora che i prezzi sono ",
+      "reach": 1,
+      "views": 5,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18154463032533710",
+      "data": "2026-10-29T11:33:04+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DfE6JFUG7Zr/",
+      "titolo": "Organizzare una gita richiede ore di ricerche. Con un chatbot gratuito puoi passare dall'i",
+      "reach": 0,
+      "views": 0,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18335928721277012",
+      "data": "2026-10-29T11:34:26+0000",
+      "tipo": "VIDEO",
+      "link": "https://www.instagram.com/reel/DfE6ObLDg-z/",
+      "titolo": "Una gita nel weekend? Organizzala con l'AI in 4 prompt",
+      "errori": [
+        "follows: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the follows metric for this media product type.",
+        "profile_visits: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the profile_visits metric for this media product type."
+      ],
+      "reach": 19,
+      "views": 20,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0
+    },
+    {
+      "id": "17873485257637359",
+      "data": "2026-10-30T19:01:36+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DfISRlZj8gt/",
+      "titolo": "Il tuo telefono è ancora protetto? Dipende dagli aggiornamenti di sicurezza, e molti non s",
+      "reach": 0,
+      "views": 0,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18097711250418489",
+      "data": "2026-10-30T19:02:30+0000",
+      "tipo": "VIDEO",
+      "link": "https://www.instagram.com/reel/DfISVPSDIh9/",
+      "titolo": "Il tuo telefono riceve ancora aggiornamenti? Come controllarlo",
+      "errori": [
+        "follows: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the follows metric for this media product type.",
+        "profile_visits: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the profile_visits metric for this media product type."
+      ],
+      "reach": 53,
+      "views": 55,
+      "saved": 0,
+      "shares": 0,
+      "likes": 1,
+      "comments": 0,
+      "total_interactions": 1
+    },
+    {
+      "id": "17915174823499521",
+      "data": "2026-10-31T11:32:06+0000",
+      "tipo": "CAROUSEL_ALBUM",
+      "link": "https://www.instagram.com/p/DfKDoR7ETr-/",
+      "titolo": "Quanti abbonamenti streaming paghi ogni mese? Spesso sono più di quelli che riesci a guard",
+      "reach": 0,
+      "views": 1,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0,
+      "follows": 0,
+      "profile_visits": 0
+    },
+    {
+      "id": "18095230085657320",
+      "data": "2026-10-31T11:33:08+0000",
+      "tipo": "VIDEO",
+      "link": "https://www.instagram.com/reel/DfKDs_Fn4ab/",
+      "titolo": "Paghi troppi streaming? Prova la rotazione",
+      "errori": [
+        "follows: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the follows metric for this media product type.",
+        "profile_visits: Graph API GET insights -> 400: OAuthException (#100): (#100) The Media Insights API does not support the profile_visits metric for this media product type."
+      ],
+      "reach": 63,
+      "views": 68,
+      "saved": 0,
+      "shares": 0,
+      "likes": 0,
+      "comments": 0,
+      "total_interactions": 0
+    }
+  ]
+}
