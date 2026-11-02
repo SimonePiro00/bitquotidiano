@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-02",
   "bozza": {
@@ -70,5 +70,8 @@
       "Caricamento di file nelle versioni gratuite di ChatGPT, Gemini e Copilot (possibili limiti giornalieri)"
     ],
     "gancio": "Contratto di *20 pagine?* Fattelo spiegare in un minuto."
-  }
+  },
+  "media_id": "18083854877711689",
+  "story_id": "18140069578640647",
+  "reel_id": "18134692057782665"
 }
