@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-03",
   "bozza": {
@@ -70,5 +70,8 @@
       "Diffusione in Italia della truffa \"Ciao mamma\" (segnalazioni Polizia Postale)"
     ],
     "gancio": "*\"Ciao mamma, ho cambiato numero\"*: non rispondere prima di aver visto questo."
-  }
+  },
+  "media_id": "18428840017150104",
+  "story_id": "17924373897224230",
+  "reel_id": "18094367075690734"
 }
