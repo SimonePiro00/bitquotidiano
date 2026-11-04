@@ -137,6 +137,18 @@ def cmd_publish(args):
         print(f"Post pubblicato: {record['media_id']}")
     else:
         print(f"Post già pubblicato ({record.get('media_id')}).")
+    if fai_storia and not fai_post and record.get("media_id"):
+        # Rilancio dopo un errore: se la storia è già uscita dopo il post, non la ripubblica.
+        from pipeline.graph import call
+        from pipeline.publish import storia_dopo
+        from datetime import datetime
+        quando = call("GET", record["media_id"], fields="timestamp")["timestamp"]
+        gia = storia_dopo(datetime.strptime(quando, "%Y-%m-%dT%H:%M:%S%z").timestamp())
+        if gia:
+            record["story_id"] = gia
+            salva()
+            print(f"Storia già pubblicata: {gia}")
+            fai_storia = False
     if fai_storia:
         record["story_id"] = publish_story(f"{base}/{args.id}/story.jpg")
         salva()
