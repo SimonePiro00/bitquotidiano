@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-04",
   "bozza": {
@@ -71,5 +71,6 @@
       "Nomi delle reti 2,4/5 GHz variano per router"
     ],
     "gancio": "Wi-Fi lento? Forse il problema è *dove hai messo il router.*"
-  }
+  },
+  "media_id": "18156445285535883"
 }
