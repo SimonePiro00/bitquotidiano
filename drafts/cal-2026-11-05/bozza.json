@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-05",
   "bozza": {
@@ -70,5 +70,8 @@
       "Modalità di disdetta (PEC, raccomandata, modulo online) dipendono dal contratto"
     ],
     "gancio": "Devi scrivere un *reclamo?* L'AI lo fa in 30 secondi."
-  }
+  },
+  "media_id": "17965284561229314",
+  "story_id": "18398336155163301",
+  "reel_id": "18154115968555075"
 }
