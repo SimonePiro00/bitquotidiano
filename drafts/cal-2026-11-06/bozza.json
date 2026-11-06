@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-06",
   "bozza": {
@@ -70,5 +70,8 @@
       "Gli errori tipici (mani, scritte) diminuiscono con i modelli più recenti"
     ],
     "gancio": "Questa foto è vera? *5 indizi* per scoprire se l'ha fatta l'AI."
-  }
+  },
+  "media_id": "18026984264869233",
+  "story_id": "17955600696042602",
+  "reel_id": "18170658286479623"
 }
