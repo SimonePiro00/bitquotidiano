@@ -17,7 +17,9 @@ def _gia_uscito(ig: str, edge: str, inizio: float, caption: str | None) -> str |
     """Cerca tra gli ultimi media dell'account uno pubblicato dopo `inizio` (e con la stessa
     didascalia, se data). Serve perché media_publish può dare errore anche quando il post è uscito."""
     time.sleep(15)
-    recenti = call("GET", f"{ig}/{edge}", fields="id,caption,timestamp", limit=5).get("data", [])
+    # Le storie non hanno didascalia: chiedere il campo caption fa fallire la richiesta.
+    campi = "id,timestamp" if edge == "stories" else "id,caption,timestamp"
+    recenti = call("GET", f"{ig}/{edge}", fields=campi, limit=5).get("data", [])
     for m in recenti:
         quando = datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z").timestamp()
         if quando >= inizio - 60 and (caption is None or m.get("caption", "").strip()[:80] == caption.strip()[:80]):
@@ -71,13 +73,36 @@ def publish_carousel(image_urls: list[str], caption: str) -> str:
     return _publish(ig, container, "media", caption)
 
 
+def storia_dopo(dopo: float) -> str | None:
+    """Id di una storia ancora visibile (le storie durano 24 ore) pubblicata dopo `dopo`, se c'è."""
+    ig = env("IG_USER_ID", required=True).strip()
+    for m in call("GET", f"{ig}/stories", fields="id,timestamp").get("data", []):
+        if datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z").timestamp() >= dopo - 60:
+            return m["id"]
+    return None
+
+
 def publish_story(image_url: str) -> str:
     """Pubblica una storia con un'immagine. L'API non permette di "ricondividere" un post con lo
-    sticker nativo, quindi la storia è un'immagine nostra che rimanda al post."""
+    sticker nativo, quindi la storia è un'immagine nostra che rimanda al post.
+    Subito dopo l'errore #4 sul post, media_publish della storia può rispondere #24 ("resource does
+    not exist"): in quel caso aspetta, controlla che la storia non sia uscita e riprova una volta
+    con un container nuovo."""
     ig = env("IG_USER_ID", required=True).strip()
-    container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
-    _wait_ready(container)
-    return _publish(ig, container, "stories")
+    inizio = time.time()
+    for tentativo in range(2):
+        container = _post(f"{ig}/media", image_url=image_url, media_type="STORIES")["id"]
+        _wait_ready(container)
+        try:
+            return _publish(ig, container, "stories")
+        except GraphError as e:
+            if tentativo == 1 or "#24" not in str(e):
+                raise
+            print(f"Storia non pubblicata ({e}): riprovo tra 60 secondi.")
+            time.sleep(60)
+            gia = storia_dopo(inizio)
+            if gia:
+                return gia
 
 
 def publish_reel(video_url: str, caption: str) -> str:
