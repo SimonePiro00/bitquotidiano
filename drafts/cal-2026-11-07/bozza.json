@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-07",
   "bozza": {
@@ -70,5 +70,8 @@
       "Percorsi menu Play Store e Impostazioni iPhone (possibili variazioni di nome)"
     ],
     "gancio": "Stai pagando un abbonamento *che non usi?* Controlla qui."
-  }
+  },
+  "media_id": "18025271369707957",
+  "story_id": "18111861011219472",
+  "reel_id": "18119453975114895"
 }
