@@ -171,6 +171,7 @@ def cmd_publish(args):
 
 
 def cmd_reel(args):
+    os.environ.setdefault("BIT_VELOCITA", "1.12")   # Reel lampo: voce più svelta, Reel sui 13 secondi
     from pipeline.reel import make_reel
     from pipeline.reel_info import make_reel_info
 

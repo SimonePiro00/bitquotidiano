@@ -11,7 +11,9 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from . import musica
+import numpy as np
+
+from . import musica, voce
 from .reel import ACCENT, BG, FG, FPS, H, MUTED, SCURO, W, _chiudi, _codifica
 from .reel_info import LARGHEZZA, X0, X1, _bit_piccolo, _ease, _fondo_gancio, _mix, _righe_evidenziate
 from .render import FONT_BOLD, _font, _wrap
@@ -100,11 +102,28 @@ def make_reel_lampo(folder: Path, gancio: str, titolo: str, punti: list[str], in
     """gancio e invio: parole tra *asterischi* in arancio. punti: 3 frasi di 2-6 parole."""
     punti = punti[:3]
     durate = [int(GANCIO_S * FPS)] + [int(PUNTO_S * FPS)] * len(punti) + [int(FINE_S * FPS)]
+    parlato = None
+    if voce.disponibile():
+        # Con la voce ogni scena dura quanto la frase detta (più un respiro), mai meno del ritmo muto.
+        pulito = lambda x: x.replace("*", "")
+        frasi = [pulito(gancio)] + punti + [pulito(invio) + ". E segui per la prossima!"]
+        parlato = [voce.parla(f) for f in frasi]
+        durate = [max(d, int((a.size / voce.RATE + 0.25) * FPS)) for d, a in zip(durate, parlato)]
     totale = sum(durate)
     out = folder / nome
     with tempfile.TemporaryDirectory() as tmp:
         traccia = Path(tmp) / "musica.wav"
-        musica.salva(musica.genera(totale / FPS, folder.name), traccia)
+        audio = musica.genera(totale / FPS, folder.name)
+        if parlato:
+            audio = audio * 0.35   # la musica resta sotto la voce
+            inizio = 0
+            for d, a in zip(durate, parlato):
+                i0 = int(inizio / FPS * voce.RATE) + int(0.05 * voce.RATE)
+                n = min(a.size, audio.size - i0)
+                audio[i0:i0 + n] += a[:n] * 0.9
+                inizio += d
+            audio = np.clip(audio, -1, 1)
+        musica.salva(audio, traccia)
         proc = _codifica(out, traccia)
         t = 0
         for scena, n_frame in enumerate(durate):
