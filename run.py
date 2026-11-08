@@ -7,6 +7,7 @@ Uso:
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
+  python run.py giornaliero           # follower di oggi + visualizzazioni e tempo medio dei Reel (analisi/*.csv)
   python run.py reel ID [ID...]      # crea reel.mp4 (infografica, muto); --stile bit, --voce (pip install piper-tts)
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
@@ -194,6 +195,12 @@ def cmd_leggi(args):
     salva(args.account.lstrip("@"), [l for l in args.link.replace(",", " ").split() if l])
 
 
+def cmd_giornaliero(args):
+    from pipeline.analisi import registro_giornaliero
+
+    print(registro_giornaliero())
+
+
 def cmd_analisi(args):
     from pipeline.analisi import analizza
 
@@ -221,6 +228,7 @@ def main():
     sub.add_parser("list").set_defaults(fn=cmd_list)
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.add_argument("--senza-reel", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
+    gi = sub.add_parser("giornaliero"); gi.set_defaults(fn=cmd_giornaliero)
     an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
     rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["bit", "infografica"], default="infografica"); rl.add_argument("--voce", action="store_true"); rl.set_defaults(fn=cmd_reel)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
