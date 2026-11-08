@@ -1,4 +1,4 @@
-"""Campioni delle voci italiane di Google (Chirp 3 HD e Neural2) con la frase del Reel: voci/campioni_google/."""
+"""Campioni delle voci italiane di Google (Chirp 3 HD e Neural2) con la frase del Reel, in voci/campioni_google/."""
 import json
 import os
 import subprocess
