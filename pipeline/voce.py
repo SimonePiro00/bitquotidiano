@@ -29,6 +29,8 @@ VOCI = {
 # Voci Kokoro (licenza Apache 2.0), più espressive: servono kokoro, torch ed espeak-ng (vedi workflow reel.yml).
 KOKORO = {"sara": "if_sara", "nicola": "im_nicola"}
 VOCE = os.environ.get("BIT_VOCE", "riccardo")
+# Voci neurali di Google Cloud Text-to-Speech: BIT_VOCE="google:it-IT-Chirp3-HD-..." con la chiave in GOOGLE_TTS_KEY.
+GOOGLE = VOCE.split(":", 1)[1] if VOCE.startswith("google:") else None
 
 _voce = None
 
@@ -60,6 +62,8 @@ def _carica():
 def disponibile() -> bool:
     if os.environ.get("BIT_MUTO"):
         return False
+    if GOOGLE:
+        return bool(os.environ.get("GOOGLE_TTS_KEY"))
     try:
         _carica()
         return True
@@ -79,6 +83,8 @@ def pronuncia(testo: str) -> str:
 
 def parla(testo: str) -> np.ndarray:
     """Audio mono float32 a 44,1 kHz con la vocina di Bit."""
+    if GOOGLE:
+        return _google(testo)
     voce = _carica()
     if VOCE in KOKORO:
         # Kokoro regola la velocità da sé e lavora a 24 kHz: si porta a 44,1 kHz.
@@ -110,3 +116,19 @@ def salva(audio: np.ndarray, percorso: Path):
         w.setsampwidth(2)
         w.setframerate(RATE)
         w.writeframes(pcm.tobytes())
+
+
+def _google(testo: str) -> np.ndarray:
+    """Sintesi con Google Cloud Text-to-Speech (la chiave va solo nei Secrets di GitHub, mai nel codice)."""
+    import base64
+    import json
+    from urllib.request import Request, urlopen
+
+    corpo = {"input": {"text": pronuncia(testo)},
+             "voice": {"languageCode": "it-IT", "name": GOOGLE},
+             "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE, "speakingRate": VELOCITA}}
+    req = Request("https://texttospeech.googleapis.com/v1/text:synthesize", data=json.dumps(corpo).encode(),
+                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": os.environ["GOOGLE_TTS_KEY"]})
+    wav = base64.b64decode(json.loads(urlopen(req, timeout=60).read())["audioContent"])
+    pcm = np.frombuffer(wav[44:], dtype=np.int16)   # salta l'intestazione WAV
+    return pcm.astype(np.float32) / 32768
