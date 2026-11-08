@@ -1,0 +1,50 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-15",
+  "bozza": {
+    "argomento": "Truffa #4: il QR code falso sul parchimetro",
+    "slides": [
+      {
+        "titolo": "Il QR code falso sul parchimetro",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come funziona",
+        "testo": "Un adesivo con un QR code finto viene incollato sul parchimetro: porta a un sito che ruba i dati della carta. Controlla l'indirizzo e usa l'app ufficiale del comune.",
+        "illustrazione": "triangolo di attenzione: controlla numeri, date e fonti"
+      },
+      {
+        "titolo": "Mandalo a chi parcheggia in città",
+        "testo": "Un adesivo può costare caro.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il QR code sul parchimetro può essere falso 🅿️\n\nI truffatori incollano un adesivo con un QR code sopra quello vero: porta a un sito che sembra ufficiale e chiede i dati della carta.\n\nCome difendersi: se il QR è un adesivo storto o incollato sopra, non usarlo. Controlla l'indirizzo del sito prima di pagare, oppure paga con l'app ufficiale indicata dal comune.\n\n💬 Paghi il parcheggio con l'app o con le monete? Dimmelo nei commenti.\n📤 Mandalo a chi parcheggia in città.\n\nTruffa #4: segui per la prossima.",
+    "hashtag": [
+      "truffe",
+      "qrcode",
+      "parcheggio",
+      "truffeonline",
+      "sicurezza",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Casi di QR code falsi sui parchimetri segnalati in Italia"
+    ],
+    "gancio": "Paghi il parcheggio con *il QR code*? Guarda prima se è un adesivo.",
+    "reel_titolo": "Truffa #4 · il QR finto",
+    "reel_punti": [
+      "Il sito chiede la carta",
+      "Paga con l'app del comune",
+      "Se il QR è un adesivo, fermati"
+    ],
+    "invio": "*Mandalo* a chi parcheggia in città",
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che frega tutti"
+  }
+}

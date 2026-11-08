@@ -7,6 +7,7 @@ Uso:
   python run.py publish ID --conferma # pubblica una bozza approvata
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
+  python run.py giornaliero           # follower di oggi + visualizzazioni e tempo medio dei Reel (analisi/*.csv)
   python run.py reel ID [ID...]      # crea reel.mp4 (infografica, muto); --stile bit, --voce (pip install piper-tts)
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
@@ -117,39 +118,60 @@ def cmd_publish(args):
     folder = DRAFTS_DIR / args.id
     record = json.loads((folder / "bozza.json").read_text())
     story, reel = folder / "story.jpg", folder / "reel.mp4"
+    # Giorni "solo Reel": niente carosello, il Reel prende il posto del post (e la storia lo segue).
+    solo_reel = bool(record["bozza"].get("solo_reel")) and reel.exists()
     fai_post = record["stato"] != "pubblicata"
     fai_storia = story.exists() and not args.senza_storia and not record.get("story_id")
     fai_reel = reel.exists() and not args.senza_reel and not record.get("reel_id")
     if not (fai_post or fai_storia or fai_reel):
         sys.exit("Bozza già pubblicata.")
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
-    slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
+    slides = [] if solo_reel else sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
     urls = [f"{base}/{args.id}/{p.name}" for p in slides]
     files = slides + [f for f, usa in [(story, fai_storia), (reel, fai_reel)] if usa]
     _attendi_pages(files, [f"{base}/{args.id}/{p.name}" for p in files])
     b = record["bozza"]
     hashtag = " ".join(f"#{h}" for h in b["hashtag"])
     salva = lambda: (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
-    if fai_post:
+    # La didascalia del Reel parte dal titolo, così non si confonde con quella del carosello.
+    didascalia_reel = f"{b['slides'][0]['titolo']}\n\n{b['didascalia']}\n\n{hashtag}"
+    if fai_post and solo_reel:
+        record["media_id"] = record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", didascalia_reel, in_griglia=True)
+        record["stato"] = "pubblicata"
+        salva()
+        fai_reel = False
+        print(f"Reel pubblicato: {record['media_id']}")
+    elif fai_post:
         record["media_id"] = publish_carousel(urls, b["didascalia"] + "\n\n" + hashtag)
         record["stato"] = "pubblicata"
         salva()
         print(f"Post pubblicato: {record['media_id']}")
     else:
         print(f"Post già pubblicato ({record.get('media_id')}).")
+    if fai_storia and not fai_post and record.get("media_id"):
+        # Rilancio dopo un errore: se la storia è già uscita dopo il post, non la ripubblica.
+        from pipeline.graph import call
+        from pipeline.publish import storia_dopo
+        from datetime import datetime
+        quando = call("GET", record["media_id"], fields="timestamp")["timestamp"]
+        gia = storia_dopo(datetime.strptime(quando, "%Y-%m-%dT%H:%M:%S%z").timestamp())
+        if gia:
+            record["story_id"] = gia
+            salva()
+            print(f"Storia già pubblicata: {gia}")
+            fai_storia = False
     if fai_storia:
         record["story_id"] = publish_story(f"{base}/{args.id}/story.jpg")
         salva()
         print(f"Storia pubblicata: {record['story_id']}")
     if fai_reel:
-        # La didascalia del Reel parte dal titolo, così non si confonde con quella del carosello.
-        titolo = b["slides"][0]["titolo"]
-        record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", f"{titolo}\n\n{b['didascalia']}\n\n{hashtag}")
+        record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", didascalia_reel)
         salva()
         print(f"Reel pubblicato: {record['reel_id']}")
 
 
 def cmd_reel(args):
+    os.environ.setdefault("BIT_VELOCITA", "1.12")   # Reel lampo: voce più svelta, Reel sui 13 secondi
     from pipeline.reel import make_reel
     from pipeline.reel_info import make_reel_info
 
@@ -158,7 +180,12 @@ def cmd_reel(args):
     for id_ in args.id:
         folder = DRAFTS_DIR / id_
         b = json.loads((folder / "bozza.json").read_text())["bozza"]
-        if args.stile == "infografica":
+        if b.get("reel_punti"):
+            from pipeline.reel_lampo import make_reel_lampo
+            print(make_reel_lampo(folder, b.get("gancio") or b["slides"][0]["titolo"], b.get("reel_titolo") or "",
+                                  b["reel_punti"], b.get("invio") or "*Mandalo* a chi ne ha bisogno", "reel.mp4",
+                                  b.get("annuncio") or "Il terzo è quello che frega tutti"))
+        elif args.stile == "infografica":
             print(make_reel_info(folder, b["slides"], "reel.mp4", b.get("gancio")))
         else:
             print(make_reel(folder, b["slides"]))
@@ -168,6 +195,12 @@ def cmd_leggi(args):
     from pipeline.fonti import salva
 
     salva(args.account.lstrip("@"), [l for l in args.link.replace(",", " ").split() if l])
+
+
+def cmd_giornaliero(args):
+    from pipeline.analisi import registro_giornaliero
+
+    print(registro_giornaliero())
 
 
 def cmd_analisi(args):
@@ -197,6 +230,7 @@ def main():
     sub.add_parser("list").set_defaults(fn=cmd_list)
     pb = sub.add_parser("publish"); pb.add_argument("id"); pb.add_argument("--conferma", action="store_true"); pb.add_argument("--senza-storia", action="store_true"); pb.add_argument("--senza-reel", action="store_true"); pb.set_defaults(fn=cmd_publish)
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
+    gi = sub.add_parser("giornaliero"); gi.set_defaults(fn=cmd_giornaliero)
     an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
     rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["bit", "infografica"], default="infografica"); rl.add_argument("--voce", action="store_true"); rl.set_defaults(fn=cmd_reel)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)

@@ -1,0 +1,71 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-10",
+  "bozza": {
+    "argomento": "Truffa #2: la finta chiamata della banca, anche dal numero vero",
+    "slides": [
+      {
+        "titolo": "La chiamata della banca può essere falsa",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il trucco del numero",
+        "testo": "I truffatori riescono a far comparire sul telefono il numero vero della banca. Vedere il nome giusto non basta.",
+        "illustrazione": "telefono con una chiamata in arrivo dalla Banca e un punto di domanda"
+      },
+      {
+        "titolo": "La storia che raccontano",
+        "testo": "\"Abbiamo bloccato un pagamento sospetto sul suo conto. Per proteggerla dobbiamo verificare alcuni dati.\"",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa non fa mai la banca",
+        "testo": "Non chiede al telefono codici dell'app, PIN o codici arrivati via SMS. Non ti chiede di spostare soldi su un \"conto sicuro\".",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa fare: riattacca",
+        "testo": "Chiudi la chiamata e richiama tu il numero scritto sulla carta o nell'app. Se era vera, la banca te lo conferma.",
+        "illustrazione": "riagganciare e richiamare tu la banca dal numero sul retro della carta"
+      },
+      {
+        "titolo": "Se hai già dato i codici",
+        "testo": "Chiama subito il numero di blocco della carta, poi la banca, e denuncia alla Polizia Postale.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Sono il bersaglio preferito: avvisali adesso.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Ti chiama la banca, sul telefono compare proprio il suo numero… ma è una truffa 📞\n\nSi chiama spoofing: i truffatori fanno apparire il numero vero della banca. Poi raccontano di un pagamento sospetto e chiedono codici o di spostare i soldi su un \"conto sicuro\".\n\nLa regola: la banca non ti chiede mai codici al telefono. Riattacca e richiama tu.\n\n💬 Hai mai ricevuto una chiamata così? Raccontalo nei commenti.\n📤 Mandalo a chi in famiglia risponde sempre al telefono.\n\nTruffa #2: segui per la prossima.",
+    "hashtag": [
+      "truffe",
+      "banca",
+      "spoofing",
+      "truffetelefoniche",
+      "sicurezza",
+      "genitori",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Spoofing del numero della banca: nel 2025 AGCOM ha introdotto filtri contro i numeri italiani falsificati dall'estero, ma i casi continuano"
+    ],
+    "gancio": "Ti chiama *la tua banca*, dal suo numero vero. Può essere una truffa.",
+    "reel_titolo": "Truffa #2 · la banca non lo fa mai",
+    "reel_punti": [
+      "Non ti fa spostare soldi",
+      "Non chiede codici o PIN",
+      "Il numero vero può essere falso"
+    ],
+    "invio": "*Mandalo* a mamma e papà, prima che li chiamino",
+    "solo_reel": false,
+    "annuncio": "Il terzo è quello che frega tutti"
+  }
+}

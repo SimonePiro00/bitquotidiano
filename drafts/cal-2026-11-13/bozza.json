@@ -1,0 +1,48 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-13",
+  "bozza": {
+    "argomento": "Batteria che non arriva a sera: 3 impostazioni",
+    "slides": [
+      {
+        "titolo": "Batteria che non arriva a sera?",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "3 impostazioni",
+        "testo": "Luminosità automatica, risparmio energetico quando scendi sotto il 30% e un controllo in Impostazioni > Batteria per scoprire quale app consuma di più.",
+        "illustrazione": "batteria con la zona consigliata tra 20 e 80 per cento"
+      },
+      {
+        "titolo": "Mandalo a chi ha sempre il caricatore",
+        "testo": "Niente app da installare.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Batteria a terra già nel pomeriggio? 🔋 Tre impostazioni da cambiare subito:\n\n1️⃣ Luminosità automatica: lo schermo è quello che consuma di più.\n2️⃣ Risparmio energetico: attivalo quando scendi sotto il 30%.\n3️⃣ Impostazioni > Batteria: guarda quale app consuma di più e limitala.\n\n💬 A che ora ti si scarica il telefono? Scrivilo qui sotto.\n📤 Mandalo a chi gira sempre col caricatore.",
+    "hashtag": [
+      "batteria",
+      "smartphone",
+      "trucchitech",
+      "android",
+      "iphone",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [],
+    "gancio": "La batteria *non arriva a sera*? Cambia queste 3 impostazioni.",
+    "reel_titolo": "Più ore, senza app",
+    "reel_punti": [
+      "Luminosità automatica",
+      "Risparmio energetico dal 30%",
+      "Scopri l'app che la divora"
+    ],
+    "invio": "*Mandalo* a chi gira sempre col caricatore",
+    "solo_reel": true,
+    "annuncio": "Il terzo nessuno lo controlla"
+  }
+}

@@ -1,0 +1,26 @@
+# Ogni sera annota i follower e, per ogni Reel degli ultimi 30 giorni, visualizzazioni e tempo medio di visione.
+# Scrive analisi/follower.csv e analisi/reel_giornaliero.csv. Non pubblica nulla.
+name: Registro giornaliero
+on:
+  schedule:
+    - cron: "45 21 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: {group: registro, cancel-in-progress: false}
+jobs:
+  registro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - run: python run.py giornaliero
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+      - run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add analisi && git commit -m "Registro giornaliero" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 10; done; exit 1

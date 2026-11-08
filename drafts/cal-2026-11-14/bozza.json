@@ -1,0 +1,71 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-14",
+  "bozza": {
+    "argomento": "Basta chiamate dei call center: il Registro delle opposizioni",
+    "slides": [
+      {
+        "titolo": "Basta chiamate dei call center",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Il Registro delle opposizioni",
+        "testo": "È un servizio pubblico e gratuito. Dal 2022 puoi iscrivere anche il numero di cellulare, non solo il fisso.",
+        "illustrazione": "telefono con una chiamata in arrivo dalla Banca e un punto di domanda"
+      },
+      {
+        "titolo": "Come iscriversi",
+        "testo": "Sul sito registrodelleopposizioni.it, con il modulo online, oppure per telefono chiamando dal numero da iscrivere.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa blocca",
+        "testo": "Le chiamate pubblicitarie delle aziende che usano gli elenchi, e anche i consensi che avevi dato in passato.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Cosa non blocca",
+        "testo": "I call center che lavorano fuori dalle regole e le aziende a cui dai il consenso dopo l'iscrizione: leggi bene prima di spuntare le caselle.",
+        "illustrazione": "riagganciare e richiamare tu la banca dal numero sul retro della carta"
+      },
+      {
+        "titolo": "Se chiamano lo stesso",
+        "testo": "Annota numero, giorno e azienda e segnala al Garante della privacy.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi non ne può più",
+        "testo": "Ci vogliono 2 minuti.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Ti chiamano ogni giorno per luce, gas e telefono? 📵\n\nIscriviti al Registro pubblico delle opposizioni: è gratis e dal 2022 vale anche per il cellulare. Annulla anche i consensi dati in passato alle aziende.\n\nNon ferma i call center abusivi, ma riduce parecchio le chiamate. E se chiamano lo stesso, puoi segnalarli al Garante.\n\n💬 Quante chiamate ricevi a settimana? Scrivi il numero nei commenti.\n📤 Mandalo a chi non ne può più.",
+    "hashtag": [
+      "callcenter",
+      "telemarketing",
+      "privacy",
+      "bollette",
+      "risparmio",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Iscrizione via sito/telefono e tempi di efficacia (fino a 15 giorni) sul sito ufficiale del Registro",
+      "Il Registro annulla i consensi precedenti all'iscrizione"
+    ],
+    "gancio": "Stanco delle *chiamate dei call center*? C'è un modo gratis per fermarle.",
+    "reel_titolo": "Gratis, anche per il cellulare",
+    "reel_punti": [
+      "Registro pubblico delle opposizioni",
+      "Iscrivi anche il cellulare, gratis",
+      "Cancella i vecchi consensi"
+    ],
+    "invio": "*Mandalo* a chi riceve 5 chiamate al giorno",
+    "solo_reel": false,
+    "annuncio": "Il terzo non lo sa quasi nessuno"
+  }
+}
