@@ -9,7 +9,10 @@ from urllib.request import Request, urlopen
 FRASE = ("Il tuo pacco è in giacenza? Non cliccare quel link. Ecco tre segnali, e il terzo è quello che frega tutti. "
          "Uno: ti mette fretta. Due: chiede solo pochi euro. Tre: il link non è del corriere. "
          "Mandalo a chi aspetta sempre un pacco, e segui per la prossima!")
-chiave = os.environ["GOOGLE_TTS_KEY"]
+chiave = os.environ.get("GOOGLE_TTS_KEY")
+if not chiave:
+    print("Manca il secret GOOGLE_TTS_KEY: nessun campione creato.")
+    sys.exit(0)
 req = Request("https://texttospeech.googleapis.com/v1/voices?languageCode=it-IT", headers={"X-Goog-Api-Key": chiave})
 voci = [v for v in json.loads(urlopen(req).read())["voices"] if "Chirp3-HD" in v["name"] or "Neural2" in v["name"]]
 scelte = [v for v in voci if "Chirp3-HD" in v["name"]][:8] + [v for v in voci if "Neural2" in v["name"]][:2]
