@@ -26,6 +26,8 @@ VOCI = {
                  "https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-it-riccardo_fasol-x-low.tar.gz"),
     "paola": ("it_IT-paola-medium.onnx", f"{_HF}/paola/medium/it_IT-paola-medium.onnx"),
 }
+# Voci Kokoro (licenza Apache 2.0), più espressive: servono kokoro, torch ed espeak-ng (vedi workflow reel.yml).
+KOKORO = {"sara": "if_sara", "nicola": "im_nicola"}
 VOCE = os.environ.get("BIT_VOCE", "riccardo")
 
 _voce = None
@@ -33,6 +35,9 @@ _voce = None
 
 def _carica():
     global _voce
+    if _voce is None and VOCE in KOKORO:
+        from kokoro import KPipeline
+        _voce = KPipeline(lang_code="i")
     if _voce is None:
         from piper import PiperVoice
         nome, url = VOCI[VOCE]
@@ -75,6 +80,12 @@ def pronuncia(testo: str) -> str:
 def parla(testo: str) -> np.ndarray:
     """Audio mono float32 a 44,1 kHz con la vocina di Bit."""
     voce = _carica()
+    if VOCE in KOKORO:
+        # Kokoro regola la velocità da sé e lavora a 24 kHz: si porta a 44,1 kHz.
+        a24 = np.concatenate([np.asarray(a, dtype=np.float32) for _, _, a in voce(pronuncia(testo), voice=KOKORO[VOCE], speed=VELOCITA)])
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", "24000", "-ac", "1", "-i", "-",
+                              "-ar", str(RATE), "-f", "f32le", "-"], input=a24.tobytes(), capture_output=True, check=True).stdout
+        return np.frombuffer(raw, dtype=np.float32).copy()
     with tempfile.TemporaryDirectory() as tmp:
         sorgente = Path(tmp) / "voce.wav"
         with wave.open(str(sorgente), "wb") as w:
