@@ -10,16 +10,20 @@ from .config import env
 from .graph import GraphError, call
 
 METRICHE_POST = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions", "follows", "profile_visits"]
+# Solo per i Reel: tempo medio e totale di visione (in millisecondi).
+METRICHE_REEL = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions",
+                 "ig_reels_avg_watch_time", "ig_reels_video_view_total_time"]
 
 
-def _insights(media_id: str) -> dict:
+def _insights(media_id: str, reel: bool = False) -> dict:
     out = {}
+    metriche = METRICHE_REEL if reel else METRICHE_POST
     try:
-        data = call("GET", f"{media_id}/insights", metric=",".join(METRICHE_POST))["data"]
+        data = call("GET", f"{media_id}/insights", metric=",".join(metriche))["data"]
     except GraphError:
         # Una metrica non supportata fa fallire tutta la richiesta: riprova una alla volta.
         data = []
-        for m in METRICHE_POST:
+        for m in metriche:
             try:
                 data += call("GET", f"{media_id}/insights", metric=m)["data"]
             except GraphError as e:
@@ -42,7 +46,7 @@ def analizza(dal: str, al: str) -> dict:
         if not inizio <= quando < fine:
             continue
         post.append({"id": m["id"], "data": m["timestamp"], "tipo": m["media_type"], "link": m.get("permalink"),
-                     "titolo": (m.get("caption") or "").split("\n")[0][:90], **_insights(m["id"])})
+                     "titolo": (m.get("caption") or "").split("\n")[0][:90], **_insights(m["id"], reel=m.get("media_type") == "VIDEO")})
         time.sleep(1)
     account = {}
     for metrica, extra in [("reach", {"period": "day", "metric_type": "total_value"}),
