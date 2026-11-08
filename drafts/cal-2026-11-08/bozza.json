@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-08",
   "bozza": {
@@ -71,5 +71,8 @@
       "Percorso Google: Sicurezza > Passkey e token di sicurezza"
     ],
     "gancio": "Le *password* stanno per sparire. Ecco cosa le sostituisce."
-  }
+  },
+  "media_id": "18457795096193780",
+  "story_id": "17911946298575164",
+  "reel_id": "18121299652778015"
 }
