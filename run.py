@@ -117,20 +117,30 @@ def cmd_publish(args):
     folder = DRAFTS_DIR / args.id
     record = json.loads((folder / "bozza.json").read_text())
     story, reel = folder / "story.jpg", folder / "reel.mp4"
+    # Giorni "solo Reel": niente carosello, il Reel prende il posto del post (e la storia lo segue).
+    solo_reel = bool(record["bozza"].get("solo_reel")) and reel.exists()
     fai_post = record["stato"] != "pubblicata"
     fai_storia = story.exists() and not args.senza_storia and not record.get("story_id")
     fai_reel = reel.exists() and not args.senza_reel and not record.get("reel_id")
     if not (fai_post or fai_storia or fai_reel):
         sys.exit("Bozza già pubblicata.")
     base = env("PUBLIC_IMAGE_BASE_URL", required=True).rstrip("/")
-    slides = sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
+    slides = [] if solo_reel else sorted(folder.glob("slide_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
     urls = [f"{base}/{args.id}/{p.name}" for p in slides]
     files = slides + [f for f, usa in [(story, fai_storia), (reel, fai_reel)] if usa]
     _attendi_pages(files, [f"{base}/{args.id}/{p.name}" for p in files])
     b = record["bozza"]
     hashtag = " ".join(f"#{h}" for h in b["hashtag"])
     salva = lambda: (folder / "bozza.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))
-    if fai_post:
+    # La didascalia del Reel parte dal titolo, così non si confonde con quella del carosello.
+    didascalia_reel = f"{b['slides'][0]['titolo']}\n\n{b['didascalia']}\n\n{hashtag}"
+    if fai_post and solo_reel:
+        record["media_id"] = record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", didascalia_reel, in_griglia=True)
+        record["stato"] = "pubblicata"
+        salva()
+        fai_reel = False
+        print(f"Reel pubblicato: {record['media_id']}")
+    elif fai_post:
         record["media_id"] = publish_carousel(urls, b["didascalia"] + "\n\n" + hashtag)
         record["stato"] = "pubblicata"
         salva()
@@ -154,9 +164,7 @@ def cmd_publish(args):
         salva()
         print(f"Storia pubblicata: {record['story_id']}")
     if fai_reel:
-        # La didascalia del Reel parte dal titolo, così non si confonde con quella del carosello.
-        titolo = b["slides"][0]["titolo"]
-        record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", f"{titolo}\n\n{b['didascalia']}\n\n{hashtag}")
+        record["reel_id"] = publish_reel(f"{base}/{args.id}/reel.mp4", didascalia_reel)
         salva()
         print(f"Reel pubblicato: {record['reel_id']}")
 
@@ -170,7 +178,11 @@ def cmd_reel(args):
     for id_ in args.id:
         folder = DRAFTS_DIR / id_
         b = json.loads((folder / "bozza.json").read_text())["bozza"]
-        if args.stile == "infografica":
+        if b.get("reel_punti"):
+            from pipeline.reel_lampo import make_reel_lampo
+            print(make_reel_lampo(folder, b.get("gancio") or b["slides"][0]["titolo"], b.get("reel_titolo") or "",
+                                  b["reel_punti"], b.get("invio") or "*Mandalo* a chi ne ha bisogno"))
+        elif args.stile == "infografica":
             print(make_reel_info(folder, b["slides"], "reel.mp4", b.get("gancio")))
         else:
             print(make_reel(folder, b["slides"]))

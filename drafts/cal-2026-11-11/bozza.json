@@ -1,0 +1,47 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-11",
+  "bozza": {
+    "argomento": "Telefono lento: 3 cose da fare prima di cambiarlo",
+    "slides": [
+      {
+        "titolo": "Telefono lento? 3 cose prima di cambiarlo",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Spazio, riavvio, aggiornamenti",
+        "testo": "Riavvia il telefono, lascia libero almeno il 10% della memoria e installa gli aggiornamenti di sistema e delle app.",
+        "illustrazione": "barra della memoria del telefono quasi piena divisa tra video, chat e app"
+      },
+      {
+        "titolo": "Mandalo a chi vuole cambiarlo",
+        "testo": "Spesso bastano 5 minuti.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Il telefono è diventato lento? 🐢 Prima di comprarne uno nuovo prova queste 3 cose:\n\n1️⃣ Spegnilo e riaccendilo: chiude le app bloccate in background.\n2️⃣ Libera spazio: con la memoria quasi piena il telefono rallenta. Cancella video doppi e chat pesanti.\n3️⃣ Aggiorna sistema e app: spesso correggono proprio i rallentamenti.\n\n💬 Quanti anni ha il tuo telefono? Scrivilo nei commenti.\n📤 Mandalo a chi vuole già cambiarlo.",
+    "hashtag": [
+      "smartphone",
+      "telefono",
+      "trucchitech",
+      "android",
+      "iphone",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [],
+    "gancio": "Telefono *lento*? Prima di cambiarlo, prova queste 3 cose.",
+    "reel_titolo": "In 5 minuti, gratis",
+    "reel_punti": [
+      "Spegnilo e riaccendilo",
+      "Libera spazio: almeno il 10%",
+      "Aggiorna sistema e app"
+    ],
+    "invio": "*Mandalo* a chi si lamenta sempre del telefono",
+    "solo_reel": true
+  }
+}

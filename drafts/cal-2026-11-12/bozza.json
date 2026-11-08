@@ -1,0 +1,47 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-12",
+  "bozza": {
+    "argomento": "Truffa #3: il codice WhatsApp a 6 cifre",
+    "slides": [
+      {
+        "titolo": "Il codice WhatsApp a 6 cifre: non darlo",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come ti rubano l'account",
+        "testo": "Ti arriva un codice per SMS e un \"amico\" ti chiede di girarglielo. Con quel codice attiva il tuo WhatsApp sul suo telefono. Difenditi con Impostazioni > Account > Verifica in due passaggi.",
+        "illustrazione": "triangolo di attenzione: controlla numeri, date e fonti"
+      },
+      {
+        "titolo": "Mandalo nel gruppo di famiglia",
+        "testo": "Un codice dato = account perso.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Scusa, ti è arrivato un codice per sbaglio, me lo giri?\" 🔢\n\nÈ il modo più comune per rubare un account WhatsApp: quel codice serve ad attivare il TUO numero sul telefono del truffatore. Spesso il messaggio arriva da un amico a cui l'account è già stato rubato.\n\nDifenditi: non dare mai il codice e attiva Impostazioni > Account > Verifica in due passaggi.\n\n💬 Hai già la verifica in due passaggi? Rispondi sì o no.\n📤 Mandalo nel gruppo di famiglia.\n\nTruffa #3: segui per la prossima.",
+    "hashtag": [
+      "whatsapp",
+      "truffe",
+      "truffeonline",
+      "sicurezza",
+      "privacy",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [],
+    "gancio": "Ti chiedono *un codice a 6 cifre* \"arrivato per sbaglio\"? Non darlo.",
+    "reel_titolo": "Truffa #3 · così rubano WhatsApp",
+    "reel_punti": [
+      "Il codice serve a rubarti l'account",
+      "Non darlo neanche a un amico",
+      "Attiva la verifica in due passaggi"
+    ],
+    "invio": "*Mandalo* nel gruppo di famiglia",
+    "solo_reel": true
+  }
+}

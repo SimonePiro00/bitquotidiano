@@ -1,0 +1,48 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano)",
+  "data_prevista": "2026-11-09",
+  "bozza": {
+    "argomento": "Truffa #1: l'SMS del pacco in giacenza",
+    "slides": [
+      {
+        "titolo": "\"Il tuo pacco è in giacenza\": è una truffa",
+        "testo": "",
+        "illustrazione": "Bit, la mascotte della pagina"
+      },
+      {
+        "titolo": "Come riconoscerla",
+        "testo": "Link che non è del sito ufficiale del corriere, richiesta di 1-2 euro, scadenza a 24 ore. Poste e corrieri non chiedono pagamenti con un link via SMS.",
+        "illustrazione": "telefono con un SMS generico di finto pacco in giacenza, link e scadenza evidenziati"
+      },
+      {
+        "titolo": "Mandalo a chi compra online",
+        "testo": "Basta un clic per lasciare i dati della carta.",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Il tuo pacco è in giacenza, paga 1,99 € per la consegna\" 📦\n\nÈ l'SMS truffa più diffuso: il link porta a un sito falso che ruba i dati della carta. Poste e corrieri non chiedono pagamenti con un link via SMS: se aspetti davvero un pacco, controlla dall'app o dal sito ufficiale.\n\n💬 Ti è mai arrivato? Scrivi \"sì\" nei commenti.\n📤 Mandalo a chi fa acquisti online.\n\nTruffa #1 di una serie: segui per la prossima.",
+    "hashtag": [
+      "truffe",
+      "sms",
+      "truffeonline",
+      "pacchi",
+      "sicurezza",
+      "phishing",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [],
+    "gancio": "*\"Il tuo pacco è in giacenza\"*: non cliccare quel link.",
+    "reel_titolo": "Truffa #1 · riconoscila così",
+    "reel_punti": [
+      "Link strano, non del corriere",
+      "Chiede pochi euro per sbloccarlo",
+      "Ti mette fretta: \"entro 24 ore\""
+    ],
+    "invio": "*Mandalo* a chi aspetta sempre un pacco",
+    "solo_reel": true
+  }
+}
