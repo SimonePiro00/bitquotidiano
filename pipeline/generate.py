@@ -68,6 +68,7 @@ class Bozza(BaseModel):
     reel_titolo: str | None = Field(default=None, description="Reel lampo: titoletto sopra i punti, max 30 caratteri")
     reel_punti: list[str] | None = Field(default=None, description="Reel lampo: 3 punti di 2-6 parole ciascuno")
     invio: str | None = Field(default=None, description="Reel lampo: invito a inoltrare, es. '*Mandalo* a chi...'")
+    annuncio: str | None = Field(default=None, description="Reel lampo: annuncia il punto più forte, tenuto per ultimo (es. 'Il terzo è quello che frega tutti')")
     solo_reel: bool = Field(default=False, description="Pubblica solo Reel e storia, senza carosello")
 
 

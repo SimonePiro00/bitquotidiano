@@ -61,10 +61,11 @@
     "reel_titolo": "Gratis, anche per il cellulare",
     "reel_punti": [
       "Registro pubblico delle opposizioni",
-      "Iscrivi fisso e cellulare",
-      "Vale anche contro i vecchi consensi"
+      "Iscrivi anche il cellulare, gratis",
+      "Cancella i vecchi consensi"
     ],
     "invio": "*Mandalo* a chi riceve 5 chiamate al giorno",
-    "solo_reel": false
+    "solo_reel": false,
+    "annuncio": "Il terzo non lo sa quasi nessuno"
   }
 }

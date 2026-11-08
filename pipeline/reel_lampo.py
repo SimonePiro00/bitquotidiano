@@ -35,13 +35,14 @@ def _scrivi_evidenziato(d, testo, size, y, colore=FG):
     return y
 
 
-def _gancio(testo, k, t):
+def _gancio(testo, k, t, annuncio="Guarda fino alla fine"):
     img = _fondo_gancio(testo, 3)[0].copy()
     d = ImageDraw.Draw(img)
     # Copre il "3 cose da sapere" del gancio lungo: qui basta la freccia.
     fine = _fondo_gancio(testo, 3)[1]
     d.rectangle([X0, fine - 70, X1, fine], fill=BG)
-    d.text((X0, fine - 60), "Guarda fino alla fine ↓", font=_font(FONT_BOLD, 46), fill=MUTED)
+    # L'annuncio del punto più forte, tenuto per ultimo: è il motivo per restare fino alla fine.
+    d.text((X0, fine - 64), f"{annuncio} ↓", font=_font(FONT_BOLD, 50), fill=ACCENT)
     d.text((X0, 170), "@bitquotidiano.it", font=_font(FONT_BOLD, 38), fill=ACCENT)
     lato = 420
     bit = _bit_piccolo(1 + (k // 5) % 2 if (k // 5) % 3 else 0, False, True, lato)
@@ -61,10 +62,11 @@ def _punti(titolo, punti, n, k, t):
         dx = int(60 * (1 - a))
         r = 40
         d.ellipse([X0 + dx, y + 8, X0 + dx + 2 * r, y + 8 + 2 * r], fill=_mix(ACCENT, a))
+        colore = ACCENT if i == len(punti) - 1 else FG   # l'ultimo è il punto forte annunciato all'inizio
         d.text((X0 + dx + r, y + 8 + r), str(i + 1), font=_font(FONT_BOLD, 50), fill=BG, anchor="mm")
         righe = _wrap(d, p, f, LARGHEZZA - 120)
         for j, rg in enumerate(righe):
-            d.text((X0 + 120 + dx, y + j * 84), rg, font=f, fill=_mix(FG, a))
+            d.text((X0 + 120 + dx, y + j * 84), rg, font=f, fill=_mix(colore, a))
         y += max(1, len(righe)) * 84 + 60
     return img
 
@@ -98,7 +100,8 @@ def _barra(frame, t, totale):
     return frame
 
 
-def make_reel_lampo(folder: Path, gancio: str, titolo: str, punti: list[str], invio: str, nome="reel.mp4") -> Path:
+def make_reel_lampo(folder: Path, gancio: str, titolo: str, punti: list[str], invio: str, nome="reel.mp4",
+                    annuncio: str = "Il terzo è quello che frega tutti") -> Path:
     """gancio e invio: parole tra *asterischi* in arancio. punti: 3 frasi di 2-6 parole."""
     punti = punti[:3]
     durate = [int(GANCIO_S * FPS)] + [int(PUNTO_S * FPS)] * len(punti) + [int(FINE_S * FPS)]
@@ -106,7 +109,7 @@ def make_reel_lampo(folder: Path, gancio: str, titolo: str, punti: list[str], in
     if voce.disponibile():
         # Con la voce ogni scena dura quanto la frase detta (più un respiro), mai meno del ritmo muto.
         pulito = lambda x: x.replace("*", "")
-        frasi = [pulito(gancio)] + punti + [pulito(invio) + ". E segui per la prossima!"]
+        frasi = [f"{pulito(gancio)} {annuncio}."] + [f"{n}: {p}" for n, p in zip(["Uno", "Due", "Tre"], punti)] + [pulito(invio) + ". E segui per la prossima!"]
         parlato = [voce.parla(f) for f in frasi]
         durate = [max(d, int((a.size / voce.RATE + 0.25) * FPS)) for d, a in zip(durate, parlato)]
     totale = sum(durate)
@@ -129,11 +132,11 @@ def make_reel_lampo(folder: Path, gancio: str, titolo: str, punti: list[str], in
         for scena, n_frame in enumerate(durate):
             for k in range(n_frame):
                 if scena == 0:
-                    frame = _gancio(gancio, k, t)
+                    frame = _gancio(gancio, k, t, annuncio)
                 elif scena <= len(punti):
                     frame = _punti(titolo, punti, scena - 1, k, t)
                 elif k >= n_frame - 6:
-                    frame = _gancio(gancio, 0, t)   # ultimi 0,2 s: torna il gancio, il loop è morbido
+                    frame = _gancio(gancio, 0, t, annuncio)   # ultimi 0,2 s: torna il gancio, il loop è morbido
                 else:
                     frame = _fine(invio, k, t)
                 proc.stdin.write(_barra(frame, t, totale).tobytes())

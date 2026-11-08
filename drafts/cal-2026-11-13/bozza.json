@@ -39,9 +39,10 @@
     "reel_punti": [
       "Luminosità automatica",
       "Risparmio energetico dal 30%",
-      "Controlla le app che consumano"
+      "Scopri l'app che la divora"
     ],
     "invio": "*Mandalo* a chi gira sempre col caricatore",
-    "solo_reel": true
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che nessuno controlla"
   }
 }

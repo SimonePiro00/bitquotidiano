@@ -39,11 +39,12 @@
     "gancio": "Paghi il parcheggio con *il QR code*? Guarda prima se è un adesivo.",
     "reel_titolo": "Truffa #4 · il QR finto",
     "reel_punti": [
-      "Adesivo sopra quello vero",
       "Il sito chiede la carta",
-      "Paga con l'app ufficiale"
+      "Paga con l'app del comune",
+      "Se il QR è un adesivo, fermati"
     ],
     "invio": "*Mandalo* a chi parcheggia in città",
-    "solo_reel": true
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che frega tutti"
   }
 }

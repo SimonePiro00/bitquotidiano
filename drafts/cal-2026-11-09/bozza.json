@@ -38,11 +38,12 @@
     "gancio": "*\"Il tuo pacco è in giacenza\"*: non cliccare quel link.",
     "reel_titolo": "Truffa #1 · riconoscila così",
     "reel_punti": [
-      "Link strano, non del corriere",
-      "Chiede pochi euro per sbloccarlo",
-      "Ti mette fretta: \"entro 24 ore\""
+      "Ti mette fretta: \"entro 24 ore\"",
+      "Chiede solo pochi euro",
+      "Il link non è del corriere"
     ],
     "invio": "*Mandalo* a chi aspetta sempre un pacco",
-    "solo_reel": true
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che frega tutti"
   }
 }

@@ -183,7 +183,8 @@ def cmd_reel(args):
         if b.get("reel_punti"):
             from pipeline.reel_lampo import make_reel_lampo
             print(make_reel_lampo(folder, b.get("gancio") or b["slides"][0]["titolo"], b.get("reel_titolo") or "",
-                                  b["reel_punti"], b.get("invio") or "*Mandalo* a chi ne ha bisogno"))
+                                  b["reel_punti"], b.get("invio") or "*Mandalo* a chi ne ha bisogno", "reel.mp4",
+                                  b.get("annuncio") or "Il terzo è quello che frega tutti"))
         elif args.stile == "infografica":
             print(make_reel_info(folder, b["slides"], "reel.mp4", b.get("gancio")))
         else:

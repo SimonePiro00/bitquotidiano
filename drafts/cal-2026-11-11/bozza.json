@@ -38,10 +38,11 @@
     "reel_titolo": "In 5 minuti, gratis",
     "reel_punti": [
       "Spegnilo e riaccendilo",
-      "Libera spazio: almeno il 10%",
-      "Aggiorna sistema e app"
+      "Aggiorna sistema e app",
+      "Libera spazio: almeno il 10%"
     ],
     "invio": "*Mandalo* a chi si lamenta sempre del telefono",
-    "solo_reel": true
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che nessuno fa"
   }
 }

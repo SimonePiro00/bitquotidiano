@@ -60,11 +60,12 @@
     "gancio": "Ti chiama *la tua banca*, dal suo numero vero. Può essere una truffa.",
     "reel_titolo": "Truffa #2 · la banca non lo fa mai",
     "reel_punti": [
-      "Non chiede codici o PIN",
       "Non ti fa spostare soldi",
-      "Riattacca e richiama tu"
+      "Non chiede codici o PIN",
+      "Il numero vero può essere falso"
     ],
     "invio": "*Mandalo* a mamma e papà, prima che li chiamino",
-    "solo_reel": false
+    "solo_reel": false,
+    "annuncio": "Il terzo è quello che frega tutti"
   }
 }

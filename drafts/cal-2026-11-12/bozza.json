@@ -37,11 +37,12 @@
     "gancio": "Ti chiedono *un codice a 6 cifre* \"arrivato per sbaglio\"? Non darlo.",
     "reel_titolo": "Truffa #3 · così rubano WhatsApp",
     "reel_punti": [
-      "Il codice serve a rubarti l'account",
-      "Non darlo neanche a un amico",
-      "Attiva la verifica in due passaggi"
+      "Il codice ruba l'account",
+      "Attiva la verifica in due passaggi",
+      "Il messaggio arriva da un amico"
     ],
     "invio": "*Mandalo* nel gruppo di famiglia",
-    "solo_reel": true
+    "solo_reel": true,
+    "annuncio": "Il terzo è quello che frega tutti"
   }
 }
