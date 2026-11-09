@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-09",
   "bozza": {
@@ -45,5 +45,8 @@
     "invio": "*Mandalo* a chi aspetta sempre un pacco",
     "solo_reel": true,
     "annuncio": "Il terzo è quello che frega tutti"
-  }
+  },
+  "media_id": "18108814040248040",
+  "reel_id": "18108814040248040",
+  "story_id": "18082890458708592"
 }
