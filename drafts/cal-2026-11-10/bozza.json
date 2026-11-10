@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-10",
   "bozza": {
@@ -67,5 +67,8 @@
     "invio": "*Mandalo* a mamma e papà, prima che li chiamino",
     "solo_reel": false,
     "annuncio": "Il terzo è quello che frega tutti"
-  }
+  },
+  "media_id": "18104768219643167",
+  "story_id": "18157830997525599",
+  "reel_id": "17965586811249599"
 }
