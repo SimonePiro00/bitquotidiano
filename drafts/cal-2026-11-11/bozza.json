@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-11",
   "bozza": {
@@ -44,5 +44,8 @@
     "invio": "*Mandalo* a chi si lamenta sempre del telefono",
     "solo_reel": true,
     "annuncio": "Il terzo è quello che nessuno fa"
-  }
+  },
+  "media_id": "17978348267938115",
+  "reel_id": "17978348267938115",
+  "story_id": "18093463787293185"
 }
