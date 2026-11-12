@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-12",
   "bozza": {
@@ -44,5 +44,8 @@
     "invio": "*Mandalo* nel gruppo di famiglia",
     "solo_reel": true,
     "annuncio": "Il terzo è quello che frega tutti"
-  }
+  },
+  "media_id": "18106258667329541",
+  "reel_id": "18106258667329541",
+  "story_id": "18112605968579416"
 }
