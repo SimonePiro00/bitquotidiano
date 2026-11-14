@@ -184,6 +184,9 @@ def _gemini_api(testo: str) -> np.ndarray:
 
     chiave = os.environ.get("GEMINI_API_KEY") or os.environ["GOOGLE_TTS_KEY"]
     print("Voce Gemini: uso la chiave", "GEMINI_API_KEY" if os.environ.get("GEMINI_API_KEY") else "GOOGLE_TTS_KEY (GEMINI_API_KEY vuota)")
+    import hashlib   # solo un'impronta per capire se le due chiavi sono uguali, mai la chiave
+    impronta = lambda k: hashlib.sha256(k.strip().encode()).hexdigest()[:6] if k else "-"
+    print("Impronte chiavi: GEMINI", impronta(os.environ.get("GEMINI_API_KEY", "")), "TTS", impronta(os.environ.get("GOOGLE_TTS_KEY", "")))
     corpo = {"contents": [{"parts": [{"text": f"{STILE}\n\nTesto da leggere: {pronuncia(testo)}"}]}],
              "generationConfig": {"responseModalities": ["AUDIO"],
                                   "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GEMINI}}}}}
