@@ -35,12 +35,12 @@
     "da_verificare": [
       "Percorsi dei menu WhatsApp aggiornati (Android e iPhone)"
     ],
-    "gancio": "Hai *WhatsApp*? Ci sono 3 impostazioni che dovresti attivare stasera.",
+    "gancio": "Usi *WhatsApp*? Allora ci sono 3 impostazioni da attivare stasera.",
     "reel_titolo": "WhatsApp · in 2 minuti",
     "reel_punti": [
-      "Verifica in due passaggi, subito",
-      "Chiamate da sconosciuti? Silenziale",
-      "Gruppi: decidi tu chi ti aggiunge"
+      "Prima di tutto, attiva la verifica in due passaggi",
+      "Poi silenzia le chiamate degli sconosciuti",
+      "E infine scegli tu chi può aggiungerti ai gruppi"
     ],
     "reel_icone": [
       "chat",
@@ -49,9 +49,10 @@
       "chat"
     ],
     "invio": "*Mandalo* a chi usa WhatsApp",
-    "annuncio": "E la terza... quasi nessuno la conosce",
+    "annuncio": "E la terza quasi nessuno la conosce",
     "solo_reel": true,
-    "reel_stile": "palco"
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
   },
   "data_prevista": "2026-11-17"
 }

@@ -38,9 +38,9 @@
     "gancio": "Ti chiama *Amazon* per un ordine sospetto? Aspetta, non premere niente.",
     "reel_titolo": "Truffa #5 · il finto Amazon",
     "reel_punti": [
-      "Ti chiede di premere 1? Riattacca",
-      "L'ordine è vero? Guardalo nell'app",
-      "Vuole farti installare un'app... stop"
+      "Se ti chiede di premere 1, riattacca e basta",
+      "Poi, se l'ordine è vero, lo trovi nell'app",
+      "E se ti fa installare un'app, è una truffa sicura"
     ],
     "reel_icone": [
       "telefono",
@@ -49,9 +49,10 @@
       "avviso"
     ],
     "invio": "*Mandalo* a chi compra online",
-    "annuncio": "E il terzo... è quello che frega tutti",
+    "annuncio": "Ti dico tre cose, e la terza è quella che frega tutti",
     "solo_reel": true,
-    "reel_stile": "palco"
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
   },
   "data_prevista": "2026-11-16"
 }

@@ -35,12 +35,12 @@
     "da_verificare": [
       "Percorso Dispositivi collegati su Android e iPhone"
     ],
-    "gancio": "Qualcuno legge il tuo *WhatsApp*? Controlla in 10 secondi.",
+    "gancio": "Qualcuno legge il tuo *WhatsApp*? Lo scopri in 10 secondi.",
     "reel_titolo": "WhatsApp · in 10 secondi",
     "reel_punti": [
-      "Apri Impostazioni, Dispositivi collegati",
-      "Un computer che non conosci? Disconnettilo",
-      "Poi attiva la verifica in due passaggi"
+      "Apri le impostazioni e vai su Dispositivi collegati",
+      "Se vedi un computer che non conosci, disconnettilo",
+      "E poi attiva la verifica in due passaggi"
     ],
     "reel_icone": [
       "chat",
@@ -49,9 +49,10 @@
       "lucchetto"
     ],
     "invio": "*Mandalo* a chi lascia WhatsApp Web aperto",
-    "annuncio": "E il terzo... ti mette al sicuro",
+    "annuncio": "E il terzo passo ti mette al sicuro",
     "solo_reel": true,
-    "reel_stile": "palco"
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
   },
   "data_prevista": "2026-11-22"
 }

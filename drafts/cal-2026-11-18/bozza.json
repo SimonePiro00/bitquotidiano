@@ -35,12 +35,12 @@
     "da_verificare": [
       "Nomi delle opzioni su iPhone e Google Foto"
     ],
-    "gancio": "*Memoria piena* sul telefono? Non cancellare le foto, prova questo.",
+    "gancio": "*Memoria piena*? Prima di cancellare le foto, prova queste tre cose.",
     "reel_titolo": "Telefono · in 5 minuti",
     "reel_punti": [
-      "WhatsApp: Gestisci spazio, via i video",
-      "App che non apri da mesi? Toglile",
-      "Foto: attiva Ottimizza spazio"
+      "Per prima cosa, togli i video pesanti di WhatsApp",
+      "Poi elimina le app che non apri da mesi",
+      "E alla fine attiva Ottimizza spazio nelle foto"
     ],
     "reel_icone": [
       "telefono",
@@ -49,9 +49,10 @@
       "batteria"
     ],
     "invio": "*Mandalo* a chi ha sempre la memoria piena",
-    "annuncio": "E il terzo... libera giga in un colpo",
+    "annuncio": "E con la terza liberi giga in un colpo",
     "solo_reel": true,
-    "reel_stile": "palco"
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
   },
   "data_prevista": "2026-11-18"
 }
