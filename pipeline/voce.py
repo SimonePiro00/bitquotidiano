@@ -42,7 +42,7 @@ STILE = os.environ.get("BIT_VOCE_STILE", (
     "ritmo VELOCE e incalzante, frasi attaccate senza pause lunghe, "
     "niente tono da annunciatore o da pubblicità."))
 # Gemini non ha un parametro di velocità: si accelera dopo (atempo, non cambia il tono) e si accorciano le pause interne.
-GEMINI_VELOCITA = float(os.environ.get("BIT_VOCE_ACCELERA", 1.25))
+GEMINI_VELOCITA = float(os.environ.get("BIT_VOCE_ACCELERA", 1.0))
 PAUSA_MAX = 0.12   # secondi: le pause interne più lunghe vengono accorciate a questo
 
 _voce = None
@@ -141,7 +141,9 @@ def _google(testo: str) -> np.ndarray:
     import json
     from urllib.request import Request, urlopen
 
-    corpo = {"input": {"text": pronuncia(testo)},
+    # Chirp 3 HD: pausa breve dopo domande e puntini, come nel parlato (scelta di Simone: Puck a 1.12).
+    markup = re.sub(r"(\?|\.\.\.|…)\s+", r"\1 [pause short] ", pronuncia(testo))
+    corpo = {"input": {"markup": markup},
              "voice": {"languageCode": "it-IT", "name": GOOGLE},
              "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE, "speakingRate": VELOCITA}}
     if GEMINI:

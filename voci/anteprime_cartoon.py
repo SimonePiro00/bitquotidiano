@@ -22,8 +22,13 @@ PROVE = [
     ("cal-2026-11-12", "6_whatsapp_palco_gemini_achird", "palco", "gemini:Achird", "1"),
     ("cal-2026-11-15", "7_palco_puck_naturale", "palco", "gemini:Puck", "1"),   # voce scelta da Simone
     ("cal-2026-11-15", "8_palco_puck_veloce", "palco", "gemini:Puck", "1"),   # più svelta (atempo 1.25, pause corte)
+    ("cal-2026-11-15", "9_palco_puck_parlato", "palco", "google:it-IT-Chirp3-HD-Puck", "1.12"),   # scelta di Simone: campione 4
 ]
-solo = os.environ.get("SOLO") or "8"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY da progetto nuovo, fatturazione attiva)
+PARLATO = {"gancio": "Paghi il parcheggio col *QR code*? Ecco, guarda prima se è un adesivo.",
+           "annuncio": "E il terzo... è quello che frega tutti",
+           "reel_punti": ["Il sito ti chiede la carta? Strano", "Paga con l'app del comune, sempre",
+                          "Se il QR è un adesivo... fermati"]}
+solo = os.environ.get("SOLO") or "9"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY da progetto nuovo, fatturazione attiva)
 for bozza, nome, stile, voce_scelta, vel in PROVE:
     if solo and nome.split("_")[0] not in solo.split(","):
         continue
@@ -33,6 +38,8 @@ for bozza, nome, stile, voce_scelta, vel in PROVE:
     importlib.reload(reel_cartoon)
     b = json.loads(Path(f"drafts/{bozza}/bozza.json").read_text())["bozza"]
     b["reel_icone"], b["reel_stile"] = ICONE[bozza], stile
+    if nome.startswith("9_"):   # testo scritto come si parla, come nel campione voci-puck/4
+        b.update(PARLATO)
     try:
         p = reel_cartoon.make_reel_cartoon(OUT, b, f"{nome}.mp4", seme=bozza)
         print("OK", p)
