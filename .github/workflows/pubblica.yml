@@ -24,3 +24,9 @@ jobs:
         run: |
           git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
           git add drafts && git commit -m "Bozza ${{ inputs.id }} pubblicata" && git push || true
+      - if: always()
+        continue-on-error: true   # l'avviso non deve mai far sembrare fallita una pubblicazione riuscita
+        run: python -m pipeline.telegram --esito "${{ inputs.id }}" "${{ job.status }}" "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
