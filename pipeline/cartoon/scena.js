@@ -537,7 +537,7 @@ function palcoFine(sc, k, t, b) {
       <text x="-230" y="-30" font-size="96" font-weight="700" fill="${C.bg}">SEGUI</text>
       <text x="-230" y="50" font-size="52" font-weight="700" fill="${C.bg}">per non farti fregare!</text>
       <text x="0" y="128" font-size="40" font-weight="500" fill="${C.bg}" text-anchor="middle">@bitquotidiano.it</text></g>`;
-  const mano = `<g transform="translate(${800} ${640 + (tocco ? 0 : 24)}) rotate(-20)">
+  const mano = `<g transform="translate(${880} ${750 + (tocco ? 0 : 24)}) rotate(-20)">
       <path d="M0 0 L0 -20 Q0 -36 14 -36 Q28 -36 28 -20 L28 30 L60 22 Q78 20 80 38 L80 80 Q80 110 50 116 L10 116 Q-10 110 -18 90 L-40 40 Q-46 26 -32 22 Q-20 18 -10 30 L0 44 Z" fill="${C.fg}" stroke="${C.bg}" stroke-width="6" stroke-linejoin="round"/></g>`;
   let coriandoli = "";
   for (let j = 0; j < 18; j++) {
