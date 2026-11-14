@@ -1,0 +1,57 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #7: il falso acquirente o venditore su Marketplace e Vinted",
+    "slides": [
+      {
+        "titolo": "La truffa di Marketplace e Vinted",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Il truffatore ti porta fuori dall'app per pagare, o ti manda un link falso per \"ricevere i soldi\". Fuori dall'app perdi ogni tutela.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi vende online",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "3 frasi che su Vinted e Marketplace devono farti scappare 🛑\n\n1. \"Paghiamo fuori dall'app\": senza il pagamento interno perdi la protezione acquisti.\n2. \"Mandami i soldi con PayPal amici e familiari\": è pensato per i regali, se qualcosa va storto non ti rimborsa nessuno.\n3. \"Clicca qui per ricevere il pagamento\": i soldi non si ricevono da un link. È una pagina finta che ti chiede i dati della carta.\n\n💬 Hai mai ricevuto una di queste frasi? Dimmelo nei commenti.\n📤 Mandalo a chi vende online.\n\nTruffa #7: segui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "vinted",
+      "marketplace",
+      "truffeonline",
+      "sicurezza",
+      "consigli",
+      "usato",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Tutele acquisto Vinted e PayPal amici e familiari"
+    ],
+    "gancio": "Vendi o compri su *Vinted* o *Marketplace*? Occhio a queste 3 frasi.",
+    "reel_titolo": "Truffa #7 · l'annuncio",
+    "reel_punti": [
+      "Paghiamo fuori dall'app? No",
+      "PayPal amici e familiari? Niente tutela",
+      "Un link per ricevere i soldi... è una trappola"
+    ],
+    "reel_icone": [
+      "soldi",
+      "stop",
+      "carta",
+      "link"
+    ],
+    "invio": "*Mandalo* a chi vende online",
+    "annuncio": "E il terzo... è quello che frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco"
+  },
+  "data_prevista": "2026-11-21"
+}

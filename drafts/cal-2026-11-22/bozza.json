@@ -1,0 +1,57 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "WhatsApp: capire se qualcuno legge i tuoi messaggi da un altro dispositivo",
+    "slides": [
+      {
+        "titolo": "Qualcuno legge il tuo WhatsApp?",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "In Impostazioni > Dispositivi collegati vedi tutti i computer e i browser collegati al tuo account. Se ne trovi uno che non riconosci, esci e attiva la verifica in due passaggi.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi lascia WhatsApp Web aperto",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Qualcuno legge il tuo WhatsApp da un altro dispositivo? Controlla così 👀\n\n1. Apri WhatsApp > Impostazioni > Dispositivi collegati.\n2. Vedi l'elenco di computer e browser collegati, con l'ultimo accesso. Uno che non riconosci? Toccalo e scegli \"Disconnetti\".\n3. Poi attiva la verifica in due passaggi (Impostazioni > Account), così nessuno può rifarlo.\n\n💬 Hai trovato qualcosa di strano? Dimmelo nei commenti.\n📤 Mandalo a chi lascia WhatsApp Web aperto in ufficio.",
+    "hashtag": [
+      "whatsapp",
+      "privacy",
+      "sicurezza",
+      "whatsappweb",
+      "trucchi",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Percorso Dispositivi collegati su Android e iPhone"
+    ],
+    "gancio": "Qualcuno legge il tuo *WhatsApp* da un altro computer? Controlla in 10 secondi.",
+    "reel_titolo": "WhatsApp · in 10 secondi",
+    "reel_punti": [
+      "Apri Impostazioni, Dispositivi collegati",
+      "Un computer che non conosci? Disconnettilo",
+      "Poi attiva la verifica in due passaggi"
+    ],
+    "reel_icone": [
+      "chat",
+      "telefono",
+      "stop",
+      "lucchetto"
+    ],
+    "invio": "*Mandalo* a chi lascia WhatsApp Web aperto",
+    "annuncio": "E il terzo... ti mette al sicuro",
+    "solo_reel": true,
+    "reel_stile": "palco"
+  },
+  "data_prevista": "2026-11-22"
+}
