@@ -15,13 +15,13 @@ ICONE = {"cal-2026-11-15": ["qr", "carta", "telefono", "stop"],
 # (bozza, nome file, stile grafico, voce, velocità): la velocità vale solo per Chirp 3 HD, Gemini segue l'indicazione di stile.
 PROVE = [
     ("cal-2026-11-15", "1_palco_v4_achird", "palco", "google:it-IT-Chirp3-HD-Achird", "1.22"),
-    ("cal-2026-11-15", "2_palco_gemini_achird", "palco", "gemini:Achird", "1"),
+    ("cal-2026-11-15", "2_palco_v4_gemini_achird", "palco", "gemini:Achird", "1"),
     ("cal-2026-11-15", "3_palco_gemini_puck", "palco", "gemini:Puck", "1"),
     ("cal-2026-11-15", "4_palco_gemini_fenrir", "palco", "gemini:Fenrir", "1"),
     ("cal-2026-11-15", "5_schede_gemini_achird", "schede", "gemini:Achird", "1"),
     ("cal-2026-11-12", "6_whatsapp_palco_gemini_achird", "palco", "gemini:Achird", "1"),
 ]
-solo = os.environ.get("SOLO") or "1,2"   # es. "2,5" per rifare solo alcune prove
+solo = os.environ.get("SOLO") or "2"   # es. "2,5" per rifare solo alcune prove
 for bozza, nome, stile, voce_scelta, vel in PROVE:
     if solo and nome.split("_")[0] not in solo.split(","):
         continue
