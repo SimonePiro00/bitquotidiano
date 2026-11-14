@@ -21,7 +21,7 @@ PROVE = [
     ("cal-2026-11-15", "5_schede_gemini_achird", "schede", "gemini:Achird", "1"),
     ("cal-2026-11-12", "6_whatsapp_palco_gemini_achird", "palco", "gemini:Achird", "1"),
 ]
-solo = os.environ.get("SOLO") or "2"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY, Gemini API attiva)
+solo = os.environ.get("SOLO") or "2"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY, Gemini API attiva, nuovo tentativo)
 for bozza, nome, stile, voce_scelta, vel in PROVE:
     if solo and nome.split("_")[0] not in solo.split(","):
         continue
