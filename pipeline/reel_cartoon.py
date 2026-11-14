@@ -49,6 +49,22 @@ def _effetto(tipo: str, rate=voce.RATE) -> np.ndarray:
             a, b = i * n // 8, (i + 1) * n // 8
             out[a:b] = np.convolve(rumore, np.ones(k) / k, "same")[a:b]
         return (out * inv * 0.5).astype(np.float32)
+    if tipo == "rullo":   # rullo di tamburi che accelera e cresce
+        n = int(0.62 * rate)
+        out = np.zeros(n, dtype=np.float32)
+        tempo, colpo = 0.0, 0
+        while tempo < 0.6:
+            i0 = int(tempo * rate)
+            m = min(int(0.05 * rate), n - i0)
+            env = np.exp(-np.arange(m) / rate * 60)
+            out[i0:i0 + m] += (rng.standard_normal(m) * env * (0.15 + 0.35 * tempo / 0.6)).astype(np.float32)
+            tempo += max(0.03, 0.09 - colpo * 0.006)
+            colpo += 1
+        return out
+    if tipo == "ding":
+        n = int(0.6 * rate)
+        t = np.arange(n) / rate
+        return ((np.sin(2 * np.pi * 1318 * t) + 0.5 * np.sin(2 * np.pi * 1976 * t)) * np.exp(-t * 6) * 0.3).astype(np.float32)
     n = int(0.12 * rate)
     t = np.arange(n) / rate
     f = 900 * np.exp(-t * 25) + 250
@@ -63,25 +79,32 @@ def copione_e_audio(b: dict, seme: str):
     icone = (b.get("reel_icone") or ["avviso"] * 4) + ["avviso"] * 4
     serie, _, titolo = (b.get("reel_titolo") or "").partition(" · ")
     pulito = lambda x: x.replace("*", "")
-    frasi = [f"{pulito(gancio)} {annuncio}."] + [p.rstrip(".") + "." for p in punti] + [pulito(invio) + "!"]
-    parole_scena = [_parole(gancio) + _parole(annuncio)] + [_parole(p) for p in punti] + [_parole(invio)]
+    # Invito a seguire con la "prossima puntata": crea attesa per il Reel successivo.
+    m = re.search(r"Truffa #(\d+)", serie or "")
+    prossima = f"Truffa #{int(m.group(1)) + 1}" if m else ""
+    segui = f"E segui per la truffa numero {int(m.group(1)) + 1}!" if m else "E segui per la prossima!"
+    frasi = [f"{pulito(gancio)} {annuncio}."] + [p.rstrip(".") + "." for p in punti] + [f"{pulito(invio)}. {segui}"]
+    parole_scena = [_parole(gancio) + _parole(annuncio)] + [_parole(p) for p in punti] + [_parole(invio) + _parole(segui)]
 
     con_voce = voce.disponibile()
     if con_voce:
         parlato = [voce.rifila(voce.parla(f)) for f in frasi]
     else:   # senza voce: ritmo di lettura, circa 14 caratteri al secondo
         parlato = [np.zeros(int(len(f) / 14 * voce.RATE), dtype=np.float32) for f in frasi]
-    pausa = [0.35, 0.3, 0.3, 0.45, 0.6]   # respiro dopo ogni frase (l'ultima lascia tempo per il loop)
+    pausa = [0.15, 0.12, 0.12, 0.3, 0.7]   # respiro dopo ogni frase (l'ultima lascia tempo per il loop)
+    SOSPENSE = 0.7   # prima del terzo punto: rullo di tamburi e lucchetto che trema
     scene, inizio = [], 0
     tipi = ["gancio"] + ["punto"] * len(punti) + ["fine"]
     for i, (tipo, a) in enumerate(zip(tipi, parlato)):
         attacco = 0 if i == 0 else int(TRANSIZIONE * FPS * 0.6)   # la voce parte quando la banda è passata
+        sospensione = int(SOSPENSE * FPS) if tipo == "punto" and i == len(punti) else 0
+        attacco += sospensione
         dur_voce = int(np.ceil(a.size / voce.RATE * FPS))
         dur = attacco + dur_voce + int(pausa[min(i, 4)] * FPS)
         sc = {"tipo": tipo, "da": inizio, "a": inizio + dur, "voce_da": inizio + attacco,
               "parole": _tempi_parole(parole_scena[i], inizio + attacco, dur_voce)}
         if tipo == "punto":
-            sc["i"] = i - 1
+            sc["i"], sc["suspense"] = i - 1, sospensione
         scene.append(sc)
         inizio += dur
     frames = inizio
@@ -102,18 +125,23 @@ def copione_e_audio(b: dict, seme: str):
         else:   # bocca finta mentre "parla"
             for f in range(sc["voce_da"], sc["voce_da"] + int(a.size / voce.RATE * FPS)):
                 bocca[f] = 0.5 + 0.5 * np.sin(f * 1.7)
-        if sc["tipo"] != "gancio":
-            for nome, ritardo in (("whoosh", -0.1), ("pop", 0.15)):
-                e = _effetto(nome)
-                j = max(0, int((sc["da"] / FPS + ritardo) * voce.RATE))
-                m = min(e.size, n_campioni - j)
-                audio[j:j + m] += e[:m]
+        if sc.get("suspense"):
+            effetti = [("whoosh", sc["da"] / FPS - 0.1), ("rullo", sc["da"] / FPS + 0.05), ("ding", sc["voce_da"] / FPS - 0.12)]
+        elif sc["tipo"] != "gancio":
+            effetti = [("whoosh", sc["da"] / FPS - 0.1), ("pop", sc["da"] / FPS + 0.15)]
+        else:
+            effetti = []
+        for nome, quando in effetti:
+            e = _effetto(nome)
+            j = max(0, int(quando * voce.RATE))
+            m = min(e.size, n_campioni - j)
+            audio[j:j + m] += e[:m]
     if con_voce and bocca.max() > 0:
         bocca = np.clip(bocca / np.percentile(bocca[bocca > 0], 90), 0, 1)
     audio = np.clip(audio, -1, 1)
 
     copione = {"fps": FPS, "frames": frames, "stile": b.get("reel_stile", "schede"), "serie": serie or "Bit Quotidiano", "titolo": titolo,
-               "gancio": gancio, "annuncio": annuncio, "invio": invio, "icona_gancio": icone[0],
+               "gancio": gancio, "annuncio": annuncio, "invio": invio, "segui": segui, "prossima": prossima, "icona_gancio": icone[0],
                "punti": [{"testo": p, "icona": icone[i + 1]} for i, p in enumerate(punti)],
                "scene": scene, "bocca": [round(float(x), 3) for x in bocca]}
     return copione, audio

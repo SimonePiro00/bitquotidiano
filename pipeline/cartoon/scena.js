@@ -383,7 +383,7 @@ function parseParole(str) { return impagina(str, 10, 1e9).parole.map(w => ({ p: 
 function paroleScena(sc) {
   if (sc.tipo === "gancio") return parseParole(S.gancio).concat(parseParole(S.annuncio));
   if (sc.tipo === "punto") return parseParole(S.punti[sc.i].testo).map(w => ({ ...w, acc: w.acc || sc.i === S.punti.length - 1 && false }));
-  return parseParole(S.invio);
+  return parseParole(S.invio).concat(parseParole(S.segui || ""));
 }
 
 function blocchi(parole) {
@@ -400,6 +400,10 @@ function blocchi(parole) {
 
 function sottotitoli(sc, n) {
   const parole = paroleScena(sc), kara = sc.parole || [];
+  if (sc.suspense && n < sc.voce_da) {   // attesa prima del terzo: domanda in sovrimpressione
+    const p = 1 + 0.06 * Math.sin(n / 2);
+    return `<text x="540" y="1500" font-size="${96 * p}" font-weight="700" fill="${C.acc}" text-anchor="middle" stroke="${C.bg}" stroke-width="14" paint-order="stroke">E IL TERZO…</text>`;
+  }
   if (!parole.length || n < (kara[0] || [0])[0]) return "";
   let ora = kara.findIndex(([a, b]) => n >= a && n < b);
   if (ora < 0) ora = n >= (kara[kara.length - 1] || [0, 0])[1] ? parole.length - 1 : -1;
@@ -451,53 +455,105 @@ function etichetta(testo, x, y) {
     <text x="20" y="45" font-size="${size}" font-weight="700" fill="${C.fg}">${esc(testo)}</text></g>`;
 }
 
+/* Pannello dei 3 segnali: quelli non ancora detti restano coperti ("???"), il terzo ha un lucchetto.
+ * È il motivo per restare: si vede subito che c'è qualcosa da scoprire. */
+function pannello(rivelati, attivo, k, t, x0, y0, w, sblocco = 1) {
+  let out = "";
+  const h = 92, gap = 18;
+  S.punti.forEach((p, j) => {
+    const y = y0 + j * (h + gap), visto = j < rivelati, ora = j === attivo;
+    const terzo = j === S.punti.length - 1;
+    const pop = ora ? easeBack(k / 0.35) : 1;
+    const bordo = ora ? C.acc : terzo && !visto ? C.acc : C.muted;
+    let contenutoRiga;
+    if (visto) {
+      const size = Math.min(48, 48 * (w - 150) / Math.max(1, larghezza(p.testo, 48)));
+      contenutoRiga = `<text x="118" y="${h / 2 + size * 0.36}" font-size="${size}" font-weight="700" fill="${ora ? C.bg : C.fg}">${esc(p.testo)}</text>`;
+    } else {
+      const lamp = 0.5 + 0.5 * Math.sin(t * 6 - j);
+      contenutoRiga = `<rect x="118" y="${h / 2 - 14}" width="${w - 260}" height="28" rx="14" fill="${C.medio}" opacity="${0.6 + 0.3 * lamp}"/>
+        <text x="${w - 120}" y="${h / 2 + 17}" font-size="48" font-weight="700" fill="${C.acc}">???</text>`;
+      if (terzo) {
+        const tr = (1 - sblocco) * 10 * Math.sin(t * 40) + 3 * Math.sin(t * 9);
+        contenutoRiga += `<g transform="translate(${w - 175} ${h / 2}) rotate(${tr}) scale(0.16)">${ICONE.lucchetto(0.2)}</g>`;
+      }
+    }
+    out += `<g transform="translate(${x0} ${y}) translate(${w / 2} ${h / 2}) scale(${0.85 + 0.15 * pop}) translate(${-w / 2} ${-h / 2})">
+      <rect width="${w}" height="${h}" rx="22" fill="${ora ? C.acc : C.bg}" stroke="${bordo}" stroke-width="${ora ? 7 : 5}" ${!visto && !ora ? 'stroke-dasharray="14 10"' : ""}/>
+      <circle cx="56" cy="${h / 2}" r="32" fill="${visto || ora ? (ora ? C.bg : C.acc) : C.scuro}" stroke="${C.fg}" stroke-width="4"/>
+      <text x="56" y="${h / 2 + 15}" font-size="42" font-weight="700" fill="${ora ? C.acc : visto ? C.bg : C.muted}" text-anchor="middle">${j + 1}</text>
+      ${contenutoRiga}</g>`;
+  });
+  return out;
+}
+
 function palcoGancio(sc, k, t, b) {
-  const tx = testo(S.gancio, 60, 450, 80, 960, -1);
-  const pop = 1 + 0.1 * Math.sin(t * 8);
+  const tx = testo(S.gancio, 60, 400, 76, 960, -1);
+  const y0 = Math.max(tx.fondo + 70, 640);
+  const tag = `${S.punti.length} segnali · il terzo frega tutti`;
   return `${tx.svg}
-    <g transform="translate(730 ${1000 + 10 * Math.sin(t * 3)}) rotate(${-6 + 4 * Math.sin(t * 2.5)}) scale(0.62)">${icona(S.icona_gancio, t)}</g>
-    ${timbro(S.annuncio, 640, 740, k + 0.6, 4, true, 40)}
-    ${bit({ x: 290, y: 1250, s: 0.72, t, bocca: b, umore: "preoccupato", bs: 150 + 12 * Math.sin(t * 6), bd: 70, tilt: 6 * Math.sin(t * 1.7), guarda: [1, -0.2], squash: 0.02 * Math.sin(t * 6) })}
-    <g transform="translate(300 ${790}) scale(${pop})"><circle r="48" fill="${C.fg}"/><text y="24" font-size="70" font-weight="700" fill="${C.acc}" text-anchor="middle">?</text></g>`;
+    <text x="60" y="${y0 - 16}" font-size="40" font-weight="700" fill="${C.acc}">${esc(tag.toUpperCase())}</text>
+    <g transform="translate(0 ${4 * Math.sin(t * 3)})">${pannello(0, -1, k, t, 60, y0 + 10, 960)}</g>
+    ${bit({ x: 300, y: 1250, s: 0.62, t, bocca: b, umore: "preoccupato", bs: 30 + 12 * Math.sin(t * 6), bd: 140, tilt: 6 * Math.sin(t * 1.7), guarda: [1, -0.2], squash: 0.02 * Math.sin(t * 6) })}
+    <g transform="translate(${720 + 6 * Math.sin(t * 3)} ${1090 + 8 * Math.sin(t * 4)}) rotate(${-8 + 4 * Math.sin(t * 2.5)}) scale(0.5)">${icona(S.icona_gancio, t)}</g>`;
 }
 
 function palcoPunto(sc, k, t, b) {
   const i = sc.i, p = S.punti[i], ultimo = i === S.punti.length - 1;
-  const e = easeBack(k / 0.45);
-  const tremo = ultimo ? 8 * Math.sin(t * 30) * Math.max(0, 1 - k / 0.7) : 0;
+  const sosp = (sc.suspense || 0) / S.fps;            // secondi di attesa prima di svelare il terzo
+  const kr = k - sosp;                                 // tempo dalla rivelazione
+  const svelato = kr >= 0;
+  const e = svelato ? easeBack(kr / 0.45) : 0;
+  const tremo = ultimo && svelato ? 10 * Math.sin(t * 34) * Math.max(0, 1 - kr / 0.6) : 0;
   const pose = [{ bs: 30, bd: 140, umore: "felice" }, { bs: 150, bd: 30, umore: "ammicca" }, { bs: 160, bd: 160, umore: "sorpreso" }][Math.min(i, 2)];
-  const salto = Math.max(0, Math.sin(clamp(k / 0.5) * Math.PI));
-  // titoletti già visti in piccolo, come "ricordo" dei punti precedenti
-  let ricordi = "";
-  for (let j = 0; j < i; j++) ricordi += `<g opacity="0.55">${etichetta(`${j + 1}. ${S.punti[j].testo}`, 60, 330 + j * 80)}</g>`;
-  return `${ricordi}
-    <g transform="translate(60 ${330 + i * 80})">${badgePiccolo(i + 1, k)}</g>
-    <g transform="translate(${710 + tremo} 1000) scale(${(0.25 + 0.75 * e) * 0.66}) rotate(${(1 - e) * 25})">${icona(p.icona, t)}</g>
-    ${timbro(p.testo, 640, 700, k - 0.25, ultimo ? 4 : -5, ultimo, 52)}
-    ${bit({ x: 270, y: 1250 - 70 * salto, s: 0.72, t, bocca: b, ...pose, guarda: [1, -0.6], bs: pose.bs + 10 * Math.sin(t * 5),
-           tilt: 8 * Math.sin(t * 2.2), squash: k < 0.12 ? 0.08 : 0.015 * Math.sin(t * 6), piedi: salto })}`;
+  const salto = svelato ? Math.max(0, Math.sin(clamp(kr / 0.5) * Math.PI)) : 0;
+  const attesa = !svelato ? `<g transform="translate(740 1000) scale(${1 + 0.08 * Math.sin(t * 20)})">
+      <circle r="150" fill="${C.scuro}" stroke="${C.acc}" stroke-width="8" stroke-dasharray="20 14" transform="rotate(${t * 200})"/>
+      <text y="45" font-size="140" font-weight="700" fill="${C.acc}" text-anchor="middle">?</text></g>` : "";
+  let scoppio = "";
+  if (ultimo && svelato && kr < 0.6) {
+    for (let j = 0; j < 14; j++) {
+      const a = j / 14 * Math.PI * 2, r = 80 + 520 * easeOut(kr / 0.6);
+      scoppio += `<circle cx="${740 + r * Math.cos(a)}" cy="${1000 + r * Math.sin(a)}" r="${16 * (1 - kr / 0.6)}" fill="${j % 2 ? C.acc : C.fg}"/>`;
+    }
+  }
+  return `${pannello(svelato ? i + 1 : i, svelato ? i : -1, kr, t, 60, 300, 960, svelato ? 1 : clamp(1 - k / Math.max(sosp, 0.01)))}
+    ${attesa}${scoppio}
+    ${svelato ? `<g transform="translate(${740 + tremo} 1000) scale(${(0.25 + 0.75 * e) * 0.72}) rotate(${(1 - e) * 25})">${icona(p.icona, t)}</g>` : ""}
+    ${bit({ x: 270, y: 1250 - 70 * salto, s: 0.72, t, bocca: b, ...(svelato ? pose : { bs: 20, bd: 20, umore: "preoccupato" }), guarda: [1, -0.4],
+           bs: (svelato ? pose.bs : 30) + 10 * Math.sin(t * 5), tilt: svelato ? 8 * Math.sin(t * 2.2) : 4 * Math.sin(t * 25),
+           squash: svelato && kr < 0.12 ? 0.08 : 0.015 * Math.sin(t * 6), piedi: salto })}
+    ${ultimo && svelato && kr < 0.25 ? `<rect width="${W}" height="${H}" fill="${C.fg}" opacity="${0.7 * (1 - kr / 0.25)}"/>` : ""}`;
 }
 
-function badgePiccolo(n, k) {
-  const e = elastic(k / 0.6);
-  return `<g transform="translate(36 32) scale(${e})"><circle r="40" fill="${C.acc}" stroke="${C.fg}" stroke-width="5"/>
-    <text y="18" font-size="52" font-weight="700" fill="${C.bg}" text-anchor="middle">${n}</text></g>`;
+function campanella(t) {
+  const r = 18 * Math.sin(t * 18) * Math.max(0, Math.sin(t * 2.5));
+  return `<g transform="rotate(${r} 0 -40)">
+    <path d="M-34 14 Q-34 -40 0 -44 Q34 -40 34 14 L44 26 L-44 26 Z" fill="${C.bg}" stroke="${C.bg}" stroke-width="6" stroke-linejoin="round"/>
+    <circle cy="36" r="10" fill="${C.bg}"/><circle cy="-48" r="7" fill="${C.bg}"/></g>`;
 }
 
 function palcoFine(sc, k, t, b) {
-  const v = (k % 1.6) / 1.6;
-  const ax = lerp(420, 1200, easeInOut(v)), ay = lerp(1000, 200, easeInOut(v)) - 120 * Math.sin(v * Math.PI);
   const salto = Math.abs(Math.sin(t * 5));
-  const segui = "+ Segui per la prossima", bw = larghezza(segui, 54) + 90;
-  const tocco = ((k + 0.4) % 1.2) < 0.25, pul = 1 + 0.05 * Math.sin(t * 7);
-  return `${testo(S.invio, 60, 400, 96, 960, k, C.fg, 0.06).svg}
-    <g transform="translate(${540} ${650}) scale(${pul * (tocco ? 0.94 : 1)})">
-      <rect x="${-bw / 2}" y="-55" width="${bw}" height="110" rx="55" fill="${C.acc}" stroke="${C.fg}" stroke-width="7"/>
-      <text y="19" font-size="54" font-weight="700" fill="${C.bg}" text-anchor="middle">${segui}</text></g>
-    <g transform="translate(${540 + bw / 2 - 50} ${685 + (tocco ? 0 : 18)}) rotate(-20)">
-      <path d="M0 0 L0 -20 Q0 -36 14 -36 Q28 -36 28 -20 L28 30 L60 22 Q78 20 80 38 L80 80 Q80 110 50 116 L10 116 Q-10 110 -18 90 L-40 40 Q-46 26 -32 22 Q-20 18 -10 30 L0 44 Z" fill="${C.fg}" stroke="${C.bg}" stroke-width="6" stroke-linejoin="round"/></g>
-    <g transform="translate(${ax} ${ay}) rotate(-38) scale(2.6)"><path d="M-30 -24 L34 0 L-30 24 L-18 0 Z" fill="${C.fg}" stroke="${C.bg}" stroke-width="3" stroke-linejoin="round"/><path d="M-18 0 L34 0" stroke="${C.acc}" stroke-width="4"/></g>
-    ${bit({ x: 400, y: 1250 - 70 * salto, s: 0.75, t, bocca: b, umore: "felice", bs: 165 + 18 * Math.sin(t * 12), bd: 120, tilt: -6, guarda: [1, -1],
+  const tocco = ((k + 0.3) % 1.1) < 0.22, pul = 1 + 0.05 * Math.sin(t * 7);
+  const e = easeBack(k / 0.5);
+  const card = `<g transform="translate(540 640) scale(${(0.3 + 0.7 * e) * pul * (tocco ? 0.95 : 1)})">
+      <rect x="-440" y="-170" width="880" height="340" rx="48" fill="${C.acc}" stroke="${C.fg}" stroke-width="9"/>
+      <g transform="translate(-330 -40) scale(1.5)">${campanella(t)}</g>
+      <text x="-230" y="-30" font-size="96" font-weight="700" fill="${C.bg}">SEGUI</text>
+      <text x="-230" y="50" font-size="54" font-weight="700" fill="${C.bg}">${esc(S.prossima ? "per la " + S.prossima : "per la prossima")}</text>
+      <text x="0" y="128" font-size="40" font-weight="500" fill="${C.bg}" text-anchor="middle">@bitquotidiano.it</text></g>`;
+  const mano = `<g transform="translate(${800} ${640 + (tocco ? 0 : 24)}) rotate(-20)">
+      <path d="M0 0 L0 -20 Q0 -36 14 -36 Q28 -36 28 -20 L28 30 L60 22 Q78 20 80 38 L80 80 Q80 110 50 116 L10 116 Q-10 110 -18 90 L-40 40 Q-46 26 -32 22 Q-20 18 -10 30 L0 44 Z" fill="${C.fg}" stroke="${C.bg}" stroke-width="6" stroke-linejoin="round"/></g>`;
+  let coriandoli = "";
+  for (let j = 0; j < 18; j++) {
+    const f = ((k * 0.7 + j * 0.13) % 1);
+    coriandoli += `<rect x="${(j * 151) % W}" y="${300 + f * 1000}" width="18" height="10" rx="3" fill="${j % 3 ? C.acc : C.fg}" opacity="${0.8 * (1 - f)}" transform="rotate(${t * 300 + j * 40} ${(j * 151) % W} ${300 + f * 1000})"/>`;
+  }
+  return `${coriandoli}
+    ${testo(S.invio, 60, 370, Math.min(70, 70 * 960 / larghezza(pulito(S.invio), 70)), 960, k, C.fg, 0.05).svg}
+    ${card}${mano}
+    ${bit({ x: 330, y: 1260 - 60 * salto, s: 0.6, t, bocca: b, umore: "felice", bs: 165 + 18 * Math.sin(t * 12), bd: 150, tilt: -6, guarda: [1, -1],
            squash: salto < 0.15 ? 0.07 : -0.03, piedi: salto })}`;
 }
 const PALCO = { gancio: palcoGancio, punto: palcoPunto, fine: palcoFine };
@@ -508,7 +564,12 @@ function contenuto(sc, n) {
   const k = (n - sc.da) / S.fps, t = n / S.fps;
   const b = S.bocca[n] || 0;
   const pill = sc.tipo === "fine" ? "" : pillola(t);
-  if (S.stile === "palco") return palco(t) + PALCO[sc.tipo](sc, k, t, b) + sottotitoli(sc, n) + pill;
+  if (S.stile === "palco") {
+    const kc = sc.tipo === "punto" ? k - (sc.suspense || 0) / S.fps : k;
+    const zoom = sc.tipo === "gancio" ? 1 : 1 + 0.06 * Math.exp(-Math.max(0, kc) * 7) * (kc >= 0 ? 1 : 0);
+    const scena = PALCO[sc.tipo](sc, k, t, b);
+    return palco(t) + `<g transform="translate(540 900) scale(${zoom}) translate(-540 -900)">${scena}</g>` + sottotitoli(sc, n) + pill;
+  }
   return DISEGNA[sc.tipo](sc, k, t, b) + pill;
 }
 
