@@ -6,7 +6,7 @@ on:
       solo: {description: "Numeri delle prove da rifare, es. 2,5 (vuoto = tutte)", default: ""}
   push:
     branches: [claude/project-thread-fkj7dg]
-    paths: [voci/anteprime_cartoon.py, pipeline/cartoon/**, pipeline/reel_cartoon.py]
+    paths: [voci/anteprime_cartoon.py, pipeline/cartoon/**, pipeline/reel_cartoon.py, pipeline/voce.py, .github/workflows/anteprime_cartoon.yml]
 permissions:
   contents: write
 jobs:
