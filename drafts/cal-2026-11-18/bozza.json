@@ -1,0 +1,58 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Memoria del telefono piena: liberare spazio senza cancellare le foto",
+    "slides": [
+      {
+        "titolo": "Memoria piena? Libera spazio senza cancellare le foto",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "I video di WhatsApp, le app che non usi e le foto in alta qualità sono i tre grandi mangia-spazio. Si liberano giga senza perdere i ricordi.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi ha sempre la memoria piena",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Memoria piena? Prima di cancellare le foto prova queste 3 cose 📱\n\n1. WhatsApp > Impostazioni > Spazio e dati > Gestisci spazio: elimina i video pesanti e i doppioni inoltrati.\n2. Togli le app che non apri da mesi (su iPhone c'è anche \"Rimuovi app inutilizzate\", che tiene i dati).\n3. Foto: con il backup attivo, \"Ottimizza spazio\" (iPhone) o \"Libera spazio\" in Google Foto tengono sul telefono solo copie leggere.\n\n💬 Quanti giga hai liberato? Dimmelo nei commenti.\n📤 Mandalo a chi ha sempre la memoria piena.",
+    "hashtag": [
+      "smartphone",
+      "memoria",
+      "trucchi",
+      "android",
+      "iphone",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Nomi delle opzioni su iPhone e Google Foto"
+    ],
+    "gancio": "*Memoria piena*? Prima di cancellare le foto, prova queste tre cose.",
+    "reel_titolo": "Telefono · in 5 minuti",
+    "reel_punti": [
+      "Per prima cosa, togli i video pesanti di WhatsApp",
+      "Poi elimina le app che non apri da mesi",
+      "E alla fine attiva Ottimizza spazio nelle foto"
+    ],
+    "reel_icone": [
+      "telefono",
+      "chat",
+      "stop",
+      "batteria"
+    ],
+    "invio": "*Mandalo* a chi ha sempre la memoria piena",
+    "annuncio": "E con la terza liberi giga in un colpo",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-18"
+}

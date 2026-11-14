@@ -1,0 +1,58 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #5: la finta chiamata di Amazon per un ordine sospetto",
+    "slides": [
+      {
+        "titolo": "La finta chiamata di Amazon",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Una voce registrata parla di un ordine sospetto e ti chiede di premere 1. Dall'altra parte c'è chi vuole i tuoi dati o farti installare un'app per controllare il telefono. Gli ordini veri li vedi solo nell'app.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi compra online",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Amazon non ti chiama per un ordine sospetto 📦\n\nLa truffa: una voce registrata parla di un acquisto costoso fatto con il tuo account e ti chiede di premere 1. Poi un finto operatore ti chiede dati, codici o di installare un'app \"di assistenza\" che gli fa controllare il telefono.\n\nCome difendersi: riattacca, apri tu l'app di Amazon e guarda \"I miei ordini\". Se lì non c'è niente, non c'è niente. Non installare mai app su richiesta di chi ti chiama.\n\n💬 Ti è mai arrivata questa chiamata? Dimmelo nei commenti.\n📤 Mandalo a chi compra online.\n\nTruffa #5: segui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "amazon",
+      "truffetelefoniche",
+      "sicurezza",
+      "consigli",
+      "tecnologia",
+      "acquistionline",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Amazon non chiama per chiedere codici o installare app (pagina ufficiale Amazon sulle truffe)"
+    ],
+    "gancio": "Ti chiama *Amazon* per un ordine sospetto? Aspetta, non premere niente.",
+    "reel_titolo": "Truffa #5 · il finto Amazon",
+    "reel_punti": [
+      "Se ti chiede di premere 1, riattacca e basta",
+      "Poi, se l'ordine è vero, lo trovi nell'app",
+      "E se ti fa installare un'app, è una truffa sicura"
+    ],
+    "reel_icone": [
+      "telefono",
+      "stop",
+      "pacco",
+      "avviso"
+    ],
+    "invio": "*Mandalo* a chi compra online",
+    "annuncio": "Ti dico tre cose, e la terza è quella che frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-16"
+}

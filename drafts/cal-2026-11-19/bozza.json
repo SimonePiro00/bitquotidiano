@@ -1,0 +1,58 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #6: il finto SMS di Poste o INPS",
+    "slides": [
+      {
+        "titolo": "Il finto SMS di Poste o INPS",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Un SMS dice che il conto è bloccato o che devi aggiornare i dati per un rimborso, con un link. Il sito è una copia di quello vero e ruba credenziali e carta.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "L'SMS di Poste o INPS con il link è quasi sempre una truffa 📩\n\nIl messaggio dice che il conto è bloccato o che c'è un rimborso da sbloccare, e ti manda su un sito identico a quello vero. Lì ti chiedono credenziali e carta.\n\nAttenzione: il falso SMS può comparire nella stessa conversazione dei messaggi veri, perché il nome del mittente si può falsificare.\n\nCome difendersi: non aprire il link. Entra tu dall'app ufficiale o dal sito scritto a mano.\n\n💬 Ti è arrivato un SMS così? Raccontalo nei commenti.\n📤 Mandalo a mamma e papà.\n\nTruffa #6: segui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "sms",
+      "smishing",
+      "poste",
+      "inps",
+      "sicurezza",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Avvisi ufficiali di Poste Italiane e INPS sugli SMS truffa"
+    ],
+    "gancio": "Ti scrivono *Poste* o *INPS* di aggiornare i dati? Aspetta un attimo.",
+    "reel_titolo": "Truffa #6 · il finto SMS",
+    "reel_punti": [
+      "Il primo è la fretta: se ti mette ansia, è sospetto",
+      "Poi c'è il link, e loro non te lo mandano mai",
+      "E anche se finisce tra i messaggi veri, può essere falso"
+    ],
+    "reel_icone": [
+      "chat",
+      "avviso",
+      "link",
+      "stop"
+    ],
+    "invio": "*Mandalo* a mamma e papà",
+    "annuncio": "Ci sono tre segnali, e il terzo frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-19"
+}

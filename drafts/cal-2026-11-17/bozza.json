@@ -1,0 +1,58 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "WhatsApp: 3 impostazioni da attivare subito",
+    "slides": [
+      {
+        "titolo": "3 impostazioni di WhatsApp da attivare",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Verifica in due passaggi (Impostazioni > Account), silenzia le chiamate da sconosciuti (Privacy > Chiamate) e scegli chi può aggiungerti ai gruppi (Privacy > Gruppi).",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi usa WhatsApp",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "3 impostazioni di WhatsApp da attivare stasera 🔒\n\n1. Verifica in due passaggi: Impostazioni > Account. Un PIN che ti protegge se qualcuno prova a rubarti l'account.\n2. Silenzia le chiamate da sconosciuti: Impostazioni > Privacy > Chiamate.\n3. Chi può aggiungerti ai gruppi: Impostazioni > Privacy > Gruppi, scegli \"I miei contatti\". Basta gruppi di spam.\n\n💬 Quale non conoscevi? Scrivilo nei commenti.\n📤 Mandalo a chi usa WhatsApp (cioè a tutti).",
+    "hashtag": [
+      "whatsapp",
+      "privacy",
+      "sicurezza",
+      "trucchi",
+      "smartphone",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Percorsi dei menu WhatsApp aggiornati (Android e iPhone)"
+    ],
+    "gancio": "Usi *WhatsApp*? Allora ci sono 3 impostazioni da attivare stasera.",
+    "reel_titolo": "WhatsApp · in 2 minuti",
+    "reel_punti": [
+      "Prima di tutto, attiva la verifica in due passaggi",
+      "Poi silenzia le chiamate degli sconosciuti",
+      "E infine scegli tu chi può aggiungerti ai gruppi"
+    ],
+    "reel_icone": [
+      "chat",
+      "lucchetto",
+      "telefono",
+      "chat"
+    ],
+    "invio": "*Mandalo* a chi usa WhatsApp",
+    "annuncio": "E la terza quasi nessuno la conosce",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-17"
+}

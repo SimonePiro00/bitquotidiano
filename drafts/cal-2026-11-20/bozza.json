@@ -1,0 +1,58 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Telefono perso o rubato: cosa fare nei primi 5 minuti",
+    "slides": [
+      {
+        "titolo": "Telefono perso? Cosa fare nei primi 5 minuti",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Localizzalo e bloccalo da un altro dispositivo, chiama l'operatore per bloccare la SIM e cambia la password dell'account Google o Apple.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi perde sempre tutto",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Telefono perso o rubato? I primi 5 minuti contano 📍\n\n1. Da un altro dispositivo apri \"Trova il mio dispositivo\" (Android) o \"Dov'è\" (iPhone): localizzalo, bloccalo e, se serve, cancellalo a distanza.\n2. Chiama il tuo operatore e fai bloccare la SIM: così nessuno riceve i tuoi codici via SMS.\n3. Cambia la password dell'account Google o Apple, e avvisa la banca se avevi app di pagamento.\n\n💬 Ti è mai successo? Dimmelo nei commenti.\n📤 Mandalo a chi perde sempre tutto.",
+    "hashtag": [
+      "smartphone",
+      "telefonorubato",
+      "sicurezza",
+      "android",
+      "iphone",
+      "consigli",
+      "tecnologia",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Nomi dei servizi Trova il mio dispositivo / Dov'è"
+    ],
+    "gancio": "Hai *perso il telefono*? Niente panico, ecco cosa fare subito.",
+    "reel_titolo": "Telefono · i primi 5 minuti",
+    "reel_punti": [
+      "Prima lo cerchi con Trova dispositivo o Dov'è",
+      "Poi chiami l'operatore e fai bloccare la SIM",
+      "E subito dopo cambi la password del tuo account"
+    ],
+    "reel_icone": [
+      "telefono",
+      "link",
+      "chat",
+      "lucchetto"
+    ],
+    "invio": "*Mandalo* a chi perde sempre tutto",
+    "annuncio": "E il terzo passo lo dimenticano tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-20"
+}
