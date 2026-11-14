@@ -91,6 +91,8 @@ def pronuncia(testo: str) -> str:
 
 def parla(testo: str) -> np.ndarray:
     """Audio mono float32 a 44,1 kHz con la vocina di Bit."""
+    if GEMINI and os.environ.get("GOOGLE_SA_JSON"):
+        return _google(testo)        # Gemini via Cloud Text-to-Speech con account di servizio
     if GEMINI:
         return _gemini_api(testo)
     if GOOGLE:
@@ -141,8 +143,12 @@ def _google(testo: str) -> np.ndarray:
         corpo = {"input": {"text": pronuncia(testo), "prompt": STILE},
                  "voice": {"languageCode": "it-IT", "name": GEMINI, "modelName": GEMINI_MODELLO},
                  "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE}}
-    req = Request("https://texttospeech.googleapis.com/v1/text:synthesize", data=json.dumps(corpo).encode(),
-                  headers={"Content-Type": "application/json", "X-Goog-Api-Key": os.environ["GOOGLE_TTS_KEY"]})
+    intestazioni = {"Content-Type": "application/json"}
+    if GEMINI and os.environ.get("GOOGLE_SA_JSON"):
+        intestazioni.update(_token_account_servizio())
+    else:
+        intestazioni["X-Goog-Api-Key"] = os.environ["GOOGLE_TTS_KEY"]
+    req = Request("https://texttospeech.googleapis.com/v1/text:synthesize", data=json.dumps(corpo).encode(), headers=intestazioni)
     from urllib.error import HTTPError
     try:
         risposta = urlopen(req, timeout=60).read()
@@ -210,3 +216,22 @@ def _gemini_api(testo: str) -> np.ndarray:
         print(f"Voce Gemini: modello {modello}")
         return np.frombuffer(raw, dtype=np.float32).copy()
     raise RuntimeError(f"Gemini API: nessun modello TTS disponibile ({ultimo})")
+
+
+_token = None
+_progetto = ""
+
+
+def _token_account_servizio() -> dict:
+    """Token OAuth dall'account di servizio (secret GOOGLE_SA_JSON): serve per Gemini-TTS su Cloud Text-to-Speech."""
+    global _token, _progetto
+    import json
+    from google.oauth2 import service_account
+    from google.auth.transport.requests import Request as GReq
+    if _token is None:
+        info = json.loads(os.environ["GOOGLE_SA_JSON"])
+        _token = service_account.Credentials.from_service_account_info(info, scopes=["https://www.googleapis.com/auth/cloud-platform"])
+        _progetto = info.get("project_id", "")
+    if not _token.valid:
+        _token.refresh(GReq())
+    return {"Authorization": f"Bearer {_token.token}", "x-goog-user-project": _progetto}

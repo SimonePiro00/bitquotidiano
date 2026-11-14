@@ -20,7 +20,7 @@ jobs:
         with: {node-version: "22"}
       - run: |
           sudo apt-get install -y -q ffmpeg fonts-dejavu-core
-          pip install numpy
+          pip install numpy google-auth requests
           npm install --no-save playwright@1.63.0
           npx playwright install --with-deps chromium
       - run: python voci/anteprime_cartoon.py
@@ -28,6 +28,7 @@ jobs:
           SOLO: ${{ inputs.solo }}
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
       - run: |
           git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
           git add anteprime/cartoon && git commit -m "Anteprime Reel cartoon" || exit 0
