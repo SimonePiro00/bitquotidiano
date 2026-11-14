@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: python -m pipeline.telegram "Prova: da ora ti avviso qui a ogni Reel pubblicato 🤖"
+      - run: |
+          python -m pipeline.telegram "Prova: da ora ti avviso qui a ogni Reel pubblicato 🤖"
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TG_BOT_SECRET }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
