@@ -141,7 +141,12 @@ def _google(testo: str) -> np.ndarray:
                  "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE}}
     req = Request("https://texttospeech.googleapis.com/v1/text:synthesize", data=json.dumps(corpo).encode(),
                   headers={"Content-Type": "application/json", "X-Goog-Api-Key": os.environ["GOOGLE_TTS_KEY"]})
-    wav = base64.b64decode(json.loads(urlopen(req, timeout=60).read())["audioContent"])
+    from urllib.error import HTTPError
+    try:
+        risposta = urlopen(req, timeout=60).read()
+    except HTTPError as e:   # il messaggio di Google dice cosa manca (API da attivare, permessi...)
+        raise RuntimeError(f"Google TTS {e.code}: {e.read().decode(errors='replace')[:800]}") from None
+    wav = base64.b64decode(json.loads(risposta)["audioContent"])
     import io
     with wave.open(io.BytesIO(wav)) as w:
         rate, canali, pcm = w.getframerate(), w.getnchannels(), w.readframes(w.getnframes())
