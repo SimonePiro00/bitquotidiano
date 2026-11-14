@@ -183,6 +183,7 @@ def _gemini_api(testo: str) -> np.ndarray:
     from urllib.request import Request, urlopen
 
     chiave = os.environ.get("GEMINI_API_KEY") or os.environ["GOOGLE_TTS_KEY"]
+    print("Voce Gemini: uso la chiave", "GEMINI_API_KEY" if os.environ.get("GEMINI_API_KEY") else "GOOGLE_TTS_KEY (GEMINI_API_KEY vuota)")
     corpo = {"contents": [{"parts": [{"text": f"{STILE}\n\nTesto da leggere: {pronuncia(testo)}"}]}],
              "generationConfig": {"responseModalities": ["AUDIO"],
                                   "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GEMINI}}}}}
