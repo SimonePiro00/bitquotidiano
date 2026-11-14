@@ -27,7 +27,8 @@ def chat_id() -> str:
     aggiornamenti = _chiama("getUpdates").get("result", [])
     chat = [u["message"]["chat"]["id"] for u in aggiornamenti if "message" in u]
     if not chat:
-        sys.exit("Nessun messaggio trovato: scrivi /start al bot su Telegram e riprova.")
+        nome = _chiama("getMe").get("result", {}).get("username", "?")
+        sys.exit(f"Nessun messaggio trovato: scrivi un messaggio al bot @{nome} su Telegram e riprova.")
     print(f"TELEGRAM_CHAT_ID da salvare nei Secrets: {chat[-1]}")
     return str(chat[-1])
 
