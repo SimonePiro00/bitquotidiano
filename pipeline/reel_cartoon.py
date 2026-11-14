@@ -79,10 +79,9 @@ def copione_e_audio(b: dict, seme: str):
     icone = (b.get("reel_icone") or ["avviso"] * 4) + ["avviso"] * 4
     serie, _, titolo = (b.get("reel_titolo") or "").partition(" · ")
     pulito = lambda x: x.replace("*", "")
-    # Invito a seguire con la "prossima puntata": crea attesa per il Reel successivo.
-    m = re.search(r"Truffa #(\d+)", serie or "")
-    prossima = f"Truffa #{int(m.group(1)) + 1}" if m else ""
-    segui = f"E segui per la truffa numero {int(m.group(1)) + 1}!" if m else "E segui per la prossima!"
+    # Invito a seguire (scelto da Simone): segui la pagina per non farti fregare.
+    segui = b.get("reel_segui") or "Segui la pagina per non farti fregare!"
+    prossima = ""
     frasi = [f"{pulito(gancio)} {annuncio}."] + [p.rstrip(".") + "." for p in punti] + [f"{pulito(invio)}. {segui}"]
     parole_scena = [_parole(gancio) + _parole(annuncio)] + [_parole(p) for p in punti] + [_parole(invio) + _parole(segui)]
 

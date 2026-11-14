@@ -535,7 +535,7 @@ function palcoFine(sc, k, t, b) {
       <rect x="-440" y="-170" width="880" height="340" rx="48" fill="${C.acc}" stroke="${C.fg}" stroke-width="9"/>
       <g transform="translate(-330 -40) scale(1.5)">${campanella(t)}</g>
       <text x="-230" y="-30" font-size="96" font-weight="700" fill="${C.bg}">SEGUI</text>
-      <text x="-230" y="50" font-size="54" font-weight="700" fill="${C.bg}">${esc(S.prossima ? "per la " + S.prossima : "per la prossima")}</text>
+      <text x="-230" y="50" font-size="52" font-weight="700" fill="${C.bg}">per non farti fregare!</text>
       <text x="0" y="128" font-size="40" font-weight="500" fill="${C.bg}" text-anchor="middle">@bitquotidiano.it</text></g>`;
   const mano = `<g transform="translate(${800} ${640 + (tocco ? 0 : 24)}) rotate(-20)">
       <path d="M0 0 L0 -20 Q0 -36 14 -36 Q28 -36 28 -20 L28 30 L60 22 Q78 20 80 38 L80 80 Q80 110 50 116 L10 116 Q-10 110 -18 90 L-40 40 Q-46 26 -32 22 Q-20 18 -10 30 L0 44 Z" fill="${C.fg}" stroke="${C.bg}" stroke-width="6" stroke-linejoin="round"/></g>`;

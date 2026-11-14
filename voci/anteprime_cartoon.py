@@ -14,7 +14,7 @@ ICONE = {"cal-2026-11-15": ["qr", "carta", "telefono", "stop"],
          "cal-2026-11-12": ["chat", "avviso", "lucchetto", "chat"]}
 # (bozza, nome file, stile grafico, voce, velocità): la velocità vale solo per Chirp 3 HD, Gemini segue l'indicazione di stile.
 PROVE = [
-    ("cal-2026-11-15", "1_palco_v3_achird", "palco", "google:it-IT-Chirp3-HD-Achird", "1.22"),
+    ("cal-2026-11-15", "1_palco_v4_achird", "palco", "google:it-IT-Chirp3-HD-Achird", "1.22"),
     ("cal-2026-11-15", "2_palco_gemini_achird", "palco", "gemini:Achird", "1"),
     ("cal-2026-11-15", "3_palco_gemini_puck", "palco", "gemini:Puck", "1"),
     ("cal-2026-11-15", "4_palco_gemini_fenrir", "palco", "gemini:Fenrir", "1"),
