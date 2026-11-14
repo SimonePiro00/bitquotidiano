@@ -90,7 +90,7 @@ def copione_e_audio(b: dict, seme: str):
         parlato = [voce.rifila(voce.parla(f)) for f in frasi]
     else:   # senza voce: ritmo di lettura, circa 14 caratteri al secondo
         parlato = [np.zeros(int(len(f) / 14 * voce.RATE), dtype=np.float32) for f in frasi]
-    pausa = [0.25, 0.2, 0.2, 0.3, 0.7]   # respiro dopo ogni frase (l'ultima lascia tempo per il loop)
+    pausa = [0.15, 0.1, 0.1, 0.15, 0.6]   # respiro dopo ogni frase (l'ultima lascia tempo per il loop)
     SOSPENSE = float(b.get("reel_suspense", 0))   # >0: pausa con rullo prima del terzo punto: rullo di tamburi e lucchetto che trema
     scene, inizio = [], 0
     tipi = ["gancio"] + ["punto"] * len(punti) + ["fine"]

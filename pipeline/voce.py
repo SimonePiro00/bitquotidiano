@@ -37,9 +37,13 @@ GEMINI = VOCE.split(":", 1)[1] if VOCE.startswith("gemini:") else None
 # Scelta di Simone (14/11/2026): Puck con gemini-2.5-flash-tts e tono "racconto a un amico".
 GEMINI_MODELLO = os.environ.get("BIT_VOCE_MODELLO", "gemini-2.5-flash-tts")
 STILE = os.environ.get("BIT_VOCE_STILE", (
-    "Parla in italiano in modo naturale e rilassato, come un ragazzo che racconta "
+    "Parla in italiano in modo naturale, come un ragazzo che racconta di corsa "
     "a un amico una cosa che gli è appena successa: tono caldo e complice, "
-    "ritmo vivace ma senza fretta, niente tono da annunciatore o da pubblicità."))
+    "ritmo VELOCE e incalzante, frasi attaccate senza pause lunghe, "
+    "niente tono da annunciatore o da pubblicità."))
+# Gemini non ha un parametro di velocità: si accelera dopo (atempo, non cambia il tono) e si accorciano le pause interne.
+GEMINI_VELOCITA = float(os.environ.get("BIT_VOCE_ACCELERA", 1.25))
+PAUSA_MAX = 0.12   # secondi: le pause interne più lunghe vengono accorciate a questo
 
 _voce = None
 
@@ -162,11 +166,32 @@ def _google(testo: str) -> np.ndarray:
     audio = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768
     if canali > 1:
         audio = audio.reshape(-1, canali).mean(axis=1)
-    if rate != RATE:   # Gemini-TTS risponde a 24 kHz qualunque cosa si chieda
+    filtro = f"aresample={RATE}"
+    if GEMINI:
+        audio = _accorcia_pause(audio, rate)
+        if GEMINI_VELOCITA != 1:
+            filtro = f"atempo={GEMINI_VELOCITA},{filtro}"
+    if rate != RATE or GEMINI:   # Gemini-TTS risponde a 24 kHz qualunque cosa si chieda
         raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(rate), "-ac", "1", "-i", "-",
-                              "-ar", str(RATE), "-f", "f32le", "-"], input=audio.tobytes(), capture_output=True, check=True).stdout
+                              "-af", filtro, "-f", "f32le", "-"], input=audio.tobytes(), capture_output=True, check=True).stdout
         audio = np.frombuffer(raw, dtype=np.float32).copy()
     return audio
+
+
+def _accorcia_pause(audio: np.ndarray, rate: int, soglia: float = 0.015) -> np.ndarray:
+    """Riduce a PAUSA_MAX ogni silenzio interno più lungo (Gemini respira parecchio tra le frasi)."""
+    blocco = int(0.01 * rate)
+    n = audio.size // blocco
+    if n == 0:
+        return audio
+    energia = np.sqrt(np.mean(audio[:n * blocco].reshape(n, blocco) ** 2, axis=1))
+    tieni, muti, max_muti = [], 0, int(PAUSA_MAX / 0.01)
+    for i, e in enumerate(energia):
+        muti = muti + 1 if e < soglia else 0
+        if muti <= max_muti:
+            tieni.append(audio[i * blocco:(i + 1) * blocco])
+    tieni.append(audio[n * blocco:])
+    return np.concatenate(tieni)
 
 
 def rifila(audio: np.ndarray, soglia: float = 0.02, margine: float = 0.04) -> np.ndarray:
