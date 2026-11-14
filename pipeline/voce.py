@@ -198,8 +198,9 @@ def _gemini_api(testo: str) -> np.ndarray:
             r = json.loads(urlopen(req, timeout=120).read())
         except HTTPError as e:
             ultimo = f"{modello} {e.code}: {e.read().decode(errors='replace')[:600]}"
-            if e.code == 404:
-                continue   # nome del modello non disponibile: prova il successivo
+            if e.code in (402, 404, 429):
+                print("Voce Gemini:", ultimo[:160])
+                continue   # modello non disponibile o senza credito per quel modello: prova il successivo
             raise RuntimeError(f"Gemini API {ultimo}") from None
         dati = r["candidates"][0]["content"]["parts"][0]["inlineData"]
         pcm = np.frombuffer(base64.b64decode(dati["data"]), dtype=np.int16).astype(np.float32) / 32768
