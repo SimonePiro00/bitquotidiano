@@ -34,11 +34,12 @@ GOOGLE = VOCE.split(":", 1)[1] if VOCE.startswith("google:") else None
 # Voci Gemini-TTS (sempre Google Cloud Text-to-Speech, stessa chiave): BIT_VOCE="gemini:Achird".
 # Seguono un'indicazione di stile scritta (BIT_VOCE_STILE), quindi possono suonare più vive e meno "lettura".
 GEMINI = VOCE.split(":", 1)[1] if VOCE.startswith("gemini:") else None
-GEMINI_MODELLO = os.environ.get("BIT_VOCE_MODELLO", "gemini-2.5-pro-tts")
+# Scelta di Simone (14/11/2026): Puck con gemini-2.5-flash-tts e tono "racconto a un amico".
+GEMINI_MODELLO = os.environ.get("BIT_VOCE_MODELLO", "gemini-2.5-flash-tts")
 STILE = os.environ.get("BIT_VOCE_STILE", (
-    "Parla in italiano come un creator simpatico e sveglio che avvisa un amico di una truffa: "
-    "ritmo svelto ma chiaro, tono complice e sorridente, energia alta, enfasi sulle parole importanti, "
-    "niente tono da annunciatore."))
+    "Parla in italiano in modo naturale e rilassato, come un ragazzo che racconta "
+    "a un amico una cosa che gli è appena successa: tono caldo e complice, "
+    "ritmo vivace ma senza fretta, niente tono da annunciatore o da pubblicità."))
 
 _voce = None
 

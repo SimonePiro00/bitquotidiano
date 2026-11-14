@@ -20,8 +20,9 @@ PROVE = [
     ("cal-2026-11-15", "4_palco_gemini_fenrir", "palco", "gemini:Fenrir", "1"),
     ("cal-2026-11-15", "5_schede_gemini_achird", "schede", "gemini:Achird", "1"),
     ("cal-2026-11-12", "6_whatsapp_palco_gemini_achird", "palco", "gemini:Achird", "1"),
+    ("cal-2026-11-15", "7_palco_puck_naturale", "palco", "gemini:Puck", "1"),   # voce scelta da Simone
 ]
-solo = os.environ.get("SOLO") or "2"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY da progetto nuovo, fatturazione attiva)
+solo = os.environ.get("SOLO") or "7"   # es. "2,5" per rifare solo alcune prove (GEMINI_API_KEY da progetto nuovo, fatturazione attiva)
 for bozza, nome, stile, voce_scelta, vel in PROVE:
     if solo and nome.split("_")[0] not in solo.split(","):
         continue
