@@ -1,0 +1,19 @@
+# Prova degli avvisi Telegram: trova il chat_id (se manca) e manda un messaggio di prova. Non pubblica nulla.
+name: Prova avvisi Telegram
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-fkj7dg]
+    paths: [voci/telegram_prova.txt]
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: |
+          python -m pipeline.telegram "Prova: da ora ti avviso qui a ogni Reel pubblicato 🤖"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TG_BOT_SECRET }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
