@@ -31,6 +31,14 @@ KOKORO = {"sara": "if_sara", "nicola": "im_nicola"}
 VOCE = os.environ.get("BIT_VOCE", "riccardo")
 # Voci neurali di Google Cloud Text-to-Speech: BIT_VOCE="google:it-IT-Chirp3-HD-..." con la chiave in GOOGLE_TTS_KEY.
 GOOGLE = VOCE.split(":", 1)[1] if VOCE.startswith("google:") else None
+# Voci Gemini-TTS (sempre Google Cloud Text-to-Speech, stessa chiave): BIT_VOCE="gemini:Achird".
+# Seguono un'indicazione di stile scritta (BIT_VOCE_STILE), quindi possono suonare più vive e meno "lettura".
+GEMINI = VOCE.split(":", 1)[1] if VOCE.startswith("gemini:") else None
+GEMINI_MODELLO = os.environ.get("BIT_VOCE_MODELLO", "gemini-2.5-pro-tts")
+STILE = os.environ.get("BIT_VOCE_STILE", (
+    "Parla in italiano come un creator simpatico e sveglio che avvisa un amico di una truffa: "
+    "ritmo svelto ma chiaro, tono complice e sorridente, energia alta, enfasi sulle parole importanti, "
+    "niente tono da annunciatore."))
 
 _voce = None
 
@@ -62,7 +70,7 @@ def _carica():
 def disponibile() -> bool:
     if os.environ.get("BIT_MUTO"):
         return False
-    if GOOGLE:
+    if GOOGLE or GEMINI:
         return bool(os.environ.get("GOOGLE_TTS_KEY"))
     try:
         _carica()
@@ -83,7 +91,7 @@ def pronuncia(testo: str) -> str:
 
 def parla(testo: str) -> np.ndarray:
     """Audio mono float32 a 44,1 kHz con la vocina di Bit."""
-    if GOOGLE:
+    if GOOGLE or GEMINI:
         return _google(testo)
     voce = _carica()
     if VOCE in KOKORO:
@@ -127,8 +135,30 @@ def _google(testo: str) -> np.ndarray:
     corpo = {"input": {"text": pronuncia(testo)},
              "voice": {"languageCode": "it-IT", "name": GOOGLE},
              "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE, "speakingRate": VELOCITA}}
+    if GEMINI:
+        corpo = {"input": {"text": pronuncia(testo), "prompt": STILE},
+                 "voice": {"languageCode": "it-IT", "name": GEMINI, "modelName": GEMINI_MODELLO},
+                 "audioConfig": {"audioEncoding": "LINEAR16", "sampleRateHertz": RATE}}
     req = Request("https://texttospeech.googleapis.com/v1/text:synthesize", data=json.dumps(corpo).encode(),
                   headers={"Content-Type": "application/json", "X-Goog-Api-Key": os.environ["GOOGLE_TTS_KEY"]})
     wav = base64.b64decode(json.loads(urlopen(req, timeout=60).read())["audioContent"])
-    pcm = np.frombuffer(wav[44:], dtype=np.int16)   # salta l'intestazione WAV
-    return pcm.astype(np.float32) / 32768
+    import io
+    with wave.open(io.BytesIO(wav)) as w:
+        rate, canali, pcm = w.getframerate(), w.getnchannels(), w.readframes(w.getnframes())
+    audio = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768
+    if canali > 1:
+        audio = audio.reshape(-1, canali).mean(axis=1)
+    if rate != RATE:   # Gemini-TTS risponde a 24 kHz qualunque cosa si chieda
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(rate), "-ac", "1", "-i", "-",
+                              "-ar", str(RATE), "-f", "f32le", "-"], input=audio.tobytes(), capture_output=True, check=True).stdout
+        audio = np.frombuffer(raw, dtype=np.float32).copy()
+    return audio
+
+
+def rifila(audio: np.ndarray, soglia: float = 0.02, margine: float = 0.04) -> np.ndarray:
+    """Toglie il silenzio all'inizio e alla fine di una frase (le voci Gemini ne lasciano parecchio)."""
+    forte = np.flatnonzero(np.abs(audio) > soglia)
+    if forte.size == 0:
+        return audio
+    m = int(margine * RATE)
+    return audio[max(0, forte[0] - m):forte[-1] + m]
