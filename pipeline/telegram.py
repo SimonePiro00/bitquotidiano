@@ -1,6 +1,6 @@
 """Avvisi a Simone su Telegram (le notifiche dell'app Claude non gli arrivano).
 
-Servono i GitHub Secrets TELEGRAM_BOT_TOKEN (da @BotFather) e TELEGRAM_CHAT_ID.
+Servono i GitHub Secrets TG_BOT_SECRET (token da @BotFather, passato come TELEGRAM_BOT_TOKEN) e TELEGRAM_CHAT_ID.
 Se TELEGRAM_CHAT_ID manca, prova a ricavarlo dall'ultimo messaggio scritto al bot.
 Uso: python -m pipeline.telegram "testo"   oppure   python -m pipeline.telegram --esito ID success|failure URL
 """

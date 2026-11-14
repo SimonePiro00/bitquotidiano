@@ -28,5 +28,5 @@ jobs:
         continue-on-error: true   # l'avviso non deve mai far sembrare fallita una pubblicazione riuscita
         run: python -m pipeline.telegram --esito "${{ inputs.id }}" "${{ job.status }}" "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TG_BOT_SECRET }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
