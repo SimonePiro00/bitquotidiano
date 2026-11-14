@@ -71,7 +71,7 @@ def disponibile() -> bool:
     if os.environ.get("BIT_MUTO"):
         return False
     if GOOGLE or GEMINI:
-        return bool(os.environ.get("GOOGLE_TTS_KEY"))
+        return bool(os.environ.get("GOOGLE_TTS_KEY") or os.environ.get("GEMINI_API_KEY"))
     try:
         _carica()
         return True
@@ -91,7 +91,9 @@ def pronuncia(testo: str) -> str:
 
 def parla(testo: str) -> np.ndarray:
     """Audio mono float32 a 44,1 kHz con la vocina di Bit."""
-    if GOOGLE or GEMINI:
+    if GEMINI:
+        return _gemini_api(testo)
+    if GOOGLE:
         return _google(testo)
     voce = _carica()
     if VOCE in KOKORO:
@@ -167,3 +169,39 @@ def rifila(audio: np.ndarray, soglia: float = 0.02, margine: float = 0.04) -> np
         return audio
     m = int(margine * RATE)
     return audio[max(0, forte[0] - m):forte[-1] + m]
+
+
+MODELLI_GEMINI = [GEMINI_MODELLO, "gemini-2.5-pro-preview-tts", "gemini-2.5-flash-preview-tts", "gemini-2.5-flash-tts"]
+
+
+def _gemini_api(testo: str) -> np.ndarray:
+    """Voce Gemini tramite la Gemini API (basta una chiave API, niente account di servizio).
+    Chiave: GEMINI_API_KEY (da Google AI Studio) oppure la stessa GOOGLE_TTS_KEY se ha la Generative Language API."""
+    import base64
+    import json
+    from urllib.error import HTTPError
+    from urllib.request import Request, urlopen
+
+    chiave = os.environ.get("GEMINI_API_KEY") or os.environ["GOOGLE_TTS_KEY"]
+    corpo = {"contents": [{"parts": [{"text": f"{STILE}\n\nTesto da leggere: {pronuncia(testo)}"}]}],
+             "generationConfig": {"responseModalities": ["AUDIO"],
+                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GEMINI}}}}}
+    ultimo = ""
+    for modello in dict.fromkeys(MODELLI_GEMINI):
+        req = Request(f"https://generativelanguage.googleapis.com/v1beta/models/{modello}:generateContent",
+                      data=json.dumps(corpo).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": chiave})
+        try:
+            r = json.loads(urlopen(req, timeout=120).read())
+        except HTTPError as e:
+            ultimo = f"{modello} {e.code}: {e.read().decode(errors='replace')[:600]}"
+            if e.code == 404:
+                continue   # nome del modello non disponibile: prova il successivo
+            raise RuntimeError(f"Gemini API {ultimo}") from None
+        dati = r["candidates"][0]["content"]["parts"][0]["inlineData"]
+        pcm = np.frombuffer(base64.b64decode(dati["data"]), dtype=np.int16).astype(np.float32) / 32768
+        rate = int(re.search(r"rate=(\d+)", dati.get("mimeType", "")).group(1)) if "rate=" in dati.get("mimeType", "") else 24000
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f32le", "-ar", str(rate), "-ac", "1", "-i", "-",
+                              "-ar", str(RATE), "-f", "f32le", "-"], input=pcm.tobytes(), capture_output=True, check=True).stdout
+        print(f"Voce Gemini: modello {modello}")
+        return np.frombuffer(raw, dtype=np.float32).copy()
+    raise RuntimeError(f"Gemini API: nessun modello TTS disponibile ({ultimo})")
