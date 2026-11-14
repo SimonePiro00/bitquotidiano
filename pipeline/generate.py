@@ -64,12 +64,13 @@ class Bozza(BaseModel):
     hashtag: list[str] = Field(description="8-15 hashtag pertinenti, senza #")
     infografica: Infografica | None = Field(description="Inserita come seconda slide")
     da_verificare: list[str] = Field(description="Affermazioni da controllare prima di pubblicare")
-    gancio: str | None = Field(default=None, description="Frase d'apertura del Reel, che parla a chi guarda; parole chiave tra *asterischi*")
+    gancio: str | None = Field(default=None, description="Frase d'apertura del Reel, che parla a chi guarda, scritta come si parla (es. 'Paghi il parcheggio col *QR code*? Ecco, guarda prima se è un adesivo.'); parole chiave tra *asterischi*")
     reel_titolo: str | None = Field(default=None, description="Reel lampo: titoletto sopra i punti, max 30 caratteri")
-    reel_punti: list[str] | None = Field(default=None, description="Reel lampo: 3 punti di 2-6 parole ciascuno")
+    reel_punti: list[str] | None = Field(default=None, description="Reel: 3 punti di 3-7 parole, scritti come si parla, anche con domanda o commento breve (es. 'Il sito ti chiede la carta? Strano', 'Se il QR è un adesivo... fermati')")
+    reel_icone: list[str] | None = Field(default=None, description="Reel cartoon: 4 icone (gancio + 3 punti) tra qr, carta, telefono, stop, avviso, lucchetto, chat, pacco, link, soldi, batteria")
     invio: str | None = Field(default=None, description="Reel lampo: invito a inoltrare, es. '*Mandalo* a chi...'")
-    annuncio: str | None = Field(default=None, description="Reel lampo: annuncia il punto più forte, tenuto per ultimo (es. 'Il terzo è quello che frega tutti')")
-    solo_reel: bool = Field(default=False, description="Pubblica solo Reel e storia, senza carosello")
+    annuncio: str | None = Field(default=None, description="Reel lampo: annuncia il punto più forte, tenuto per ultimo (es. 'E il terzo... è quello che frega tutti')")
+    solo_reel: bool = Field(default=True, description="Pubblica solo Reel e storia, senza carosello (scelta di Simone dal 14/11/2026)")
 
 
 def _image_urls(post: dict) -> list[str]:

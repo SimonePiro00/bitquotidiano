@@ -1,13 +1,14 @@
-# Rigenera i Reel delle bozze indicate con la voce scelta (le voci Kokoro si scaricano solo da qui). Non pubblica nulla.
+# Crea i Reel delle bozze indicate: stile cartoon con Bit, voce Puck (Chirp 3 HD, gratuita). Non pubblica nulla.
 name: Crea Reel con voce
 on:
   workflow_dispatch:
     inputs:
       id: {description: "ID delle bozze separati da spazio", required: true}
-      voce: {description: "sara, nicola, paola, riccardo", default: "sara"}
+      voce: {description: "es. google:it-IT-Chirp3-HD-Puck (vuoto = Puck)", default: ""}
+      stile: {description: "cartoon, infografica o bit", default: "cartoon"}
   push:
-    branches: [claude/project-thread-1obi9s]
-    paths: [voci/reel_richiesta.txt]   # prima riga: voce, seconda: ID delle bozze
+    branches: [claude/project-thread-fkj7dg]
+    paths: [voci/reel_richiesta.txt]   # prima riga: voce (vuota = Puck), seconda: ID delle bozze
 permissions:
   contents: write
 jobs:
@@ -17,17 +18,23 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
       - run: |
-          sudo apt-get install -y -q ffmpeg espeak-ng fonts-dejavu-core libcairo2
-          pip install torch --index-url https://download.pytorch.org/whl/cpu
-          pip install -r requirements.txt numpy piper-tts kokoro soundfile
+          sudo apt-get install -y -q ffmpeg fonts-dejavu-core libcairo2
+          pip install -r requirements.txt numpy google-auth requests
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
       - run: |
           if [ -z "$ID" ]; then VOCE=$(sed -n 1p voci/reel_richiesta.txt); ID=$(sed -n 2p voci/reel_richiesta.txt); fi
-          BIT_VOCE="$VOCE" python run.py reel $ID --voce
+          if [ -n "$VOCE" ]; then export BIT_VOCE="$VOCE"; fi
+          python run.py reel $ID --voce --stile "${STILE:-cartoon}"
         env:
           ID: ${{ inputs.id }}
           VOCE: ${{ inputs.voce }}
+          STILE: ${{ inputs.stile }}
           GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
       - run: |
           git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
           git add drafts && git commit -m "Reel con voce" || exit 0

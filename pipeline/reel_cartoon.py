@@ -21,6 +21,19 @@ ICONE = ["qr", "carta", "telefono", "stop", "avviso", "lucchetto", "chat", "pacc
 TRANSIZIONE = 0.32   # secondi della banda arancio tra una scena e l'altra (vedi scena.js)
 
 
+PAROLE_ICONE = [("qr", r"\bqr\b"), ("pacco", r"pacc|giacenz|corrier|spedizion"), ("chat", r"whatsapp|messagg|chat|sms"),
+                ("lucchetto", r"password|codic|account|ruba|verific"), ("carta", r"carta|iban|bonific|pagament|paga"),
+                ("soldi", r"soldi|euro|€|prezz|abbonament|gratis"), ("link", r"link|clic|sito"),
+                ("batteria", r"batteri|ricaric"), ("telefono", r"telefon|chiam|cellular|app\b|smartphone"),
+                ("stop", r"ferma|blocca|non |mai\b|riattacca"), ("avviso", r".")]
+
+
+def icone_auto(b: dict) -> list[str]:
+    """Se la bozza non ha reel_icone, sceglie un'icona per gancio e punti dalle parole del testo."""
+    testi = [(b.get("gancio") or b["slides"][0]["titolo"])] + list(b["reel_punti"][:3])
+    return [next(n for n, r in PAROLE_ICONE if re.search(r, t.lower())) for t in testi]
+
+
 def _parole(testo: str) -> list[str]:
     return [p.replace("*", "") for p in testo.split() if p.replace("*", "")]
 
@@ -76,7 +89,7 @@ def copione_e_audio(b: dict, seme: str):
     gancio, annuncio = b.get("gancio") or b["slides"][0]["titolo"], b.get("annuncio") or "Il terzo è quello che frega tutti"
     invio = b.get("invio") or "*Mandalo* a chi ne ha bisogno"
     punti = b["reel_punti"][:3]
-    icone = (b.get("reel_icone") or ["avviso"] * 4) + ["avviso"] * 4
+    icone = [i if i in ICONE else "avviso" for i in (b.get("reel_icone") or icone_auto(b))] + ["avviso"] * 4
     serie, _, titolo = (b.get("reel_titolo") or "").partition(" · ")
     pulito = lambda x: x.replace("*", "")
     # Invito a seguire (scelto da Simone): segui la pagina per non farti fregare.
