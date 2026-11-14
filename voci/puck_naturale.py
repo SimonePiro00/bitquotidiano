@@ -60,9 +60,12 @@ if os.environ.get("GOOGLE_SA_JSON"):
     os.environ["BIT_VOCE_STILE"] = ("Parla in italiano in modo naturale e rilassato, come un ragazzo che racconta "
                                     "a un amico una cosa che gli è appena successa: tono caldo e complice, "
                                     "ritmo vivace ma senza fretta, niente tono da annunciatore o da pubblicità.")
+    os.environ["BIT_VOCE_MODELLO"] = "gemini-2.5-flash-tts"   # il modello pro va in timeout su testi lunghi
     from pipeline import voce
-    a = voce.parla(SENZA_TAG)
-    buf = io.BytesIO()
-    voce.salva(a, out / "tmp.wav")
-    mp3((out / "tmp.wav").read_bytes(), "6_gemini_puck_a_pagamento")
-    (out / "tmp.wav").unlink()
+    try:
+        a = voce.parla(SENZA_TAG)
+        voce.salva(a, out / "tmp.wav")
+        mp3((out / "tmp.wav").read_bytes(), "6_gemini_puck_a_pagamento")
+        (out / "tmp.wav").unlink()
+    except Exception as e:  # noqa: BLE001 - è solo un paragone
+        print("Gemini FALLITA:", e)
