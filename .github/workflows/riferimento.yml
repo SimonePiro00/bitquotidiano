@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install requests
+      - run: pip install requests && sudo apt-get install -y -q ffmpeg
       - run: python voci/riferimento.py
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}

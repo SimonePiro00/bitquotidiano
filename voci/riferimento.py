@@ -23,6 +23,17 @@ for nome in CANDIDATI:
                     print("LIKE", m.get("like_count"), "COMMENTI", m.get("comments_count"))
                     print("VIDEO_URL", m.get("media_url"))
                     print("THUMB_URL", m.get("thumbnail_url"))
+                    # Foglio di fotogrammi a bassa risoluzione, stampato nel log (non viene salvato nel repo).
+                    import base64, subprocess, requests
+                    open("/tmp/r.mp4", "wb").write(requests.get(m["media_url"], timeout=120).content)
+                    subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "/tmp/r.mp4"])
+                    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", "/tmp/r.mp4", "-t", "40", "-vf",
+                                    "fps=0.6,scale=170:-1,tile=6x4", "-frames:v", "1", "-q:v", "9", "/tmp/f.jpg"], check=True)
+                    b = base64.b64encode(open("/tmp/f.jpg", "rb").read()).decode()
+                    print("FOGLIO_INIZIO")
+                    for i in range(0, len(b), 4000):
+                        print(b[i:i + 4000])
+                    print("FOGLIO_FINE")
                     sys.exit(0)
             after = media.get("paging", {}).get("cursors", {}).get("after", "")
             if not after or "next" not in media.get("paging", {}):
