@@ -8,7 +8,7 @@ Uso:
   python run.py leggi "LINK1 LINK2" --account NOME  # scarica testo e immagini di post indicati
   python run.py analisi --dal AAAA-MM-GG --al AAAA-MM-GG  # risultati dei post pubblicati nel periodo
   python run.py giornaliero           # follower di oggi + visualizzazioni e tempo medio dei Reel (analisi/*.csv)
-  python run.py reel ID [ID...]      # crea reel.mp4 (infografica, muto); --stile bit, --voce (pip install piper-tts)
+  python run.py reel ID [ID...]      # crea reel.mp4 (cartoon con Bit; muto senza --voce); --stile infografica|bit
   python run.py demo FILE.json        # disegna le slide da una bozza di esempio, senza API
 """
 import argparse
@@ -118,8 +118,11 @@ def cmd_publish(args):
     folder = DRAFTS_DIR / args.id
     record = json.loads((folder / "bozza.json").read_text())
     story, reel = folder / "story.jpg", folder / "reel.mp4"
-    # Giorni "solo Reel": niente carosello, il Reel prende il posto del post (e la storia lo segue).
-    solo_reel = bool(record["bozza"].get("solo_reel")) and reel.exists()
+    # Dal 14/11/2026 Simone pubblica SOLO Reel: niente carosello, il Reel prende il posto del post (e la storia lo segue).
+    # Il carosello esce solo se la bozza dice esplicitamente "solo_reel": false.
+    solo_reel = bool(record["bozza"].get("solo_reel", True))
+    if solo_reel and not reel.exists() and record["stato"] != "pubblicata":
+        sys.exit("Manca reel.mp4: pubblichiamo solo Reel, quindi niente carosello. Crea prima il Reel (workflow 'Crea Reel con voce').")
     fai_post = record["stato"] != "pubblicata"
     fai_storia = story.exists() and not args.senza_storia and not record.get("story_id")
     fai_reel = reel.exists() and not args.senza_reel and not record.get("reel_id")
@@ -171,7 +174,9 @@ def cmd_publish(args):
 
 
 def cmd_reel(args):
-    os.environ.setdefault("BIT_VELOCITA", "1.12")   # Reel lampo: voce più svelta, Reel sui 13 secondi
+    # Voce scelta da Simone il 14/11/2026: Puck (Chirp 3 HD, gratuita) a 1.12.
+    os.environ.setdefault("BIT_VOCE", "google:it-IT-Chirp3-HD-Puck")
+    os.environ.setdefault("BIT_VELOCITA", "1.12")
     from pipeline.reel import make_reel
     from pipeline.reel_info import make_reel_info
 
@@ -180,7 +185,11 @@ def cmd_reel(args):
     for id_ in args.id:
         folder = DRAFTS_DIR / id_
         b = json.loads((folder / "bozza.json").read_text())["bozza"]
-        if b.get("reel_punti"):
+        if b.get("reel_punti") and args.stile == "cartoon":
+            from pipeline.reel_cartoon import make_reel_cartoon
+            b.setdefault("reel_stile", "palco")
+            print(make_reel_cartoon(folder, b, "reel.mp4", seme=id_))
+        elif b.get("reel_punti"):
             from pipeline.reel_lampo import make_reel_lampo
             print(make_reel_lampo(folder, b.get("gancio") or b["slides"][0]["titolo"], b.get("reel_titolo") or "",
                                   b["reel_punti"], b.get("invio") or "*Mandalo* a chi ne ha bisogno", "reel.mp4",
@@ -232,7 +241,7 @@ def main():
     lg = sub.add_parser("leggi"); lg.add_argument("link"); lg.add_argument("--account", default="technologybrief"); lg.set_defaults(fn=cmd_leggi)
     gi = sub.add_parser("giornaliero"); gi.set_defaults(fn=cmd_giornaliero)
     an = sub.add_parser("analisi"); an.add_argument("--dal", required=True); an.add_argument("--al", required=True); an.set_defaults(fn=cmd_analisi)
-    rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["bit", "infografica"], default="infografica"); rl.add_argument("--voce", action="store_true"); rl.set_defaults(fn=cmd_reel)
+    rl = sub.add_parser("reel"); rl.add_argument("id", nargs="+"); rl.add_argument("--stile", choices=["cartoon", "bit", "infografica"], default="cartoon"); rl.add_argument("--voce", action="store_true"); rl.set_defaults(fn=cmd_reel)
     d = sub.add_parser("demo"); d.add_argument("file"); d.add_argument("--out", default="esempi"); d.set_defaults(fn=cmd_demo)
     args = p.parse_args()
     args.fn(args)

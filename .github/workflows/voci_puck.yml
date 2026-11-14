@@ -1,0 +1,25 @@
+# Varianti più naturali della voce Puck. Serve GOOGLE_TTS_KEY (e GOOGLE_SA_JSON per il paragone Gemini). Non pubblica nulla.
+name: Varianti voce Puck
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/project-thread-fkj7dg]
+    paths: [voci/puck_naturale.py]
+permissions:
+  contents: write
+jobs:
+  voci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy google-auth requests && sudo apt-get install -y -q ffmpeg
+      - run: python voci/puck_naturale.py
+        env:
+          GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+      - run: |
+          git config user.name "pipeline-bot"; git config user.email "bot@users.noreply.github.com"
+          git add anteprime/voci-puck && git commit -m "Varianti voce Puck" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 10; done; exit 1

@@ -36,15 +36,22 @@
     "da_verificare": [
       "Casi di QR code falsi sui parchimetri segnalati in Italia"
     ],
-    "gancio": "Paghi il parcheggio con *il QR code*? Guarda prima se è un adesivo.",
+    "gancio": "Paghi il parcheggio col *QR code*? Ecco, guarda prima se è un adesivo.",
     "reel_titolo": "Truffa #4 · il QR finto",
     "reel_punti": [
-      "Il sito chiede la carta",
-      "Paga con l'app del comune",
-      "Se il QR è un adesivo, fermati"
+      "Il sito ti chiede la carta? Strano",
+      "Paga con l'app del comune, sempre",
+      "Se il QR è un adesivo... fermati"
     ],
     "invio": "*Mandalo* a chi parcheggia in città",
     "solo_reel": true,
-    "annuncio": "Il terzo è quello che frega tutti"
+    "annuncio": "E il terzo... è quello che frega tutti",
+    "reel_icone": [
+      "qr",
+      "carta",
+      "telefono",
+      "stop"
+    ],
+    "reel_stile": "palco"
   }
 }
