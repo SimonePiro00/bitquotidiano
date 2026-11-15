@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano)",
   "data_prevista": "2026-11-15",
   "bozza": {
@@ -54,5 +54,7 @@
     ],
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
-  }
+  },
+  "media_id": "17997508032023627",
+  "reel_id": "17997508032023627"
 }
