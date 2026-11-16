@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
   "bozza": {
     "argomento": "Truffa #5: la finta chiamata di Amazon per un ordine sospetto",
@@ -54,5 +54,7 @@
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
   },
-  "data_prevista": "2026-11-16"
+  "data_prevista": "2026-11-16",
+  "media_id": "18647385778036193",
+  "reel_id": "18647385778036193"
 }
