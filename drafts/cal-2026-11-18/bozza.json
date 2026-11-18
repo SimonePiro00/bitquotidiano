@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
   "bozza": {
     "argomento": "Memoria del telefono piena: liberare spazio senza cancellare le foto",
@@ -54,5 +54,7 @@
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
   },
-  "data_prevista": "2026-11-18"
+  "data_prevista": "2026-11-18",
+  "media_id": "18228661033338146",
+  "reel_id": "18228661033338146"
 }
