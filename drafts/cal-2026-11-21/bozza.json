@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
   "bozza": {
     "argomento": "Truffa #7: il falso acquirente o venditore su Marketplace e Vinted",
@@ -54,5 +54,7 @@
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
   },
-  "data_prevista": "2026-11-21"
+  "data_prevista": "2026-11-21",
+  "media_id": "18133682818691415",
+  "reel_id": "18133682818691415"
 }
