@@ -1,0 +1,55 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Hai cliccato un link truffa? Cosa fare subito",
+    "slides": [
+      {
+        "titolo": "Hai cliccato un link truffa? Cosa fare subito",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Prima chiudi la pagina e non scrivere niente. Poi cambi password, e se serve chiami la banca. E attivi la verifica in due passaggi.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi clicca su tutto",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Hai cliccato un link truffa? Succede a tutti, l'importante è muoversi subito 🚨\n\n1️⃣ Chiudi la pagina e non inserire altri dati\n2️⃣ Cambia la password dell'account che ti hanno chiesto. Se hai inserito la carta, chiama subito la banca e falla bloccare\n3️⃣ Attiva la verifica in due passaggi, così la sola password non basta più\n\nSe hai perso soldi, fai denuncia alla Polizia Postale.\n\n💬 Ti è successo? Scrivi 1 nei commenti.\n📤 Mandalo a chi clicca su tutto.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "phishing",
+      "sicurezza",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Consigli Polizia Postale in caso di phishing"
+    ],
+    "gancio": "Hai cliccato *un link truffa*? Niente panico, ecco cosa fare.",
+    "reel_titolo": "Emergenza · link cliccato",
+    "reel_punti": [
+      "Prima chiudi la pagina e non scrivere niente",
+      "Poi cambi password, e se serve chiami la banca",
+      "E attivi la verifica in due passaggi"
+    ],
+    "reel_icone": [
+      "link",
+      "stop",
+      "carta",
+      "lucchetto"
+    ],
+    "invio": "Ti è successo? *Scrivi 1* nei commenti",
+    "annuncio": "E il terzo passo lo dimenticano tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-26"
+}

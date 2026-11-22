@@ -1,0 +1,55 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #8: i finti negozi del Black Friday",
+    "slides": [
+      {
+        "titolo": "i finti negozi del Black Friday",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Il primo è lo sconto troppo bello, tipo meno ottanta. Poi in fondo al sito manca la partita IVA. E se puoi pagare solo col bonifico, chiudi tutto.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Con il Black Friday spuntano negozi falsi con sconti incredibili 🛍️\n\nSembrano veri: logo, foto e recensioni copiate. Ma il pacco non arriva mai.\n\nI tre segnali:\n1️⃣ Sconti del 70-80% su marche famose\n2️⃣ Niente partita IVA, indirizzo o contatti in fondo al sito\n3️⃣ Puoi pagare solo con bonifico o ricarica: niente carta con protezione o PayPal\n\n💬 Ti è capitato? Scrivi 1 nei commenti.\n📤 Mandalo a mamma e papà.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "blackfriday",
+      "shoppingonline",
+      "sicurezza",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Avvisi Polizia Postale sui falsi e-commerce del Black Friday"
+    ],
+    "gancio": "Sconti pazzeschi sul *Black Friday*? Prima guarda queste tre cose.",
+    "reel_titolo": "Truffa #8 · il finto negozio",
+    "reel_punti": [
+      "Il primo è lo sconto troppo bello, tipo meno ottanta",
+      "Poi in fondo al sito manca la partita IVA",
+      "E se puoi pagare solo col bonifico, chiudi tutto"
+    ],
+    "reel_icone": [
+      "soldi",
+      "soldi",
+      "link",
+      "carta"
+    ],
+    "invio": "Ti è capitato? *Scrivi 1* nei commenti",
+    "annuncio": "E la terza è quella che frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-23"
+}

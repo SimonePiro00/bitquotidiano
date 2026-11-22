@@ -1,0 +1,55 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Black Friday: come capire se lo sconto è vero",
+    "slides": [
+      {
+        "titolo": "come capire se lo sconto è vero",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Il primo è il timer: se ti mette fretta, respira. Poi controlli il prezzo dei mesi scorsi. E per legge vale il prezzo più basso dei 30 giorni.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi compra online",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "Oggi è Black Friday 🛒 Ma lo sconto è vero?\n\n1️⃣ Timer e \"ultimi pezzi\" servono a metterti fretta\n2️⃣ Controlla lo storico del prezzo con un sito che lo traccia, come Keepa o CamelCamelCamel\n3️⃣ Per legge, il prezzo barrato deve essere il più basso degli ultimi 30 giorni. Se il negozio lo ha alzato a ottobre per scontarlo oggi, non può farlo\n\n💬 Ti è capitato? Scrivi 1 nei commenti.\n📤 Mandalo a chi compra online.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "blackfriday",
+      "sconti",
+      "shoppingonline",
+      "consigli",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "D.lgs. 26/2023 (direttiva Omnibus) sugli annunci di riduzione di prezzo"
+    ],
+    "gancio": "Sconto del *50%* al Black Friday? Ecco come capire se è vero.",
+    "reel_titolo": "Black Friday · lo sconto vero",
+    "reel_punti": [
+      "Il primo è il timer: se ti mette fretta, respira",
+      "Poi controlli il prezzo dei mesi scorsi",
+      "E per legge vale il prezzo più basso dei 30 giorni"
+    ],
+    "reel_icone": [
+      "soldi",
+      "avviso",
+      "link",
+      "soldi"
+    ],
+    "invio": "Ti è capitato? *Scrivi 1* nei commenti",
+    "annuncio": "E il terzo trucco lo conoscono in pochi",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-27"
+}

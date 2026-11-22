@@ -1,0 +1,56 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #11: il finto rimborso dell'Agenzia delle Entrate",
+    "slides": [
+      {
+        "titolo": "il finto rimborso dell'Agenzia delle Entrate",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Ti promette soldi, ma chiede i dati della carta. Poi il link porta su un sito copiato. E i rimborsi veri arrivano sul conto, mai via link.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Hai diritto a un rimborso, inserisci i dati della carta\" 💶 È una truffa.\n\nMail e SMS usano logo e nomi veri dell'Agenzia delle Entrate e portano a un sito copiato.\n\nL'Agenzia non chiede mai i dati della carta via mail o SMS: i rimborsi arrivano sul conto che hai comunicato tu. Se hai dubbi, controlla nella tua area riservata entrando dal sito ufficiale.\n\n💬 Ti è arrivata? Scrivi 1 nei commenti.\n📤 Mandalo a mamma e papà.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "agenziaentrate",
+      "rimborso",
+      "phishing",
+      "sicurezza",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Avvisi dell'Agenzia delle Entrate su mail e SMS falsi"
+    ],
+    "gancio": "L'*Agenzia delle Entrate* ti deve un rimborso? Occhio.",
+    "reel_titolo": "Truffa #11 · il finto rimborso",
+    "reel_punti": [
+      "Ti promette soldi, ma chiede i dati della carta",
+      "Poi il link porta su un sito copiato",
+      "E i rimborsi veri arrivano sul conto, mai via link"
+    ],
+    "reel_icone": [
+      "soldi",
+      "carta",
+      "link",
+      "stop"
+    ],
+    "invio": "Ti è arrivata? *Scrivi 1* nei commenti",
+    "annuncio": "Ci sono tre segnali, e il terzo frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-28"
+}

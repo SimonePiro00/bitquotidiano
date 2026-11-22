@@ -1,0 +1,56 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #10: la finta bolletta della luce non pagata",
+    "slides": [
+      {
+        "titolo": "la finta bolletta della luce non pagata",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "La prima è la fretta: te la staccano tra poche ore. Poi ti mandano un link per pagare con la carta. E il distacco vero arriva solo dopo una raccomandata.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a mamma e papà",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Bolletta non pagata, ti stacchiamo la luce entro oggi\" ⚡ Con un link per pagare subito. È una truffa.\n\nPrima di sospendere la fornitura, il fornitore deve mandarti un sollecito scritto (la messa in mora) con raccomandata o PEC, e darti tempo per pagare.\n\nCome difendersi: non pagare dal link. Controlla nell'app o nell'area clienti del tuo fornitore, o chiama il numero scritto sulla bolletta.\n\n💬 Ti è arrivato? Scrivi 1 nei commenti.\n📤 Mandalo a mamma e papà.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "bolletta",
+      "luce",
+      "sms",
+      "sicurezza",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Regole ARERA sulla messa in mora e il distacco"
+    ],
+    "gancio": "Ti scrivono che *ti staccano la luce* oggi? Aspetta un attimo.",
+    "reel_titolo": "Truffa #10 · la finta bolletta",
+    "reel_punti": [
+      "La prima è la fretta: te la staccano tra poche ore",
+      "Poi ti mandano un link per pagare con la carta",
+      "E il distacco vero arriva solo dopo una raccomandata"
+    ],
+    "reel_icone": [
+      "soldi",
+      "avviso",
+      "link",
+      "stop"
+    ],
+    "invio": "Ti è arrivato? *Scrivi 1* nei commenti",
+    "annuncio": "Ci sono tre segnali, e il terzo frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-25"
+}
