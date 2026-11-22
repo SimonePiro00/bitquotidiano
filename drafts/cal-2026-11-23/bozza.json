@@ -11,7 +11,7 @@
       },
       {
         "titolo": "In breve",
-        "testo": "Il primo è lo sconto troppo bello, tipo meno ottanta. Poi in fondo al sito non c'è la partita IVA. E se puoi pagare solo col bonifico, chiudi tutto.",
+        "testo": "Il primo è lo sconto troppo bello, tipo meno ottanta. Poi in fondo al sito manca la partita IVA. E se puoi pagare solo col bonifico, chiudi tutto.",
         "illustrazione": null
       },
       {
@@ -32,11 +32,11 @@
     "da_verificare": [
       "Avvisi Polizia Postale sui falsi e-commerce del Black Friday"
     ],
-    "gancio": "Sconti dell'*80%* sul Black Friday? Prima guarda queste tre cose.",
+    "gancio": "Sconti pazzeschi sul *Black Friday*? Prima guarda queste tre cose.",
     "reel_titolo": "Truffa #8 · il finto negozio",
     "reel_punti": [
       "Il primo è lo sconto troppo bello, tipo meno ottanta",
-      "Poi in fondo al sito non c'è la partita IVA",
+      "Poi in fondo al sito manca la partita IVA",
       "E se puoi pagare solo col bonifico, chiudi tutto"
     ],
     "reel_icone": [
