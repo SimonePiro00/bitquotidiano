@@ -1,0 +1,56 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #9: il messaggio \"Sei tu in questo video?\"",
+    "slides": [
+      {
+        "titolo": "il messaggio \"Sei tu in questo video?\"",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Il messaggio arriva da un amico vero, ma il suo profilo è stato rubato. Poi il link ti fa rifare l'accesso su una pagina finta. E appena metti la password, rubano anche il tuo profilo.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi usa Instagram",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Sei tu in questo video?\" 😱 Se te lo scrive un amico su Instagram o Messenger, non cliccare.\n\nIl suo profilo è stato rubato e il messaggio parte in automatico a tutti i suoi contatti. Il link apre una pagina di accesso identica a quella vera: se metti la password, il prossimo profilo rubato è il tuo.\n\nCome difendersi: non aprire il link, avvisa l'amico per un'altra strada e attiva la verifica in due passaggi.\n\n💬 Ti è mai arrivato? Scrivi 1 se sì, 2 se no.\n📤 Mandalo a chi usa Instagram.\n\nSegui la pagina: domani ce n'è un'altra.",
+    "hashtag": [
+      "truffe",
+      "instagram",
+      "messenger",
+      "phishing",
+      "sicurezza",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Centro assistenza Meta sugli account compromessi"
+    ],
+    "gancio": "Un amico ti scrive *Sei tu in questo video?* Non cliccare.",
+    "reel_titolo": "Truffa #9 · sei tu nel video?",
+    "reel_punti": [
+      "Il messaggio arriva da un amico vero, ma il suo profilo è stato rubato",
+      "Poi il link ti fa rifare l'accesso su una pagina finta",
+      "E appena metti la password, rubano anche il tuo profilo"
+    ],
+    "reel_icone": [
+      "chat",
+      "chat",
+      "link",
+      "lucchetto"
+    ],
+    "invio": "Ti è mai arrivato? *Scrivi 1* se sì, 2 se no",
+    "annuncio": "Ecco come funziona, e il terzo passo frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina, domani ce n'è un'altra!"
+  },
+  "data_prevista": "2026-11-24"
+}

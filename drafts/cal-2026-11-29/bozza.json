@@ -1,0 +1,55 @@
+{
+  "stato": "in_attesa",
+  "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
+  "bozza": {
+    "argomento": "Truffa #12: il finto avviso sullo SPID",
+    "slides": [
+      {
+        "titolo": "il finto avviso sullo SPID",
+        "testo": "",
+        "illustrazione": null
+      },
+      {
+        "titolo": "In breve",
+        "testo": "Ti dicono che lo SPID è scaduto e va rifatto subito. Poi il link ti chiede password e foto del documento. E con il tuo SPID possono entrare a nome tuo nei servizi pubblici.",
+        "illustrazione": null
+      },
+      {
+        "titolo": "Mandalo a chi usa lo SPID",
+        "testo": "Segui la pagina per non farti fregare!",
+        "illustrazione": null
+      }
+    ],
+    "didascalia": "\"Il tuo SPID è sospeso, aggiornalo entro 24 ore\" 🪪 È una truffa.\n\nIl link porta su una pagina copiata che chiede password e foto del documento. Con quei dati i truffatori possono attivare uno SPID a tuo nome ed entrare nei servizi pubblici come se fossi tu.\n\nCome difendersi: non cliccare, entra solo dall'app o dal sito ufficiale del tuo gestore SPID e, se hai dubbi, chiama il loro numero.\n\n💬 Ti è mai arrivato? Scrivi 1 se sì, 2 se no.\n📤 Mandalo a chi usa lo SPID.\n\nSegui la pagina per non farti fregare.",
+    "hashtag": [
+      "truffe",
+      "spid",
+      "phishing",
+      "sicurezza",
+      "bitquotidiano"
+    ],
+    "infografica": null,
+    "da_verificare": [
+      "Avvisi AgID sulle campagne di phishing SPID"
+    ],
+    "gancio": "Ti scrivono che il tuo *SPID* è sospeso? Non cliccare.",
+    "reel_titolo": "Truffa #12 · il finto SPID",
+    "reel_punti": [
+      "Ti dicono che lo SPID è scaduto e va rifatto subito",
+      "Poi il link ti chiede password e foto del documento",
+      "E con il tuo SPID possono entrare a nome tuo nei servizi pubblici"
+    ],
+    "reel_icone": [
+      "avviso",
+      "lucchetto",
+      "link",
+      "stop"
+    ],
+    "invio": "Ti è mai arrivato? *Scrivi 1* se sì, 2 se no",
+    "annuncio": "Ecco come funziona, e il terzo passo frega tutti",
+    "solo_reel": true,
+    "reel_stile": "palco",
+    "reel_segui": "E segui la pagina per non farti fregare!"
+  },
+  "data_prevista": "2026-11-29"
+}
