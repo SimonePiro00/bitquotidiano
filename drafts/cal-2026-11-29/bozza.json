@@ -11,7 +11,7 @@
       },
       {
         "titolo": "In breve",
-        "testo": "Ti dicono che lo SPID è scaduto e va rifatto subito. Poi il link ti chiede password e foto del documento. E con il tuo SPID possono entrare a nome tuo nei servizi pubblici.",
+        "testo": "Ti dicono che lo SPID è scaduto e va rifatto. Poi il link chiede password e documento. E col tuo SPID entrano a nome tuo nei servizi.",
         "illustrazione": null
       },
       {
@@ -35,9 +35,9 @@
     "gancio": "Ti scrivono che il tuo *SPID* è sospeso? Non cliccare.",
     "reel_titolo": "Truffa #12 · il finto SPID",
     "reel_punti": [
-      "Ti dicono che lo SPID è scaduto e va rifatto subito",
-      "Poi il link ti chiede password e foto del documento",
-      "E con il tuo SPID possono entrare a nome tuo nei servizi pubblici"
+      "Ti dicono che lo SPID è scaduto e va rifatto",
+      "Poi il link chiede password e documento",
+      "E col tuo SPID entrano a nome tuo nei servizi"
     ],
     "reel_icone": [
       "avviso",

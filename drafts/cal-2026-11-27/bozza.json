@@ -11,7 +11,7 @@
       },
       {
         "titolo": "In breve",
-        "testo": "Il primo è il timer, se ti mette fretta respira. Poi controlli quanto costava nei mesi scorsi, con un sito che segna i prezzi. E per legge lo sconto va calcolato sul prezzo più basso degli ultimi 30 giorni.",
+        "testo": "Il primo è il timer: se ti mette fretta, respira. Poi controlli il prezzo dei mesi scorsi. E per legge vale il prezzo più basso dei 30 giorni.",
         "illustrazione": null
       },
       {
@@ -20,7 +20,7 @@
         "illustrazione": null
       }
     ],
-    "didascalia": "Oggi è Black Friday 🛒 Ma lo sconto è vero?\n\n1️⃣ Timer e \"ultimi pezzi\" servono a metterti fretta\n2️⃣ Controlla lo storico del prezzo con un sito che lo traccia, come Keepa o CamelCamelCamel\n3️⃣ Per legge, il prezzo barrato deve essere il più basso degli ultimi 30 giorni. Se il negozio lo ha alzato a ottobre per scontarlo oggi, non può farlo\n\n💬 Ti è capitato? Scrivi 1 nei commenti.\n📤 Mandalo a chi compra online.\n\nSegui la pagina: domani ce n'è un'altra.",
+    "didascalia": "Oggi è Black Friday 🛒 Ma lo sconto è vero?\n\n1️⃣ Timer e \"ultimi pezzi\" servono a metterti fretta\n2️⃣ Controlla lo storico del prezzo con un sito che lo traccia, come Keepa o CamelCamelCamel\n3️⃣ Per legge, il prezzo barrato deve essere il più basso degli ultimi 30 giorni. Se il negozio lo ha alzato a ottobre per scontarlo oggi, non può farlo\n\n💬 Ti è capitato? Scrivi 1 nei commenti.\n📤 Mandalo a chi compra online.\n\nSegui la pagina per non farti fregare.",
     "hashtag": [
       "blackfriday",
       "sconti",
@@ -35,9 +35,9 @@
     "gancio": "Sconto del *50%* al Black Friday? Ecco come capire se è vero.",
     "reel_titolo": "Black Friday · lo sconto vero",
     "reel_punti": [
-      "Il primo è il timer, se ti mette fretta respira",
-      "Poi controlli quanto costava nei mesi scorsi, con un sito che segna i prezzi",
-      "E per legge lo sconto va calcolato sul prezzo più basso degli ultimi 30 giorni"
+      "Il primo è il timer: se ti mette fretta, respira",
+      "Poi controlli il prezzo dei mesi scorsi",
+      "E per legge vale il prezzo più basso dei 30 giorni"
     ],
     "reel_icone": [
       "soldi",
@@ -49,7 +49,7 @@
     "annuncio": "E il terzo trucco lo conoscono in pochi",
     "solo_reel": true,
     "reel_stile": "palco",
-    "reel_segui": "E segui la pagina, domani ce n'è un'altra!"
+    "reel_segui": "E segui la pagina per non farti fregare!"
   },
   "data_prevista": "2026-11-27"
 }
