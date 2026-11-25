@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
   "bozza": {
     "argomento": "Truffa #10: la finta bolletta della luce non pagata",
@@ -52,5 +52,7 @@
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
   },
-  "data_prevista": "2026-11-25"
+  "data_prevista": "2026-11-25",
+  "media_id": "18033962048863526",
+  "reel_id": "18033962048863526"
 }
