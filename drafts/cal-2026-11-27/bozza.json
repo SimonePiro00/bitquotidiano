@@ -1,5 +1,5 @@
 {
-  "stato": "in_attesa",
+  "stato": "pubblicata",
   "fonte": "calendario editoriale (bozza scritta a mano, solo Reel)",
   "bozza": {
     "argomento": "Black Friday: come capire se lo sconto è vero",
@@ -51,5 +51,7 @@
     "reel_stile": "palco",
     "reel_segui": "E segui la pagina per non farti fregare!"
   },
-  "data_prevista": "2026-11-27"
+  "data_prevista": "2026-11-27",
+  "media_id": "18118215536036732",
+  "reel_id": "18118215536036732"
 }
